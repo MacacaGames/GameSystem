@@ -39,7 +39,6 @@
 
 using System.Collections;
 using System.Collections.Generic;
-using Amanotes.ContentReader;
 using Rayark.Mast;
 using UnityEngine;
 using System;

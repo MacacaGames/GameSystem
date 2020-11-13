@@ -17,7 +17,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Amanotes.ContentReader;
 using System.IO;
 using Rayark.Mast;
 using System;
