@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ApplicationLifeCycle : MonoBehaviour, IApplicationLifyCycle
+public abstract class ApplicationLifeCycle : MonoBehaviour, IApplicationLifeCycle
 {
     public abstract void Init();
     public abstract void OnApplicationBeforeGamePlay();
 }
 
-interface IApplicationLifyCycle
+interface IApplicationLifeCycle
 {
     void Init();
     /// <summary>

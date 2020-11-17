@@ -21,7 +21,7 @@ using System.IO;
 using Rayark.Mast;
 using System;
 
-public class GamePlayController : IApplicationLifyCycle
+public class GamePlayController : IApplicationLifeCycle
 {
     GamePlayData currentGamePlayData;
     private ApplicationController _applicationController;

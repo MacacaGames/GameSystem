@@ -58,7 +58,7 @@ public class ApplicationController : MonoBehaviour
 
     [SerializeField] GamePlayData gamePlayData;
     [SerializeField] GameSystemBase[] gameSystems;
-    IApplicationLifyCycle[] applicationLifyCycles;
+    IApplicationLifeCycle[] applicationLifyCycles;
     List<GameSystemBase> gameSystemInstances = new List<GameSystemBase>();
 
 
