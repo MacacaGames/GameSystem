@@ -48,10 +48,12 @@ using System.Linq;
 /// <summary>
 /// Main ApplicationController for all games
 /// </summary>
-public class ApplicationController : UnitySingleton<ApplicationController>
+public class ApplicationController : MonoBehaviour
 {
+    public static ApplicationController Instance;
     void Awake()
     {
+        Instance = this;
         Init();
     }
 
