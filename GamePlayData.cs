@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Rayark.Mast;
 using UnityEngine;
 
-public abstract class GamePlayData : ScriptableObject
+public abstract class GamePlayData : ScriptableObject ,IApplicationInjectable
 {
     GamePlayController _gamePlayController;
     ApplicationController _applicationController;

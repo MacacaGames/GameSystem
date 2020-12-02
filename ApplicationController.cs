@@ -43,6 +43,8 @@ using Rayark.Mast;
 using UnityEngine;
 using System;
 using System.Linq;
+using System.Reflection;
+using System.Runtime;
 
 /// <summary>
 /// Main ApplicationController for all games
@@ -58,7 +60,7 @@ public class ApplicationController : MonoBehaviour
 
     [SerializeField] GamePlayData gamePlayData;
     [SerializeField] GameSystemBase[] gameSystems;
-    IApplicationLifeCycle[] applicationLifyCycles;
+    ApplicationLifeCycle[] applicationLifyCycles;
     List<GameSystemBase> gameSystemInstances = new List<GameSystemBase>();
 
 
@@ -81,19 +83,38 @@ public class ApplicationController : MonoBehaviour
         gamePlayController.Init();
         applicationExecutor = new Executor();
 
+        //Prepare Instance
         foreach (var item in gameSystems)
         {
             var temp = Instantiate(item);
-            temp.Init();
-            applicationExecutor.Add(temp.OnUpdate());
             gameSystemInstances.Add(temp);
         }
-
         applicationLifyCycles = FindObjectsOfType<ApplicationLifeCycle>();
+
+        //Inject Dependency
+        InjectByClass(gamePlayData);
+
+        foreach (var item in gameSystemInstances)
+        {
+            InjectByClass(item);
+        }
+
+        foreach (var item in applicationLifyCycles)
+        {
+            InjectByClass(item);
+        }
+
+        //Init
+        foreach (var item in gameSystemInstances)
+        {
+            item.Init();
+            applicationExecutor.Add(item.OnUpdate());
+        }
         foreach (var item in applicationLifyCycles)
         {
             item.Init();
         }
+
 
         applicationExecutor.Add(ApplicationTask());
     }
@@ -191,6 +212,12 @@ public class ApplicationController : MonoBehaviour
         result = gameSystemInstances.SingleOrDefault(m => m is T) as T;
         return result;
     }
+    public object GetGameSystem(Type t)
+    {
+        object result;
+        result = gameSystemInstances.SingleOrDefault(m => m.GetType() == t);
+        return result;
+    }
 
     /// <summary>
     /// Get Current GamePlayController
@@ -213,6 +240,18 @@ public class ApplicationController : MonoBehaviour
         return result;
     }
 
+    public object GetApplicationLifeCycle(Type t)
+    {
+        object result;
+        result = applicationLifyCycles.SingleOrDefault(m => m.GetType() == t);
+        return result;
+    }
+
+    public void ResolveInjection(IApplicationInjectable injectable)
+    {
+        InjectByClass(injectable);
+    }
+
     /// <summary>
     /// Start the Game
     /// </summary>
@@ -230,4 +269,67 @@ public class ApplicationController : MonoBehaviour
     {
         gamePlayController.QuitGamePlay();
     }
+
+    private void InjectByClass(IApplicationInjectable injectable)
+    {
+        Type contract = injectable.GetType();
+
+        MemberInfo[] members = contract.FindMembers(
+            MemberTypes.Property | MemberTypes.Field,
+            BindingFlags.FlattenHierarchy | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance,
+            null, null);
+
+        foreach (MemberInfo member in members)
+        {
+            object[] attrs = member.GetCustomAttributes(typeof(InjectAttribute), true);
+
+            foreach (object attr in attrs)
+            {
+                if (attr.GetType() != typeof(InjectAttribute))
+                {
+                    continue;
+                }
+
+                if (member.MemberType == MemberTypes.Field)
+                {
+                    System.Reflection.FieldInfo fieldInfo = member as FieldInfo;
+                    if (fieldInfo != null)
+                        fieldInfo.SetValue(injectable, GetInstanceValue(fieldInfo.FieldType));
+                }
+                else if (member.MemberType == MemberTypes.Property)
+                {
+                    System.Reflection.PropertyInfo info = member as PropertyInfo;
+                    if (info != null)
+                        info.SetValue(injectable, GetInstanceValue(info.PropertyType));
+                }
+                else
+                {
+                    Debug.LogError($"Unsupport member type {member.MemberType}");
+                }
+            }
+        }
+
+        object GetInstanceValue(Type t)
+        {
+            if (t.IsSubclassOf(typeof(ApplicationLifeCycle)))
+            {
+                return GetApplicationLifeCycle(t);
+            }
+            if (t.IsSubclassOf(typeof(GameSystemBase)))
+            {
+                return GetGameSystem(t);
+            }
+            if (t.IsSubclassOf(typeof(GamePlayData)))
+            {
+                return GetGamePlayController().GetGamePlayData();
+            }
+            return null;
+        }
+    }
 }
+public interface IApplicationInjectable
+{
+
+}
+[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
+public class InjectAttribute : Attribute { }

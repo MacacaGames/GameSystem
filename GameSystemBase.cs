@@ -4,7 +4,7 @@ using UnityEngine;
 using Rayark.Mast;
 using Coroutine = Rayark.Mast.Coroutine;
 
-public abstract class GameSystemBase : ScriptableObject
+public abstract class GameSystemBase : ScriptableObject, IApplicationInjectable
 {
     public abstract void Init();
     Coroutine logic;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ApplicationLifeCycle : MonoBehaviour, IApplicationLifeCycle
+public abstract class ApplicationLifeCycle : MonoBehaviour, IApplicationLifeCycle, IApplicationInjectable
 {
     public abstract void Init();
     public abstract void OnApplicationBeforeGamePlay();
