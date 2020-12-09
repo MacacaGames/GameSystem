@@ -270,6 +270,11 @@ public class ApplicationController : MonoBehaviour
         gamePlayController.QuitGamePlay();
     }
 
+    void OnGUI()
+    {
+        gamePlayData.OnGUI();
+    }
+
     private void InjectByClass(IApplicationInjectable injectable)
     {
         Type contract = injectable.GetType();

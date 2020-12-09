@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Rayark.Mast;
 using UnityEngine;
 
-public abstract class GamePlayData : ScriptableObject ,IApplicationInjectable
+public abstract class GamePlayData : ScriptableObject, IApplicationInjectable
 {
     GamePlayController _gamePlayController;
     ApplicationController _applicationController;
@@ -101,4 +101,6 @@ public abstract class GamePlayData : ScriptableObject ,IApplicationInjectable
     /// Same as ApplicationController OnApplicationBeforeGamePlay.
     /// </summary>
     public abstract void OnApplicationBeforeGamePlay();
+    public abstract void OnGUI();
+
 }
