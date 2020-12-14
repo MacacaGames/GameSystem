@@ -9,6 +9,9 @@ namespace MacacaGames.GameSystem
         bool injectFinish = false;
         void Awake()
         {
+            if (!injectFinish)
+                return;
+
             List<IApplicationInjectable> injectables = new List<IApplicationInjectable>();
             ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject(gameObject, injectables);
             foreach (var item in injectables)

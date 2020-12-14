@@ -90,7 +90,10 @@ namespace MacacaGames.GameSystem
                 var temp = Instantiate(item);
                 gameSystemInstances.Add(temp);
             }
-            applicationLifyCycles = FindObjectsOfType<ApplicationLifeCycle>();
+            applicationLifyCycles = Resources.FindObjectsOfTypeAll<ApplicationLifeCycle>().Where(
+                (m) =>
+                m.gameObject != null &&
+                m.gameObject.scene.IsValid()).ToArray();
 
             //Inject Dependency
             InjectByClass(gamePlayData);
@@ -281,8 +284,7 @@ namespace MacacaGames.GameSystem
             Type contract = injectable.GetType();
 
             MemberInfo[] members = contract.FindMembers(
-                MemberTypes.Property | MemberTypes.Field,
-                BindingFlags.FlattenHierarchy | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance,
+                MemberTypes.Property | MemberTypes.Field, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance,
                 null, null);
 
             foreach (MemberInfo member in members)
