@@ -19,7 +19,7 @@
         |                  Game Lobby (A state for waiting for enter gameplay)
         |                       |
         |                       |
-        |                       |   [GamePlayData.StartGamePlay]
+        |                       |   [ApplicationController.Instance.StartGame] 
         |                       V
         |                       |
         |                       |  
@@ -29,10 +29,7 @@
         |                       | 
         |                       |
         |                       |                   
-        -------------------------   [ApplicitionController.OnApplicationAfterGamePlay]
-                                    [GameSystemBase.OnApplicationAfterGamePlay]
-
-
+        -------------------------   [GamePlayController.SuccessGamePlay]
 /// 
 /// 
 */
@@ -67,6 +64,8 @@ namespace MacacaGames.GameSystem
 
         /// <summary>
         /// Fire while application init, only fire once
+        /// Usually to use in other scene before Scene with ApplicationController
+        /// e.g. Loading scene
         /// </summary>
         Action OnApplicationInit;
 
@@ -119,22 +118,9 @@ namespace MacacaGames.GameSystem
                 item.Init();
             }
 
-
             applicationExecutor.Add(ApplicationTask());
         }
 
-        void Update()
-        {
-            if (applicationExecutor == null)
-            {
-                return;
-            }
-
-            if (!applicationExecutor.Finished)
-            {
-                applicationExecutor.Resume(Time.deltaTime);
-            }
-        }
 
         Executor applicationExecutor;
         Executor gamePlayTaskExecutor;
@@ -177,7 +163,7 @@ namespace MacacaGames.GameSystem
                 }
 
                 //Game Start
-                gamePlayTaskExecutor = gamePlayController.StartGamePlay();
+                gamePlayTaskExecutor = gamePlayController.GamePlayControllerCoreLoop();
                 while (!gamePlayTaskExecutor.Finished)
                 {
                     gamePlayController.gamePlayUnpauseUpdateExecuter.Resume(Rayark.Mast.Coroutine.Delta);
@@ -216,6 +202,12 @@ namespace MacacaGames.GameSystem
             result = gameSystemInstances.SingleOrDefault(m => m is T) as T;
             return result;
         }
+
+        /// <summary>
+        /// Get the game system instance
+        /// </summary>
+        /// <param name="t">The game system class you wish to get</param>
+        /// <returns>The game system instance, null if no instance</returns>
         public object GetGameSystem(Type t)
         {
             object result;
@@ -244,6 +236,11 @@ namespace MacacaGames.GameSystem
             return result;
         }
 
+        /// <summary>
+        /// Get the ApplicationLifeCycle instance
+        /// </summary>
+        /// <typeparam name="T">The ApplicationLifeCycle class you wish to get</typeparam>
+        /// <returns>The ApplicationLifeCycle instance, null if no instance</returns>
         public object GetApplicationLifeCycle(Type t)
         {
             object result;
@@ -251,10 +248,6 @@ namespace MacacaGames.GameSystem
             return result;
         }
 
-        public void ResolveInjection(IApplicationInjectable injectable)
-        {
-            InjectByClass(injectable);
-        }
 
         /// <summary>
         /// Start the Game
@@ -274,10 +267,31 @@ namespace MacacaGames.GameSystem
         //{
         //    gamePlayController.QuitGamePlay();
         //}
+        #region  Unity Callback
 
         void OnGUI()
         {
             gamePlayData.OnGUI();
+        }
+
+        void Update()
+        {
+            if (applicationExecutor == null)
+            {
+                return;
+            }
+
+            if (!applicationExecutor.Finished)
+            {
+                applicationExecutor.Resume(Time.deltaTime);
+            }
+        }
+
+        #endregion
+        #region  Injection
+        public void ResolveInjection(IApplicationInjectable injectable)
+        {
+            InjectByClass(injectable);
         }
 
         private void InjectByClass(IApplicationInjectable injectable)
@@ -285,8 +299,9 @@ namespace MacacaGames.GameSystem
             Type contract = injectable.GetType();
 
             MemberInfo[] members = contract.FindMembers(
-                MemberTypes.Property | MemberTypes.Field, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance,
-                null, null);
+                MemberTypes.Property | MemberTypes.Field | MemberTypes.NestedType,
+                BindingFlags.FlattenHierarchy | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static,
+            null, null);
 
             foreach (MemberInfo member in members)
             {
@@ -335,11 +350,31 @@ namespace MacacaGames.GameSystem
                 return null;
             }
         }
+        #endregion
     }
+
     public interface IApplicationInjectable
     {
 
     }
+
+    /// <summary>
+    /// Mark a Property or Field inside IApplicationInjectable that can be Injected by ApplicationController
+    /// Remember the member needs to be accessable to make the Inject work.
+    /// 
+    /// e.g. In the case while trying to inject ChildClass the inject will has below result 
+    /// 
+    /// class BaseClass : IApplicationInjectable{
+    ///     SomeClass canNotBeInject;
+    ///     protected SomeClass canBeInject;
+    ///     public SomeClass alsoCanBeInject;
+    /// }
+    /// 
+    /// class ChildClass : BaseClass{
+    ///     
+    /// }
+    /// </summary>
+    /// 
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
     public class InjectAttribute : Attribute { }
 }

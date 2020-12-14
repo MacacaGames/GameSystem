@@ -45,27 +45,35 @@ namespace MacacaGames.GameSystem
             currentGamePlayData?.OnApplicationBeforeGamePlay();
         }
 
-
+        /// <summary>
+        /// Get the current GamePlayData 
+        /// </summary>
+        /// <returns>GamePlayData</returns>
         public GamePlayData GetGamePlayData()
         {
             return currentGamePlayData;
         }
 
+        /// <summary>
+        /// Get the current GamePlayData and convert to target case
+        /// </summary>
+        /// <typeparam name="T">Target Type</typeparam>
+        /// <returns>GamePlayData</returns>
         public T GetGamePlayData<T>() where T : GamePlayData
         {
             return currentGamePlayData as T;
         }
 
 
-        public Executor StartGamePlay()
+        public Executor GamePlayControllerCoreLoop()
         {
             ResetGamePlayValue();
             currentGamePlayData.OnGameValueReset();
             gamePlayUpdateExecuter.Clear();
             return new Executor
-        {
-            EnterGame()
-        };
+            {
+                EnterGame()
+            };
         }
 
         IEnumerator EnterGame()
@@ -84,7 +92,9 @@ namespace MacacaGames.GameSystem
         }
 
         /// <summary>
-        /// Failed and exit the gameplay, this will fire continue flow
+        /// Failed and exit the gameplay, this will fire continue flow(if continue is available)
+        /// <see cref="GameOverFlow()"/> for the contniue behaviour
+        /// or <see cref="GamePlayData.OnContinueFlow(IReturn{bool})()"/> for your continue implement 
         /// </summary>
         public void FailedGamePlay()
         {
@@ -111,17 +121,23 @@ namespace MacacaGames.GameSystem
             isGaming = false;
         }
 
+        /// <summary>
+        /// Make the game Pause, use <see cref="ResumePause()"/> to Resume from Pause
+        /// </summary>
         public void EnterPause()
         {
             isPause = true;
         }
 
-        public void EndPause()
+        /// <summary>
+        /// Resume the game Pause, use <see cref="EnterPause()"/> to Enter pause
+        /// </summary>
+        public void ResumePause()
         {
             isPause = false;
         }
 
-        public void ResetGamePlayValue()
+        void ResetGamePlayValue()
         {
             isInResult = false;
             isQuiting = false;
@@ -239,8 +255,11 @@ namespace MacacaGames.GameSystem
             isGaming = false;
         }
 
-
-
+        /// <summary>
+        /// Fire after calling <see cref="FailedGamePlay()"/>
+        /// Player continue flow is runing in the flow too.
+        /// </summary>
+        /// <returns></returns>
         public IEnumerator GameOverFlow()
         {
             //關卡結束，代表玩家獲勝
@@ -282,7 +301,7 @@ namespace MacacaGames.GameSystem
                     yield return new WaitUntil(() => isContinueing == false);
                 }
 
-                EndPause();
+                ResumePause();
             }
         }
 
