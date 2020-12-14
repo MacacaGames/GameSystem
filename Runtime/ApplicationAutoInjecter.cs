@@ -9,7 +9,7 @@ namespace MacacaGames.GameSystem
         bool injectFinish = false;
         void Awake()
         {
-            if (!injectFinish)
+            if (injectFinish)
                 return;
 
             List<IApplicationInjectable> injectables = new List<IApplicationInjectable>();
