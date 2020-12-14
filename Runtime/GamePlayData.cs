@@ -14,7 +14,7 @@ namespace MacacaGames.GameSystem
             this._gamePlayController = _gamePlayController;
         }
 
-        protected GamePlayController gamePlayController
+        public GamePlayController gamePlayController
         {
             get { return _gamePlayController; }
         }
