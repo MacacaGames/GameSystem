@@ -269,10 +269,11 @@ namespace MacacaGames.GameSystem
             this.isInGame = isInGame;
         }
 
-        public void ExitGame()
-        {
-            gamePlayController.QuitGamePlay();
-        }
+        //You should exit game through GamePlayController.QuitGamePlay
+        //public void ExitGame()
+        //{
+        //    gamePlayController.QuitGamePlay();
+        //}
 
         void OnGUI()
         {

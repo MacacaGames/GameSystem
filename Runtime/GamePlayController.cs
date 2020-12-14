@@ -78,10 +78,9 @@ namespace MacacaGames.GameSystem
         /// <summary>
         /// End and exit the gameplay,used on Game Clear
         /// </summary>
-        public void EndGamePlay()
+        public void SuccessGamePlay()
         {
-            Rayark.Mast.Coroutine coroutine = new Rayark.Mast.Coroutine(GameOverFlow());
-            AddToUnpauseUpdateExecuter(coroutine);
+            isGaming = false;
         }
 
         /// <summary>
@@ -195,7 +194,13 @@ namespace MacacaGames.GameSystem
 
             while (isQuiting == false && isGaming == true)
             {
-                gamePlayCoroutine.Resume(Rayark.Mast.Coroutine.Delta);
+                if (!gamePlayCoroutine.Finished)
+                    gamePlayCoroutine.Resume(Rayark.Mast.Coroutine.Delta);
+                else
+                {
+                    Debug.LogError("gamePlayCoroutine is finished");
+                    Debug.Break();
+                }
                 yield return null;
             }
 
