@@ -1,0 +1,1 @@
+See [Document](https://macacagames.github.io/GameSystem/) for more detail.

@@ -1,0 +1,222 @@
+{
+  "homepages": [],
+  "source_base_path": "/Users/miki/Documents/SquidBeat/SB_Unity/Packages/MacacaGameSystem/Document",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MacacaGames.GameSystem.ApplicationAutoInjecter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.ApplicationAutoInjecter.html",
+          "hash": "x7vTD+KhjQCg6TGElGWS6Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MacacaGames.GameSystem.ApplicationController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.ApplicationController.html",
+          "hash": "n/VkdjGkMfDS4mnjuVOeVw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MacacaGames.GameSystem.ApplicationLifeCycle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.ApplicationLifeCycle.html",
+          "hash": "/IHlAyyWxkWChX6JcIBfiQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MacacaGames.GameSystem.ApplicationUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.ApplicationUtils.html",
+          "hash": "xZsPfNuHIZI5/esHYYtlDg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MacacaGames.GameSystem.GamePlayController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.GamePlayController.html",
+          "hash": "RGXSAzGekkxDLx1fvmU7jg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MacacaGames.GameSystem.GamePlayData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.GamePlayData.html",
+          "hash": "DcFNcGHqkzQOO+dXjIj8UQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MacacaGames.GameSystem.GameSystemBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.GameSystemBase.html",
+          "hash": "e1qBDat8abdjx6P/l1uBPA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MacacaGames.GameSystem.IApplicationInjectable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.IApplicationInjectable.html",
+          "hash": "slfR1Ng30NenpF4P079NEA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MacacaGames.GameSystem.InjectAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.InjectAttribute.html",
+          "hash": "TP9TRVISvgaEi8VFKUbGkA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MacacaGames.GameSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.html",
+          "hash": "ngQY0QRcIikGXvNi6a0TsA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "NWGPANvwYtKLf3lUFRDImA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "adMLtjIY987m1u/zzbDFfw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "rZWzsar60bWpZIA1HIxlZQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "EIhwD2+o19OxxQFCB6JJTg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 2,
+          "skipped_file_count": 2
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 10,
+          "skipped_file_count": 10
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
