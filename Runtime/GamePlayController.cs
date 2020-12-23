@@ -291,6 +291,8 @@ namespace MacacaGames.GameSystem
                         currentGamePlayData.OnContinue();
                         isFailed = false;
                         isPlayerDied = false;
+                        isContinueing = false;
+                        alreadyContinue = true;
                     }
                     else
                     {
