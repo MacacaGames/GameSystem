@@ -1,14 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Rayark.Mast;
-using Coroutine = Rayark.Mast.Coroutine;
 namespace MacacaGames.GameSystem
 {
     /// <summary>
-    /// ScriptableObject based ApplicationLifeCycle object
+    /// MonoBehaviour based ApplicationLifeCycle object
     /// </summary>
-    public abstract class ScriptableObjectLifeCycle : ScriptableObject, IApplicationInjectable, IApplicationLifeCycle
+    public abstract class MonoBehaviourLifeCycle : MonoBehaviour, IApplicationLifeCycle, IApplicationInjectable
     {
         /// <summary>
         /// Init the object, fire once during ApplicationController.Init()

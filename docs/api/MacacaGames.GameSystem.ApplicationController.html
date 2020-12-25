@@ -196,8 +196,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public T GetApplicationLifeCycle&lt;T&gt;()
-
-    where T : ApplicationLifeCycle</code></pre>
+    where T : MonoBehaviourLifeCycle</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -313,8 +312,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public T GetGameSystem&lt;T&gt;()
-
-    where T : GameSystemBase</code></pre>
+    where T : ScriptableObjectLifeCycle</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -362,7 +360,8 @@
   
   <a id="MacacaGames_GameSystem_ApplicationController_RegistApplicationExecuter_" data-uid="MacacaGames.GameSystem.ApplicationController.RegistApplicationExecuter*"></a>
   <h4 id="MacacaGames_GameSystem_ApplicationController_RegistApplicationExecuter_IResumable_" data-uid="MacacaGames.GameSystem.ApplicationController.RegistApplicationExecuter(IResumable)">RegistApplicationExecuter(IResumable)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Regist an IResumable which update by Application</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -427,7 +426,8 @@
   
   <a id="MacacaGames_GameSystem_ApplicationController_UnRegistApplicationExecuter_" data-uid="MacacaGames.GameSystem.ApplicationController.UnRegistApplicationExecuter*"></a>
   <h4 id="MacacaGames_GameSystem_ApplicationController_UnRegistApplicationExecuter_IResumable_" data-uid="MacacaGames.GameSystem.ApplicationController.UnRegistApplicationExecuter(IResumable)">UnRegistApplicationExecuter(IResumable)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Unregist an IResumable which update by Application</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">

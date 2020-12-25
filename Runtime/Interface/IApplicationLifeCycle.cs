@@ -1,5 +1,9 @@
 namespace MacacaGames.GameSystem
 {
+    /// <summary>
+    /// The life cycle interface for GameSystem
+    /// Use <see cref="ScriptableObjectLifeCycle"/> or  <see cref="MonoBehaviourLifeCycle"/> for more detail
+    /// </summary>
     interface IApplicationLifeCycle
     {
         /// <summary>

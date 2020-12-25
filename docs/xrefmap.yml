@@ -160,38 +160,6 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.ApplicationController.UnRegistApplicationExecuter
   nameWithType: ApplicationController.UnRegistApplicationExecuter
-- uid: MacacaGames.GameSystem.ApplicationLifeCycle
-  name: ApplicationLifeCycle
-  href: api/MacacaGames.GameSystem.ApplicationLifeCycle.html
-  commentId: T:MacacaGames.GameSystem.ApplicationLifeCycle
-  fullName: MacacaGames.GameSystem.ApplicationLifeCycle
-  nameWithType: ApplicationLifeCycle
-- uid: MacacaGames.GameSystem.ApplicationLifeCycle.Init
-  name: Init()
-  href: api/MacacaGames.GameSystem.ApplicationLifeCycle.html#MacacaGames_GameSystem_ApplicationLifeCycle_Init
-  commentId: M:MacacaGames.GameSystem.ApplicationLifeCycle.Init
-  fullName: MacacaGames.GameSystem.ApplicationLifeCycle.Init()
-  nameWithType: ApplicationLifeCycle.Init()
-- uid: MacacaGames.GameSystem.ApplicationLifeCycle.Init*
-  name: Init
-  href: api/MacacaGames.GameSystem.ApplicationLifeCycle.html#MacacaGames_GameSystem_ApplicationLifeCycle_Init_
-  commentId: Overload:MacacaGames.GameSystem.ApplicationLifeCycle.Init
-  isSpec: "True"
-  fullName: MacacaGames.GameSystem.ApplicationLifeCycle.Init
-  nameWithType: ApplicationLifeCycle.Init
-- uid: MacacaGames.GameSystem.ApplicationLifeCycle.OnApplicationBeforeGamePlay
-  name: OnApplicationBeforeGamePlay()
-  href: api/MacacaGames.GameSystem.ApplicationLifeCycle.html#MacacaGames_GameSystem_ApplicationLifeCycle_OnApplicationBeforeGamePlay
-  commentId: M:MacacaGames.GameSystem.ApplicationLifeCycle.OnApplicationBeforeGamePlay
-  fullName: MacacaGames.GameSystem.ApplicationLifeCycle.OnApplicationBeforeGamePlay()
-  nameWithType: ApplicationLifeCycle.OnApplicationBeforeGamePlay()
-- uid: MacacaGames.GameSystem.ApplicationLifeCycle.OnApplicationBeforeGamePlay*
-  name: OnApplicationBeforeGamePlay
-  href: api/MacacaGames.GameSystem.ApplicationLifeCycle.html#MacacaGames_GameSystem_ApplicationLifeCycle_OnApplicationBeforeGamePlay_
-  commentId: Overload:MacacaGames.GameSystem.ApplicationLifeCycle.OnApplicationBeforeGamePlay
-  isSpec: "True"
-  fullName: MacacaGames.GameSystem.ApplicationLifeCycle.OnApplicationBeforeGamePlay
-  nameWithType: ApplicationLifeCycle.OnApplicationBeforeGamePlay
 - uid: MacacaGames.GameSystem.ApplicationUtils
   name: ApplicationUtils
   href: api/MacacaGames.GameSystem.ApplicationUtils.html
@@ -311,12 +279,12 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.GamePlayController.GameOverFlow
   nameWithType: GamePlayController.GameOverFlow
-- uid: MacacaGames.GameSystem.GamePlayController.GamePlayControllerCoreLoop
-  name: GamePlayControllerCoreLoop()
-  href: api/MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_GamePlayControllerCoreLoop
-  commentId: M:MacacaGames.GameSystem.GamePlayController.GamePlayControllerCoreLoop
-  fullName: MacacaGames.GameSystem.GamePlayController.GamePlayControllerCoreLoop()
-  nameWithType: GamePlayController.GamePlayControllerCoreLoop()
+- uid: MacacaGames.GameSystem.GamePlayController.GamePlayControllerCoreLoop(System.Collections.IEnumerator,System.Collections.IEnumerator)
+  name: GamePlayControllerCoreLoop(IEnumerator, IEnumerator)
+  href: api/MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_GamePlayControllerCoreLoop_System_Collections_IEnumerator_System_Collections_IEnumerator_
+  commentId: M:MacacaGames.GameSystem.GamePlayController.GamePlayControllerCoreLoop(System.Collections.IEnumerator,System.Collections.IEnumerator)
+  fullName: MacacaGames.GameSystem.GamePlayController.GamePlayControllerCoreLoop(System.Collections.IEnumerator, System.Collections.IEnumerator)
+  nameWithType: GamePlayController.GamePlayControllerCoreLoop(IEnumerator, IEnumerator)
 - uid: MacacaGames.GameSystem.GamePlayController.GamePlayControllerCoreLoop*
   name: GamePlayControllerCoreLoop
   href: api/MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_GamePlayControllerCoreLoop_
@@ -679,19 +647,6 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.GamePlayData.OnEnterGame
   nameWithType: GamePlayData.OnEnterGame
-- uid: MacacaGames.GameSystem.GamePlayData.OnGameClear
-  name: OnGameClear()
-  href: api/MacacaGames.GameSystem.GamePlayData.html#MacacaGames_GameSystem_GamePlayData_OnGameClear
-  commentId: M:MacacaGames.GameSystem.GamePlayData.OnGameClear
-  fullName: MacacaGames.GameSystem.GamePlayData.OnGameClear()
-  nameWithType: GamePlayData.OnGameClear()
-- uid: MacacaGames.GameSystem.GamePlayData.OnGameClear*
-  name: OnGameClear
-  href: api/MacacaGames.GameSystem.GamePlayData.html#MacacaGames_GameSystem_GamePlayData_OnGameClear_
-  commentId: Overload:MacacaGames.GameSystem.GamePlayData.OnGameClear
-  isSpec: "True"
-  fullName: MacacaGames.GameSystem.GamePlayData.OnGameClear
-  nameWithType: GamePlayData.OnGameClear
 - uid: MacacaGames.GameSystem.GamePlayData.OnGameEnd
   name: OnGameEnd()
   href: api/MacacaGames.GameSystem.GamePlayData.html#MacacaGames_GameSystem_GamePlayData_OnGameEnd
@@ -718,6 +673,19 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.GamePlayData.OnGameFaild
   nameWithType: GamePlayData.OnGameFaild
+- uid: MacacaGames.GameSystem.GamePlayData.OnGameSuccess
+  name: OnGameSuccess()
+  href: api/MacacaGames.GameSystem.GamePlayData.html#MacacaGames_GameSystem_GamePlayData_OnGameSuccess
+  commentId: M:MacacaGames.GameSystem.GamePlayData.OnGameSuccess
+  fullName: MacacaGames.GameSystem.GamePlayData.OnGameSuccess()
+  nameWithType: GamePlayData.OnGameSuccess()
+- uid: MacacaGames.GameSystem.GamePlayData.OnGameSuccess*
+  name: OnGameSuccess
+  href: api/MacacaGames.GameSystem.GamePlayData.html#MacacaGames_GameSystem_GamePlayData_OnGameSuccess_
+  commentId: Overload:MacacaGames.GameSystem.GamePlayData.OnGameSuccess
+  isSpec: "True"
+  fullName: MacacaGames.GameSystem.GamePlayData.OnGameSuccess
+  nameWithType: GamePlayData.OnGameSuccess
 - uid: MacacaGames.GameSystem.GamePlayData.OnGameValueReset
   name: OnGameValueReset()
   href: api/MacacaGames.GameSystem.GamePlayData.html#MacacaGames_GameSystem_GamePlayData_OnGameValueReset
@@ -783,64 +751,6 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.GamePlayData.SetGamePlayController
   nameWithType: GamePlayData.SetGamePlayController
-- uid: MacacaGames.GameSystem.GameSystemBase
-  name: GameSystemBase
-  href: api/MacacaGames.GameSystem.GameSystemBase.html
-  commentId: T:MacacaGames.GameSystem.GameSystemBase
-  fullName: MacacaGames.GameSystem.GameSystemBase
-  nameWithType: GameSystemBase
-- uid: MacacaGames.GameSystem.GameSystemBase.Init
-  name: Init()
-  href: api/MacacaGames.GameSystem.GameSystemBase.html#MacacaGames_GameSystem_GameSystemBase_Init
-  commentId: M:MacacaGames.GameSystem.GameSystemBase.Init
-  fullName: MacacaGames.GameSystem.GameSystemBase.Init()
-  nameWithType: GameSystemBase.Init()
-- uid: MacacaGames.GameSystem.GameSystemBase.Init*
-  name: Init
-  href: api/MacacaGames.GameSystem.GameSystemBase.html#MacacaGames_GameSystem_GameSystemBase_Init_
-  commentId: Overload:MacacaGames.GameSystem.GameSystemBase.Init
-  isSpec: "True"
-  fullName: MacacaGames.GameSystem.GameSystemBase.Init
-  nameWithType: GameSystemBase.Init
-- uid: MacacaGames.GameSystem.GameSystemBase.OnApplicationBeforeGamePlay
-  name: OnApplicationBeforeGamePlay()
-  href: api/MacacaGames.GameSystem.GameSystemBase.html#MacacaGames_GameSystem_GameSystemBase_OnApplicationBeforeGamePlay
-  commentId: M:MacacaGames.GameSystem.GameSystemBase.OnApplicationBeforeGamePlay
-  fullName: MacacaGames.GameSystem.GameSystemBase.OnApplicationBeforeGamePlay()
-  nameWithType: GameSystemBase.OnApplicationBeforeGamePlay()
-- uid: MacacaGames.GameSystem.GameSystemBase.OnApplicationBeforeGamePlay*
-  name: OnApplicationBeforeGamePlay
-  href: api/MacacaGames.GameSystem.GameSystemBase.html#MacacaGames_GameSystem_GameSystemBase_OnApplicationBeforeGamePlay_
-  commentId: Overload:MacacaGames.GameSystem.GameSystemBase.OnApplicationBeforeGamePlay
-  isSpec: "True"
-  fullName: MacacaGames.GameSystem.GameSystemBase.OnApplicationBeforeGamePlay
-  nameWithType: GameSystemBase.OnApplicationBeforeGamePlay
-- uid: MacacaGames.GameSystem.GameSystemBase.OnUpdate
-  name: OnUpdate()
-  href: api/MacacaGames.GameSystem.GameSystemBase.html#MacacaGames_GameSystem_GameSystemBase_OnUpdate
-  commentId: M:MacacaGames.GameSystem.GameSystemBase.OnUpdate
-  fullName: MacacaGames.GameSystem.GameSystemBase.OnUpdate()
-  nameWithType: GameSystemBase.OnUpdate()
-- uid: MacacaGames.GameSystem.GameSystemBase.OnUpdate*
-  name: OnUpdate
-  href: api/MacacaGames.GameSystem.GameSystemBase.html#MacacaGames_GameSystem_GameSystemBase_OnUpdate_
-  commentId: Overload:MacacaGames.GameSystem.GameSystemBase.OnUpdate
-  isSpec: "True"
-  fullName: MacacaGames.GameSystem.GameSystemBase.OnUpdate
-  nameWithType: GameSystemBase.OnUpdate
-- uid: MacacaGames.GameSystem.GameSystemBase.OnUpdateImpl
-  name: OnUpdateImpl()
-  href: api/MacacaGames.GameSystem.GameSystemBase.html#MacacaGames_GameSystem_GameSystemBase_OnUpdateImpl
-  commentId: M:MacacaGames.GameSystem.GameSystemBase.OnUpdateImpl
-  fullName: MacacaGames.GameSystem.GameSystemBase.OnUpdateImpl()
-  nameWithType: GameSystemBase.OnUpdateImpl()
-- uid: MacacaGames.GameSystem.GameSystemBase.OnUpdateImpl*
-  name: OnUpdateImpl
-  href: api/MacacaGames.GameSystem.GameSystemBase.html#MacacaGames_GameSystem_GameSystemBase_OnUpdateImpl_
-  commentId: Overload:MacacaGames.GameSystem.GameSystemBase.OnUpdateImpl
-  isSpec: "True"
-  fullName: MacacaGames.GameSystem.GameSystemBase.OnUpdateImpl
-  nameWithType: GameSystemBase.OnUpdateImpl
 - uid: MacacaGames.GameSystem.IApplicationInjectable
   name: IApplicationInjectable
   href: api/MacacaGames.GameSystem.IApplicationInjectable.html
@@ -853,3 +763,145 @@ references:
   commentId: T:MacacaGames.GameSystem.InjectAttribute
   fullName: MacacaGames.GameSystem.InjectAttribute
   nameWithType: InjectAttribute
+- uid: MacacaGames.GameSystem.MonoBehaviourLifeCycle
+  name: MonoBehaviourLifeCycle
+  href: api/MacacaGames.GameSystem.MonoBehaviourLifeCycle.html
+  commentId: T:MacacaGames.GameSystem.MonoBehaviourLifeCycle
+  fullName: MacacaGames.GameSystem.MonoBehaviourLifeCycle
+  nameWithType: MonoBehaviourLifeCycle
+- uid: MacacaGames.GameSystem.MonoBehaviourLifeCycle.Init
+  name: Init()
+  href: api/MacacaGames.GameSystem.MonoBehaviourLifeCycle.html#MacacaGames_GameSystem_MonoBehaviourLifeCycle_Init
+  commentId: M:MacacaGames.GameSystem.MonoBehaviourLifeCycle.Init
+  fullName: MacacaGames.GameSystem.MonoBehaviourLifeCycle.Init()
+  nameWithType: MonoBehaviourLifeCycle.Init()
+- uid: MacacaGames.GameSystem.MonoBehaviourLifeCycle.Init*
+  name: Init
+  href: api/MacacaGames.GameSystem.MonoBehaviourLifeCycle.html#MacacaGames_GameSystem_MonoBehaviourLifeCycle_Init_
+  commentId: Overload:MacacaGames.GameSystem.MonoBehaviourLifeCycle.Init
+  isSpec: "True"
+  fullName: MacacaGames.GameSystem.MonoBehaviourLifeCycle.Init
+  nameWithType: MonoBehaviourLifeCycle.Init
+- uid: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationBeforeGamePlay
+  name: OnApplicationBeforeGamePlay()
+  href: api/MacacaGames.GameSystem.MonoBehaviourLifeCycle.html#MacacaGames_GameSystem_MonoBehaviourLifeCycle_OnApplicationBeforeGamePlay
+  commentId: M:MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationBeforeGamePlay
+  fullName: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationBeforeGamePlay()
+  nameWithType: MonoBehaviourLifeCycle.OnApplicationBeforeGamePlay()
+- uid: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationBeforeGamePlay*
+  name: OnApplicationBeforeGamePlay
+  href: api/MacacaGames.GameSystem.MonoBehaviourLifeCycle.html#MacacaGames_GameSystem_MonoBehaviourLifeCycle_OnApplicationBeforeGamePlay_
+  commentId: Overload:MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationBeforeGamePlay
+  isSpec: "True"
+  fullName: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationBeforeGamePlay
+  nameWithType: MonoBehaviourLifeCycle.OnApplicationBeforeGamePlay
+- uid: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationUpdate
+  name: OnApplicationUpdate()
+  href: api/MacacaGames.GameSystem.MonoBehaviourLifeCycle.html#MacacaGames_GameSystem_MonoBehaviourLifeCycle_OnApplicationUpdate
+  commentId: M:MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationUpdate
+  fullName: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationUpdate()
+  nameWithType: MonoBehaviourLifeCycle.OnApplicationUpdate()
+- uid: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationUpdate*
+  name: OnApplicationUpdate
+  href: api/MacacaGames.GameSystem.MonoBehaviourLifeCycle.html#MacacaGames_GameSystem_MonoBehaviourLifeCycle_OnApplicationUpdate_
+  commentId: Overload:MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationUpdate
+  isSpec: "True"
+  fullName: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationUpdate
+  nameWithType: MonoBehaviourLifeCycle.OnApplicationUpdate
+- uid: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnGamePlayUpdate
+  name: OnGamePlayUpdate()
+  href: api/MacacaGames.GameSystem.MonoBehaviourLifeCycle.html#MacacaGames_GameSystem_MonoBehaviourLifeCycle_OnGamePlayUpdate
+  commentId: M:MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnGamePlayUpdate
+  fullName: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnGamePlayUpdate()
+  nameWithType: MonoBehaviourLifeCycle.OnGamePlayUpdate()
+- uid: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnGamePlayUpdate*
+  name: OnGamePlayUpdate
+  href: api/MacacaGames.GameSystem.MonoBehaviourLifeCycle.html#MacacaGames_GameSystem_MonoBehaviourLifeCycle_OnGamePlayUpdate_
+  commentId: Overload:MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnGamePlayUpdate
+  isSpec: "True"
+  fullName: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnGamePlayUpdate
+  nameWithType: MonoBehaviourLifeCycle.OnGamePlayUpdate
+- uid: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnUnPauseGamePlayUpdate
+  name: OnUnPauseGamePlayUpdate()
+  href: api/MacacaGames.GameSystem.MonoBehaviourLifeCycle.html#MacacaGames_GameSystem_MonoBehaviourLifeCycle_OnUnPauseGamePlayUpdate
+  commentId: M:MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnUnPauseGamePlayUpdate
+  fullName: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnUnPauseGamePlayUpdate()
+  nameWithType: MonoBehaviourLifeCycle.OnUnPauseGamePlayUpdate()
+- uid: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnUnPauseGamePlayUpdate*
+  name: OnUnPauseGamePlayUpdate
+  href: api/MacacaGames.GameSystem.MonoBehaviourLifeCycle.html#MacacaGames_GameSystem_MonoBehaviourLifeCycle_OnUnPauseGamePlayUpdate_
+  commentId: Overload:MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnUnPauseGamePlayUpdate
+  isSpec: "True"
+  fullName: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnUnPauseGamePlayUpdate
+  nameWithType: MonoBehaviourLifeCycle.OnUnPauseGamePlayUpdate
+- uid: MacacaGames.GameSystem.ScriptableObjectLifeCycle
+  name: ScriptableObjectLifeCycle
+  href: api/MacacaGames.GameSystem.ScriptableObjectLifeCycle.html
+  commentId: T:MacacaGames.GameSystem.ScriptableObjectLifeCycle
+  fullName: MacacaGames.GameSystem.ScriptableObjectLifeCycle
+  nameWithType: ScriptableObjectLifeCycle
+- uid: MacacaGames.GameSystem.ScriptableObjectLifeCycle.Init
+  name: Init()
+  href: api/MacacaGames.GameSystem.ScriptableObjectLifeCycle.html#MacacaGames_GameSystem_ScriptableObjectLifeCycle_Init
+  commentId: M:MacacaGames.GameSystem.ScriptableObjectLifeCycle.Init
+  fullName: MacacaGames.GameSystem.ScriptableObjectLifeCycle.Init()
+  nameWithType: ScriptableObjectLifeCycle.Init()
+- uid: MacacaGames.GameSystem.ScriptableObjectLifeCycle.Init*
+  name: Init
+  href: api/MacacaGames.GameSystem.ScriptableObjectLifeCycle.html#MacacaGames_GameSystem_ScriptableObjectLifeCycle_Init_
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectLifeCycle.Init
+  isSpec: "True"
+  fullName: MacacaGames.GameSystem.ScriptableObjectLifeCycle.Init
+  nameWithType: ScriptableObjectLifeCycle.Init
+- uid: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnApplicationBeforeGamePlay
+  name: OnApplicationBeforeGamePlay()
+  href: api/MacacaGames.GameSystem.ScriptableObjectLifeCycle.html#MacacaGames_GameSystem_ScriptableObjectLifeCycle_OnApplicationBeforeGamePlay
+  commentId: M:MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnApplicationBeforeGamePlay
+  fullName: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnApplicationBeforeGamePlay()
+  nameWithType: ScriptableObjectLifeCycle.OnApplicationBeforeGamePlay()
+- uid: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnApplicationBeforeGamePlay*
+  name: OnApplicationBeforeGamePlay
+  href: api/MacacaGames.GameSystem.ScriptableObjectLifeCycle.html#MacacaGames_GameSystem_ScriptableObjectLifeCycle_OnApplicationBeforeGamePlay_
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnApplicationBeforeGamePlay
+  isSpec: "True"
+  fullName: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnApplicationBeforeGamePlay
+  nameWithType: ScriptableObjectLifeCycle.OnApplicationBeforeGamePlay
+- uid: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnApplicationUpdate
+  name: OnApplicationUpdate()
+  href: api/MacacaGames.GameSystem.ScriptableObjectLifeCycle.html#MacacaGames_GameSystem_ScriptableObjectLifeCycle_OnApplicationUpdate
+  commentId: M:MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnApplicationUpdate
+  fullName: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnApplicationUpdate()
+  nameWithType: ScriptableObjectLifeCycle.OnApplicationUpdate()
+- uid: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnApplicationUpdate*
+  name: OnApplicationUpdate
+  href: api/MacacaGames.GameSystem.ScriptableObjectLifeCycle.html#MacacaGames_GameSystem_ScriptableObjectLifeCycle_OnApplicationUpdate_
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnApplicationUpdate
+  isSpec: "True"
+  fullName: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnApplicationUpdate
+  nameWithType: ScriptableObjectLifeCycle.OnApplicationUpdate
+- uid: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnGamePlayUpdate
+  name: OnGamePlayUpdate()
+  href: api/MacacaGames.GameSystem.ScriptableObjectLifeCycle.html#MacacaGames_GameSystem_ScriptableObjectLifeCycle_OnGamePlayUpdate
+  commentId: M:MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnGamePlayUpdate
+  fullName: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnGamePlayUpdate()
+  nameWithType: ScriptableObjectLifeCycle.OnGamePlayUpdate()
+- uid: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnGamePlayUpdate*
+  name: OnGamePlayUpdate
+  href: api/MacacaGames.GameSystem.ScriptableObjectLifeCycle.html#MacacaGames_GameSystem_ScriptableObjectLifeCycle_OnGamePlayUpdate_
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnGamePlayUpdate
+  isSpec: "True"
+  fullName: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnGamePlayUpdate
+  nameWithType: ScriptableObjectLifeCycle.OnGamePlayUpdate
+- uid: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnUnPauseGamePlayUpdate
+  name: OnUnPauseGamePlayUpdate()
+  href: api/MacacaGames.GameSystem.ScriptableObjectLifeCycle.html#MacacaGames_GameSystem_ScriptableObjectLifeCycle_OnUnPauseGamePlayUpdate
+  commentId: M:MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnUnPauseGamePlayUpdate
+  fullName: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnUnPauseGamePlayUpdate()
+  nameWithType: ScriptableObjectLifeCycle.OnUnPauseGamePlayUpdate()
+- uid: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnUnPauseGamePlayUpdate*
+  name: OnUnPauseGamePlayUpdate
+  href: api/MacacaGames.GameSystem.ScriptableObjectLifeCycle.html#MacacaGames_GameSystem_ScriptableObjectLifeCycle_OnUnPauseGamePlayUpdate_
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnUnPauseGamePlayUpdate
+  isSpec: "True"
+  fullName: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnUnPauseGamePlayUpdate
+  nameWithType: ScriptableObjectLifeCycle.OnUnPauseGamePlayUpdate

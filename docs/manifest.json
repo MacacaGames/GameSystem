@@ -12,7 +12,7 @@
           "hash": "x7vTD+KhjQCg6TGElGWS6Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -21,22 +21,10 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.ApplicationController.html",
-          "hash": "n/VkdjGkMfDS4mnjuVOeVw=="
+          "hash": "+R4UYzwiQIaEDzTvbVqBhQ=="
         }
       },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/MacacaGames.GameSystem.ApplicationLifeCycle.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/MacacaGames.GameSystem.ApplicationLifeCycle.html",
-          "hash": "/IHlAyyWxkWChX6JcIBfiQ=="
-        }
-      },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -48,7 +36,7 @@
           "hash": "xZsPfNuHIZI5/esHYYtlDg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -57,10 +45,10 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.GamePlayController.html",
-          "hash": "RGXSAzGekkxDLx1fvmU7jg=="
+          "hash": "1jJ95f88S/Ono3xWWrv6LQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -69,22 +57,10 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.GamePlayData.html",
-          "hash": "DcFNcGHqkzQOO+dXjIj8UQ=="
+          "hash": "U+tM90o6lFWA1RhcuEIHqQ=="
         }
       },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/MacacaGames.GameSystem.GameSystemBase.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/MacacaGames.GameSystem.GameSystemBase.html",
-          "hash": "e1qBDat8abdjx6P/l1uBPA=="
-        }
-      },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -96,7 +72,7 @@
           "hash": "slfR1Ng30NenpF4P079NEA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -108,7 +84,31 @@
           "hash": "TP9TRVISvgaEi8VFKUbGkA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MacacaGames.GameSystem.MonoBehaviourLifeCycle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.MonoBehaviourLifeCycle.html",
+          "hash": "qYmytMVFJ/ChOuioBKUD7A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MacacaGames.GameSystem.ScriptableObjectLifeCycle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.ScriptableObjectLifeCycle.html",
+          "hash": "zOzFY4W4qblEjxgvCXE12g=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -117,10 +117,10 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.html",
-          "hash": "ngQY0QRcIikGXvNi6a0TsA=="
+          "hash": "eGMpORIczZh4tJd447oKvw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "adMLtjIY987m1u/zzbDFfw=="
+          "hash": "szhvlOOkiwFXVvYgzKyukA=="
         }
       },
       "is_incremental": false,
@@ -191,7 +191,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 10,
-          "skipped_file_count": 10
+          "skipped_file_count": 1
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
