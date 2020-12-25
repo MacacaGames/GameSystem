@@ -22,7 +22,7 @@ using Rayark.Mast;
 using System;
 namespace MacacaGames.GameSystem
 {
-    public class GamePlayController : IApplicationLifeCycle
+    public class GamePlayController
     {
         GamePlayData currentGamePlayData;
         private ApplicationController _applicationController;
@@ -65,11 +65,14 @@ namespace MacacaGames.GameSystem
         }
 
 
-        public Executor GamePlayControllerCoreLoop()
+        public Executor GamePlayControllerCoreLoop(IEnumerator gamePlayUpdate, IEnumerator unPauseGamePlayUpdate)
         {
             ResetGamePlayValue();
             currentGamePlayData.OnGameValueReset();
             gamePlayUpdateExecuter.Clear();
+            gamePlayUnpauseUpdateExecuter.Clear();
+            gamePlayUpdateExecuter.Add(gamePlayUpdate);
+            gamePlayUnpauseUpdateExecuter.Add(unPauseGamePlayUpdate);
             return new Executor
             {
                 EnterGame()

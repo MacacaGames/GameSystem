@@ -57,10 +57,11 @@ namespace MacacaGames.GameSystem
         }
 
         [SerializeField] GamePlayData gamePlayData;
-        [SerializeField] GameSystemBase[] gameSystems;
-        ApplicationLifeCycle[] applicationLifyCycles;
-        List<GameSystemBase> gameSystemInstances = new List<GameSystemBase>();
+        [SerializeField] ScriptableObjectLifeCycle[] gameSystems;
+        MonoBehaviourLifeCycle[] monoBehaviourLifeCycles;
+        List<ScriptableObjectLifeCycle> gameSystemInstances = new List<ScriptableObjectLifeCycle>();
 
+        IApplicationLifeCycle[] applicationLifeCycles;
 
         /// <summary>
         /// Fire while application init, only fire once
@@ -89,7 +90,7 @@ namespace MacacaGames.GameSystem
                 var temp = Instantiate(item);
                 gameSystemInstances.Add(temp);
             }
-            applicationLifyCycles = Resources.FindObjectsOfTypeAll<ApplicationLifeCycle>().Where(
+            monoBehaviourLifeCycles = Resources.FindObjectsOfTypeAll<MonoBehaviourLifeCycle>().Where(
                 (m) =>
                 m.gameObject != null &&
                 m.gameObject.scene.IsValid()).ToArray();
@@ -102,7 +103,7 @@ namespace MacacaGames.GameSystem
                 InjectByClass(item);
             }
 
-            foreach (var item in applicationLifyCycles)
+            foreach (var item in monoBehaviourLifeCycles)
             {
                 InjectByClass(item);
             }
@@ -111,19 +112,77 @@ namespace MacacaGames.GameSystem
             foreach (var item in gameSystemInstances)
             {
                 item.Init();
-                applicationExecutor.Add(item.OnUpdate());
             }
-            foreach (var item in applicationLifyCycles)
+            foreach (var item in monoBehaviourLifeCycles)
             {
                 item.Init();
             }
 
             applicationExecutor.Add(ApplicationTask());
+            applicationLifeCycles = gameSystemInstances.Cast<IApplicationLifeCycle>()
+                                        .Union(monoBehaviourLifeCycles.Cast<IApplicationLifeCycle>())
+                                        .ToArray();
+
+            applicationExecutor.Add(ApplicationUpdateRunner());
         }
 
+        IEnumerator ApplicationUpdateRunner()
+        {
+            while (true)
+            {
+                foreach (var item in applicationLifeCycles)
+                {
+                    try
+                    {
+                        item.OnApplicationUpdate();
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.LogError($"Exception in {item.GetType().ToString()} , msg:{ex.ToString()}");
+                    }
+                }
+                yield return null;
+            }
+        }
+        IEnumerator GamePlayUpdateRunner()
+        {
+            while (true)
+            {
+                foreach (var item in applicationLifeCycles)
+                {
+                    try
+                    {
+                        item.OnGamePlayUpdate();
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.LogError($"Exception in {item.GetType().ToString()} , msg:{ex.ToString()}");
+                    }
+                }
+                yield return null;
+            }
+        }
+        IEnumerator UnPauseGamePlayUpdateRunner()
+        {
+            while (true)
+            {
+                foreach (var item in applicationLifeCycles)
+                {
+                    try
+                    {
+                        item.OnGamePlayUpdate();
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.LogError($"Exception in {item.GetType().ToString()} , msg:{ex.ToString()}");
+                    }
+                }
+                yield return null;
+            }
+        }
 
         Executor applicationExecutor;
-        Executor gamePlayTaskExecutor;
+        Executor gamePlayTask;
         public bool isInGame { get; private set; } = false;
 
         IEnumerator ApplicationTask()
@@ -133,19 +192,8 @@ namespace MacacaGames.GameSystem
                 isInGame = false;
                 OnApplicationBeforeGamePlay?.Invoke();
                 gamePlayController.OnApplicationBeforeGamePlay();
-                foreach (var item in gameSystemInstances)
-                {
-                    try
-                    {
-                        item.OnApplicationBeforeGamePlay();
-                    }
-                    catch (Exception ex)
-                    {
-                        Debug.LogError($"Exception in {item.GetType().ToString()} , msg:{ex.ToString()}");
-                    }
-                }
 
-                foreach (var item in applicationLifyCycles)
+                foreach (var item in applicationLifeCycles)
                 {
                     try
                     {
@@ -163,15 +211,15 @@ namespace MacacaGames.GameSystem
                 }
 
                 //Game Start
-                gamePlayTaskExecutor = gamePlayController.GamePlayControllerCoreLoop();
-                while (!gamePlayTaskExecutor.Finished)
+                gamePlayTask = gamePlayController.GamePlayControllerCoreLoop(GamePlayUpdateRunner(), UnPauseGamePlayUpdateRunner());
+                while (!gamePlayTask.Finished)
                 {
                     gamePlayController.gamePlayUnpauseUpdateExecuter.Resume(Rayark.Mast.Coroutine.Delta);
 
                     if (gamePlayController.isPause == false && gamePlayController.isContinueing == false)
                     {
                         gamePlayController.gamePlayUpdateExecuter.Resume(Rayark.Mast.Coroutine.Delta);
-                        gamePlayTaskExecutor.Resume(Rayark.Mast.Coroutine.Delta);
+                        gamePlayTask.Resume(Rayark.Mast.Coroutine.Delta);
                     }
 
                     yield return null;
@@ -179,12 +227,20 @@ namespace MacacaGames.GameSystem
             }
         }
 
+        /// <summary>
+        /// Regist an IResumable which update by Application
+        /// </summary>
+        /// <param name="c"></param>
         public void RegistApplicationExecuter(IResumable c)
         {
             if (!applicationExecutor.Contains(c))
                 applicationExecutor.Add(c);
         }
 
+        /// <summary>
+        /// Unregist an IResumable which update by Application
+        /// </summary>
+        /// <param name="c"></param>
         public void UnRegistApplicationExecuter(IResumable c)
         {
             if (applicationExecutor.Contains(c))
@@ -196,7 +252,7 @@ namespace MacacaGames.GameSystem
         /// </summary>
         /// <typeparam name="T">The game system class you wish to get</typeparam>
         /// <returns>The game system instance, null if no instance</returns>
-        public T GetGameSystem<T>() where T : GameSystemBase
+        public T GetGameSystem<T>() where T : ScriptableObjectLifeCycle
         {
             T result;
             result = gameSystemInstances.SingleOrDefault(m => m is T) as T;
@@ -229,10 +285,10 @@ namespace MacacaGames.GameSystem
         /// </summary>
         /// <typeparam name="T">The ApplicationLifeCycle class you wish to get</typeparam>
         /// <returns>The ApplicationLifeCycle instance, null if no instance</returns>
-        public T GetApplicationLifeCycle<T>() where T : ApplicationLifeCycle
+        public T GetApplicationLifeCycle<T>() where T : MonoBehaviourLifeCycle
         {
             T result;
-            result = applicationLifyCycles.SingleOrDefault(m => m is T) as T;
+            result = monoBehaviourLifeCycles.SingleOrDefault(m => m is T) as T;
             return result;
         }
 
@@ -244,7 +300,7 @@ namespace MacacaGames.GameSystem
         public object GetApplicationLifeCycle(Type t)
         {
             object result;
-            result = applicationLifyCycles.SingleOrDefault(m => m.GetType() == t);
+            result = monoBehaviourLifeCycles.SingleOrDefault(m => m.GetType() == t);
             return result;
         }
 
@@ -335,11 +391,11 @@ namespace MacacaGames.GameSystem
 
             object GetInstanceValue(Type t)
             {
-                if (t.IsSubclassOf(typeof(ApplicationLifeCycle)))
+                if (t.IsSubclassOf(typeof(MonoBehaviourLifeCycle)))
                 {
                     return GetApplicationLifeCycle(t);
                 }
-                if (t.IsSubclassOf(typeof(GameSystemBase)))
+                if (t.IsSubclassOf(typeof(ScriptableObjectLifeCycle)))
                 {
                     return GetGameSystem(t);
                 }
