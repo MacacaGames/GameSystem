@@ -19,11 +19,11 @@ references:
   commentId: T:MacacaGames.GameSystem.ApplicationController
   fullName: MacacaGames.GameSystem.ApplicationController
   nameWithType: ApplicationController
-- uid: MacacaGames.GameSystem.ApplicationController.GetApplicationLifeCycle(Type)
+- uid: MacacaGames.GameSystem.ApplicationController.GetApplicationLifeCycle(System.Type)
   name: GetApplicationLifeCycle(Type)
-  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetApplicationLifeCycle_Type_
-  commentId: M:MacacaGames.GameSystem.ApplicationController.GetApplicationLifeCycle(Type)
-  fullName: MacacaGames.GameSystem.ApplicationController.GetApplicationLifeCycle(Type)
+  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetApplicationLifeCycle_System_Type_
+  commentId: M:MacacaGames.GameSystem.ApplicationController.GetApplicationLifeCycle(System.Type)
+  fullName: MacacaGames.GameSystem.ApplicationController.GetApplicationLifeCycle(System.Type)
   nameWithType: ApplicationController.GetApplicationLifeCycle(Type)
 - uid: MacacaGames.GameSystem.ApplicationController.GetApplicationLifeCycle*
   name: GetApplicationLifeCycle
@@ -54,11 +54,11 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.ApplicationController.GetGamePlayController
   nameWithType: ApplicationController.GetGamePlayController
-- uid: MacacaGames.GameSystem.ApplicationController.GetGameSystem(Type)
+- uid: MacacaGames.GameSystem.ApplicationController.GetGameSystem(System.Type)
   name: GetGameSystem(Type)
-  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetGameSystem_Type_
-  commentId: M:MacacaGames.GameSystem.ApplicationController.GetGameSystem(Type)
-  fullName: MacacaGames.GameSystem.ApplicationController.GetGameSystem(Type)
+  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetGameSystem_System_Type_
+  commentId: M:MacacaGames.GameSystem.ApplicationController.GetGameSystem(System.Type)
+  fullName: MacacaGames.GameSystem.ApplicationController.GetGameSystem(System.Type)
   nameWithType: ApplicationController.GetGameSystem(Type)
 - uid: MacacaGames.GameSystem.ApplicationController.GetGameSystem*
   name: GetGameSystem
@@ -108,11 +108,11 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.ApplicationController.isInGame
   nameWithType: ApplicationController.isInGame
-- uid: MacacaGames.GameSystem.ApplicationController.RegistApplicationExecuter(IResumable)
+- uid: MacacaGames.GameSystem.ApplicationController.RegistApplicationExecuter(Rayark.Mast.IResumable)
   name: RegistApplicationExecuter(IResumable)
-  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_RegistApplicationExecuter_IResumable_
-  commentId: M:MacacaGames.GameSystem.ApplicationController.RegistApplicationExecuter(IResumable)
-  fullName: MacacaGames.GameSystem.ApplicationController.RegistApplicationExecuter(IResumable)
+  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_RegistApplicationExecuter_Rayark_Mast_IResumable_
+  commentId: M:MacacaGames.GameSystem.ApplicationController.RegistApplicationExecuter(Rayark.Mast.IResumable)
+  fullName: MacacaGames.GameSystem.ApplicationController.RegistApplicationExecuter(Rayark.Mast.IResumable)
   nameWithType: ApplicationController.RegistApplicationExecuter(IResumable)
 - uid: MacacaGames.GameSystem.ApplicationController.RegistApplicationExecuter*
   name: RegistApplicationExecuter
@@ -147,11 +147,11 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.ApplicationController.StartGame
   nameWithType: ApplicationController.StartGame
-- uid: MacacaGames.GameSystem.ApplicationController.UnRegistApplicationExecuter(IResumable)
+- uid: MacacaGames.GameSystem.ApplicationController.UnRegistApplicationExecuter(Rayark.Mast.IResumable)
   name: UnRegistApplicationExecuter(IResumable)
-  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_UnRegistApplicationExecuter_IResumable_
-  commentId: M:MacacaGames.GameSystem.ApplicationController.UnRegistApplicationExecuter(IResumable)
-  fullName: MacacaGames.GameSystem.ApplicationController.UnRegistApplicationExecuter(IResumable)
+  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_UnRegistApplicationExecuter_Rayark_Mast_IResumable_
+  commentId: M:MacacaGames.GameSystem.ApplicationController.UnRegistApplicationExecuter(Rayark.Mast.IResumable)
+  fullName: MacacaGames.GameSystem.ApplicationController.UnRegistApplicationExecuter(Rayark.Mast.IResumable)
   nameWithType: ApplicationController.UnRegistApplicationExecuter(IResumable)
 - uid: MacacaGames.GameSystem.ApplicationController.UnRegistApplicationExecuter*
   name: UnRegistApplicationExecuter
@@ -166,13 +166,13 @@ references:
   commentId: T:MacacaGames.GameSystem.ApplicationUtils
   fullName: MacacaGames.GameSystem.ApplicationUtils
   nameWithType: ApplicationUtils
-- uid: MacacaGames.GameSystem.ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject(GameObject,System.Collections.Generic.List{MacacaGames.GameSystem.IApplicationInjectable})
+- uid: MacacaGames.GameSystem.ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject(UnityEngine.GameObject,System.Collections.Generic.List{MacacaGames.GameSystem.IApplicationInjectable})
   name: GetInjectableMonoBehavioursUnderGameObject(GameObject, List<IApplicationInjectable>)
-  href: api/MacacaGames.GameSystem.ApplicationUtils.html#MacacaGames_GameSystem_ApplicationUtils_GetInjectableMonoBehavioursUnderGameObject_GameObject_System_Collections_Generic_List_MacacaGames_GameSystem_IApplicationInjectable__
-  commentId: M:MacacaGames.GameSystem.ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject(GameObject,System.Collections.Generic.List{MacacaGames.GameSystem.IApplicationInjectable})
+  href: api/MacacaGames.GameSystem.ApplicationUtils.html#MacacaGames_GameSystem_ApplicationUtils_GetInjectableMonoBehavioursUnderGameObject_UnityEngine_GameObject_System_Collections_Generic_List_MacacaGames_GameSystem_IApplicationInjectable__
+  commentId: M:MacacaGames.GameSystem.ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject(UnityEngine.GameObject,System.Collections.Generic.List{MacacaGames.GameSystem.IApplicationInjectable})
   name.vb: GetInjectableMonoBehavioursUnderGameObject(GameObject, List(Of IApplicationInjectable))
-  fullName: MacacaGames.GameSystem.ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject(GameObject, System.Collections.Generic.List<MacacaGames.GameSystem.IApplicationInjectable>)
-  fullName.vb: MacacaGames.GameSystem.ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject(GameObject, System.Collections.Generic.List(Of MacacaGames.GameSystem.IApplicationInjectable))
+  fullName: MacacaGames.GameSystem.ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject(UnityEngine.GameObject, System.Collections.Generic.List<MacacaGames.GameSystem.IApplicationInjectable>)
+  fullName.vb: MacacaGames.GameSystem.ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject(UnityEngine.GameObject, System.Collections.Generic.List(Of MacacaGames.GameSystem.IApplicationInjectable))
   nameWithType: ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject(GameObject, List<IApplicationInjectable>)
   nameWithType.vb: ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject(GameObject, List(Of IApplicationInjectable))
 - uid: MacacaGames.GameSystem.ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject*
@@ -201,11 +201,11 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.GamePlayController.GamePlayController
   nameWithType: GamePlayController.GamePlayController
-- uid: MacacaGames.GameSystem.GamePlayController.AddToUnpauseUpdateExecuter(IResumable)
+- uid: MacacaGames.GameSystem.GamePlayController.AddToUnpauseUpdateExecuter(Rayark.Mast.IResumable)
   name: AddToUnpauseUpdateExecuter(IResumable)
-  href: api/MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_AddToUnpauseUpdateExecuter_IResumable_
-  commentId: M:MacacaGames.GameSystem.GamePlayController.AddToUnpauseUpdateExecuter(IResumable)
-  fullName: MacacaGames.GameSystem.GamePlayController.AddToUnpauseUpdateExecuter(IResumable)
+  href: api/MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_AddToUnpauseUpdateExecuter_Rayark_Mast_IResumable_
+  commentId: M:MacacaGames.GameSystem.GamePlayController.AddToUnpauseUpdateExecuter(Rayark.Mast.IResumable)
+  fullName: MacacaGames.GameSystem.GamePlayController.AddToUnpauseUpdateExecuter(Rayark.Mast.IResumable)
   nameWithType: GamePlayController.AddToUnpauseUpdateExecuter(IResumable)
 - uid: MacacaGames.GameSystem.GamePlayController.AddToUnpauseUpdateExecuter*
   name: AddToUnpauseUpdateExecuter
@@ -214,11 +214,11 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.GamePlayController.AddToUnpauseUpdateExecuter
   nameWithType: GamePlayController.AddToUnpauseUpdateExecuter
-- uid: MacacaGames.GameSystem.GamePlayController.AddToUpdateExecuter(IResumable)
+- uid: MacacaGames.GameSystem.GamePlayController.AddToUpdateExecuter(Rayark.Mast.IResumable)
   name: AddToUpdateExecuter(IResumable)
-  href: api/MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_AddToUpdateExecuter_IResumable_
-  commentId: M:MacacaGames.GameSystem.GamePlayController.AddToUpdateExecuter(IResumable)
-  fullName: MacacaGames.GameSystem.GamePlayController.AddToUpdateExecuter(IResumable)
+  href: api/MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_AddToUpdateExecuter_Rayark_Mast_IResumable_
+  commentId: M:MacacaGames.GameSystem.GamePlayController.AddToUpdateExecuter(Rayark.Mast.IResumable)
+  fullName: MacacaGames.GameSystem.GamePlayController.AddToUpdateExecuter(Rayark.Mast.IResumable)
   nameWithType: GamePlayController.AddToUpdateExecuter(IResumable)
 - uid: MacacaGames.GameSystem.GamePlayController.AddToUpdateExecuter*
   name: AddToUpdateExecuter
@@ -456,11 +456,11 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.GamePlayController.QuitGamePlay
   nameWithType: GamePlayController.QuitGamePlay
-- uid: MacacaGames.GameSystem.GamePlayController.RemoveFromUnpauseUpdateExecuter(IResumable)
+- uid: MacacaGames.GameSystem.GamePlayController.RemoveFromUnpauseUpdateExecuter(Rayark.Mast.IResumable)
   name: RemoveFromUnpauseUpdateExecuter(IResumable)
-  href: api/MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_RemoveFromUnpauseUpdateExecuter_IResumable_
-  commentId: M:MacacaGames.GameSystem.GamePlayController.RemoveFromUnpauseUpdateExecuter(IResumable)
-  fullName: MacacaGames.GameSystem.GamePlayController.RemoveFromUnpauseUpdateExecuter(IResumable)
+  href: api/MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_RemoveFromUnpauseUpdateExecuter_Rayark_Mast_IResumable_
+  commentId: M:MacacaGames.GameSystem.GamePlayController.RemoveFromUnpauseUpdateExecuter(Rayark.Mast.IResumable)
+  fullName: MacacaGames.GameSystem.GamePlayController.RemoveFromUnpauseUpdateExecuter(Rayark.Mast.IResumable)
   nameWithType: GamePlayController.RemoveFromUnpauseUpdateExecuter(IResumable)
 - uid: MacacaGames.GameSystem.GamePlayController.RemoveFromUnpauseUpdateExecuter*
   name: RemoveFromUnpauseUpdateExecuter
@@ -469,11 +469,11 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.GamePlayController.RemoveFromUnpauseUpdateExecuter
   nameWithType: GamePlayController.RemoveFromUnpauseUpdateExecuter
-- uid: MacacaGames.GameSystem.GamePlayController.RemoveFromUpdateExecuter(IResumable)
+- uid: MacacaGames.GameSystem.GamePlayController.RemoveFromUpdateExecuter(Rayark.Mast.IResumable)
   name: RemoveFromUpdateExecuter(IResumable)
-  href: api/MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_RemoveFromUpdateExecuter_IResumable_
-  commentId: M:MacacaGames.GameSystem.GamePlayController.RemoveFromUpdateExecuter(IResumable)
-  fullName: MacacaGames.GameSystem.GamePlayController.RemoveFromUpdateExecuter(IResumable)
+  href: api/MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_RemoveFromUpdateExecuter_Rayark_Mast_IResumable_
+  commentId: M:MacacaGames.GameSystem.GamePlayController.RemoveFromUpdateExecuter(Rayark.Mast.IResumable)
+  fullName: MacacaGames.GameSystem.GamePlayController.RemoveFromUpdateExecuter(Rayark.Mast.IResumable)
   nameWithType: GamePlayController.RemoveFromUpdateExecuter(IResumable)
 - uid: MacacaGames.GameSystem.GamePlayController.RemoveFromUpdateExecuter*
   name: RemoveFromUpdateExecuter
@@ -618,13 +618,13 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.GamePlayData.OnContinue
   nameWithType: GamePlayData.OnContinue
-- uid: MacacaGames.GameSystem.GamePlayData.OnContinueFlow(IReturn{System.Boolean})
+- uid: MacacaGames.GameSystem.GamePlayData.OnContinueFlow(Rayark.Mast.IReturn{System.Boolean})
   name: OnContinueFlow(IReturn<Boolean>)
-  href: api/MacacaGames.GameSystem.GamePlayData.html#MacacaGames_GameSystem_GamePlayData_OnContinueFlow_IReturn_System_Boolean__
-  commentId: M:MacacaGames.GameSystem.GamePlayData.OnContinueFlow(IReturn{System.Boolean})
+  href: api/MacacaGames.GameSystem.GamePlayData.html#MacacaGames_GameSystem_GamePlayData_OnContinueFlow_Rayark_Mast_IReturn_System_Boolean__
+  commentId: M:MacacaGames.GameSystem.GamePlayData.OnContinueFlow(Rayark.Mast.IReturn{System.Boolean})
   name.vb: OnContinueFlow(IReturn(Of Boolean))
-  fullName: MacacaGames.GameSystem.GamePlayData.OnContinueFlow(IReturn<System.Boolean>)
-  fullName.vb: MacacaGames.GameSystem.GamePlayData.OnContinueFlow(IReturn(Of System.Boolean))
+  fullName: MacacaGames.GameSystem.GamePlayData.OnContinueFlow(Rayark.Mast.IReturn<System.Boolean>)
+  fullName.vb: MacacaGames.GameSystem.GamePlayData.OnContinueFlow(Rayark.Mast.IReturn(Of System.Boolean))
   nameWithType: GamePlayData.OnContinueFlow(IReturn<Boolean>)
   nameWithType.vb: GamePlayData.OnContinueFlow(IReturn(Of Boolean))
 - uid: MacacaGames.GameSystem.GamePlayData.OnContinueFlow*

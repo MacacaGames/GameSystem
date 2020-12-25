@@ -4,9 +4,9 @@
       "src": [
         {
           "files": [
-            "Runtime/*.cs"
+            "GameSystem.csproj"
           ],
-          "src": "../"
+          "src": "../../../"
         }
       ],
       "dest": "api",
