@@ -66,12 +66,12 @@ namespace MacacaGames.GameSystem
         public abstract void OnGameEnd();
 
         /// <summary>
-        /// Excude after GamePlay() is end, but before GameResult()
+        /// Execude after GamePlay() is end, but before GameResult(), exclude Quitting & Failing
         /// </summary>
-        public abstract void OnGameClear();
+        public abstract void OnGameSuccess();
 
         /// <summary>
-        /// Game total end, no mater is died, clear or quit.
+        /// Game Failed.
         /// </summary>
         public abstract void OnGameFaild();
 
