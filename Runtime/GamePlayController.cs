@@ -235,7 +235,7 @@ namespace MacacaGames.GameSystem
                 else
                 {
                     //Player clear
-                    currentGamePlayData.OnGameClear();
+                    currentGamePlayData.OnGameSuccess();
                 }
 
                 isInResult = true;
