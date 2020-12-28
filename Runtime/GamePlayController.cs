@@ -91,18 +91,20 @@ namespace MacacaGames.GameSystem
         /// </summary>
         public void SuccessGamePlay()
         {
-            isGaming = false;
+            //Since the normal gameplay loop coroutine end means the game is finish normally
+            //just endthegame
+            EndTheGame();
         }
 
         /// <summary>
         /// Failed and exit the gameplay, this will fire continue flow(if continue is available)
-        /// <see cref="GameOverFlow()"/> for the contniue behaviour
+        /// <see cref="GameFaildFlow()"/> for the contniue behaviour
         /// or <see cref="GamePlayData.OnContinueFlow(IReturn{bool})()"/> for your continue implement 
         /// </summary>
         public void FailedGamePlay()
         {
             isFailed = true;
-            Rayark.Mast.Coroutine coroutine = new Rayark.Mast.Coroutine(GameOverFlow());
+            Rayark.Mast.Coroutine coroutine = new Rayark.Mast.Coroutine(GameFaildFlow());
             AddToUnpauseUpdateExecuter(coroutine);
         }
 
@@ -112,15 +114,11 @@ namespace MacacaGames.GameSystem
         public void QuitGamePlay()
         {
             isQuiting = true;
-            isFailed = true;
-            isPause = false;
             isGaming = false;
-            isPlayerDied = false;
         }
 
-        void EndGameDueToPlayerDied()
+        void EndTheGame()
         {
-            isPlayerDied = true;
             isGaming = false;
         }
 
@@ -142,11 +140,9 @@ namespace MacacaGames.GameSystem
 
         void ResetGamePlayValue()
         {
-            isInResult = false;
             isQuiting = false;
             isFailed = false;
             isPause = false;
-            isPlayerDied = false;
             alreadyContinue = false;
             isContinueing = false;
         }
@@ -161,6 +157,7 @@ namespace MacacaGames.GameSystem
 
         /// <summary>
         /// Is GamePlay Pause, value will keep until next gameplay start.
+        /// Should be only modify the value by <see cref="EnterPause()"/> or  <see cref="ResumePause()"/>
         /// </summary>
         /// <value></value>
         public bool isPause { get; private set; }
@@ -178,7 +175,7 @@ namespace MacacaGames.GameSystem
         public bool isQuiting { get; private set; } = false;
 
         /// <summary>
-        /// Is GamePlay Pause, value will keep until next gameplay start.
+        /// Is GamePlay Failed, value will keep until next gameplay start.
         /// </summary>
         /// <value></value>
         public bool isFailed { get; private set; } = false;
@@ -187,13 +184,14 @@ namespace MacacaGames.GameSystem
         /// Is In Result , value will keep until next gameplay start.
         /// </summary>
         /// <value></value>
-        public bool isInResult { get; private set; } = false;
-
-        /// <summary>
-        /// Is GamePlay PlayerDied, value will keep until next gameplay start.
-        /// </summary>
-        /// <value></value>
-        public bool isPlayerDied { get; private set; } = false;
+        public bool isInResult
+        {
+            get
+            {
+                return gameResultCoroutine != null && !gameResultCoroutine.Finished;
+            }
+        }
+        Rayark.Mast.Coroutine gameResultCoroutine = null;
 
         /// <summary>
         /// Is GamePlay alreadyContinue, value will keep until next gameplay start.
@@ -205,19 +203,13 @@ namespace MacacaGames.GameSystem
         {
             Rayark.Mast.Coroutine gamePlayCoroutine = new Rayark.Mast.Coroutine(currentGamePlayData.GamePlay());
 
-            // while (!onEnterGameCoroutine.Finished)
-            // {
-            //     onEnterGameCoroutine.Resume(Rayark.Mast.Coroutine.Delta);
-            //     yield return null;
-            // }
-
             while (isQuiting == false && isGaming == true)
             {
                 if (!gamePlayCoroutine.Finished)
                     gamePlayCoroutine.Resume(Rayark.Mast.Coroutine.Delta);
                 else
                 {
-                    Debug.LogError("gamePlayCoroutine is finished");
+                    Debug.LogError("gamePlayCoroutine is finished, Remember to call   gamePlayController.SuccessGamePlay(); in the end of GamePlay IEnumrator");
                     Debug.Break();
                 }
                 yield return null;
@@ -229,24 +221,22 @@ namespace MacacaGames.GameSystem
             {
                 if (isFailed == true)
                 {
-                    //Player died
-                    currentGamePlayData.OnGameFaild();
+                    //Game Faild
+                    currentGamePlayData.OnGameLose();
                 }
                 else
                 {
-                    //Player clear
+                    //Game Success
                     currentGamePlayData.OnGameSuccess();
                 }
 
-                isInResult = true;
-                Rayark.Mast.Coroutine gameResultCoroutine = new Rayark.Mast.Coroutine(currentGamePlayData.GameResult());
+                gameResultCoroutine = new Rayark.Mast.Coroutine(currentGamePlayData.GameResult());
                 while (!gameResultCoroutine.Finished)
                 {
                     gameResultCoroutine.Resume(Rayark.Mast.Coroutine.Delta);
                     yield return null;
                 }
-
-                isInResult = false;
+                gameResultCoroutine = null;
             }
             //Game Ending by external reason, e.g. Quit from UI
             else
@@ -260,59 +250,49 @@ namespace MacacaGames.GameSystem
 
         /// <summary>
         /// Fire after calling <see cref="FailedGamePlay()"/>
-        /// Player continue flow is runing in the flow too.
+        /// Will proccess continue logic during this phase.
+        /// Note. during GameFaildFlow the GamePlay is still running but keeps in pause status.
+        /// This flow may fire mutilple times during one gameplay.
         /// </summary>
         /// <returns></returns>
-        public IEnumerator GameOverFlow()
+        public IEnumerator GameFaildFlow()
         {
-            //關卡結束，代表玩家獲勝
-            if (isFailed == false)
+            EnterPause();
+            currentGamePlayData.OnGameFaild();
+            //已經接關過
+            if (alreadyContinue || !currentGamePlayData.IsContinueAvailable)
             {
-                isPlayerDied = false;
-                isGaming = false;
+                EndTheGame();
             }
-            //否則表示死亡，進接關流程
+            //尚未接關過
             else
             {
-                EnterPause();
+                isContinueing = true;
+                BlockMonad<bool> continueFlowCoroutine = new BlockMonad<bool>(r => currentGamePlayData.OnContinueFlow(r));
+                yield return continueFlowCoroutine.Do();
 
-                //已經接關過
-                if (alreadyContinue || !currentGamePlayData.IsContinueAvailable)
+                // Continue success
+                if (continueFlowCoroutine.Result)
                 {
-                    EndGameDueToPlayerDied();
+                    currentGamePlayData.OnContinue();
+                    isFailed = false;
+                    isContinueing = false;
+                    alreadyContinue = true;
                 }
-                //尚未接關過
                 else
                 {
-                    isContinueing = true;
-                    var m = new BlockMonad<bool>(r => currentGamePlayData.OnContinueFlow(r));
-                    yield return m.Do();
-
-                    // Continue success
-                    if (m.Result)
-                    {
-                        currentGamePlayData.OnContinue();
-                        isFailed = false;
-                        isPlayerDied = false;
-                        isContinueing = false;
-                        alreadyContinue = true;
-                    }
-                    else
-                    {
-                        isContinueing = false;
-                        EndGameDueToPlayerDied();
-                    }
-
-                    yield return new WaitUntil(() => isContinueing == false);
+                    isContinueing = false;
+                    EndTheGame();
                 }
-
-                ResumePause();
+                continueFlowCoroutine = null;
             }
+
+            ResumePause();
         }
 
         #endregion
 
-        #region GameLifeCycle
+        #region GameLifeCycleExcuter
 
         public Executor gamePlayUpdateExecuter = new Executor();
         public Executor gamePlayUnpauseUpdateExecuter = new Executor();

@@ -59,8 +59,7 @@ namespace MacacaGames.GameSystem
         [SerializeField] GamePlayData gamePlayData;
         [SerializeField] ScriptableObjectLifeCycle[] gameSystems;
         MonoBehaviourLifeCycle[] monoBehaviourLifeCycles;
-        List<ScriptableObjectLifeCycle> gameSystemInstances = new List<ScriptableObjectLifeCycle>();
-
+         List<ScriptableObjectLifeCycle> scriptableObjectLifeCycleInstances = new List<ScriptableObjectLifeCycle>();
         IApplicationLifeCycle[] applicationLifeCycles;
 
         /// <summary>
@@ -88,7 +87,7 @@ namespace MacacaGames.GameSystem
             foreach (var item in gameSystems)
             {
                 var temp = Instantiate(item);
-                gameSystemInstances.Add(temp);
+                scriptableObjectLifeCycleInstances.Add(temp);
             }
             monoBehaviourLifeCycles = Resources.FindObjectsOfTypeAll<MonoBehaviourLifeCycle>().Where(
                 (m) =>
@@ -98,7 +97,7 @@ namespace MacacaGames.GameSystem
             //Inject Dependency
             InjectByClass(gamePlayData);
 
-            foreach (var item in gameSystemInstances)
+            foreach (var item in scriptableObjectLifeCycleInstances)
             {
                 InjectByClass(item);
             }
@@ -109,7 +108,7 @@ namespace MacacaGames.GameSystem
             }
 
             //Init
-            foreach (var item in gameSystemInstances)
+            foreach (var item in scriptableObjectLifeCycleInstances)
             {
                 item.Init();
             }
@@ -119,7 +118,7 @@ namespace MacacaGames.GameSystem
             }
 
             applicationExecutor.Add(ApplicationTask());
-            applicationLifeCycles = gameSystemInstances.Cast<IApplicationLifeCycle>()
+            applicationLifeCycles = scriptableObjectLifeCycleInstances.Cast<IApplicationLifeCycle>()
                                         .Union(monoBehaviourLifeCycles.Cast<IApplicationLifeCycle>())
                                         .ToArray();
 
@@ -255,7 +254,7 @@ namespace MacacaGames.GameSystem
         public T GetGameSystem<T>() where T : ScriptableObjectLifeCycle
         {
             T result;
-            result = gameSystemInstances.SingleOrDefault(m => m is T) as T;
+            result = scriptableObjectLifeCycleInstances.SingleOrDefault(m => m is T) as T;
             return result;
         }
 
@@ -267,7 +266,7 @@ namespace MacacaGames.GameSystem
         public object GetGameSystem(Type t)
         {
             object result;
-            result = gameSystemInstances.SingleOrDefault(m => m.GetType() == t);
+            result = scriptableObjectLifeCycleInstances.SingleOrDefault(m => m.GetType() == t);
             return result;
         }
 

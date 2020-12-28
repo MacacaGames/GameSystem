@@ -4,6 +4,13 @@ using Rayark.Mast;
 using UnityEngine;
 namespace MacacaGames.GameSystem
 {
+    /// <summary>
+    /// Game state define
+    /// Success : Player finished gameplay, usually means player wins.
+    /// Lose : GamePlay is ended due to player is died. 
+    /// Faild : Player is died, Player may died muilple times during one gameplay
+    /// Quit : Player give up the gameplay, usually leave gameplay by UI.
+    /// </summary>
     public abstract class GamePlayData : ScriptableObject, IApplicationInjectable
     {
         GamePlayController _gamePlayController;
@@ -29,10 +36,7 @@ namespace MacacaGames.GameSystem
             get { return _applicationController; }
         }
 
-        /// Game state define
-        /// Clear : Player finished gameplay, usually means player wins.
-        /// Died : GamePlay is ended due to player is died. 
-        /// Quit : Player give up the gameplay, usually leave gameplay by UI.
+
         /// <summary>
         /// Main logic of the game
         /// </summary>
@@ -69,6 +73,10 @@ namespace MacacaGames.GameSystem
         /// Execude after GamePlay() is end, but before GameResult(), exclude Quitting & Failing
         /// </summary>
         public abstract void OnGameSuccess();
+        /// <summary>
+        /// Game Lose .
+        /// </summary>
+        public abstract void OnGameLose();
 
         /// <summary>
         /// Game Failed.
