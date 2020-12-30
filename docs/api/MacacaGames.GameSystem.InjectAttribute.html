@@ -75,14 +75,6 @@
   </h1>
   <div class="markdown level0 summary"><p>Mark a Property or Field inside IApplicationInjectable that can be Injected by ApplicationController
 Remember the member needs to be accessable to make the Inject work.</p>
-<p>e.g. In the case while trying to inject ChildClass the inject will has below result</p>
-<p>class BaseClass : IApplicationInjectable{
-SomeClass canNotBeInject;
-protected SomeClass canBeInject;
-public SomeClass alsoCanBeInject;
-}</p>
-<p>class ChildClass : BaseClass{</p>
-<p>}</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -237,12 +229,23 @@ public SomeClass alsoCanBeInject;
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="MacacaGames.GameSystem.html">MacacaGames.GameSystem</a></h6>
-  <h6><strong>Assembly</strong>: GameSystem.dll</h6>
+  <h6><strong>Assembly</strong>: Macaca.GameSystem.dll</h6>
   <h5 id="MacacaGames_GameSystem_InjectAttribute_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false)]
 public class InjectAttribute : Attribute, _Attribute</code></pre>
   </div>
+  <h5 id="MacacaGames_GameSystem_InjectAttribute_examples"><strong>Examples</strong></h5>
+  <p>In the case while trying to inject ChildClass the inject will has below result</p>
+<pre><code>class ChildClass : BaseClass{
+
+}
+class BaseClass : IApplicationInjectable{
+    SomeClass canNotBeInject;
+    protected SomeClass canBeInject;
+    public SomeClass alsoCanBeInject;
+}</code></pre>
+
   <h3 id="implements">Implements</h3>
   <div>
       <span class="xref">System.Runtime.InteropServices._Attribute</span>
@@ -258,7 +261,7 @@ public class InjectAttribute : Attribute, _Attribute</code></pre>
                     <a href="https://github.com/MacacaGames/GameSystem/new/master/apiSpec/new?filename=MacacaGames_GameSystem_InjectAttribute.md&amp;value=---%0Auid%3A%20MacacaGames.GameSystem.InjectAttribute%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/MacacaGames/GameSystem/blob/master/Runtime/ApplicationController.cs/#L434" class="contribution-link">View Source</a>
+                    <a href="https://github.com/MacacaGames/GameSystem/blob/master/Runtime/ApplicationController.cs/#L433" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

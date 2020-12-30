@@ -59,7 +59,7 @@ namespace MacacaGames.GameSystem
         [SerializeField] GamePlayData gamePlayData;
         [SerializeField] ScriptableObjectLifeCycle[] gameSystems;
         MonoBehaviourLifeCycle[] monoBehaviourLifeCycles;
-         List<ScriptableObjectLifeCycle> scriptableObjectLifeCycleInstances = new List<ScriptableObjectLifeCycle>();
+        List<ScriptableObjectLifeCycle> scriptableObjectLifeCycleInstances = new List<ScriptableObjectLifeCycle>();
         IApplicationLifeCycle[] applicationLifeCycles;
 
         /// <summary>
@@ -416,20 +416,20 @@ namespace MacacaGames.GameSystem
     /// <summary>
     /// Mark a Property or Field inside IApplicationInjectable that can be Injected by ApplicationController
     /// Remember the member needs to be accessable to make the Inject work.
-    /// 
-    /// e.g. In the case while trying to inject ChildClass the inject will has below result 
-    /// 
+    /// </summary>
+    /// <example>
+    /// In the case while trying to inject ChildClass the inject will has below result 
+    /// <code>
+    /// class ChildClass : BaseClass{
+    ///     
+    /// }
     /// class BaseClass : IApplicationInjectable{
     ///     SomeClass canNotBeInject;
     ///     protected SomeClass canBeInject;
     ///     public SomeClass alsoCanBeInject;
     /// }
-    /// 
-    /// class ChildClass : BaseClass{
-    ///     
-    /// }
-    /// </summary>
-    /// 
+    /// </code>
+    /// </example>
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
     public class InjectAttribute : Attribute { }
 }

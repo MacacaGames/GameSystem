@@ -87,18 +87,15 @@
       <h4><a class="xref" href="MacacaGames.GameSystem.GamePlayController.html">GamePlayController</a></h4>
       <section></section>
       <h4><a class="xref" href="MacacaGames.GameSystem.GamePlayData.html">GamePlayData</a></h4>
-      <section></section>
+      <section><p>Game state define
+Success : Player finished gameplay, usually means player wins.
+Lose : GamePlay is ended due to player is died.
+Faild : Player is died, Player may died muilple times during one gameplay
+Quit : Player give up the gameplay, usually leave gameplay by UI.</p>
+</section>
       <h4><a class="xref" href="MacacaGames.GameSystem.InjectAttribute.html">InjectAttribute</a></h4>
       <section><p>Mark a Property or Field inside IApplicationInjectable that can be Injected by ApplicationController
 Remember the member needs to be accessable to make the Inject work.</p>
-<p>e.g. In the case while trying to inject ChildClass the inject will has below result</p>
-<p>class BaseClass : IApplicationInjectable{
-SomeClass canNotBeInject;
-protected SomeClass canBeInject;
-public SomeClass alsoCanBeInject;
-}</p>
-<p>class ChildClass : BaseClass{</p>
-<p>}</p>
 </section>
       <h4><a class="xref" href="MacacaGames.GameSystem.MonoBehaviourLifeCycle.html">MonoBehaviourLifeCycle</a></h4>
       <section><p>MonoBehaviour based ApplicationLifeCycle object</p>

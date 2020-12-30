@@ -266,19 +266,19 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.GamePlayController.FailedGamePlay
   nameWithType: GamePlayController.FailedGamePlay
-- uid: MacacaGames.GameSystem.GamePlayController.GameOverFlow
-  name: GameOverFlow()
-  href: api/MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_GameOverFlow
-  commentId: M:MacacaGames.GameSystem.GamePlayController.GameOverFlow
-  fullName: MacacaGames.GameSystem.GamePlayController.GameOverFlow()
-  nameWithType: GamePlayController.GameOverFlow()
-- uid: MacacaGames.GameSystem.GamePlayController.GameOverFlow*
-  name: GameOverFlow
-  href: api/MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_GameOverFlow_
-  commentId: Overload:MacacaGames.GameSystem.GamePlayController.GameOverFlow
+- uid: MacacaGames.GameSystem.GamePlayController.GameFaildFlow
+  name: GameFaildFlow()
+  href: api/MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_GameFaildFlow
+  commentId: M:MacacaGames.GameSystem.GamePlayController.GameFaildFlow
+  fullName: MacacaGames.GameSystem.GamePlayController.GameFaildFlow()
+  nameWithType: GamePlayController.GameFaildFlow()
+- uid: MacacaGames.GameSystem.GamePlayController.GameFaildFlow*
+  name: GameFaildFlow
+  href: api/MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_GameFaildFlow_
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.GameFaildFlow
   isSpec: "True"
-  fullName: MacacaGames.GameSystem.GamePlayController.GameOverFlow
-  nameWithType: GamePlayController.GameOverFlow
+  fullName: MacacaGames.GameSystem.GamePlayController.GameFaildFlow
+  nameWithType: GamePlayController.GameFaildFlow
 - uid: MacacaGames.GameSystem.GamePlayController.GamePlayControllerCoreLoop(System.Collections.IEnumerator,System.Collections.IEnumerator)
   name: GamePlayControllerCoreLoop(IEnumerator, IEnumerator)
   href: api/MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_GamePlayControllerCoreLoop_System_Collections_IEnumerator_System_Collections_IEnumerator_
@@ -404,19 +404,6 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.GamePlayController.isPause
   nameWithType: GamePlayController.isPause
-- uid: MacacaGames.GameSystem.GamePlayController.isPlayerDied
-  name: isPlayerDied
-  href: api/MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_isPlayerDied
-  commentId: P:MacacaGames.GameSystem.GamePlayController.isPlayerDied
-  fullName: MacacaGames.GameSystem.GamePlayController.isPlayerDied
-  nameWithType: GamePlayController.isPlayerDied
-- uid: MacacaGames.GameSystem.GamePlayController.isPlayerDied*
-  name: isPlayerDied
-  href: api/MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_isPlayerDied_
-  commentId: Overload:MacacaGames.GameSystem.GamePlayController.isPlayerDied
-  isSpec: "True"
-  fullName: MacacaGames.GameSystem.GamePlayController.isPlayerDied
-  nameWithType: GamePlayController.isPlayerDied
 - uid: MacacaGames.GameSystem.GamePlayController.isQuiting
   name: isQuiting
   href: api/MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_isQuiting
@@ -673,6 +660,19 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.GamePlayData.OnGameFaild
   nameWithType: GamePlayData.OnGameFaild
+- uid: MacacaGames.GameSystem.GamePlayData.OnGameLose
+  name: OnGameLose()
+  href: api/MacacaGames.GameSystem.GamePlayData.html#MacacaGames_GameSystem_GamePlayData_OnGameLose
+  commentId: M:MacacaGames.GameSystem.GamePlayData.OnGameLose
+  fullName: MacacaGames.GameSystem.GamePlayData.OnGameLose()
+  nameWithType: GamePlayData.OnGameLose()
+- uid: MacacaGames.GameSystem.GamePlayData.OnGameLose*
+  name: OnGameLose
+  href: api/MacacaGames.GameSystem.GamePlayData.html#MacacaGames_GameSystem_GamePlayData_OnGameLose_
+  commentId: Overload:MacacaGames.GameSystem.GamePlayData.OnGameLose
+  isSpec: "True"
+  fullName: MacacaGames.GameSystem.GamePlayData.OnGameLose
+  nameWithType: GamePlayData.OnGameLose
 - uid: MacacaGames.GameSystem.GamePlayData.OnGameSuccess
   name: OnGameSuccess()
   href: api/MacacaGames.GameSystem.GamePlayData.html#MacacaGames_GameSystem_GamePlayData_OnGameSuccess
