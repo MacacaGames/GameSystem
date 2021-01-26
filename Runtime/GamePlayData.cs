@@ -11,7 +11,7 @@ namespace MacacaGames.GameSystem
     /// Faild : Player is died, Player may died muilple times during one gameplay
     /// Quit : Player give up the gameplay, usually leave gameplay by UI.
     /// </summary>
-    public abstract class GamePlayData : ScriptableObject, IApplicationInjectable
+    public abstract class GamePlayData : ScriptableObject
     {
         GamePlayController _gamePlayController;
         ApplicationController _applicationController;

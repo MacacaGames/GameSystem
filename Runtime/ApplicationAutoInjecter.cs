@@ -12,9 +12,8 @@ namespace MacacaGames.GameSystem
             if (injectFinish)
                 return;
 
-            List<IApplicationInjectable> injectables = new List<IApplicationInjectable>();
-            ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject(gameObject, injectables);
-            if (injectables.Count == 0)
+            Component[] injectables = GetComponentsInChildren<Component>();
+            if (injectables.Length == 0)
             {
                 Debug.LogError("No IApplicationInjectable found on this GameObject or its children, remember add IApplicationInjectable on the class which you wish to Inject", gameObject);
             }

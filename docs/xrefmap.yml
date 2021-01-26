@@ -76,6 +76,19 @@ references:
   fullName.vb: MacacaGames.GameSystem.ApplicationController.GetGameSystem(Of T)()
   nameWithType: ApplicationController.GetGameSystem<T>()
   nameWithType.vb: ApplicationController.GetGameSystem(Of T)()
+- uid: MacacaGames.GameSystem.ApplicationController.GetRegisterInstance(System.Type)
+  name: GetRegisterInstance(Type)
+  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetRegisterInstance_System_Type_
+  commentId: M:MacacaGames.GameSystem.ApplicationController.GetRegisterInstance(System.Type)
+  fullName: MacacaGames.GameSystem.ApplicationController.GetRegisterInstance(System.Type)
+  nameWithType: ApplicationController.GetRegisterInstance(Type)
+- uid: MacacaGames.GameSystem.ApplicationController.GetRegisterInstance*
+  name: GetRegisterInstance
+  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetRegisterInstance_
+  commentId: Overload:MacacaGames.GameSystem.ApplicationController.GetRegisterInstance
+  isSpec: "True"
+  fullName: MacacaGames.GameSystem.ApplicationController.GetRegisterInstance
+  nameWithType: ApplicationController.GetRegisterInstance
 - uid: MacacaGames.GameSystem.ApplicationController.Init
   name: Init()
   href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_Init
@@ -121,12 +134,12 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.ApplicationController.RegistApplicationExecuter
   nameWithType: ApplicationController.RegistApplicationExecuter
-- uid: MacacaGames.GameSystem.ApplicationController.ResolveInjection(MacacaGames.GameSystem.IApplicationInjectable)
-  name: ResolveInjection(IApplicationInjectable)
-  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_ResolveInjection_MacacaGames_GameSystem_IApplicationInjectable_
-  commentId: M:MacacaGames.GameSystem.ApplicationController.ResolveInjection(MacacaGames.GameSystem.IApplicationInjectable)
-  fullName: MacacaGames.GameSystem.ApplicationController.ResolveInjection(MacacaGames.GameSystem.IApplicationInjectable)
-  nameWithType: ApplicationController.ResolveInjection(IApplicationInjectable)
+- uid: MacacaGames.GameSystem.ApplicationController.ResolveInjection(System.Object)
+  name: ResolveInjection(Object)
+  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_ResolveInjection_System_Object_
+  commentId: M:MacacaGames.GameSystem.ApplicationController.ResolveInjection(System.Object)
+  fullName: MacacaGames.GameSystem.ApplicationController.ResolveInjection(System.Object)
+  nameWithType: ApplicationController.ResolveInjection(Object)
 - uid: MacacaGames.GameSystem.ApplicationController.ResolveInjection*
   name: ResolveInjection
   href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_ResolveInjection_
@@ -160,28 +173,6 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.ApplicationController.UnRegistApplicationExecuter
   nameWithType: ApplicationController.UnRegistApplicationExecuter
-- uid: MacacaGames.GameSystem.ApplicationUtils
-  name: ApplicationUtils
-  href: api/MacacaGames.GameSystem.ApplicationUtils.html
-  commentId: T:MacacaGames.GameSystem.ApplicationUtils
-  fullName: MacacaGames.GameSystem.ApplicationUtils
-  nameWithType: ApplicationUtils
-- uid: MacacaGames.GameSystem.ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject(UnityEngine.GameObject,System.Collections.Generic.List{MacacaGames.GameSystem.IApplicationInjectable})
-  name: GetInjectableMonoBehavioursUnderGameObject(GameObject, List<IApplicationInjectable>)
-  href: api/MacacaGames.GameSystem.ApplicationUtils.html#MacacaGames_GameSystem_ApplicationUtils_GetInjectableMonoBehavioursUnderGameObject_UnityEngine_GameObject_System_Collections_Generic_List_MacacaGames_GameSystem_IApplicationInjectable__
-  commentId: M:MacacaGames.GameSystem.ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject(UnityEngine.GameObject,System.Collections.Generic.List{MacacaGames.GameSystem.IApplicationInjectable})
-  name.vb: GetInjectableMonoBehavioursUnderGameObject(GameObject, List(Of IApplicationInjectable))
-  fullName: MacacaGames.GameSystem.ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject(UnityEngine.GameObject, System.Collections.Generic.List<MacacaGames.GameSystem.IApplicationInjectable>)
-  fullName.vb: MacacaGames.GameSystem.ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject(UnityEngine.GameObject, System.Collections.Generic.List(Of MacacaGames.GameSystem.IApplicationInjectable))
-  nameWithType: ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject(GameObject, List<IApplicationInjectable>)
-  nameWithType.vb: ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject(GameObject, List(Of IApplicationInjectable))
-- uid: MacacaGames.GameSystem.ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject*
-  name: GetInjectableMonoBehavioursUnderGameObject
-  href: api/MacacaGames.GameSystem.ApplicationUtils.html#MacacaGames_GameSystem_ApplicationUtils_GetInjectableMonoBehavioursUnderGameObject_
-  commentId: Overload:MacacaGames.GameSystem.ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject
-  isSpec: "True"
-  fullName: MacacaGames.GameSystem.ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject
-  nameWithType: ApplicationUtils.GetInjectableMonoBehavioursUnderGameObject
 - uid: MacacaGames.GameSystem.GamePlayController
   name: GamePlayController
   href: api/MacacaGames.GameSystem.GamePlayController.html
@@ -751,12 +742,6 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.GamePlayData.SetGamePlayController
   nameWithType: GamePlayData.SetGamePlayController
-- uid: MacacaGames.GameSystem.IApplicationInjectable
-  name: IApplicationInjectable
-  href: api/MacacaGames.GameSystem.IApplicationInjectable.html
-  commentId: T:MacacaGames.GameSystem.IApplicationInjectable
-  fullName: MacacaGames.GameSystem.IApplicationInjectable
-  nameWithType: IApplicationInjectable
 - uid: MacacaGames.GameSystem.InjectAttribute
   name: InjectAttribute
   href: api/MacacaGames.GameSystem.InjectAttribute.html
@@ -834,6 +819,31 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnUnPauseGamePlayUpdate
   nameWithType: MonoBehaviourLifeCycle.OnUnPauseGamePlayUpdate
+- uid: MacacaGames.GameSystem.RegisterAttribute
+  name: RegisterAttribute
+  href: api/MacacaGames.GameSystem.RegisterAttribute.html
+  commentId: T:MacacaGames.GameSystem.RegisterAttribute
+  fullName: MacacaGames.GameSystem.RegisterAttribute
+  nameWithType: RegisterAttribute
+- uid: MacacaGames.GameSystem.RegisterAttribute.#ctor(System.Int32)
+  name: RegisterAttribute(Int32)
+  href: api/MacacaGames.GameSystem.RegisterAttribute.html#MacacaGames_GameSystem_RegisterAttribute__ctor_System_Int32_
+  commentId: M:MacacaGames.GameSystem.RegisterAttribute.#ctor(System.Int32)
+  fullName: MacacaGames.GameSystem.RegisterAttribute.RegisterAttribute(System.Int32)
+  nameWithType: RegisterAttribute.RegisterAttribute(Int32)
+- uid: MacacaGames.GameSystem.RegisterAttribute.#ctor*
+  name: RegisterAttribute
+  href: api/MacacaGames.GameSystem.RegisterAttribute.html#MacacaGames_GameSystem_RegisterAttribute__ctor_
+  commentId: Overload:MacacaGames.GameSystem.RegisterAttribute.#ctor
+  isSpec: "True"
+  fullName: MacacaGames.GameSystem.RegisterAttribute.RegisterAttribute
+  nameWithType: RegisterAttribute.RegisterAttribute
+- uid: MacacaGames.GameSystem.RegisterAttribute.order
+  name: order
+  href: api/MacacaGames.GameSystem.RegisterAttribute.html#MacacaGames_GameSystem_RegisterAttribute_order
+  commentId: F:MacacaGames.GameSystem.RegisterAttribute.order
+  fullName: MacacaGames.GameSystem.RegisterAttribute.order
+  nameWithType: RegisterAttribute.order
 - uid: MacacaGames.GameSystem.ScriptableObjectLifeCycle
   name: ScriptableObjectLifeCycle
   href: api/MacacaGames.GameSystem.ScriptableObjectLifeCycle.html

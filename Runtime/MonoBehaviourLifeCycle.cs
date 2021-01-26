@@ -6,7 +6,7 @@ namespace MacacaGames.GameSystem
     /// <summary>
     /// MonoBehaviour based ApplicationLifeCycle object
     /// </summary>
-    public abstract class MonoBehaviourLifeCycle : MonoBehaviour, IApplicationLifeCycle, IApplicationInjectable
+    public abstract class MonoBehaviourLifeCycle : MonoBehaviour, IApplicationLifeCycle
     {
         /// <summary>
         /// Init the object, fire once during ApplicationController.Init()

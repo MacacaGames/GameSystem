@@ -58,9 +58,12 @@ namespace MacacaGames.GameSystem
 
         [SerializeField] GamePlayData gamePlayData;
         [SerializeField] ScriptableObjectLifeCycle[] gameSystems;
-        MonoBehaviourLifeCycle[] monoBehaviourLifeCycles;
+
+        MonoBehaviourLifeCycle[] monoBehaviourLifeCycleInstance;
         List<ScriptableObjectLifeCycle> scriptableObjectLifeCycleInstances = new List<ScriptableObjectLifeCycle>();
-        IApplicationLifeCycle[] applicationLifeCycles;
+        object[] registerInstance;
+
+        Dictionary<Type, IApplicationLifeCycle> allApplicationLifeCycles = new Dictionary<Type, IApplicationLifeCycle>();
 
         /// <summary>
         /// Fire while application init, only fire once
@@ -89,10 +92,14 @@ namespace MacacaGames.GameSystem
                 var temp = Instantiate(item);
                 scriptableObjectLifeCycleInstances.Add(temp);
             }
-            monoBehaviourLifeCycles = Resources.FindObjectsOfTypeAll<MonoBehaviourLifeCycle>().Where(
-                (m) =>
-                m.gameObject != null &&
-                m.gameObject.scene.IsValid()).ToArray();
+            monoBehaviourLifeCycleInstance =
+                Resources.FindObjectsOfTypeAll<MonoBehaviourLifeCycle>()
+                        .Where((m) =>
+                                m.gameObject != null &&
+                                m.gameObject.scene.IsValid())
+                        .ToArray();
+
+            registerInstance = GenerateRegisterInstance(GetAllRegisterType().ToArray());
 
             //Inject Dependency
             InjectByClass(gamePlayData);
@@ -102,7 +109,12 @@ namespace MacacaGames.GameSystem
                 InjectByClass(item);
             }
 
-            foreach (var item in monoBehaviourLifeCycles)
+            foreach (var item in monoBehaviourLifeCycleInstance)
+            {
+                InjectByClass(item);
+            }
+
+            foreach (var item in registerInstance)
             {
                 InjectByClass(item);
             }
@@ -111,17 +123,25 @@ namespace MacacaGames.GameSystem
             foreach (var item in scriptableObjectLifeCycleInstances)
             {
                 item.Init();
+                allApplicationLifeCycles.Add(item.GetType(), item);
             }
-            foreach (var item in monoBehaviourLifeCycles)
+
+            foreach (var item in monoBehaviourLifeCycleInstance)
             {
                 item.Init();
+                allApplicationLifeCycles.Add(item.GetType(), item);
+            }
+
+            foreach (var item in registerInstance)
+            {
+                if (item is IApplicationLifeCycle applicationLifeCycle)
+                {
+                    applicationLifeCycle.Init();
+                    allApplicationLifeCycles.Add(item.GetType(), applicationLifeCycle);
+                }
             }
 
             applicationExecutor.Add(ApplicationTask());
-            applicationLifeCycles = scriptableObjectLifeCycleInstances.Cast<IApplicationLifeCycle>()
-                                        .Union(monoBehaviourLifeCycles.Cast<IApplicationLifeCycle>())
-                                        .ToArray();
-
             applicationExecutor.Add(ApplicationUpdateRunner());
         }
 
@@ -129,11 +149,11 @@ namespace MacacaGames.GameSystem
         {
             while (true)
             {
-                foreach (var item in applicationLifeCycles)
+                foreach (var item in allApplicationLifeCycles)
                 {
                     try
                     {
-                        item.OnApplicationUpdate();
+                        item.Value.OnApplicationUpdate();
                     }
                     catch (Exception ex)
                     {
@@ -147,11 +167,11 @@ namespace MacacaGames.GameSystem
         {
             while (true)
             {
-                foreach (var item in applicationLifeCycles)
+                foreach (var item in allApplicationLifeCycles)
                 {
                     try
                     {
-                        item.OnGamePlayUpdate();
+                        item.Value.OnGamePlayUpdate();
                     }
                     catch (Exception ex)
                     {
@@ -165,11 +185,11 @@ namespace MacacaGames.GameSystem
         {
             while (true)
             {
-                foreach (var item in applicationLifeCycles)
+                foreach (var item in allApplicationLifeCycles)
                 {
                     try
                     {
-                        item.OnGamePlayUpdate();
+                        item.Value.OnGamePlayUpdate();
                     }
                     catch (Exception ex)
                     {
@@ -192,11 +212,11 @@ namespace MacacaGames.GameSystem
                 OnApplicationBeforeGamePlay?.Invoke();
                 gamePlayController.OnApplicationBeforeGamePlay();
 
-                foreach (var item in applicationLifeCycles)
+                foreach (var item in allApplicationLifeCycles)
                 {
                     try
                     {
-                        item.OnApplicationBeforeGamePlay();
+                        item.Value.OnApplicationBeforeGamePlay();
                     }
                     catch (Exception ex)
                     {
@@ -287,7 +307,7 @@ namespace MacacaGames.GameSystem
         public T GetApplicationLifeCycle<T>() where T : MonoBehaviourLifeCycle
         {
             T result;
-            result = monoBehaviourLifeCycles.SingleOrDefault(m => m is T) as T;
+            result = monoBehaviourLifeCycleInstance.SingleOrDefault(m => m is T) as T;
             return result;
         }
 
@@ -299,7 +319,31 @@ namespace MacacaGames.GameSystem
         public object GetApplicationLifeCycle(Type t)
         {
             object result;
-            result = monoBehaviourLifeCycles.SingleOrDefault(m => m.GetType() == t);
+            result = monoBehaviourLifeCycleInstance.SingleOrDefault(m => m.GetType() == t);
+            return result;
+        }
+
+        // /// <summary>
+        // /// Get the object instance which has Register Attribute
+        // /// </summary>
+        // /// <typeparam name="T">The Register class you wish to get</typeparam>
+        // /// <returns>The Register instance, null if no instance</returns>
+        // public T GetRegisterInstance<T>() where T : MonoBehaviourLifeCycle
+        // {
+        //     T result;
+        //     result = monoBehaviourLifeCycleInstance.SingleOrDefault(m => m is T) as T;
+        //     return result;
+        // }
+
+        /// <summary>
+        /// Get the object instance which has Register Attribute
+        /// </summary>
+        /// <typeparam name="T">The Register class you wish to get</typeparam>
+        /// <returns>The Register instance, null if no instance</returns>
+        public object GetRegisterInstance(Type t)
+        {
+            object result;
+            result = registerInstance.SingleOrDefault(m => m.GetType() == t);
             return result;
         }
 
@@ -344,47 +388,84 @@ namespace MacacaGames.GameSystem
 
         #endregion
         #region  Injection
-        public void ResolveInjection(IApplicationInjectable injectable)
+
+
+        object[] GenerateRegisterInstance(Type[] types)
+        {
+            List<object> result = new List<object>();
+            foreach (var item in types)
+            {
+                var temp = Activator.CreateInstance(item);
+                result.Add(temp);
+            }
+            return result.ToArray();
+        }
+
+        IEnumerable<Type> GetAllRegisterType()
+        {
+            var a = typeof(IApplicationLifeCycle);
+            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            return assemblies
+                    .SelectMany(s => s.GetTypes())
+                    .Where(p => p.GetCustomAttribute(typeof(RegisterAttribute), true) != null)
+                    .OrderBy(p => p.GetCustomAttribute<RegisterAttribute>(true).order);
+
+            // bool IsSystemLifeCycle(Type t)
+            // {
+            //     return
+            //         !t.IsSubclassOf(typeof(MonoBehaviourLifeCycle)) &&
+            //         !t.IsSubclassOf(typeof(ScriptableObjectLifeCycle)) &&
+            //         !t.IsSubclassOf(typeof(GamePlayData));
+            // }
+        }
+
+        /// <summary>
+        /// Inject all member with [Inject] attribute on target object
+        /// </summary>
+        /// <param name="injectable">The object to inject</param>
+        public void ResolveInjection(object injectable)
         {
             InjectByClass(injectable);
         }
 
-        private void InjectByClass(IApplicationInjectable injectable)
+        private void InjectByClass(object injectable, Type[] types = null)
         {
             Type contract = injectable.GetType();
 
-            MemberInfo[] members = contract.FindMembers(
+            IEnumerable<MemberInfo> members =
+            contract.FindMembers(
                 MemberTypes.Property | MemberTypes.Field | MemberTypes.NestedType,
                 BindingFlags.FlattenHierarchy | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static,
-            null, null);
+                (m, i) => m.GetCustomAttribute(typeof(InjectAttribute), true) != null,
+                null);
 
-            foreach (MemberInfo member in members)
+            IEnumerable<FieldInfo> fieldInfos =
+                members
+                .Where(m => m.MemberType == MemberTypes.Field)
+                .Cast<FieldInfo>()
+                .Where(m => types == null || types.Contains(m.FieldType));
+
+            IEnumerable<PropertyInfo> propertyInfos =
+                members
+                .Where(m => m.MemberType == MemberTypes.Property)
+                .Cast<PropertyInfo>()
+                .Where(m => types == null || types.Contains(m.PropertyType));
+
+            foreach (FieldInfo fieldInfo in fieldInfos)
             {
-                object[] attrs = member.GetCustomAttributes(typeof(InjectAttribute), true);
-
-                foreach (object attr in attrs)
+                var target = GetInstanceValue(fieldInfo.FieldType);
+                if (target != null)
                 {
-                    if (attr.GetType() != typeof(InjectAttribute))
-                    {
-                        continue;
-                    }
+                    fieldInfo.SetValue(injectable, target);
+                }
+            }
 
-                    if (member.MemberType == MemberTypes.Field)
-                    {
-                        System.Reflection.FieldInfo fieldInfo = member as FieldInfo;
-                        if (fieldInfo != null)
-                            fieldInfo.SetValue(injectable, GetInstanceValue(fieldInfo.FieldType));
-                    }
-                    else if (member.MemberType == MemberTypes.Property)
-                    {
-                        System.Reflection.PropertyInfo info = member as PropertyInfo;
-                        if (info != null)
-                            info.SetValue(injectable, GetInstanceValue(info.PropertyType));
-                    }
-                    else
-                    {
-                        Debug.LogError($"Unsupport member type {member.MemberType}");
-                    }
+            foreach (PropertyInfo info in propertyInfos)
+            {
+                var target = GetInstanceValue(info.PropertyType);
+                if (target != null)
+                {
+                    info.SetValue(injectable, target);
                 }
             }
 
@@ -402,34 +483,11 @@ namespace MacacaGames.GameSystem
                 {
                     return GetGamePlayController().GetGamePlayData();
                 }
-                return null;
+                //Finally try to find RegisterInstance
+                return GetRegisterInstance(t);
             }
         }
         #endregion
     }
 
-    public interface IApplicationInjectable
-    {
-
-    }
-
-    /// <summary>
-    /// Mark a Property or Field inside IApplicationInjectable that can be Injected by ApplicationController
-    /// Remember the member needs to be accessable to make the Inject work.
-    /// </summary>
-    /// <example>
-    /// In the case while trying to inject ChildClass the inject will has below result 
-    /// <code>
-    /// class ChildClass : BaseClass{
-    ///     
-    /// }
-    /// class BaseClass : IApplicationInjectable{
-    ///     SomeClass canNotBeInject;
-    ///     protected SomeClass canBeInject;
-    ///     public SomeClass alsoCanBeInject;
-    /// }
-    /// </code>
-    /// </example>
-    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
-    public class InjectAttribute : Attribute { }
 }

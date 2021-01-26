@@ -8,7 +8,7 @@ namespace MacacaGames.GameSystem
     /// <summary>
     /// ScriptableObject based ApplicationLifeCycle object
     /// </summary>
-    public abstract class ScriptableObjectLifeCycle : ScriptableObject, IApplicationInjectable, IApplicationLifeCycle
+    public abstract class ScriptableObjectLifeCycle : ScriptableObject, IApplicationLifeCycle
     {
         /// <summary>
         /// Init the object, fire once during ApplicationController.Init()
