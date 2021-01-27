@@ -57,11 +57,11 @@ namespace MacacaGames.GameSystem
         }
 
         [SerializeField] GamePlayData gamePlayData;
-        [SerializeField] ScriptableObjectLifeCycle[] gameSystems;
+        [SerializeField] ScriptableObjectLifeCycle[] scriptableObjectLifeCycle;
 
         MonoBehaviourLifeCycle[] monoBehaviourLifeCycleInstance;
         List<ScriptableObjectLifeCycle> scriptableObjectLifeCycleInstances = new List<ScriptableObjectLifeCycle>();
-        object[] registerInstance;
+        object[] resolveTargetInstance;
 
         Dictionary<Type, IApplicationLifeCycle> allApplicationLifeCycles = new Dictionary<Type, IApplicationLifeCycle>();
 
@@ -79,15 +79,18 @@ namespace MacacaGames.GameSystem
 
         GamePlayController gamePlayController;
 
+        public bool IsInit = false;
+
         public void Init()
         {
+            if (IsInit) return;
             OnApplicationInit?.Invoke();
             gamePlayController = new GamePlayController(this, gamePlayData);
             gamePlayController.Init();
             applicationExecutor = new Executor();
 
             //Prepare Instance
-            foreach (var item in gameSystems)
+            foreach (var item in scriptableObjectLifeCycle)
             {
                 var temp = Instantiate(item);
                 scriptableObjectLifeCycleInstances.Add(temp);
@@ -99,7 +102,7 @@ namespace MacacaGames.GameSystem
                                 m.gameObject.scene.IsValid())
                         .ToArray();
 
-            registerInstance = GenerateRegisterInstance(GetAllRegisterType().ToArray());
+            resolveTargetInstance = GenerateResolveTargetInstance(GetAllRegisterType().ToArray());
 
             //Inject Dependency
             InjectByClass(gamePlayData);
@@ -114,7 +117,7 @@ namespace MacacaGames.GameSystem
                 InjectByClass(item);
             }
 
-            foreach (var item in registerInstance)
+            foreach (var item in resolveTargetInstance)
             {
                 InjectByClass(item);
             }
@@ -132,7 +135,7 @@ namespace MacacaGames.GameSystem
                 allApplicationLifeCycles.Add(item.GetType(), item);
             }
 
-            foreach (var item in registerInstance)
+            foreach (var item in resolveTargetInstance)
             {
                 if (item is IApplicationLifeCycle applicationLifeCycle)
                 {
@@ -143,6 +146,7 @@ namespace MacacaGames.GameSystem
 
             applicationExecutor.Add(ApplicationTask());
             applicationExecutor.Add(ApplicationUpdateRunner());
+            IsInit = true;
         }
 
         IEnumerator ApplicationUpdateRunner()
@@ -343,7 +347,7 @@ namespace MacacaGames.GameSystem
         public object GetRegisterInstance(Type t)
         {
             object result;
-            result = registerInstance.SingleOrDefault(m => m.GetType() == t);
+            result = resolveTargetInstance.SingleOrDefault(m => m.GetType() == t);
             return result;
         }
 
@@ -387,15 +391,39 @@ namespace MacacaGames.GameSystem
         }
 
         #endregion
+
         #region  Injection
 
+        /// <summary>
+        /// Create a new instance with target type and do inject immediately
+        /// </summary>
+        /// <param name="type">The object type to create new instance</param>
+        /// <param name="inject">Inject the reference in new instance</param>
+        /// <returns>The new Instance</returns>
+        public object CreateInstance(Type type, bool inject = true)
+        {
+            object result = Activator.CreateInstance(type);
+            if (IsInit && inject)
+                InjectByClass(result);
+            return result;
+        }
 
-        object[] GenerateRegisterInstance(Type[] types)
+        /// <summary>
+        /// Create a new instance with target type and do inject immediately
+        /// </summary>
+        /// <param name="inject">Inject the reference in new instance</param>
+        /// <typeparam name="T">The object type to create new instance </typeparam>
+        public T CreateInstance<T>(bool inject = true) where T : class
+        {
+            return CreateInstance(typeof(T), inject) as T;
+        }
+
+        object[] GenerateResolveTargetInstance(Type[] types)
         {
             List<object> result = new List<object>();
             foreach (var item in types)
             {
-                var temp = Activator.CreateInstance(item);
+                var temp = CreateInstance(item, false);
                 result.Add(temp);
             }
             return result.ToArray();
@@ -407,8 +435,8 @@ namespace MacacaGames.GameSystem
             var assemblies = AppDomain.CurrentDomain.GetAssemblies();
             return assemblies
                     .SelectMany(s => s.GetTypes())
-                    .Where(p => p.GetCustomAttribute(typeof(RegisterAttribute), true) != null)
-                    .OrderBy(p => p.GetCustomAttribute<RegisterAttribute>(true).order);
+                    .Where(p => p.GetCustomAttribute(typeof(ResolveTargetAttribute), true) != null)
+                    .OrderBy(p => p.GetCustomAttribute<ResolveTargetAttribute>(true).order);
 
             // bool IsSystemLifeCycle(Type t)
             // {

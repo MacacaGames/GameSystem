@@ -42,13 +42,13 @@ namespace MacacaGames.GameSystem
     /// Mark a class the can be inject by ApplicationController inject system
     /// </summary>
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
-    public class RegisterAttribute : Attribute
+    public class ResolveTargetAttribute : Attribute
     {
         /// <summary>
         /// Mark a class the can be inject by ApplicationController inject system
         /// </summary>
         /// <param name="order">The order, smaller is earier</param>
-        public RegisterAttribute(int order)
+        public ResolveTargetAttribute(int order)
         {
             this.order = order;
         }
