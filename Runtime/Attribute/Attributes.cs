@@ -3,7 +3,7 @@ using System;
 namespace MacacaGames.GameSystem
 {
     /// <summary>
-    /// Mark a Property or Field inside IApplicationInjectable that can be Injected by ApplicationController
+    /// Mark a Property or Field inside a class that can be Injected by ApplicationController
     /// Remember the member needs to be accessable to make the Injection work.
     /// </summary>
     /// <example>
@@ -28,7 +28,7 @@ namespace MacacaGames.GameSystem
     /// class ChildClass : BaseClass{
     ///     
     /// }
-    /// class BaseClass : IApplicationInjectable{
+    /// class BaseClass {
     ///     privete SomeClass privateItem;
     ///     protected SomeClass protectedItem;
     ///     public SomeClass publicItem;
