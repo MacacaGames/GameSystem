@@ -63,6 +63,13 @@
 
 <p>See <a href="https://macacagames.github.io/GameSystem/">Document</a> for more detail.</p>
 <h1 id="welcome-to-macaca-gamesystem">Welcome to Macaca GameSystem</h1>
+<p>Macaca GameSystem is a framework to build game life cycle in Unity3D.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Life cycle management and callback.</li>
+<li>Replaceable gamelogic implement via Unity's ScriptableObject.</li>
+<li>Contains a lightweight dependency injection system.</li>
+</ul>
 <h2 id="installation">Installation</h2>
 <h3 id="option-1-unity-package-manager">Option 1: Unity Package manager</h3>
 <p>Add it to your editor's <code>manifest.json</code> file like this:</p>
@@ -79,6 +86,86 @@
 
 git submodule add https://github.com/MacacaGames/mast.git Assets/Mast
 </code></pre>
+<h2 id="gameplaydata">GamePlayData</h2>
+<p>GamePlayData is the main game logic implemention. Do your logic in the callbacks to complete your game. For each callback's detail please see <a href="https://macacagames.github.io/GameSystem/api/MacacaGames.GameSystem.GamePlayData.html">Document</a></p>
+<pre><code class="lang-csharp">public abstract IEnumerator GamePlay();
+
+public abstract IEnumerator GameResult();
+
+public abstract void OnGameValueReset();
+
+public abstract IEnumerator OnEnterGame();
+
+public abstract void OnLeaveGame();
+
+public abstract void OnGameEnd();
+
+public abstract void OnGameSuccess();
+
+public abstract void OnGameLose();
+
+public abstract void OnGameFaild();
+
+public abstract IEnumerator OnContinueFlow(IReturn&lt;bool&gt; result);
+
+public abstract bool IsContinueAvailable { get; }
+
+public abstract void OnContinue();
+
+public abstract void Init();
+
+public abstract void OnApplicationBeforeGamePlay();
+
+public abstract void OnGUI();
+</code></pre>
+<h2 id="injection">Injection</h2>
+<p>Game System contains a lightweight dependency inject system, help you to resolve the reference problem in the game.</p>
+<p>Use the <code>[ResloveTarget]</code> attribute to mark a class to become a injectable object.</p>
+<p>Each MonoBehaviourLifeCycle and ScriptableObjectLifeCycle in the scene or referenced on ApplicationController will also injectable.</p>
+<p>And use ```[Inject]`` attribute on the target field/property. Finally use ResolveInjection to complete injection.</p>
+<p>All MonoBehaviourLifeCycle, ScriptableObjectLifeCycle and GamePlayData will complete the injtection automatically on each instance during Init phase.</p>
+<p>Example</p>
+<pre><code class="lang-csharp">[ResloveTarget]
+public class MySystem { }
+
+public class MyMonoBehaviourLifeCycle : MonoBehaviourLifeCycle { }
+
+public class MyScriptableObjectLifeCycle : ScriptableObjectLifeCycle { }
+
+public MyMonoBehaviour : MonoBehaviour{
+    [Inject]
+    MySystem mySystem;
+
+    [Inject]
+    MyMonoBehaviourLifeCycle myMonoBehaviourLifeCycle;
+
+    [Inject]
+    MyScriptableObjectLifeCycle myScriptableObjectLifeCycle;
+
+    //Call ApplicationController.Instance.ResolveInjection(this); to inject all [Inject] member
+    void Awake(){
+        ApplicationController.Instance.ResolveInjection(this);
+    }
+}
+
+public MyOtherClass{
+    [Inject]
+    MySystem mySystem;
+
+    [Inject]
+    MyMonoBehaviourLifeCycle myMonoBehaviourLifeCycle;
+
+    [Inject]
+    MyScriptableObjectLifeCycle myScriptableObjectLifeCycle;
+
+    //On a normal class you can call ApplicationController.Instance.ResolveInjection(this); in the constructor
+    public MyOtherClass(){
+        ApplicationController.Instance.ResolveInjection(this);
+    }
+}
+</code></pre>
+<h3 id="applicationautoinjecter">ApplicationAutoInjecter</h3>
+<p>On a GameObject you can attach <code>ApplicationAutoInjecter</code> component which will complete the injtection automatically on all component on the GameObject when the GameObject is created.</p>
 </article>
           </div>
           

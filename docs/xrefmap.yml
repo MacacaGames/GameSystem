@@ -19,28 +19,28 @@ references:
   commentId: T:MacacaGames.GameSystem.ApplicationController
   fullName: MacacaGames.GameSystem.ApplicationController
   nameWithType: ApplicationController
-- uid: MacacaGames.GameSystem.ApplicationController.GetApplicationLifeCycle(System.Type)
-  name: GetApplicationLifeCycle(Type)
-  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetApplicationLifeCycle_System_Type_
-  commentId: M:MacacaGames.GameSystem.ApplicationController.GetApplicationLifeCycle(System.Type)
-  fullName: MacacaGames.GameSystem.ApplicationController.GetApplicationLifeCycle(System.Type)
-  nameWithType: ApplicationController.GetApplicationLifeCycle(Type)
-- uid: MacacaGames.GameSystem.ApplicationController.GetApplicationLifeCycle*
-  name: GetApplicationLifeCycle
-  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetApplicationLifeCycle_
-  commentId: Overload:MacacaGames.GameSystem.ApplicationController.GetApplicationLifeCycle
+- uid: MacacaGames.GameSystem.ApplicationController.CreateInstance(System.Type,System.Boolean)
+  name: CreateInstance(Type, Boolean)
+  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_CreateInstance_System_Type_System_Boolean_
+  commentId: M:MacacaGames.GameSystem.ApplicationController.CreateInstance(System.Type,System.Boolean)
+  fullName: MacacaGames.GameSystem.ApplicationController.CreateInstance(System.Type, System.Boolean)
+  nameWithType: ApplicationController.CreateInstance(Type, Boolean)
+- uid: MacacaGames.GameSystem.ApplicationController.CreateInstance*
+  name: CreateInstance
+  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_CreateInstance_
+  commentId: Overload:MacacaGames.GameSystem.ApplicationController.CreateInstance
   isSpec: "True"
-  fullName: MacacaGames.GameSystem.ApplicationController.GetApplicationLifeCycle
-  nameWithType: ApplicationController.GetApplicationLifeCycle
-- uid: MacacaGames.GameSystem.ApplicationController.GetApplicationLifeCycle``1
-  name: GetApplicationLifeCycle<T>()
-  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetApplicationLifeCycle__1
-  commentId: M:MacacaGames.GameSystem.ApplicationController.GetApplicationLifeCycle``1
-  name.vb: GetApplicationLifeCycle(Of T)()
-  fullName: MacacaGames.GameSystem.ApplicationController.GetApplicationLifeCycle<T>()
-  fullName.vb: MacacaGames.GameSystem.ApplicationController.GetApplicationLifeCycle(Of T)()
-  nameWithType: ApplicationController.GetApplicationLifeCycle<T>()
-  nameWithType.vb: ApplicationController.GetApplicationLifeCycle(Of T)()
+  fullName: MacacaGames.GameSystem.ApplicationController.CreateInstance
+  nameWithType: ApplicationController.CreateInstance
+- uid: MacacaGames.GameSystem.ApplicationController.CreateInstance``1(System.Boolean)
+  name: CreateInstance<T>(Boolean)
+  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_CreateInstance__1_System_Boolean_
+  commentId: M:MacacaGames.GameSystem.ApplicationController.CreateInstance``1(System.Boolean)
+  name.vb: CreateInstance(Of T)(Boolean)
+  fullName: MacacaGames.GameSystem.ApplicationController.CreateInstance<T>(System.Boolean)
+  fullName.vb: MacacaGames.GameSystem.ApplicationController.CreateInstance(Of T)(System.Boolean)
+  nameWithType: ApplicationController.CreateInstance<T>(Boolean)
+  nameWithType.vb: ApplicationController.CreateInstance(Of T)(Boolean)
 - uid: MacacaGames.GameSystem.ApplicationController.GetGamePlayController
   name: GetGamePlayController()
   href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetGamePlayController
@@ -54,28 +54,28 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.ApplicationController.GetGamePlayController
   nameWithType: ApplicationController.GetGamePlayController
-- uid: MacacaGames.GameSystem.ApplicationController.GetGameSystem(System.Type)
-  name: GetGameSystem(Type)
-  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetGameSystem_System_Type_
-  commentId: M:MacacaGames.GameSystem.ApplicationController.GetGameSystem(System.Type)
-  fullName: MacacaGames.GameSystem.ApplicationController.GetGameSystem(System.Type)
-  nameWithType: ApplicationController.GetGameSystem(Type)
-- uid: MacacaGames.GameSystem.ApplicationController.GetGameSystem*
-  name: GetGameSystem
-  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetGameSystem_
-  commentId: Overload:MacacaGames.GameSystem.ApplicationController.GetGameSystem
+- uid: MacacaGames.GameSystem.ApplicationController.GetMonobehaviourLifeCycle(System.Type)
+  name: GetMonobehaviourLifeCycle(Type)
+  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetMonobehaviourLifeCycle_System_Type_
+  commentId: M:MacacaGames.GameSystem.ApplicationController.GetMonobehaviourLifeCycle(System.Type)
+  fullName: MacacaGames.GameSystem.ApplicationController.GetMonobehaviourLifeCycle(System.Type)
+  nameWithType: ApplicationController.GetMonobehaviourLifeCycle(Type)
+- uid: MacacaGames.GameSystem.ApplicationController.GetMonobehaviourLifeCycle*
+  name: GetMonobehaviourLifeCycle
+  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetMonobehaviourLifeCycle_
+  commentId: Overload:MacacaGames.GameSystem.ApplicationController.GetMonobehaviourLifeCycle
   isSpec: "True"
-  fullName: MacacaGames.GameSystem.ApplicationController.GetGameSystem
-  nameWithType: ApplicationController.GetGameSystem
-- uid: MacacaGames.GameSystem.ApplicationController.GetGameSystem``1
-  name: GetGameSystem<T>()
-  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetGameSystem__1
-  commentId: M:MacacaGames.GameSystem.ApplicationController.GetGameSystem``1
-  name.vb: GetGameSystem(Of T)()
-  fullName: MacacaGames.GameSystem.ApplicationController.GetGameSystem<T>()
-  fullName.vb: MacacaGames.GameSystem.ApplicationController.GetGameSystem(Of T)()
-  nameWithType: ApplicationController.GetGameSystem<T>()
-  nameWithType.vb: ApplicationController.GetGameSystem(Of T)()
+  fullName: MacacaGames.GameSystem.ApplicationController.GetMonobehaviourLifeCycle
+  nameWithType: ApplicationController.GetMonobehaviourLifeCycle
+- uid: MacacaGames.GameSystem.ApplicationController.GetMonobehaviourLifeCycle``1
+  name: GetMonobehaviourLifeCycle<T>()
+  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetMonobehaviourLifeCycle__1
+  commentId: M:MacacaGames.GameSystem.ApplicationController.GetMonobehaviourLifeCycle``1
+  name.vb: GetMonobehaviourLifeCycle(Of T)()
+  fullName: MacacaGames.GameSystem.ApplicationController.GetMonobehaviourLifeCycle<T>()
+  fullName.vb: MacacaGames.GameSystem.ApplicationController.GetMonobehaviourLifeCycle(Of T)()
+  nameWithType: ApplicationController.GetMonobehaviourLifeCycle<T>()
+  nameWithType.vb: ApplicationController.GetMonobehaviourLifeCycle(Of T)()
 - uid: MacacaGames.GameSystem.ApplicationController.GetRegisterInstance(System.Type)
   name: GetRegisterInstance(Type)
   href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetRegisterInstance_System_Type_
@@ -89,6 +89,28 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.ApplicationController.GetRegisterInstance
   nameWithType: ApplicationController.GetRegisterInstance
+- uid: MacacaGames.GameSystem.ApplicationController.GetScriptableLifeCycle(System.Type)
+  name: GetScriptableLifeCycle(Type)
+  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetScriptableLifeCycle_System_Type_
+  commentId: M:MacacaGames.GameSystem.ApplicationController.GetScriptableLifeCycle(System.Type)
+  fullName: MacacaGames.GameSystem.ApplicationController.GetScriptableLifeCycle(System.Type)
+  nameWithType: ApplicationController.GetScriptableLifeCycle(Type)
+- uid: MacacaGames.GameSystem.ApplicationController.GetScriptableLifeCycle*
+  name: GetScriptableLifeCycle
+  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetScriptableLifeCycle_
+  commentId: Overload:MacacaGames.GameSystem.ApplicationController.GetScriptableLifeCycle
+  isSpec: "True"
+  fullName: MacacaGames.GameSystem.ApplicationController.GetScriptableLifeCycle
+  nameWithType: ApplicationController.GetScriptableLifeCycle
+- uid: MacacaGames.GameSystem.ApplicationController.GetScriptableLifeCycle``1
+  name: GetScriptableLifeCycle<T>()
+  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetScriptableLifeCycle__1
+  commentId: M:MacacaGames.GameSystem.ApplicationController.GetScriptableLifeCycle``1
+  name.vb: GetScriptableLifeCycle(Of T)()
+  fullName: MacacaGames.GameSystem.ApplicationController.GetScriptableLifeCycle<T>()
+  fullName.vb: MacacaGames.GameSystem.ApplicationController.GetScriptableLifeCycle(Of T)()
+  nameWithType: ApplicationController.GetScriptableLifeCycle<T>()
+  nameWithType.vb: ApplicationController.GetScriptableLifeCycle(Of T)()
 - uid: MacacaGames.GameSystem.ApplicationController.Init
   name: Init()
   href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_Init
@@ -121,6 +143,12 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.ApplicationController.isInGame
   nameWithType: ApplicationController.isInGame
+- uid: MacacaGames.GameSystem.ApplicationController.IsInit
+  name: IsInit
+  href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_IsInit
+  commentId: F:MacacaGames.GameSystem.ApplicationController.IsInit
+  fullName: MacacaGames.GameSystem.ApplicationController.IsInit
+  nameWithType: ApplicationController.IsInit
 - uid: MacacaGames.GameSystem.ApplicationController.RegistApplicationExecuter(Rayark.Mast.IResumable)
   name: RegistApplicationExecuter(IResumable)
   href: api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_RegistApplicationExecuter_Rayark_Mast_IResumable_
@@ -819,31 +847,31 @@ references:
   isSpec: "True"
   fullName: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnUnPauseGamePlayUpdate
   nameWithType: MonoBehaviourLifeCycle.OnUnPauseGamePlayUpdate
-- uid: MacacaGames.GameSystem.RegisterAttribute
-  name: RegisterAttribute
-  href: api/MacacaGames.GameSystem.RegisterAttribute.html
-  commentId: T:MacacaGames.GameSystem.RegisterAttribute
-  fullName: MacacaGames.GameSystem.RegisterAttribute
-  nameWithType: RegisterAttribute
-- uid: MacacaGames.GameSystem.RegisterAttribute.#ctor(System.Int32)
-  name: RegisterAttribute(Int32)
-  href: api/MacacaGames.GameSystem.RegisterAttribute.html#MacacaGames_GameSystem_RegisterAttribute__ctor_System_Int32_
-  commentId: M:MacacaGames.GameSystem.RegisterAttribute.#ctor(System.Int32)
-  fullName: MacacaGames.GameSystem.RegisterAttribute.RegisterAttribute(System.Int32)
-  nameWithType: RegisterAttribute.RegisterAttribute(Int32)
-- uid: MacacaGames.GameSystem.RegisterAttribute.#ctor*
-  name: RegisterAttribute
-  href: api/MacacaGames.GameSystem.RegisterAttribute.html#MacacaGames_GameSystem_RegisterAttribute__ctor_
-  commentId: Overload:MacacaGames.GameSystem.RegisterAttribute.#ctor
+- uid: MacacaGames.GameSystem.ResolveTargetAttribute
+  name: ResolveTargetAttribute
+  href: api/MacacaGames.GameSystem.ResolveTargetAttribute.html
+  commentId: T:MacacaGames.GameSystem.ResolveTargetAttribute
+  fullName: MacacaGames.GameSystem.ResolveTargetAttribute
+  nameWithType: ResolveTargetAttribute
+- uid: MacacaGames.GameSystem.ResolveTargetAttribute.#ctor(System.Int32)
+  name: ResolveTargetAttribute(Int32)
+  href: api/MacacaGames.GameSystem.ResolveTargetAttribute.html#MacacaGames_GameSystem_ResolveTargetAttribute__ctor_System_Int32_
+  commentId: M:MacacaGames.GameSystem.ResolveTargetAttribute.#ctor(System.Int32)
+  fullName: MacacaGames.GameSystem.ResolveTargetAttribute.ResolveTargetAttribute(System.Int32)
+  nameWithType: ResolveTargetAttribute.ResolveTargetAttribute(Int32)
+- uid: MacacaGames.GameSystem.ResolveTargetAttribute.#ctor*
+  name: ResolveTargetAttribute
+  href: api/MacacaGames.GameSystem.ResolveTargetAttribute.html#MacacaGames_GameSystem_ResolveTargetAttribute__ctor_
+  commentId: Overload:MacacaGames.GameSystem.ResolveTargetAttribute.#ctor
   isSpec: "True"
-  fullName: MacacaGames.GameSystem.RegisterAttribute.RegisterAttribute
-  nameWithType: RegisterAttribute.RegisterAttribute
-- uid: MacacaGames.GameSystem.RegisterAttribute.order
+  fullName: MacacaGames.GameSystem.ResolveTargetAttribute.ResolveTargetAttribute
+  nameWithType: ResolveTargetAttribute.ResolveTargetAttribute
+- uid: MacacaGames.GameSystem.ResolveTargetAttribute.order
   name: order
-  href: api/MacacaGames.GameSystem.RegisterAttribute.html#MacacaGames_GameSystem_RegisterAttribute_order
-  commentId: F:MacacaGames.GameSystem.RegisterAttribute.order
-  fullName: MacacaGames.GameSystem.RegisterAttribute.order
-  nameWithType: RegisterAttribute.order
+  href: api/MacacaGames.GameSystem.ResolveTargetAttribute.html#MacacaGames_GameSystem_ResolveTargetAttribute_order
+  commentId: F:MacacaGames.GameSystem.ResolveTargetAttribute.order
+  fullName: MacacaGames.GameSystem.ResolveTargetAttribute.order
+  nameWithType: ResolveTargetAttribute.order
 - uid: MacacaGames.GameSystem.ScriptableObjectLifeCycle
   name: ScriptableObjectLifeCycle
   href: api/MacacaGames.GameSystem.ScriptableObjectLifeCycle.html

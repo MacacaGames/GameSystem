@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.ApplicationController.html",
-          "hash": "VvkCmXL9XbBAk3lxQLU8jw=="
+          "hash": "UesqKQbzA0g2zZyjv9jl8g=="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.GamePlayController.html",
-          "hash": "npJVrGdd9bNSZPvuzXQzSg=="
+          "hash": "z5ZC/B+3xkZ+y1a+iyaxWA=="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.GamePlayData.html",
-          "hash": "WXmxbAhhylDAbuKnX4lTug=="
+          "hash": "nDJsJvqlWRBz9/dMWGFu5Q=="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.InjectAttribute.html",
-          "hash": "55a6kPXZPku5QhSZBHzo4w=="
+          "hash": "wbW+lmUsagEuHu1VZG80oA=="
         }
       },
       "is_incremental": false,
@@ -77,11 +77,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/MacacaGames.GameSystem.RegisterAttribute.yml",
+      "source_relative_path": "api/MacacaGames.GameSystem.ResolveTargetAttribute.yml",
       "output": {
         ".html": {
-          "relative_path": "api/MacacaGames.GameSystem.RegisterAttribute.html",
-          "hash": "n2UuEaWsU6UDyKCgHuJ67g=="
+          "relative_path": "api/MacacaGames.GameSystem.ResolveTargetAttribute.html",
+          "hash": "OAQDYrOfvTJ7sEBAzfQ6GQ=="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.html",
-          "hash": "B/8cezuMhEdr8A8pDC7E/w=="
+          "hash": "ymjhNA0y+NnLJL1oIWyhcQ=="
         }
       },
       "is_incremental": false,
@@ -120,7 +120,7 @@
           "hash": "NWGPANvwYtKLf3lUFRDImA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "BZEiK79W9JweFhuTOlU19Q=="
+          "hash": "TN1iLn+y71JmojLj3e379Q=="
         }
       },
       "is_incremental": false,
@@ -152,10 +152,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "Doola1KesXM3p2wZkhbTEA=="
+          "hash": "UUBQuWdcFWVxR1j1fHE3GQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -195,13 +195,13 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 2,
-          "skipped_file_count": 2
+          "skipped_file_count": 1
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 9,
-          "skipped_file_count": 1
+          "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
