@@ -36,18 +36,16 @@ namespace MacacaGames.GameSystem
             get { return _applicationController; }
         }
 
+        /// <summary>
+        /// Same as ApplicationController Init.
+        /// </summary>
+        public abstract void Init();
+
 
         /// <summary>
-        /// Main logic of the game
+        /// Same as ApplicationController OnApplicationBeforeGamePlay.
         /// </summary>
-        /// <returns></returns>
-        public abstract IEnumerator GamePlay();
-
-        /// <summary>
-        /// Only work during play died or clear, not on quit
-        /// </summary>
-        /// <returns></returns>
-        public abstract IEnumerator GameResult();
+        public abstract void OnApplicationBeforeGamePlay();
 
         /// <summary>
         /// Reset all gameplay relalte value
@@ -60,23 +58,37 @@ namespace MacacaGames.GameSystem
         public abstract IEnumerator OnEnterGame();
 
         /// <summary>
+        /// Main logic of the game
+        /// </summary>
+        /// <returns></returns>
+        public abstract IEnumerator GamePlay();
+
+
+        /// <summary>
         /// Excude after GamePlay() is end, but before GameResult()
         /// </summary>
         public abstract void OnLeaveGame();
 
         /// <summary>
-        /// Game total end, no mater is died, clear or quit.
-        /// </summary>
-        public abstract void OnGameEnd();
-
-        /// <summary>
         /// Execude after GamePlay() is end, but before GameResult(), exclude Quitting & Failing
         /// </summary>
         public abstract void OnGameSuccess();
+
         /// <summary>
         /// Game Lose .
         /// </summary>
         public abstract void OnGameLose();
+
+        /// <summary>
+        /// Only work during play died or clear, not on quit
+        /// </summary>
+        /// <returns></returns>
+        public abstract IEnumerator GameResult();
+
+        /// <summary>
+        /// Game total end, no mater is died, clear or quit.
+        /// </summary>
+        public abstract void OnGameEnd();
 
         /// <summary>
         /// Game Failed.
@@ -101,15 +113,6 @@ namespace MacacaGames.GameSystem
         /// </summary>
         public abstract void OnContinue();
 
-        /// <summary>
-        /// Same as ApplicationController Init.
-        /// </summary>
-        public abstract void Init();
-
-        /// <summary>
-        /// Same as ApplicationController OnApplicationBeforeGamePlay.
-        /// </summary>
-        public abstract void OnApplicationBeforeGamePlay();
         public abstract void OnGUI();
 
     }

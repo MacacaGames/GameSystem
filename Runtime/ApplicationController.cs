@@ -275,7 +275,7 @@ namespace MacacaGames.GameSystem
         /// </summary>
         /// <typeparam name="T">The game system class you wish to get</typeparam>
         /// <returns>The game system instance, null if no instance</returns>
-        public T GetGameSystem<T>() where T : ScriptableObjectLifeCycle
+        public T GetScriptableLifeCycle<T>() where T : ScriptableObjectLifeCycle
         {
             T result;
             result = scriptableObjectLifeCycleInstances.SingleOrDefault(m => m is T) as T;
@@ -287,7 +287,7 @@ namespace MacacaGames.GameSystem
         /// </summary>
         /// <param name="t">The game system class you wish to get</param>
         /// <returns>The game system instance, null if no instance</returns>
-        public object GetGameSystem(Type t)
+        public object GetScriptableLifeCycle(Type t)
         {
             object result;
             result = scriptableObjectLifeCycleInstances.SingleOrDefault(m => m.GetType() == t);
@@ -308,7 +308,7 @@ namespace MacacaGames.GameSystem
         /// </summary>
         /// <typeparam name="T">The ApplicationLifeCycle class you wish to get</typeparam>
         /// <returns>The ApplicationLifeCycle instance, null if no instance</returns>
-        public T GetApplicationLifeCycle<T>() where T : MonoBehaviourLifeCycle
+        public T GetMonobehaviourLifeCycle<T>() where T : MonoBehaviourLifeCycle
         {
             T result;
             result = monoBehaviourLifeCycleInstance.SingleOrDefault(m => m is T) as T;
@@ -320,7 +320,7 @@ namespace MacacaGames.GameSystem
         /// </summary>
         /// <typeparam name="T">The ApplicationLifeCycle class you wish to get</typeparam>
         /// <returns>The ApplicationLifeCycle instance, null if no instance</returns>
-        public object GetApplicationLifeCycle(Type t)
+        public object GetMonobehaviourLifeCycle(Type t)
         {
             object result;
             result = monoBehaviourLifeCycleInstance.SingleOrDefault(m => m.GetType() == t);
@@ -501,11 +501,11 @@ namespace MacacaGames.GameSystem
             {
                 if (t.IsSubclassOf(typeof(MonoBehaviourLifeCycle)))
                 {
-                    return GetApplicationLifeCycle(t);
+                    return GetMonobehaviourLifeCycle(t);
                 }
                 if (t.IsSubclassOf(typeof(ScriptableObjectLifeCycle)))
                 {
-                    return GetGameSystem(t);
+                    return GetScriptableLifeCycle(t);
                 }
                 if (t.IsSubclassOf(typeof(GamePlayData)))
                 {
