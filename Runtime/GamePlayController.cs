@@ -24,15 +24,13 @@ namespace MacacaGames.GameSystem
 {
     public class GamePlayController
     {
-        GamePlayData currentGamePlayData;
+        IGamePlayData currentGamePlayData;
         private ApplicationController _applicationController;
 
-        public GamePlayController(ApplicationController _applicationController, GamePlayData gamePlayData)
+        public GamePlayController(ApplicationController _applicationController, IGamePlayData gamePlayData)
         {
             this._applicationController = _applicationController;
             currentGamePlayData = gamePlayData;
-            currentGamePlayData.SetGamePlayController(this);
-            currentGamePlayData.SetApplicationController(_applicationController);
         }
 
         public void Init()
@@ -49,7 +47,7 @@ namespace MacacaGames.GameSystem
         /// Get the current GamePlayData 
         /// </summary>
         /// <returns>GamePlayData</returns>
-        public GamePlayData GetGamePlayData()
+        public IGamePlayData GetGamePlayData()
         {
             return currentGamePlayData;
         }
@@ -59,11 +57,10 @@ namespace MacacaGames.GameSystem
         /// </summary>
         /// <typeparam name="T">Target Type</typeparam>
         /// <returns>GamePlayData</returns>
-        public T GetGamePlayData<T>() where T : GamePlayData
+        public T GetGamePlayData<T>() where T : class, IGamePlayData
         {
             return currentGamePlayData as T;
         }
-
 
         public Executor GamePlayControllerCoreLoop(IEnumerator gamePlayUpdate, IEnumerator unPauseGamePlayUpdate)
         {
@@ -99,7 +96,7 @@ namespace MacacaGames.GameSystem
         /// <summary>
         /// Failed and exit the gameplay, this will fire continue flow(if continue is available)
         /// <see cref="GameFaildFlow()"/> for the contniue behaviour
-        /// or <see cref="GamePlayData.OnContinueFlow(IReturn{bool})()"/> for your continue implement 
+        /// or <see cref="ScriptableObjectGamePlayData.OnContinueFlow(IReturn{bool})()"/> for your continue implement 
         /// </summary>
         public void FailedGamePlay()
         {

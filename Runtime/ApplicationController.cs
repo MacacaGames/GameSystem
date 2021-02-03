@@ -47,6 +47,7 @@ namespace MacacaGames.GameSystem
     /// <summary>
     /// Main ApplicationController for all games
     /// </summary>
+    [ResolveTarget]
     public class ApplicationController : MonoBehaviour
     {
         public static ApplicationController Instance;
@@ -56,9 +57,8 @@ namespace MacacaGames.GameSystem
             Init();
         }
 
-        [SerializeField] GamePlayData gamePlayData;
+        [SerializeReference] ScriptableObjectGamePlayData gamePlayData;
         [SerializeField] ScriptableObjectLifeCycle[] scriptableObjectLifeCycle;
-
         MonoBehaviourLifeCycle[] monoBehaviourLifeCycleInstance;
         List<ScriptableObjectLifeCycle> scriptableObjectLifeCycleInstances = new List<ScriptableObjectLifeCycle>();
         object[] resolveTargetInstance;
@@ -327,18 +327,6 @@ namespace MacacaGames.GameSystem
             return result;
         }
 
-        // /// <summary>
-        // /// Get the object instance which has Register Attribute
-        // /// </summary>
-        // /// <typeparam name="T">The Register class you wish to get</typeparam>
-        // /// <returns>The Register instance, null if no instance</returns>
-        // public T GetRegisterInstance<T>() where T : MonoBehaviourLifeCycle
-        // {
-        //     T result;
-        //     result = monoBehaviourLifeCycleInstance.SingleOrDefault(m => m is T) as T;
-        //     return result;
-        // }
-
         /// <summary>
         /// Get the object instance which has Register Attribute
         /// </summary>
@@ -499,6 +487,14 @@ namespace MacacaGames.GameSystem
 
             object GetInstanceValue(Type t)
             {
+                if (t.IsSubclassOf(typeof(GamePlayController)) || t == typeof(GamePlayController))
+                {
+                    return GetGamePlayController();
+                }
+                if (t.IsSubclassOf(typeof(ApplicationController)) || t == typeof(ApplicationController))
+                {
+                    return this;
+                }
                 if (t.IsSubclassOf(typeof(MonoBehaviourLifeCycle)))
                 {
                     return GetMonobehaviourLifeCycle(t);
@@ -507,7 +503,8 @@ namespace MacacaGames.GameSystem
                 {
                     return GetScriptableLifeCycle(t);
                 }
-                if (t.IsSubclassOf(typeof(GamePlayData)))
+
+                if (typeof(IGamePlayData).IsAssignableFrom(t))
                 {
                     return GetGamePlayController().GetGamePlayData();
                 }

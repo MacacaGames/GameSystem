@@ -11,29 +11,20 @@ namespace MacacaGames.GameSystem
     /// Faild : Player is died, Player may died muilple times during one gameplay
     /// Quit : Player give up the gameplay, usually leave gameplay by UI.
     /// </summary>
-    public abstract class GamePlayData : ScriptableObject
+    public abstract class ScriptableObjectGamePlayData : ScriptableObject, IGamePlayData
     {
-        GamePlayController _gamePlayController;
-        ApplicationController _applicationController;
-
-        public void SetGamePlayController(GamePlayController _gamePlayController)
-        {
-            this._gamePlayController = _gamePlayController;
-        }
-
+        [Inject]
         public GamePlayController gamePlayController
         {
-            get { return _gamePlayController; }
+            get;
+            set;
         }
 
-        public void SetApplicationController(ApplicationController _applicationController)
+        [Inject]
+        public ApplicationController applicationController
         {
-            this._applicationController = _applicationController;
-        }
-
-        protected ApplicationController applicationController
-        {
-            get { return _applicationController; }
+            get;
+            set;
         }
 
         /// <summary>
@@ -107,6 +98,8 @@ namespace MacacaGames.GameSystem
         /// </summary>
         /// <value></value>
         public abstract bool IsContinueAvailable { get; }
+
+
 
         /// <summary>
         /// While the result in OnContinueFlow is true, do anything require to continue the gameplay on this callback.
