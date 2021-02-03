@@ -87,7 +87,6 @@ namespace MacacaGames.GameSystem
             if (IsInit) return;
             OnApplicationInit?.Invoke();
             gamePlayController = new GamePlayController(this, gamePlayData);
-            gamePlayController.Init();
             applicationExecutor = new Executor();
 
             //Prepare Instance
@@ -124,6 +123,8 @@ namespace MacacaGames.GameSystem
             }
 
             //Init
+            gamePlayController.Init();
+
             foreach (var item in scriptableObjectLifeCycleInstances)
             {
                 item.Init();
