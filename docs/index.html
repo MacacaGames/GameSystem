@@ -71,7 +71,7 @@
 <li>Contains a lightweight dependency injection system.</li>
 </ul>
 <h2 id="installation">Installation</h2>
-<h3 id="option-1-unity-package-manager">Option 1: Unity Package manager</h3>
+<h3 id="option-1-unity-package-manager-recommend">Option 1: Unity Package manager (Recommend)</h3>
 <p>Add it to your editor's <code>manifest.json</code> file like this:</p>
 <pre><code class="lang-json">{
     &quot;dependencies&quot;: {
@@ -86,45 +86,60 @@
 
 git submodule add https://github.com/MacacaGames/mast.git Assets/Mast
 </code></pre>
-<h2 id="gameplaydata">GamePlayData</h2>
-<p>GamePlayData is the main game logic implemention. Do your logic in the callbacks to complete your game. For each callback's detail please see <a href="https://macacagames.github.io/GameSystem/api/MacacaGames.GameSystem.GamePlayData.html">Document</a></p>
-<pre><code class="lang-csharp">public abstract IEnumerator GamePlay();
+<h2 id="igameplaydata">IGamePlayData</h2>
+<p>IGamePlayData is the main game logic implemention. Do your logic in the callbacks to complete your game. For each callback's detail please see <a href="https://macacagames.github.io/GameSystem/api/MacacaGames.GameSystem.IGamePlayData.html">Document</a></p>
+<p>Create a cs file which inherit from ScriptableObjectGamePlayData, and referenced it to ApplicationController.</p>
+<pre><code class="lang-csharp">void Init();
 
-public abstract IEnumerator GameResult();
+void OnApplicationBeforeGamePlay();
 
-public abstract void OnGameValueReset();
+void OnGameValueReset();
 
-public abstract IEnumerator OnEnterGame();
+IEnumerator OnEnterGame();
 
-public abstract void OnLeaveGame();
+IEnumerator GamePlay();
 
-public abstract void OnGameEnd();
+void OnLeaveGame();
 
-public abstract void OnGameSuccess();
+void OnGameSuccess();
 
-public abstract void OnGameLose();
+void OnGameLose();
 
-public abstract void OnGameFaild();
+IEnumerator GameResult();
 
-public abstract IEnumerator OnContinueFlow(IReturn&lt;bool&gt; result);
+void OnGameEnd();
 
-public abstract bool IsContinueAvailable { get; }
+void OnGameFaild();
 
-public abstract void OnContinue();
+IEnumerator OnContinueFlow(IReturn&lt;bool&gt; result);
 
-public abstract void Init();
+bool IsContinueAvailable { get; }
 
-public abstract void OnApplicationBeforeGamePlay();
+void OnContinue();
 
-public abstract void OnGUI();
+void OnGUI();
+</code></pre>
+<h2 id="highlight-api">Highlight API</h2>
+<p>The most useful API in this library.</p>
+<pre><code class="lang-csharp">// Call StartGame to start the game.
+ApplicationController.Instance.StartGame();
+
+// Get the GamePlayController and control the game state with below apis
+GamePlayController gamePlayController = ApplicationController.Instance.GetGamePlayController();
+
+gamePlayController.SuccessGamePlay();
+gamePlayController.FailedGamePlay();
+gamePlayController.QuitGamePlay();
+gamePlayController.EnterPause();
+gamePlayController.ResumePause();
 </code></pre>
 <h2 id="injection">Injection</h2>
 <p>Game System contains a lightweight dependency inject system, help you to resolve the reference problem in the game.</p>
 <p>Use the <code>[ResloveTarget]</code> attribute to mark a class to become a injectable object.</p>
 <p>Each MonoBehaviourLifeCycle and ScriptableObjectLifeCycle in the scene or referenced on ApplicationController will also injectable.</p>
-<p>And use ```[Inject]`` attribute on the target field/property. Finally use ResolveInjection to complete injection.</p>
+<p>And use <code>[Inject]</code> attribute on the target field/property. Finally use ResolveInjection to complete injection.</p>
 <p>All MonoBehaviourLifeCycle, ScriptableObjectLifeCycle and GamePlayData will complete the injtection automatically on each instance during Init phase.</p>
-<p>Example</p>
+<h3 id="example">Example:</h3>
 <pre><code class="lang-csharp">[ResloveTarget]
 public class MySystem { }
 
@@ -165,7 +180,7 @@ public MyOtherClass{
 }
 </code></pre>
 <h3 id="applicationautoinjecter">ApplicationAutoInjecter</h3>
-<p>On a GameObject you can attach <code>ApplicationAutoInjecter</code> component which will complete the injtection automatically on all component on the GameObject when the GameObject is created.</p>
+<p>On a GameObject you can attach <code>ApplicationAutoInjecter</code> component which will complete the injtection automatically on all component on the GameObject when the GameObject is Instantiated.</p>
 </article>
           </div>
           

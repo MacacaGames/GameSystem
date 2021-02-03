@@ -11,7 +11,7 @@
                                 |   
                                 |   [ApplicitionController.ApplicationTask]
                                 |
-        ----------------------->| 
+        ┌─────────────>─────────┐ 
         |                       |  
         |                       |   [ApplicitionController.OnApplicationBeforeGamePlay]
         |                       |   [GameSystemBase.OnApplicationBeforeGamePlay]
@@ -21,15 +21,16 @@
         |                       |
         |                       |   [ApplicationController.Instance.StartGame] 
         |                       V
-        |                       |
-        |                       |  
-        |                       |  
-        |                       |
-        |                       |   [GamePlayData.GamePlay()]
+        |       ┌───────>──┐    |
+        |       |          |    |  
+        |       |     [GamePlayData.GamePlay()]
+        |       |          |    | 
+        |       └──────────┘    |
         |                       | 
         |                       |
         |                       |                   
-        -------------------------   [GamePlayController.SuccessGamePlay]
+        └───────────────────────┘   [GamePlayController.SuccessGamePlay]
+
 /// 
 /// 
 */
@@ -212,6 +213,7 @@ namespace MacacaGames.GameSystem
         {
             while (true)
             {
+                currentApplicationState = ApplicationState.Lobby;
                 isInGame = false;
                 OnApplicationBeforeGamePlay?.Invoke();
                 gamePlayController.OnApplicationBeforeGamePlay();
@@ -232,7 +234,7 @@ namespace MacacaGames.GameSystem
                 {
                     yield return null;
                 }
-
+                currentApplicationState = ApplicationState.Gaming;
                 //Game Start
                 gamePlayTask = gamePlayController.GamePlayControllerCoreLoop(GamePlayUpdateRunner(), UnPauseGamePlayUpdateRunner());
                 while (!gamePlayTask.Finished)
@@ -245,6 +247,18 @@ namespace MacacaGames.GameSystem
                         gamePlayTask.Resume(Rayark.Mast.Coroutine.Delta);
                     }
 
+                    if (gamePlayController.isPause)
+                    {
+                        currentApplicationState = ApplicationState.Pause;
+                    }
+                    if (gamePlayController.isContinueing)
+                    {
+                        currentApplicationState = ApplicationState.Continuing;
+                    }
+                    if (gamePlayController.isInResult)
+                    {
+                        currentApplicationState = ApplicationState.Result;
+                    }
                     yield return null;
                 }
             }
@@ -353,11 +367,7 @@ namespace MacacaGames.GameSystem
             this.isInGame = isInGame;
         }
 
-        //You should exit game through GamePlayController.QuitGamePlay
-        //public void ExitGame()
-        //{
-        //    gamePlayController.QuitGamePlay();
-        //}
+
         #region  Unity Callback
 
         void OnGUI()
@@ -378,6 +388,54 @@ namespace MacacaGames.GameSystem
             }
         }
 
+        #endregion
+
+        #region ApplicationState
+        /// <summary>
+        /// An enum to explain which state the application is.
+        /// </summary>
+        public enum ApplicationState
+        {
+            /// <summary>
+            /// Lobby is the homepage waiting for user to start the game
+            /// </summary>
+            Lobby,
+
+            /// <summary>
+            /// Gaming, means user is in the GamePlay, equal to <see cref="GamePlayController.isGaming"/> == true
+            /// , Use <see cref="GamePlayController.alreadyContinue"/> to know is the player have continue or not. 
+            /// </summary>
+            Gaming,
+
+            /// <summary>
+            /// In the gameplay but paused, equal to <see cref="GamePlayController.isPause"/>  == true
+            /// </summary>
+            Pause,
+
+            /// <summary>
+            /// GameOver and in the result, use <see cref="GamePlayController.isFailed"/> to know if the player win or lose.
+            /// </summary>
+            Result,
+
+            /// <summary>
+            /// Game faild and proccessing the continue flow
+            /// </summary>
+            Continuing,
+        }
+
+        ApplicationState currentApplicationState = ApplicationState.Lobby;
+
+        /// <summary>
+        /// Current application state
+        /// </summary>
+        /// <value>See <see cref="ApplicationController.ApplicationState"/> to get more detail about each state</value>
+        public ApplicationState CurrentApplicationState
+        {
+            get
+            {
+                return currentApplicationState;
+            }
+        }
         #endregion
 
         #region  Injection

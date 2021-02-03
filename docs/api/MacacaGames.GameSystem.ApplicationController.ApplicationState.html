@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Namespace MacacaGames.GameSystem
+    <title>Enum ApplicationController.ApplicationState
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Namespace MacacaGames.GameSystem
+    <meta name="title" content="Enum ApplicationController.ApplicationState
    ">
     <meta name="generator" content="docfx 2.56.6.0">
     
@@ -68,46 +68,58 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="MacacaGames.GameSystem">
+            <article class="content wrap" id="_content" data-uid="MacacaGames.GameSystem.ApplicationController.ApplicationState">
   
-  <h1 id="MacacaGames_GameSystem" data-uid="MacacaGames.GameSystem" class="text-break">Namespace MacacaGames.GameSystem
+  
+  <h1 id="MacacaGames_GameSystem_ApplicationController_ApplicationState" data-uid="MacacaGames.GameSystem.ApplicationController.ApplicationState" class="text-break">Enum ApplicationController.ApplicationState
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>An enum to explain which state the application is.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
-  <div class="markdown level0 remarks"></div>
-    <h3 id="classes">Classes
+  <h6><strong>Namespace</strong>: <a class="xref" href="MacacaGames.GameSystem.html">MacacaGames.GameSystem</a></h6>
+  <h6><strong>Assembly</strong>: Macaca.GameSystem.dll</h6>
+  <h5 id="MacacaGames_GameSystem_ApplicationController_ApplicationState_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public enum ApplicationState</code></pre>
+  </div>
+  <h3 id="fields">Fields
   </h3>
-      <h4><a class="xref" href="MacacaGames.GameSystem.ApplicationAutoInjecter.html">ApplicationAutoInjecter</a></h4>
-      <section></section>
-      <h4><a class="xref" href="MacacaGames.GameSystem.ApplicationController.html">ApplicationController</a></h4>
-      <section><p>Main ApplicationController for all games</p>
-</section>
-      <h4><a class="xref" href="MacacaGames.GameSystem.GamePlayController.html">GamePlayController</a></h4>
-      <section></section>
-      <h4><a class="xref" href="MacacaGames.GameSystem.InjectAttribute.html">InjectAttribute</a></h4>
-      <section><p>Mark a Property or Field inside a class that can be Injected by ApplicationController
-Remember the member needs to be accessable to make the Injection work.</p>
-</section>
-      <h4><a class="xref" href="MacacaGames.GameSystem.MonoBehaviourLifeCycle.html">MonoBehaviourLifeCycle</a></h4>
-      <section><p>MonoBehaviour based ApplicationLifeCycle object</p>
-</section>
-      <h4><a class="xref" href="MacacaGames.GameSystem.ResolveTargetAttribute.html">ResolveTargetAttribute</a></h4>
-      <section><p>Mark a class the can be inject by ApplicationController inject system</p>
-</section>
-      <h4><a class="xref" href="MacacaGames.GameSystem.ScriptableObjectGamePlayData.html">ScriptableObjectGamePlayData</a></h4>
-      <section></section>
-      <h4><a class="xref" href="MacacaGames.GameSystem.ScriptableObjectLifeCycle.html">ScriptableObjectLifeCycle</a></h4>
-      <section><p>ScriptableObject based ApplicationLifeCycle object</p>
-</section>
-    <h3 id="interfaces">Interfaces
-  </h3>
-      <h4><a class="xref" href="MacacaGames.GameSystem.IGamePlayData.html">IGamePlayData</a></h4>
-      <section></section>
-    <h3 id="enums">Enums
-  </h3>
-      <h4><a class="xref" href="MacacaGames.GameSystem.ApplicationController.ApplicationState.html">ApplicationController.ApplicationState</a></h4>
-      <section><p>An enum to explain which state the application is.</p>
-</section>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    <thead>
+    <tbody>
+      <tr>
+        <td id="MacacaGames_GameSystem_ApplicationController_ApplicationState_Continuing">Continuing</td>
+        <td><p>Game faild and proccessing the continue flow</p>
+</td>
+      </tr>
+      <tr>
+        <td id="MacacaGames_GameSystem_ApplicationController_ApplicationState_Gaming">Gaming</td>
+        <td><p>Gaming, means user is in the GamePlay, equal to <a class="xref" href="MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_isGaming">isGaming</a> == true
+, Use <a class="xref" href="MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_alreadyContinue">alreadyContinue</a> to know is the player have continue or not.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="MacacaGames_GameSystem_ApplicationController_ApplicationState_Lobby">Lobby</td>
+        <td><p>Lobby is the homepage waiting for user to start the game</p>
+</td>
+      </tr>
+      <tr>
+        <td id="MacacaGames_GameSystem_ApplicationController_ApplicationState_Pause">Pause</td>
+        <td><p>In the gameplay but paused, equal to <a class="xref" href="MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_isPause">isPause</a>  == true</p>
+</td>
+      </tr>
+      <tr>
+        <td id="MacacaGames_GameSystem_ApplicationController_ApplicationState_Result">Result</td>
+        <td><p>GameOver and in the result, use <a class="xref" href="MacacaGames.GameSystem.GamePlayController.html#MacacaGames_GameSystem_GamePlayController_isFailed">isFailed</a> to know if the player win or lose.</p>
+</td>
+      </tr>
+    </tbody>
+  </thead></thead></table>
 </article>
           </div>
           
@@ -115,6 +127,12 @@ Remember the member needs to be accessable to make the Injection work.</p>
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MacacaGames/GameSystem/new/master/apiSpec/new?filename=MacacaGames_GameSystem_ApplicationController_ApplicationState.md&amp;value=---%0Auid%3A%20MacacaGames.GameSystem.ApplicationController.ApplicationState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/MacacaGames/GameSystem/blob/master/Runtime/ApplicationController.cs/#L397" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

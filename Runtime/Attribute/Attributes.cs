@@ -44,10 +44,14 @@ namespace MacacaGames.GameSystem
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
     public class ResolveTargetAttribute : Attribute
     {
+        /// <summary>
+        /// Mark a class the can be inject by ApplicationController inject system
+        /// </summary>
         public ResolveTargetAttribute()
         {
             this.order = 0;
         }
+        
         /// <summary>
         /// Mark a class the can be inject by ApplicationController inject system
         /// </summary>

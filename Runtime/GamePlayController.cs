@@ -111,7 +111,7 @@ namespace MacacaGames.GameSystem
         public void QuitGamePlay()
         {
             isQuiting = true;
-            isGaming = false;
+            EndTheGame();
         }
 
         void EndTheGame()
@@ -242,7 +242,7 @@ namespace MacacaGames.GameSystem
             }
 
             currentGamePlayData.OnGameEnd();
-            isGaming = false;
+            EndTheGame();
         }
 
         /// <summary>
@@ -252,7 +252,7 @@ namespace MacacaGames.GameSystem
         /// This flow may fire mutilple times during one gameplay.
         /// </summary>
         /// <returns></returns>
-        public IEnumerator GameFaildFlow()
+        IEnumerator GameFaildFlow()
         {
             EnterPause();
             currentGamePlayData.OnGameFaild();

@@ -11,7 +11,7 @@ Macaca GameSystem is a framework to build game life cycle in Unity3D.
 
 ## Installation
 
-### Option 1: Unity Package manager
+### Option 1: Unity Package manager (Recommend)
 Add it to your editor's `manifest.json` file like this:
 ```json
 {
@@ -31,39 +31,58 @@ git submodule add https://github.com/MacacaGames/GameSystem.git Assets/MacacaGam
 git submodule add https://github.com/MacacaGames/mast.git Assets/Mast
 ```
 
-## GamePlayData
-GamePlayData is the main game logic implemention. Do your logic in the callbacks to complete your game. For each callback's detail please see [Document](https://macacagames.github.io/GameSystem/api/MacacaGames.GameSystem.GamePlayData.html) 
+## IGamePlayData
+IGamePlayData is the main game logic implemention. Do your logic in the callbacks to complete your game. For each callback's detail please see [Document](https://macacagames.github.io/GameSystem/api/MacacaGames.GameSystem.IGamePlayData.html)
+
+Create a cs file which inherit from ScriptableObjectGamePlayData, and referenced it to ApplicationController.
 
 ```csharp
-public abstract IEnumerator GamePlay();
+void Init();
 
-public abstract IEnumerator GameResult();
+void OnApplicationBeforeGamePlay();
 
-public abstract void OnGameValueReset();
+void OnGameValueReset();
 
-public abstract IEnumerator OnEnterGame();
+IEnumerator OnEnterGame();
 
-public abstract void OnLeaveGame();
+IEnumerator GamePlay();
 
-public abstract void OnGameEnd();
+void OnLeaveGame();
 
-public abstract void OnGameSuccess();
+void OnGameSuccess();
 
-public abstract void OnGameLose();
+void OnGameLose();
 
-public abstract void OnGameFaild();
+IEnumerator GameResult();
 
-public abstract IEnumerator OnContinueFlow(IReturn<bool> result);
+void OnGameEnd();
 
-public abstract bool IsContinueAvailable { get; }
+void OnGameFaild();
 
-public abstract void OnContinue();
+IEnumerator OnContinueFlow(IReturn<bool> result);
 
-public abstract void Init();
+bool IsContinueAvailable { get; }
 
-public abstract void OnApplicationBeforeGamePlay();
+void OnContinue();
 
-public abstract void OnGUI();
+void OnGUI();
+```
+
+## Highlight API
+The most useful API in this library.
+
+```csharp
+// Call StartGame to start the game.
+ApplicationController.Instance.StartGame();
+
+// Get the GamePlayController and control the game state with below apis
+GamePlayController gamePlayController = ApplicationController.Instance.GetGamePlayController();
+
+gamePlayController.SuccessGamePlay();
+gamePlayController.FailedGamePlay();
+gamePlayController.QuitGamePlay();
+gamePlayController.EnterPause();
+gamePlayController.ResumePause();
 ```
 
 ## Injection
@@ -73,11 +92,11 @@ Use the ``[ResloveTarget]`` attribute to mark a class to become a injectable obj
 
 Each MonoBehaviourLifeCycle and ScriptableObjectLifeCycle in the scene or referenced on ApplicationController will also injectable.
 
-And use ```[Inject]`` attribute on the target field/property. Finally use ResolveInjection to complete injection.
+And use ``[Inject]`` attribute on the target field/property. Finally use ResolveInjection to complete injection.
 
 All MonoBehaviourLifeCycle, ScriptableObjectLifeCycle and GamePlayData will complete the injtection automatically on each instance during Init phase.
 
-Example 
+### Example:
 ```csharp
 [ResloveTarget]
 public class MySystem { }
@@ -119,4 +138,4 @@ public MyOtherClass{
 }
 ```
 ### ApplicationAutoInjecter
-On a GameObject you can attach ``ApplicationAutoInjecter`` component which will complete the injtection automatically on all component on the GameObject when the GameObject is created.
+On a GameObject you can attach ``ApplicationAutoInjecter`` component which will complete the injtection automatically on all component on the GameObject when the GameObject is Instantiated.

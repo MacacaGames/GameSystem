@@ -4,13 +4,6 @@ using Rayark.Mast;
 using UnityEngine;
 namespace MacacaGames.GameSystem
 {
-    /// <summary>
-    /// Game state define
-    /// Success : Player finished gameplay, usually means player wins.
-    /// Lose : GamePlay is ended due to player is died. 
-    /// Faild : Player is died, Player may died muilple times during one gameplay
-    /// Quit : Player give up the gameplay, usually leave gameplay by UI.
-    /// </summary>
     public abstract class ScriptableObjectGamePlayData : ScriptableObject, IGamePlayData
     {
         [Inject]
