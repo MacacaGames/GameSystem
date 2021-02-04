@@ -1,0 +1,24 @@
+### YamlMime:TableOfContent
+- uid: MacacaGames.GameSystem
+  name: MacacaGames.GameSystem
+  items:
+  - uid: MacacaGames.GameSystem.ApplicationAutoInjecter
+    name: ApplicationAutoInjecter
+  - uid: MacacaGames.GameSystem.ApplicationController
+    name: ApplicationController
+  - uid: MacacaGames.GameSystem.ApplicationController.ApplicationState
+    name: ApplicationController.ApplicationState
+  - uid: MacacaGames.GameSystem.GamePlayController
+    name: GamePlayController
+  - uid: MacacaGames.GameSystem.IGamePlayData
+    name: IGamePlayData
+  - uid: MacacaGames.GameSystem.InjectAttribute
+    name: InjectAttribute
+  - uid: MacacaGames.GameSystem.MonoBehaviourLifeCycle
+    name: MonoBehaviourLifeCycle
+  - uid: MacacaGames.GameSystem.ResolveTargetAttribute
+    name: ResolveTargetAttribute
+  - uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData
+    name: ScriptableObjectGamePlayData
+  - uid: MacacaGames.GameSystem.ScriptableObjectLifeCycle
+    name: ScriptableObjectLifeCycle

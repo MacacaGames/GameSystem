@@ -1,0 +1,3487 @@
+### YamlMime:ManagedReference
+items:
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData
+  commentId: T:MacacaGames.GameSystem.ScriptableObjectGamePlayData
+  id: ScriptableObjectGamePlayData
+  parent: MacacaGames.GameSystem
+  children:
+  - MacacaGames.GameSystem.ScriptableObjectGamePlayData.applicationController
+  - MacacaGames.GameSystem.ScriptableObjectGamePlayData.GamePlay
+  - MacacaGames.GameSystem.ScriptableObjectGamePlayData.gamePlayController
+  - MacacaGames.GameSystem.ScriptableObjectGamePlayData.GameResult
+  - MacacaGames.GameSystem.ScriptableObjectGamePlayData.Init
+  - MacacaGames.GameSystem.ScriptableObjectGamePlayData.IsContinueAvailable
+  - MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnApplicationBeforeGamePlay
+  - MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinue
+  - MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinueFlow(Rayark.Mast.IReturn{System.Boolean})
+  - MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnEnterGame
+  - MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameEnd
+  - MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameFaild
+  - MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameLose
+  - MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameSuccess
+  - MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameValueReset
+  - MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGUI
+  - MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnLeaveGame
+  langs:
+  - csharp
+  - vb
+  name: ScriptableObjectGamePlayData
+  nameWithType: ScriptableObjectGamePlayData
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData
+  type: Class
+  source:
+    remote:
+      path: Runtime/ScriptableObjectGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: ScriptableObjectGamePlayData
+    path: ../Runtime/ScriptableObjectGamePlayData.cs
+    startLine: 6
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  syntax:
+    content: 'public abstract class ScriptableObjectGamePlayData : ScriptableObject, IGamePlayData'
+    content.vb: >-
+      Public MustInherit Class ScriptableObjectGamePlayData
+          Inherits ScriptableObject
+          Implements IGamePlayData
+  inheritance:
+  - System.Object
+  - UnityEngine.Object
+  - UnityEngine.ScriptableObject
+  implements:
+  - MacacaGames.GameSystem.IGamePlayData
+  inheritedMembers:
+  - UnityEngine.ScriptableObject.SetDirty
+  - UnityEngine.ScriptableObject.CreateInstance(System.String)
+  - UnityEngine.ScriptableObject.CreateInstance(System.Type)
+  - UnityEngine.ScriptableObject.CreateInstance``1
+  - UnityEngine.Object.GetInstanceID
+  - UnityEngine.Object.GetHashCode
+  - UnityEngine.Object.Equals(System.Object)
+  - UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+  - UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+  - UnityEngine.Object.Instantiate(UnityEngine.Object)
+  - UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform)
+  - UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)
+  - UnityEngine.Object.Instantiate``1({T})
+  - UnityEngine.Object.Instantiate``1({T},UnityEngine.Vector3,UnityEngine.Quaternion)
+  - UnityEngine.Object.Instantiate``1({T},UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+  - UnityEngine.Object.Instantiate``1({T},UnityEngine.Transform)
+  - UnityEngine.Object.Instantiate``1({T},UnityEngine.Transform,System.Boolean)
+  - UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
+  - UnityEngine.Object.Destroy(UnityEngine.Object)
+  - UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
+  - UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
+  - UnityEngine.Object.FindObjectsOfType(System.Type)
+  - UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)
+  - UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
+  - UnityEngine.Object.DestroyObject(UnityEngine.Object)
+  - UnityEngine.Object.FindSceneObjectsOfType(System.Type)
+  - UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
+  - UnityEngine.Object.FindObjectsOfType``1
+  - UnityEngine.Object.FindObjectOfType``1
+  - UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
+  - UnityEngine.Object.FindObjectOfType(System.Type)
+  - UnityEngine.Object.ToString
+  - UnityEngine.Object.name
+  - UnityEngine.Object.hideFlags
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.gamePlayController
+  commentId: P:MacacaGames.GameSystem.ScriptableObjectGamePlayData.gamePlayController
+  id: gamePlayController
+  parent: MacacaGames.GameSystem.ScriptableObjectGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: gamePlayController
+  nameWithType: ScriptableObjectGamePlayData.gamePlayController
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.gamePlayController
+  type: Property
+  source:
+    remote:
+      path: Runtime/ScriptableObjectGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: gamePlayController
+    path: ../Runtime/ScriptableObjectGamePlayData.cs
+    startLine: 8
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  syntax:
+    content: public GamePlayController gamePlayController { get; set; }
+    parameters: []
+    return:
+      type: MacacaGames.GameSystem.GamePlayController
+    content.vb: Public Property gamePlayController As GamePlayController
+  overload: MacacaGames.GameSystem.ScriptableObjectGamePlayData.gamePlayController*
+  implements:
+  - MacacaGames.GameSystem.IGamePlayData.gamePlayController
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.applicationController
+  commentId: P:MacacaGames.GameSystem.ScriptableObjectGamePlayData.applicationController
+  id: applicationController
+  parent: MacacaGames.GameSystem.ScriptableObjectGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: applicationController
+  nameWithType: ScriptableObjectGamePlayData.applicationController
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.applicationController
+  type: Property
+  source:
+    remote:
+      path: Runtime/ScriptableObjectGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: applicationController
+    path: ../Runtime/ScriptableObjectGamePlayData.cs
+    startLine: 15
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  syntax:
+    content: public ApplicationController applicationController { get; set; }
+    parameters: []
+    return:
+      type: MacacaGames.GameSystem.ApplicationController
+    content.vb: Public Property applicationController As ApplicationController
+  overload: MacacaGames.GameSystem.ScriptableObjectGamePlayData.applicationController*
+  implements:
+  - MacacaGames.GameSystem.IGamePlayData.applicationController
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.Init
+  commentId: M:MacacaGames.GameSystem.ScriptableObjectGamePlayData.Init
+  id: Init
+  parent: MacacaGames.GameSystem.ScriptableObjectGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: Init()
+  nameWithType: ScriptableObjectGamePlayData.Init()
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.Init()
+  type: Method
+  source:
+    remote:
+      path: Runtime/ScriptableObjectGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: Init
+    path: ../Runtime/ScriptableObjectGamePlayData.cs
+    startLine: 25
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nSame as ApplicationController Init.\n"
+  example: []
+  syntax:
+    content: public abstract void Init()
+    content.vb: Public MustOverride Sub Init
+  overload: MacacaGames.GameSystem.ScriptableObjectGamePlayData.Init*
+  implements:
+  - MacacaGames.GameSystem.IGamePlayData.Init
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnApplicationBeforeGamePlay
+  commentId: M:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnApplicationBeforeGamePlay
+  id: OnApplicationBeforeGamePlay
+  parent: MacacaGames.GameSystem.ScriptableObjectGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnApplicationBeforeGamePlay()
+  nameWithType: ScriptableObjectGamePlayData.OnApplicationBeforeGamePlay()
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnApplicationBeforeGamePlay()
+  type: Method
+  source:
+    remote:
+      path: Runtime/ScriptableObjectGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnApplicationBeforeGamePlay
+    path: ../Runtime/ScriptableObjectGamePlayData.cs
+    startLine: 31
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nSame as ApplicationController OnApplicationBeforeGamePlay.\n"
+  example: []
+  syntax:
+    content: public abstract void OnApplicationBeforeGamePlay()
+    content.vb: Public MustOverride Sub OnApplicationBeforeGamePlay
+  overload: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnApplicationBeforeGamePlay*
+  implements:
+  - MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameValueReset
+  commentId: M:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameValueReset
+  id: OnGameValueReset
+  parent: MacacaGames.GameSystem.ScriptableObjectGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnGameValueReset()
+  nameWithType: ScriptableObjectGamePlayData.OnGameValueReset()
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameValueReset()
+  type: Method
+  source:
+    remote:
+      path: Runtime/ScriptableObjectGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnGameValueReset
+    path: ../Runtime/ScriptableObjectGamePlayData.cs
+    startLine: 36
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nReset all gameplay relalte value\n"
+  example: []
+  syntax:
+    content: public abstract void OnGameValueReset()
+    content.vb: Public MustOverride Sub OnGameValueReset
+  overload: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameValueReset*
+  implements:
+  - MacacaGames.GameSystem.IGamePlayData.OnGameValueReset
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnEnterGame
+  commentId: M:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnEnterGame
+  id: OnEnterGame
+  parent: MacacaGames.GameSystem.ScriptableObjectGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnEnterGame()
+  nameWithType: ScriptableObjectGamePlayData.OnEnterGame()
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnEnterGame()
+  type: Method
+  source:
+    remote:
+      path: Runtime/ScriptableObjectGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnEnterGame
+    path: ../Runtime/ScriptableObjectGamePlayData.cs
+    startLine: 41
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nExcude before gameplay realy start\n"
+  example: []
+  syntax:
+    content: public abstract IEnumerator OnEnterGame()
+    return:
+      type: System.Collections.IEnumerator
+    content.vb: Public MustOverride Function OnEnterGame As IEnumerator
+  overload: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnEnterGame*
+  implements:
+  - MacacaGames.GameSystem.IGamePlayData.OnEnterGame
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.GamePlay
+  commentId: M:MacacaGames.GameSystem.ScriptableObjectGamePlayData.GamePlay
+  id: GamePlay
+  parent: MacacaGames.GameSystem.ScriptableObjectGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: GamePlay()
+  nameWithType: ScriptableObjectGamePlayData.GamePlay()
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.GamePlay()
+  type: Method
+  source:
+    remote:
+      path: Runtime/ScriptableObjectGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: GamePlay
+    path: ../Runtime/ScriptableObjectGamePlayData.cs
+    startLine: 47
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nMain logic of the game\n"
+  example: []
+  syntax:
+    content: public abstract IEnumerator GamePlay()
+    return:
+      type: System.Collections.IEnumerator
+      description: ''
+    content.vb: Public MustOverride Function GamePlay As IEnumerator
+  overload: MacacaGames.GameSystem.ScriptableObjectGamePlayData.GamePlay*
+  implements:
+  - MacacaGames.GameSystem.IGamePlayData.GamePlay
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnLeaveGame
+  commentId: M:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnLeaveGame
+  id: OnLeaveGame
+  parent: MacacaGames.GameSystem.ScriptableObjectGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnLeaveGame()
+  nameWithType: ScriptableObjectGamePlayData.OnLeaveGame()
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnLeaveGame()
+  type: Method
+  source:
+    remote:
+      path: Runtime/ScriptableObjectGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnLeaveGame
+    path: ../Runtime/ScriptableObjectGamePlayData.cs
+    startLine: 53
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nExcude after GamePlay() is end, but before GameResult()\n"
+  example: []
+  syntax:
+    content: public abstract void OnLeaveGame()
+    content.vb: Public MustOverride Sub OnLeaveGame
+  overload: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnLeaveGame*
+  implements:
+  - MacacaGames.GameSystem.IGamePlayData.OnLeaveGame
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameSuccess
+  commentId: M:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameSuccess
+  id: OnGameSuccess
+  parent: MacacaGames.GameSystem.ScriptableObjectGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnGameSuccess()
+  nameWithType: ScriptableObjectGamePlayData.OnGameSuccess()
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameSuccess()
+  type: Method
+  source:
+    remote:
+      path: Runtime/ScriptableObjectGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnGameSuccess
+    path: ../Runtime/ScriptableObjectGamePlayData.cs
+    startLine: 58
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  syntax:
+    content: public abstract void OnGameSuccess()
+    content.vb: Public MustOverride Sub OnGameSuccess
+  overload: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameSuccess*
+  implements:
+  - MacacaGames.GameSystem.IGamePlayData.OnGameSuccess
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameLose
+  commentId: M:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameLose
+  id: OnGameLose
+  parent: MacacaGames.GameSystem.ScriptableObjectGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnGameLose()
+  nameWithType: ScriptableObjectGamePlayData.OnGameLose()
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameLose()
+  type: Method
+  source:
+    remote:
+      path: Runtime/ScriptableObjectGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnGameLose
+    path: ../Runtime/ScriptableObjectGamePlayData.cs
+    startLine: 63
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nGame Lose .\n"
+  example: []
+  syntax:
+    content: public abstract void OnGameLose()
+    content.vb: Public MustOverride Sub OnGameLose
+  overload: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameLose*
+  implements:
+  - MacacaGames.GameSystem.IGamePlayData.OnGameLose
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.GameResult
+  commentId: M:MacacaGames.GameSystem.ScriptableObjectGamePlayData.GameResult
+  id: GameResult
+  parent: MacacaGames.GameSystem.ScriptableObjectGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: GameResult()
+  nameWithType: ScriptableObjectGamePlayData.GameResult()
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.GameResult()
+  type: Method
+  source:
+    remote:
+      path: Runtime/ScriptableObjectGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: GameResult
+    path: ../Runtime/ScriptableObjectGamePlayData.cs
+    startLine: 69
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nOnly work during play died or clear, not on quit\n"
+  example: []
+  syntax:
+    content: public abstract IEnumerator GameResult()
+    return:
+      type: System.Collections.IEnumerator
+      description: ''
+    content.vb: Public MustOverride Function GameResult As IEnumerator
+  overload: MacacaGames.GameSystem.ScriptableObjectGamePlayData.GameResult*
+  implements:
+  - MacacaGames.GameSystem.IGamePlayData.GameResult
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameEnd
+  commentId: M:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameEnd
+  id: OnGameEnd
+  parent: MacacaGames.GameSystem.ScriptableObjectGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnGameEnd()
+  nameWithType: ScriptableObjectGamePlayData.OnGameEnd()
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameEnd()
+  type: Method
+  source:
+    remote:
+      path: Runtime/ScriptableObjectGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnGameEnd
+    path: ../Runtime/ScriptableObjectGamePlayData.cs
+    startLine: 74
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nGame total end, no mater is died, clear or quit.\n"
+  example: []
+  syntax:
+    content: public abstract void OnGameEnd()
+    content.vb: Public MustOverride Sub OnGameEnd
+  overload: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameEnd*
+  implements:
+  - MacacaGames.GameSystem.IGamePlayData.OnGameEnd
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameFaild
+  commentId: M:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameFaild
+  id: OnGameFaild
+  parent: MacacaGames.GameSystem.ScriptableObjectGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnGameFaild()
+  nameWithType: ScriptableObjectGamePlayData.OnGameFaild()
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameFaild()
+  type: Method
+  source:
+    remote:
+      path: Runtime/ScriptableObjectGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnGameFaild
+    path: ../Runtime/ScriptableObjectGamePlayData.cs
+    startLine: 79
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nGame Failed.\n"
+  example: []
+  syntax:
+    content: public abstract void OnGameFaild()
+    content.vb: Public MustOverride Sub OnGameFaild
+  overload: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameFaild*
+  implements:
+  - MacacaGames.GameSystem.IGamePlayData.OnGameFaild
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinueFlow(Rayark.Mast.IReturn{System.Boolean})
+  commentId: M:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinueFlow(Rayark.Mast.IReturn{System.Boolean})
+  id: OnContinueFlow(Rayark.Mast.IReturn{System.Boolean})
+  parent: MacacaGames.GameSystem.ScriptableObjectGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnContinueFlow(IReturn<Boolean>)
+  nameWithType: ScriptableObjectGamePlayData.OnContinueFlow(IReturn<Boolean>)
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinueFlow(Rayark.Mast.IReturn<System.Boolean>)
+  type: Method
+  source:
+    remote:
+      path: Runtime/ScriptableObjectGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnContinueFlow
+    path: ../Runtime/ScriptableObjectGamePlayData.cs
+    startLine: 86
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nImplement the continue progress here and set result in result \n"
+  example: []
+  syntax:
+    content: public abstract IEnumerator OnContinueFlow(IReturn<bool> result)
+    parameters:
+    - id: result
+      type: Rayark.Mast.IReturn{System.Boolean}
+      description: the reture value for the continue progress
+    return:
+      type: System.Collections.IEnumerator
+      description: ''
+    content.vb: Public MustOverride Function OnContinueFlow(result As IReturn(Of Boolean)) As IEnumerator
+  overload: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinueFlow*
+  implements:
+  - MacacaGames.GameSystem.IGamePlayData.OnContinueFlow(Rayark.Mast.IReturn{System.Boolean})
+  nameWithType.vb: ScriptableObjectGamePlayData.OnContinueFlow(IReturn(Of Boolean))
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  fullName.vb: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinueFlow(Rayark.Mast.IReturn(Of System.Boolean))
+  name.vb: OnContinueFlow(IReturn(Of Boolean))
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.IsContinueAvailable
+  commentId: P:MacacaGames.GameSystem.ScriptableObjectGamePlayData.IsContinueAvailable
+  id: IsContinueAvailable
+  parent: MacacaGames.GameSystem.ScriptableObjectGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: IsContinueAvailable
+  nameWithType: ScriptableObjectGamePlayData.IsContinueAvailable
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.IsContinueAvailable
+  type: Property
+  source:
+    remote:
+      path: Runtime/ScriptableObjectGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: IsContinueAvailable
+    path: ../Runtime/ScriptableObjectGamePlayData.cs
+    startLine: 92
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nTo verify is the game play available to continue\n"
+  example: []
+  syntax:
+    content: public abstract bool IsContinueAvailable { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public MustOverride ReadOnly Property IsContinueAvailable As Boolean
+  overload: MacacaGames.GameSystem.ScriptableObjectGamePlayData.IsContinueAvailable*
+  implements:
+  - MacacaGames.GameSystem.IGamePlayData.IsContinueAvailable
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinue
+  commentId: M:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinue
+  id: OnContinue
+  parent: MacacaGames.GameSystem.ScriptableObjectGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnContinue()
+  nameWithType: ScriptableObjectGamePlayData.OnContinue()
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinue()
+  type: Method
+  source:
+    remote:
+      path: Runtime/ScriptableObjectGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnContinue
+    path: ../Runtime/ScriptableObjectGamePlayData.cs
+    startLine: 99
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nWhile the result in OnContinueFlow is true, do anything require to continue the gameplay on this callback.\n"
+  example: []
+  syntax:
+    content: public abstract void OnContinue()
+    content.vb: Public MustOverride Sub OnContinue
+  overload: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinue*
+  implements:
+  - MacacaGames.GameSystem.IGamePlayData.OnContinue
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGUI
+  commentId: M:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGUI
+  id: OnGUI
+  parent: MacacaGames.GameSystem.ScriptableObjectGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnGUI()
+  nameWithType: ScriptableObjectGamePlayData.OnGUI()
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGUI()
+  type: Method
+  source:
+    remote:
+      path: Runtime/ScriptableObjectGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnGUI
+    path: ../Runtime/ScriptableObjectGamePlayData.cs
+    startLine: 101
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  syntax:
+    content: public abstract void OnGUI()
+    content.vb: Public MustOverride Sub OnGUI
+  overload: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGUI*
+  implements:
+  - MacacaGames.GameSystem.IGamePlayData.OnGUI
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+references:
+- uid: MacacaGames.GameSystem
+  commentId: N:MacacaGames.GameSystem
+  name: MacacaGames.GameSystem
+  nameWithType: MacacaGames.GameSystem
+  fullName: MacacaGames.GameSystem
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: UnityEngine.Object
+  commentId: T:UnityEngine.Object
+  parent: UnityEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: UnityEngine.Object
+- uid: UnityEngine.ScriptableObject
+  commentId: T:UnityEngine.ScriptableObject
+  parent: UnityEngine
+  isExternal: true
+  name: ScriptableObject
+  nameWithType: ScriptableObject
+  fullName: UnityEngine.ScriptableObject
+- uid: MacacaGames.GameSystem.IGamePlayData
+  commentId: T:MacacaGames.GameSystem.IGamePlayData
+  parent: MacacaGames.GameSystem
+  name: IGamePlayData
+  nameWithType: IGamePlayData
+  fullName: MacacaGames.GameSystem.IGamePlayData
+- uid: UnityEngine.ScriptableObject.SetDirty
+  commentId: M:UnityEngine.ScriptableObject.SetDirty
+  parent: UnityEngine.ScriptableObject
+  isExternal: true
+  name: SetDirty()
+  nameWithType: ScriptableObject.SetDirty()
+  fullName: UnityEngine.ScriptableObject.SetDirty()
+  spec.csharp:
+  - uid: UnityEngine.ScriptableObject.SetDirty
+    name: SetDirty
+    nameWithType: ScriptableObject.SetDirty
+    fullName: UnityEngine.ScriptableObject.SetDirty
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.ScriptableObject.SetDirty
+    name: SetDirty
+    nameWithType: ScriptableObject.SetDirty
+    fullName: UnityEngine.ScriptableObject.SetDirty
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.ScriptableObject.CreateInstance(System.String)
+  commentId: M:UnityEngine.ScriptableObject.CreateInstance(System.String)
+  parent: UnityEngine.ScriptableObject
+  isExternal: true
+  name: CreateInstance(String)
+  nameWithType: ScriptableObject.CreateInstance(String)
+  fullName: UnityEngine.ScriptableObject.CreateInstance(System.String)
+  spec.csharp:
+  - uid: UnityEngine.ScriptableObject.CreateInstance(System.String)
+    name: CreateInstance
+    nameWithType: ScriptableObject.CreateInstance
+    fullName: UnityEngine.ScriptableObject.CreateInstance
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.ScriptableObject.CreateInstance(System.String)
+    name: CreateInstance
+    nameWithType: ScriptableObject.CreateInstance
+    fullName: UnityEngine.ScriptableObject.CreateInstance
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.ScriptableObject.CreateInstance(System.Type)
+  commentId: M:UnityEngine.ScriptableObject.CreateInstance(System.Type)
+  parent: UnityEngine.ScriptableObject
+  isExternal: true
+  name: CreateInstance(Type)
+  nameWithType: ScriptableObject.CreateInstance(Type)
+  fullName: UnityEngine.ScriptableObject.CreateInstance(System.Type)
+  spec.csharp:
+  - uid: UnityEngine.ScriptableObject.CreateInstance(System.Type)
+    name: CreateInstance
+    nameWithType: ScriptableObject.CreateInstance
+    fullName: UnityEngine.ScriptableObject.CreateInstance
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.ScriptableObject.CreateInstance(System.Type)
+    name: CreateInstance
+    nameWithType: ScriptableObject.CreateInstance
+    fullName: UnityEngine.ScriptableObject.CreateInstance
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.ScriptableObject.CreateInstance``1
+  commentId: M:UnityEngine.ScriptableObject.CreateInstance``1
+  parent: UnityEngine.ScriptableObject
+  isExternal: true
+  name: CreateInstance<T>()
+  nameWithType: ScriptableObject.CreateInstance<T>()
+  fullName: UnityEngine.ScriptableObject.CreateInstance<T>()
+  nameWithType.vb: ScriptableObject.CreateInstance(Of T)()
+  fullName.vb: UnityEngine.ScriptableObject.CreateInstance(Of T)()
+  name.vb: CreateInstance(Of T)()
+  spec.csharp:
+  - uid: UnityEngine.ScriptableObject.CreateInstance``1
+    name: CreateInstance<T>
+    nameWithType: ScriptableObject.CreateInstance<T>
+    fullName: UnityEngine.ScriptableObject.CreateInstance<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.ScriptableObject.CreateInstance``1
+    name: CreateInstance(Of T)
+    nameWithType: ScriptableObject.CreateInstance(Of T)
+    fullName: UnityEngine.ScriptableObject.CreateInstance(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.GetInstanceID
+  commentId: M:UnityEngine.Object.GetInstanceID
+  parent: UnityEngine.Object
+  isExternal: true
+  name: GetInstanceID()
+  nameWithType: Object.GetInstanceID()
+  fullName: UnityEngine.Object.GetInstanceID()
+  spec.csharp:
+  - uid: UnityEngine.Object.GetInstanceID
+    name: GetInstanceID
+    nameWithType: Object.GetInstanceID
+    fullName: UnityEngine.Object.GetInstanceID
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.GetInstanceID
+    name: GetInstanceID
+    nameWithType: Object.GetInstanceID
+    fullName: UnityEngine.Object.GetInstanceID
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.GetHashCode
+  commentId: M:UnityEngine.Object.GetHashCode
+  parent: UnityEngine.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: UnityEngine.Object.GetHashCode()
+  spec.csharp:
+  - uid: UnityEngine.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: UnityEngine.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: UnityEngine.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.Equals(System.Object)
+  commentId: M:UnityEngine.Object.Equals(System.Object)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: UnityEngine.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: UnityEngine.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: UnityEngine.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: UnityEngine.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+  commentId: M:UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: Instantiate(Object, Vector3, Quaternion)
+  nameWithType: Object.Instantiate(Object, Vector3, Quaternion)
+  fullName: UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Vector3, UnityEngine.Quaternion)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+    name: Instantiate
+    nameWithType: Object.Instantiate
+    fullName: UnityEngine.Object.Instantiate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    nameWithType: Vector3
+    fullName: UnityEngine.Vector3
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    nameWithType: Quaternion
+    fullName: UnityEngine.Quaternion
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+    name: Instantiate
+    nameWithType: Object.Instantiate
+    fullName: UnityEngine.Object.Instantiate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    nameWithType: Vector3
+    fullName: UnityEngine.Vector3
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    nameWithType: Quaternion
+    fullName: UnityEngine.Quaternion
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+  commentId: M:UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: Instantiate(Object, Vector3, Quaternion, Transform)
+  nameWithType: Object.Instantiate(Object, Vector3, Quaternion, Transform)
+  fullName: UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Vector3, UnityEngine.Quaternion, UnityEngine.Transform)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+    name: Instantiate
+    nameWithType: Object.Instantiate
+    fullName: UnityEngine.Object.Instantiate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    nameWithType: Vector3
+    fullName: UnityEngine.Vector3
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    nameWithType: Quaternion
+    fullName: UnityEngine.Quaternion
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Transform
+    name: Transform
+    nameWithType: Transform
+    fullName: UnityEngine.Transform
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+    name: Instantiate
+    nameWithType: Object.Instantiate
+    fullName: UnityEngine.Object.Instantiate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    nameWithType: Vector3
+    fullName: UnityEngine.Vector3
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    nameWithType: Quaternion
+    fullName: UnityEngine.Quaternion
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Transform
+    name: Transform
+    nameWithType: Transform
+    fullName: UnityEngine.Transform
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.Instantiate(UnityEngine.Object)
+  commentId: M:UnityEngine.Object.Instantiate(UnityEngine.Object)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: Instantiate(Object)
+  nameWithType: Object.Instantiate(Object)
+  fullName: UnityEngine.Object.Instantiate(UnityEngine.Object)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate(UnityEngine.Object)
+    name: Instantiate
+    nameWithType: Object.Instantiate
+    fullName: UnityEngine.Object.Instantiate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate(UnityEngine.Object)
+    name: Instantiate
+    nameWithType: Object.Instantiate
+    fullName: UnityEngine.Object.Instantiate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform)
+  commentId: M:UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: Instantiate(Object, Transform)
+  nameWithType: Object.Instantiate(Object, Transform)
+  fullName: UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Transform)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform)
+    name: Instantiate
+    nameWithType: Object.Instantiate
+    fullName: UnityEngine.Object.Instantiate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Transform
+    name: Transform
+    nameWithType: Transform
+    fullName: UnityEngine.Transform
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform)
+    name: Instantiate
+    nameWithType: Object.Instantiate
+    fullName: UnityEngine.Object.Instantiate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Transform
+    name: Transform
+    nameWithType: Transform
+    fullName: UnityEngine.Transform
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)
+  commentId: M:UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: Instantiate(Object, Transform, Boolean)
+  nameWithType: Object.Instantiate(Object, Transform, Boolean)
+  fullName: UnityEngine.Object.Instantiate(UnityEngine.Object, UnityEngine.Transform, System.Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)
+    name: Instantiate
+    nameWithType: Object.Instantiate
+    fullName: UnityEngine.Object.Instantiate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Transform
+    name: Transform
+    nameWithType: Transform
+    fullName: UnityEngine.Transform
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate(UnityEngine.Object,UnityEngine.Transform,System.Boolean)
+    name: Instantiate
+    nameWithType: Object.Instantiate
+    fullName: UnityEngine.Object.Instantiate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Transform
+    name: Transform
+    nameWithType: Transform
+    fullName: UnityEngine.Transform
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.Instantiate``1({T})
+  commentId: M:UnityEngine.Object.Instantiate``1(``0)
+  parent: UnityEngine.Object
+  definition: UnityEngine.Object.Instantiate``1(``0)
+  name: Instantiate<T>(T)
+  nameWithType: Object.Instantiate<T>(T)
+  fullName: UnityEngine.Object.Instantiate<T>(T)
+  nameWithType.vb: Object.Instantiate(Of T)(T)
+  fullName.vb: UnityEngine.Object.Instantiate(Of T)(T)
+  name.vb: Instantiate(Of T)(T)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate``1(``0)
+    name: Instantiate<T>
+    nameWithType: Object.Instantiate<T>
+    fullName: UnityEngine.Object.Instantiate<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate``1(``0)
+    name: Instantiate(Of T)
+    nameWithType: Object.Instantiate(Of T)
+    fullName: UnityEngine.Object.Instantiate(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.Instantiate``1({T},UnityEngine.Vector3,UnityEngine.Quaternion)
+  commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion)
+  parent: UnityEngine.Object
+  definition: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion)
+  name: Instantiate<T>(T, Vector3, Quaternion)
+  nameWithType: Object.Instantiate<T>(T, Vector3, Quaternion)
+  fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Vector3, UnityEngine.Quaternion)
+  nameWithType.vb: Object.Instantiate(Of T)(T, Vector3, Quaternion)
+  fullName.vb: UnityEngine.Object.Instantiate(Of T)(T, UnityEngine.Vector3, UnityEngine.Quaternion)
+  name.vb: Instantiate(Of T)(T, Vector3, Quaternion)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion)
+    name: Instantiate<T>
+    nameWithType: Object.Instantiate<T>
+    fullName: UnityEngine.Object.Instantiate<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    nameWithType: Vector3
+    fullName: UnityEngine.Vector3
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    nameWithType: Quaternion
+    fullName: UnityEngine.Quaternion
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion)
+    name: Instantiate(Of T)
+    nameWithType: Object.Instantiate(Of T)
+    fullName: UnityEngine.Object.Instantiate(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    nameWithType: Vector3
+    fullName: UnityEngine.Vector3
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    nameWithType: Quaternion
+    fullName: UnityEngine.Quaternion
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.Instantiate``1({T},UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+  commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+  parent: UnityEngine.Object
+  definition: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+  name: Instantiate<T>(T, Vector3, Quaternion, Transform)
+  nameWithType: Object.Instantiate<T>(T, Vector3, Quaternion, Transform)
+  fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Vector3, UnityEngine.Quaternion, UnityEngine.Transform)
+  nameWithType.vb: Object.Instantiate(Of T)(T, Vector3, Quaternion, Transform)
+  fullName.vb: UnityEngine.Object.Instantiate(Of T)(T, UnityEngine.Vector3, UnityEngine.Quaternion, UnityEngine.Transform)
+  name.vb: Instantiate(Of T)(T, Vector3, Quaternion, Transform)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+    name: Instantiate<T>
+    nameWithType: Object.Instantiate<T>
+    fullName: UnityEngine.Object.Instantiate<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    nameWithType: Vector3
+    fullName: UnityEngine.Vector3
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    nameWithType: Quaternion
+    fullName: UnityEngine.Quaternion
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Transform
+    name: Transform
+    nameWithType: Transform
+    fullName: UnityEngine.Transform
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+    name: Instantiate(Of T)
+    nameWithType: Object.Instantiate(Of T)
+    fullName: UnityEngine.Object.Instantiate(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    nameWithType: Vector3
+    fullName: UnityEngine.Vector3
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    nameWithType: Quaternion
+    fullName: UnityEngine.Quaternion
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Transform
+    name: Transform
+    nameWithType: Transform
+    fullName: UnityEngine.Transform
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.Instantiate``1({T},UnityEngine.Transform)
+  commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform)
+  parent: UnityEngine.Object
+  definition: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform)
+  name: Instantiate<T>(T, Transform)
+  nameWithType: Object.Instantiate<T>(T, Transform)
+  fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Transform)
+  nameWithType.vb: Object.Instantiate(Of T)(T, Transform)
+  fullName.vb: UnityEngine.Object.Instantiate(Of T)(T, UnityEngine.Transform)
+  name.vb: Instantiate(Of T)(T, Transform)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform)
+    name: Instantiate<T>
+    nameWithType: Object.Instantiate<T>
+    fullName: UnityEngine.Object.Instantiate<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Transform
+    name: Transform
+    nameWithType: Transform
+    fullName: UnityEngine.Transform
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform)
+    name: Instantiate(Of T)
+    nameWithType: Object.Instantiate(Of T)
+    fullName: UnityEngine.Object.Instantiate(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Transform
+    name: Transform
+    nameWithType: Transform
+    fullName: UnityEngine.Transform
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.Instantiate``1({T},UnityEngine.Transform,System.Boolean)
+  commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
+  parent: UnityEngine.Object
+  definition: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
+  name: Instantiate<T>(T, Transform, Boolean)
+  nameWithType: Object.Instantiate<T>(T, Transform, Boolean)
+  fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Transform, System.Boolean)
+  nameWithType.vb: Object.Instantiate(Of T)(T, Transform, Boolean)
+  fullName.vb: UnityEngine.Object.Instantiate(Of T)(T, UnityEngine.Transform, System.Boolean)
+  name.vb: Instantiate(Of T)(T, Transform, Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
+    name: Instantiate<T>
+    nameWithType: Object.Instantiate<T>
+    fullName: UnityEngine.Object.Instantiate<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Transform
+    name: Transform
+    nameWithType: Transform
+    fullName: UnityEngine.Transform
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
+    name: Instantiate(Of T)
+    nameWithType: Object.Instantiate(Of T)
+    fullName: UnityEngine.Object.Instantiate(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Transform
+    name: Transform
+    nameWithType: Transform
+    fullName: UnityEngine.Transform
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
+  commentId: M:UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: Destroy(Object, Single)
+  nameWithType: Object.Destroy(Object, Single)
+  fullName: UnityEngine.Object.Destroy(UnityEngine.Object, System.Single)
+  spec.csharp:
+  - uid: UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
+    name: Destroy
+    nameWithType: Object.Destroy
+    fullName: UnityEngine.Object.Destroy
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.Destroy(UnityEngine.Object,System.Single)
+    name: Destroy
+    nameWithType: Object.Destroy
+    fullName: UnityEngine.Object.Destroy
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.Destroy(UnityEngine.Object)
+  commentId: M:UnityEngine.Object.Destroy(UnityEngine.Object)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: Destroy(Object)
+  nameWithType: Object.Destroy(Object)
+  fullName: UnityEngine.Object.Destroy(UnityEngine.Object)
+  spec.csharp:
+  - uid: UnityEngine.Object.Destroy(UnityEngine.Object)
+    name: Destroy
+    nameWithType: Object.Destroy
+    fullName: UnityEngine.Object.Destroy
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.Destroy(UnityEngine.Object)
+    name: Destroy
+    nameWithType: Object.Destroy
+    fullName: UnityEngine.Object.Destroy
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
+  commentId: M:UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: DestroyImmediate(Object, Boolean)
+  nameWithType: Object.DestroyImmediate(Object, Boolean)
+  fullName: UnityEngine.Object.DestroyImmediate(UnityEngine.Object, System.Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
+    name: DestroyImmediate
+    nameWithType: Object.DestroyImmediate
+    fullName: UnityEngine.Object.DestroyImmediate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
+    name: DestroyImmediate
+    nameWithType: Object.DestroyImmediate
+    fullName: UnityEngine.Object.DestroyImmediate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
+  commentId: M:UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: DestroyImmediate(Object)
+  nameWithType: Object.DestroyImmediate(Object)
+  fullName: UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
+  spec.csharp:
+  - uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
+    name: DestroyImmediate
+    nameWithType: Object.DestroyImmediate
+    fullName: UnityEngine.Object.DestroyImmediate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
+    name: DestroyImmediate
+    nameWithType: Object.DestroyImmediate
+    fullName: UnityEngine.Object.DestroyImmediate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.FindObjectsOfType(System.Type)
+  commentId: M:UnityEngine.Object.FindObjectsOfType(System.Type)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectsOfType(Type)
+  nameWithType: Object.FindObjectsOfType(Type)
+  fullName: UnityEngine.Object.FindObjectsOfType(System.Type)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectsOfType(System.Type)
+    name: FindObjectsOfType
+    nameWithType: Object.FindObjectsOfType
+    fullName: UnityEngine.Object.FindObjectsOfType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectsOfType(System.Type)
+    name: FindObjectsOfType
+    nameWithType: Object.FindObjectsOfType
+    fullName: UnityEngine.Object.FindObjectsOfType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)
+  commentId: M:UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: DontDestroyOnLoad(Object)
+  nameWithType: Object.DontDestroyOnLoad(Object)
+  fullName: UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)
+  spec.csharp:
+  - uid: UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)
+    name: DontDestroyOnLoad
+    nameWithType: Object.DontDestroyOnLoad
+    fullName: UnityEngine.Object.DontDestroyOnLoad
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)
+    name: DontDestroyOnLoad
+    nameWithType: Object.DontDestroyOnLoad
+    fullName: UnityEngine.Object.DontDestroyOnLoad
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
+  commentId: M:UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: DestroyObject(Object, Single)
+  nameWithType: Object.DestroyObject(Object, Single)
+  fullName: UnityEngine.Object.DestroyObject(UnityEngine.Object, System.Single)
+  spec.csharp:
+  - uid: UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
+    name: DestroyObject
+    nameWithType: Object.DestroyObject
+    fullName: UnityEngine.Object.DestroyObject
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
+    name: DestroyObject
+    nameWithType: Object.DestroyObject
+    fullName: UnityEngine.Object.DestroyObject
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.DestroyObject(UnityEngine.Object)
+  commentId: M:UnityEngine.Object.DestroyObject(UnityEngine.Object)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: DestroyObject(Object)
+  nameWithType: Object.DestroyObject(Object)
+  fullName: UnityEngine.Object.DestroyObject(UnityEngine.Object)
+  spec.csharp:
+  - uid: UnityEngine.Object.DestroyObject(UnityEngine.Object)
+    name: DestroyObject
+    nameWithType: Object.DestroyObject
+    fullName: UnityEngine.Object.DestroyObject
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.DestroyObject(UnityEngine.Object)
+    name: DestroyObject
+    nameWithType: Object.DestroyObject
+    fullName: UnityEngine.Object.DestroyObject
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Object
+    name: Object
+    nameWithType: Object
+    fullName: UnityEngine.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.FindSceneObjectsOfType(System.Type)
+  commentId: M:UnityEngine.Object.FindSceneObjectsOfType(System.Type)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindSceneObjectsOfType(Type)
+  nameWithType: Object.FindSceneObjectsOfType(Type)
+  fullName: UnityEngine.Object.FindSceneObjectsOfType(System.Type)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindSceneObjectsOfType(System.Type)
+    name: FindSceneObjectsOfType
+    nameWithType: Object.FindSceneObjectsOfType
+    fullName: UnityEngine.Object.FindSceneObjectsOfType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindSceneObjectsOfType(System.Type)
+    name: FindSceneObjectsOfType
+    nameWithType: Object.FindSceneObjectsOfType
+    fullName: UnityEngine.Object.FindSceneObjectsOfType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
+  commentId: M:UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectsOfTypeIncludingAssets(Type)
+  nameWithType: Object.FindObjectsOfTypeIncludingAssets(Type)
+  fullName: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
+    name: FindObjectsOfTypeIncludingAssets
+    nameWithType: Object.FindObjectsOfTypeIncludingAssets
+    fullName: UnityEngine.Object.FindObjectsOfTypeIncludingAssets
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
+    name: FindObjectsOfTypeIncludingAssets
+    nameWithType: Object.FindObjectsOfTypeIncludingAssets
+    fullName: UnityEngine.Object.FindObjectsOfTypeIncludingAssets
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.FindObjectsOfType``1
+  commentId: M:UnityEngine.Object.FindObjectsOfType``1
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectsOfType<T>()
+  nameWithType: Object.FindObjectsOfType<T>()
+  fullName: UnityEngine.Object.FindObjectsOfType<T>()
+  nameWithType.vb: Object.FindObjectsOfType(Of T)()
+  fullName.vb: UnityEngine.Object.FindObjectsOfType(Of T)()
+  name.vb: FindObjectsOfType(Of T)()
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectsOfType``1
+    name: FindObjectsOfType<T>
+    nameWithType: Object.FindObjectsOfType<T>
+    fullName: UnityEngine.Object.FindObjectsOfType<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectsOfType``1
+    name: FindObjectsOfType(Of T)
+    nameWithType: Object.FindObjectsOfType(Of T)
+    fullName: UnityEngine.Object.FindObjectsOfType(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.FindObjectOfType``1
+  commentId: M:UnityEngine.Object.FindObjectOfType``1
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectOfType<T>()
+  nameWithType: Object.FindObjectOfType<T>()
+  fullName: UnityEngine.Object.FindObjectOfType<T>()
+  nameWithType.vb: Object.FindObjectOfType(Of T)()
+  fullName.vb: UnityEngine.Object.FindObjectOfType(Of T)()
+  name.vb: FindObjectOfType(Of T)()
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectOfType``1
+    name: FindObjectOfType<T>
+    nameWithType: Object.FindObjectOfType<T>
+    fullName: UnityEngine.Object.FindObjectOfType<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectOfType``1
+    name: FindObjectOfType(Of T)
+    nameWithType: Object.FindObjectOfType(Of T)
+    fullName: UnityEngine.Object.FindObjectOfType(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
+  commentId: M:UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectsOfTypeAll(Type)
+  nameWithType: Object.FindObjectsOfTypeAll(Type)
+  fullName: UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
+    name: FindObjectsOfTypeAll
+    nameWithType: Object.FindObjectsOfTypeAll
+    fullName: UnityEngine.Object.FindObjectsOfTypeAll
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
+    name: FindObjectsOfTypeAll
+    nameWithType: Object.FindObjectsOfTypeAll
+    fullName: UnityEngine.Object.FindObjectsOfTypeAll
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.FindObjectOfType(System.Type)
+  commentId: M:UnityEngine.Object.FindObjectOfType(System.Type)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectOfType(Type)
+  nameWithType: Object.FindObjectOfType(Type)
+  fullName: UnityEngine.Object.FindObjectOfType(System.Type)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectOfType(System.Type)
+    name: FindObjectOfType
+    nameWithType: Object.FindObjectOfType
+    fullName: UnityEngine.Object.FindObjectOfType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectOfType(System.Type)
+    name: FindObjectOfType
+    nameWithType: Object.FindObjectOfType
+    fullName: UnityEngine.Object.FindObjectOfType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.ToString
+  commentId: M:UnityEngine.Object.ToString
+  parent: UnityEngine.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: UnityEngine.Object.ToString()
+  spec.csharp:
+  - uid: UnityEngine.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: UnityEngine.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: UnityEngine.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.name
+  commentId: P:UnityEngine.Object.name
+  parent: UnityEngine.Object
+  isExternal: true
+  name: name
+  nameWithType: Object.name
+  fullName: UnityEngine.Object.name
+- uid: UnityEngine.Object.hideFlags
+  commentId: P:UnityEngine.Object.hideFlags
+  parent: UnityEngine.Object
+  isExternal: true
+  name: hideFlags
+  nameWithType: Object.hideFlags
+  fullName: UnityEngine.Object.hideFlags
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: UnityEngine.Object.Instantiate``1(``0)
+  commentId: M:UnityEngine.Object.Instantiate``1(``0)
+  isExternal: true
+  name: Instantiate<T>(T)
+  nameWithType: Object.Instantiate<T>(T)
+  fullName: UnityEngine.Object.Instantiate<T>(T)
+  nameWithType.vb: Object.Instantiate(Of T)(T)
+  fullName.vb: UnityEngine.Object.Instantiate(Of T)(T)
+  name.vb: Instantiate(Of T)(T)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate``1(``0)
+    name: Instantiate<T>
+    nameWithType: Object.Instantiate<T>
+    fullName: UnityEngine.Object.Instantiate<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate``1(``0)
+    name: Instantiate(Of T)
+    nameWithType: Object.Instantiate(Of T)
+    fullName: UnityEngine.Object.Instantiate(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion)
+  commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion)
+  isExternal: true
+  name: Instantiate<T>(T, Vector3, Quaternion)
+  nameWithType: Object.Instantiate<T>(T, Vector3, Quaternion)
+  fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Vector3, UnityEngine.Quaternion)
+  nameWithType.vb: Object.Instantiate(Of T)(T, Vector3, Quaternion)
+  fullName.vb: UnityEngine.Object.Instantiate(Of T)(T, UnityEngine.Vector3, UnityEngine.Quaternion)
+  name.vb: Instantiate(Of T)(T, Vector3, Quaternion)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion)
+    name: Instantiate<T>
+    nameWithType: Object.Instantiate<T>
+    fullName: UnityEngine.Object.Instantiate<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    nameWithType: Vector3
+    fullName: UnityEngine.Vector3
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    nameWithType: Quaternion
+    fullName: UnityEngine.Quaternion
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion)
+    name: Instantiate(Of T)
+    nameWithType: Object.Instantiate(Of T)
+    fullName: UnityEngine.Object.Instantiate(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    nameWithType: Vector3
+    fullName: UnityEngine.Vector3
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    nameWithType: Quaternion
+    fullName: UnityEngine.Quaternion
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+  commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+  isExternal: true
+  name: Instantiate<T>(T, Vector3, Quaternion, Transform)
+  nameWithType: Object.Instantiate<T>(T, Vector3, Quaternion, Transform)
+  fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Vector3, UnityEngine.Quaternion, UnityEngine.Transform)
+  nameWithType.vb: Object.Instantiate(Of T)(T, Vector3, Quaternion, Transform)
+  fullName.vb: UnityEngine.Object.Instantiate(Of T)(T, UnityEngine.Vector3, UnityEngine.Quaternion, UnityEngine.Transform)
+  name.vb: Instantiate(Of T)(T, Vector3, Quaternion, Transform)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+    name: Instantiate<T>
+    nameWithType: Object.Instantiate<T>
+    fullName: UnityEngine.Object.Instantiate<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    nameWithType: Vector3
+    fullName: UnityEngine.Vector3
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    nameWithType: Quaternion
+    fullName: UnityEngine.Quaternion
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Transform
+    name: Transform
+    nameWithType: Transform
+    fullName: UnityEngine.Transform
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+    name: Instantiate(Of T)
+    nameWithType: Object.Instantiate(Of T)
+    fullName: UnityEngine.Object.Instantiate(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    nameWithType: Vector3
+    fullName: UnityEngine.Vector3
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Quaternion
+    name: Quaternion
+    nameWithType: Quaternion
+    fullName: UnityEngine.Quaternion
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Transform
+    name: Transform
+    nameWithType: Transform
+    fullName: UnityEngine.Transform
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform)
+  commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform)
+  isExternal: true
+  name: Instantiate<T>(T, Transform)
+  nameWithType: Object.Instantiate<T>(T, Transform)
+  fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Transform)
+  nameWithType.vb: Object.Instantiate(Of T)(T, Transform)
+  fullName.vb: UnityEngine.Object.Instantiate(Of T)(T, UnityEngine.Transform)
+  name.vb: Instantiate(Of T)(T, Transform)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform)
+    name: Instantiate<T>
+    nameWithType: Object.Instantiate<T>
+    fullName: UnityEngine.Object.Instantiate<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Transform
+    name: Transform
+    nameWithType: Transform
+    fullName: UnityEngine.Transform
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform)
+    name: Instantiate(Of T)
+    nameWithType: Object.Instantiate(Of T)
+    fullName: UnityEngine.Object.Instantiate(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Transform
+    name: Transform
+    nameWithType: Transform
+    fullName: UnityEngine.Transform
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
+  commentId: M:UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
+  isExternal: true
+  name: Instantiate<T>(T, Transform, Boolean)
+  nameWithType: Object.Instantiate<T>(T, Transform, Boolean)
+  fullName: UnityEngine.Object.Instantiate<T>(T, UnityEngine.Transform, System.Boolean)
+  nameWithType.vb: Object.Instantiate(Of T)(T, Transform, Boolean)
+  fullName.vb: UnityEngine.Object.Instantiate(Of T)(T, UnityEngine.Transform, System.Boolean)
+  name.vb: Instantiate(Of T)(T, Transform, Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
+    name: Instantiate<T>
+    nameWithType: Object.Instantiate<T>
+    fullName: UnityEngine.Object.Instantiate<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Transform
+    name: Transform
+    nameWithType: Transform
+    fullName: UnityEngine.Transform
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.Instantiate``1(``0,UnityEngine.Transform,System.Boolean)
+    name: Instantiate(Of T)
+    nameWithType: Object.Instantiate(Of T)
+    fullName: UnityEngine.Object.Instantiate(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Transform
+    name: Transform
+    nameWithType: Transform
+    fullName: UnityEngine.Transform
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.gamePlayController*
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectGamePlayData.gamePlayController
+  name: gamePlayController
+  nameWithType: ScriptableObjectGamePlayData.gamePlayController
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.gamePlayController
+- uid: MacacaGames.GameSystem.IGamePlayData.gamePlayController
+  commentId: P:MacacaGames.GameSystem.IGamePlayData.gamePlayController
+  parent: MacacaGames.GameSystem.IGamePlayData
+  name: gamePlayController
+  nameWithType: IGamePlayData.gamePlayController
+  fullName: MacacaGames.GameSystem.IGamePlayData.gamePlayController
+- uid: MacacaGames.GameSystem.GamePlayController
+  commentId: T:MacacaGames.GameSystem.GamePlayController
+  parent: MacacaGames.GameSystem
+  name: GamePlayController
+  nameWithType: GamePlayController
+  fullName: MacacaGames.GameSystem.GamePlayController
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.applicationController*
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectGamePlayData.applicationController
+  name: applicationController
+  nameWithType: ScriptableObjectGamePlayData.applicationController
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.applicationController
+- uid: MacacaGames.GameSystem.IGamePlayData.applicationController
+  commentId: P:MacacaGames.GameSystem.IGamePlayData.applicationController
+  parent: MacacaGames.GameSystem.IGamePlayData
+  name: applicationController
+  nameWithType: IGamePlayData.applicationController
+  fullName: MacacaGames.GameSystem.IGamePlayData.applicationController
+- uid: MacacaGames.GameSystem.ApplicationController
+  commentId: T:MacacaGames.GameSystem.ApplicationController
+  parent: MacacaGames.GameSystem
+  name: ApplicationController
+  nameWithType: ApplicationController
+  fullName: MacacaGames.GameSystem.ApplicationController
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.Init*
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectGamePlayData.Init
+  name: Init
+  nameWithType: ScriptableObjectGamePlayData.Init
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.Init
+- uid: MacacaGames.GameSystem.IGamePlayData.Init
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.Init
+  parent: MacacaGames.GameSystem.IGamePlayData
+  name: Init()
+  nameWithType: IGamePlayData.Init()
+  fullName: MacacaGames.GameSystem.IGamePlayData.Init()
+  spec.csharp:
+  - uid: MacacaGames.GameSystem.IGamePlayData.Init
+    name: Init
+    nameWithType: IGamePlayData.Init
+    fullName: MacacaGames.GameSystem.IGamePlayData.Init
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MacacaGames.GameSystem.IGamePlayData.Init
+    name: Init
+    nameWithType: IGamePlayData.Init
+    fullName: MacacaGames.GameSystem.IGamePlayData.Init
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnApplicationBeforeGamePlay*
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnApplicationBeforeGamePlay
+  name: OnApplicationBeforeGamePlay
+  nameWithType: ScriptableObjectGamePlayData.OnApplicationBeforeGamePlay
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnApplicationBeforeGamePlay
+- uid: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
+  parent: MacacaGames.GameSystem.IGamePlayData
+  name: OnApplicationBeforeGamePlay()
+  nameWithType: IGamePlayData.OnApplicationBeforeGamePlay()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay()
+  spec.csharp:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
+    name: OnApplicationBeforeGamePlay
+    nameWithType: IGamePlayData.OnApplicationBeforeGamePlay
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
+    name: OnApplicationBeforeGamePlay
+    nameWithType: IGamePlayData.OnApplicationBeforeGamePlay
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameValueReset*
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameValueReset
+  name: OnGameValueReset
+  nameWithType: ScriptableObjectGamePlayData.OnGameValueReset
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameValueReset
+- uid: MacacaGames.GameSystem.IGamePlayData.OnGameValueReset
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnGameValueReset
+  parent: MacacaGames.GameSystem.IGamePlayData
+  name: OnGameValueReset()
+  nameWithType: IGamePlayData.OnGameValueReset()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnGameValueReset()
+  spec.csharp:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnGameValueReset
+    name: OnGameValueReset
+    nameWithType: IGamePlayData.OnGameValueReset
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnGameValueReset
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnGameValueReset
+    name: OnGameValueReset
+    nameWithType: IGamePlayData.OnGameValueReset
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnGameValueReset
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnEnterGame*
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnEnterGame
+  name: OnEnterGame
+  nameWithType: ScriptableObjectGamePlayData.OnEnterGame
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnEnterGame
+- uid: MacacaGames.GameSystem.IGamePlayData.OnEnterGame
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnEnterGame
+  parent: MacacaGames.GameSystem.IGamePlayData
+  name: OnEnterGame()
+  nameWithType: IGamePlayData.OnEnterGame()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnEnterGame()
+  spec.csharp:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnEnterGame
+    name: OnEnterGame
+    nameWithType: IGamePlayData.OnEnterGame
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnEnterGame
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnEnterGame
+    name: OnEnterGame
+    nameWithType: IGamePlayData.OnEnterGame
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnEnterGame
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerator
+  commentId: T:System.Collections.IEnumerator
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerator
+  nameWithType: IEnumerator
+  fullName: System.Collections.IEnumerator
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.GamePlay*
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectGamePlayData.GamePlay
+  name: GamePlay
+  nameWithType: ScriptableObjectGamePlayData.GamePlay
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.GamePlay
+- uid: MacacaGames.GameSystem.IGamePlayData.GamePlay
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.GamePlay
+  parent: MacacaGames.GameSystem.IGamePlayData
+  name: GamePlay()
+  nameWithType: IGamePlayData.GamePlay()
+  fullName: MacacaGames.GameSystem.IGamePlayData.GamePlay()
+  spec.csharp:
+  - uid: MacacaGames.GameSystem.IGamePlayData.GamePlay
+    name: GamePlay
+    nameWithType: IGamePlayData.GamePlay
+    fullName: MacacaGames.GameSystem.IGamePlayData.GamePlay
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MacacaGames.GameSystem.IGamePlayData.GamePlay
+    name: GamePlay
+    nameWithType: IGamePlayData.GamePlay
+    fullName: MacacaGames.GameSystem.IGamePlayData.GamePlay
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnLeaveGame*
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnLeaveGame
+  name: OnLeaveGame
+  nameWithType: ScriptableObjectGamePlayData.OnLeaveGame
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnLeaveGame
+- uid: MacacaGames.GameSystem.IGamePlayData.OnLeaveGame
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnLeaveGame
+  parent: MacacaGames.GameSystem.IGamePlayData
+  name: OnLeaveGame()
+  nameWithType: IGamePlayData.OnLeaveGame()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnLeaveGame()
+  spec.csharp:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnLeaveGame
+    name: OnLeaveGame
+    nameWithType: IGamePlayData.OnLeaveGame
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnLeaveGame
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnLeaveGame
+    name: OnLeaveGame
+    nameWithType: IGamePlayData.OnLeaveGame
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnLeaveGame
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameSuccess*
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameSuccess
+  name: OnGameSuccess
+  nameWithType: ScriptableObjectGamePlayData.OnGameSuccess
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameSuccess
+- uid: MacacaGames.GameSystem.IGamePlayData.OnGameSuccess
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnGameSuccess
+  parent: MacacaGames.GameSystem.IGamePlayData
+  name: OnGameSuccess()
+  nameWithType: IGamePlayData.OnGameSuccess()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnGameSuccess()
+  spec.csharp:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnGameSuccess
+    name: OnGameSuccess
+    nameWithType: IGamePlayData.OnGameSuccess
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnGameSuccess
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnGameSuccess
+    name: OnGameSuccess
+    nameWithType: IGamePlayData.OnGameSuccess
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnGameSuccess
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameLose*
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameLose
+  name: OnGameLose
+  nameWithType: ScriptableObjectGamePlayData.OnGameLose
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameLose
+- uid: MacacaGames.GameSystem.IGamePlayData.OnGameLose
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnGameLose
+  parent: MacacaGames.GameSystem.IGamePlayData
+  name: OnGameLose()
+  nameWithType: IGamePlayData.OnGameLose()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnGameLose()
+  spec.csharp:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnGameLose
+    name: OnGameLose
+    nameWithType: IGamePlayData.OnGameLose
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnGameLose
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnGameLose
+    name: OnGameLose
+    nameWithType: IGamePlayData.OnGameLose
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnGameLose
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.GameResult*
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectGamePlayData.GameResult
+  name: GameResult
+  nameWithType: ScriptableObjectGamePlayData.GameResult
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.GameResult
+- uid: MacacaGames.GameSystem.IGamePlayData.GameResult
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.GameResult
+  parent: MacacaGames.GameSystem.IGamePlayData
+  name: GameResult()
+  nameWithType: IGamePlayData.GameResult()
+  fullName: MacacaGames.GameSystem.IGamePlayData.GameResult()
+  spec.csharp:
+  - uid: MacacaGames.GameSystem.IGamePlayData.GameResult
+    name: GameResult
+    nameWithType: IGamePlayData.GameResult
+    fullName: MacacaGames.GameSystem.IGamePlayData.GameResult
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MacacaGames.GameSystem.IGamePlayData.GameResult
+    name: GameResult
+    nameWithType: IGamePlayData.GameResult
+    fullName: MacacaGames.GameSystem.IGamePlayData.GameResult
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameEnd*
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameEnd
+  name: OnGameEnd
+  nameWithType: ScriptableObjectGamePlayData.OnGameEnd
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameEnd
+- uid: MacacaGames.GameSystem.IGamePlayData.OnGameEnd
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnGameEnd
+  parent: MacacaGames.GameSystem.IGamePlayData
+  name: OnGameEnd()
+  nameWithType: IGamePlayData.OnGameEnd()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnGameEnd()
+  spec.csharp:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnGameEnd
+    name: OnGameEnd
+    nameWithType: IGamePlayData.OnGameEnd
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnGameEnd
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnGameEnd
+    name: OnGameEnd
+    nameWithType: IGamePlayData.OnGameEnd
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnGameEnd
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameFaild*
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameFaild
+  name: OnGameFaild
+  nameWithType: ScriptableObjectGamePlayData.OnGameFaild
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameFaild
+- uid: MacacaGames.GameSystem.IGamePlayData.OnGameFaild
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnGameFaild
+  parent: MacacaGames.GameSystem.IGamePlayData
+  name: OnGameFaild()
+  nameWithType: IGamePlayData.OnGameFaild()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnGameFaild()
+  spec.csharp:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnGameFaild
+    name: OnGameFaild
+    nameWithType: IGamePlayData.OnGameFaild
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnGameFaild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnGameFaild
+    name: OnGameFaild
+    nameWithType: IGamePlayData.OnGameFaild
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnGameFaild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinueFlow*
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinueFlow
+  name: OnContinueFlow
+  nameWithType: ScriptableObjectGamePlayData.OnContinueFlow
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinueFlow
+- uid: MacacaGames.GameSystem.IGamePlayData.OnContinueFlow(Rayark.Mast.IReturn{System.Boolean})
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnContinueFlow(Rayark.Mast.IReturn{System.Boolean})
+  parent: MacacaGames.GameSystem.IGamePlayData
+  isExternal: true
+  name: OnContinueFlow(IReturn<Boolean>)
+  nameWithType: IGamePlayData.OnContinueFlow(IReturn<Boolean>)
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnContinueFlow(Rayark.Mast.IReturn<System.Boolean>)
+  nameWithType.vb: IGamePlayData.OnContinueFlow(IReturn(Of Boolean))
+  fullName.vb: MacacaGames.GameSystem.IGamePlayData.OnContinueFlow(Rayark.Mast.IReturn(Of System.Boolean))
+  name.vb: OnContinueFlow(IReturn(Of Boolean))
+  spec.csharp:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnContinueFlow(Rayark.Mast.IReturn{System.Boolean})
+    name: OnContinueFlow
+    nameWithType: IGamePlayData.OnContinueFlow
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnContinueFlow
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Rayark.Mast.IReturn`1
+    name: IReturn
+    nameWithType: IReturn
+    fullName: Rayark.Mast.IReturn
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnContinueFlow(Rayark.Mast.IReturn{System.Boolean})
+    name: OnContinueFlow
+    nameWithType: IGamePlayData.OnContinueFlow
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnContinueFlow
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Rayark.Mast.IReturn`1
+    name: IReturn
+    nameWithType: IReturn
+    fullName: Rayark.Mast.IReturn
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Rayark.Mast.IReturn{System.Boolean}
+  commentId: T:Rayark.Mast.IReturn{System.Boolean}
+  parent: Rayark.Mast
+  definition: Rayark.Mast.IReturn`1
+  name: IReturn<Boolean>
+  nameWithType: IReturn<Boolean>
+  fullName: Rayark.Mast.IReturn<System.Boolean>
+  nameWithType.vb: IReturn(Of Boolean)
+  fullName.vb: Rayark.Mast.IReturn(Of System.Boolean)
+  name.vb: IReturn(Of Boolean)
+  spec.csharp:
+  - uid: Rayark.Mast.IReturn`1
+    name: IReturn
+    nameWithType: IReturn
+    fullName: Rayark.Mast.IReturn
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Rayark.Mast.IReturn`1
+    name: IReturn
+    nameWithType: IReturn
+    fullName: Rayark.Mast.IReturn
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Rayark.Mast.IReturn`1
+  commentId: T:Rayark.Mast.IReturn`1
+  name: IReturn<T>
+  nameWithType: IReturn<T>
+  fullName: Rayark.Mast.IReturn<T>
+  nameWithType.vb: IReturn(Of T)
+  fullName.vb: Rayark.Mast.IReturn(Of T)
+  name.vb: IReturn(Of T)
+  spec.csharp:
+  - uid: Rayark.Mast.IReturn`1
+    name: IReturn
+    nameWithType: IReturn
+    fullName: Rayark.Mast.IReturn
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Rayark.Mast.IReturn`1
+    name: IReturn
+    nameWithType: IReturn
+    fullName: Rayark.Mast.IReturn
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Rayark.Mast
+  commentId: N:Rayark.Mast
+  name: Rayark.Mast
+  nameWithType: Rayark.Mast
+  fullName: Rayark.Mast
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.IsContinueAvailable*
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectGamePlayData.IsContinueAvailable
+  name: IsContinueAvailable
+  nameWithType: ScriptableObjectGamePlayData.IsContinueAvailable
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.IsContinueAvailable
+- uid: MacacaGames.GameSystem.IGamePlayData.IsContinueAvailable
+  commentId: P:MacacaGames.GameSystem.IGamePlayData.IsContinueAvailable
+  parent: MacacaGames.GameSystem.IGamePlayData
+  name: IsContinueAvailable
+  nameWithType: IGamePlayData.IsContinueAvailable
+  fullName: MacacaGames.GameSystem.IGamePlayData.IsContinueAvailable
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinue*
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinue
+  name: OnContinue
+  nameWithType: ScriptableObjectGamePlayData.OnContinue
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinue
+- uid: MacacaGames.GameSystem.IGamePlayData.OnContinue
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnContinue
+  parent: MacacaGames.GameSystem.IGamePlayData
+  name: OnContinue()
+  nameWithType: IGamePlayData.OnContinue()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnContinue()
+  spec.csharp:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnContinue
+    name: OnContinue
+    nameWithType: IGamePlayData.OnContinue
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnContinue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnContinue
+    name: OnContinue
+    nameWithType: IGamePlayData.OnContinue
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnContinue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGUI*
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGUI
+  name: OnGUI
+  nameWithType: ScriptableObjectGamePlayData.OnGUI
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGUI
+- uid: MacacaGames.GameSystem.IGamePlayData.OnGUI
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnGUI
+  parent: MacacaGames.GameSystem.IGamePlayData
+  name: OnGUI()
+  nameWithType: IGamePlayData.OnGUI()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnGUI()
+  spec.csharp:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnGUI
+    name: OnGUI
+    nameWithType: IGamePlayData.OnGUI
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnGUI
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnGUI
+    name: OnGUI
+    nameWithType: IGamePlayData.OnGUI
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnGUI
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

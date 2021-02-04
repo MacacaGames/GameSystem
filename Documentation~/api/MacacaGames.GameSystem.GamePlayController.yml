@@ -1,0 +1,1372 @@
+### YamlMime:ManagedReference
+items:
+- uid: MacacaGames.GameSystem.GamePlayController
+  commentId: T:MacacaGames.GameSystem.GamePlayController
+  id: GamePlayController
+  parent: MacacaGames.GameSystem
+  children:
+  - MacacaGames.GameSystem.GamePlayController.#ctor(MacacaGames.GameSystem.ApplicationController,MacacaGames.GameSystem.IGamePlayData)
+  - MacacaGames.GameSystem.GamePlayController.AddToUnpauseUpdateExecuter(Rayark.Mast.IResumable)
+  - MacacaGames.GameSystem.GamePlayController.AddToUpdateExecuter(Rayark.Mast.IResumable)
+  - MacacaGames.GameSystem.GamePlayController.alreadyContinue
+  - MacacaGames.GameSystem.GamePlayController.EnterPause
+  - MacacaGames.GameSystem.GamePlayController.FailedGamePlay
+  - MacacaGames.GameSystem.GamePlayController.GamePlayControllerCoreLoop(System.Collections.IEnumerator,System.Collections.IEnumerator)
+  - MacacaGames.GameSystem.GamePlayController.gamePlayUnpauseUpdateExecuter
+  - MacacaGames.GameSystem.GamePlayController.gamePlayUpdateExecuter
+  - MacacaGames.GameSystem.GamePlayController.GetGamePlayData
+  - MacacaGames.GameSystem.GamePlayController.GetGamePlayData``1
+  - MacacaGames.GameSystem.GamePlayController.Init
+  - MacacaGames.GameSystem.GamePlayController.isContinueing
+  - MacacaGames.GameSystem.GamePlayController.isFailed
+  - MacacaGames.GameSystem.GamePlayController.isGaming
+  - MacacaGames.GameSystem.GamePlayController.isInResult
+  - MacacaGames.GameSystem.GamePlayController.isPause
+  - MacacaGames.GameSystem.GamePlayController.isQuiting
+  - MacacaGames.GameSystem.GamePlayController.OnApplicationBeforeGamePlay
+  - MacacaGames.GameSystem.GamePlayController.QuitGamePlay
+  - MacacaGames.GameSystem.GamePlayController.RemoveFromUnpauseUpdateExecuter(Rayark.Mast.IResumable)
+  - MacacaGames.GameSystem.GamePlayController.RemoveFromUpdateExecuter(Rayark.Mast.IResumable)
+  - MacacaGames.GameSystem.GamePlayController.ResumePause
+  - MacacaGames.GameSystem.GamePlayController.SuccessGamePlay
+  langs:
+  - csharp
+  - vb
+  name: GamePlayController
+  nameWithType: GamePlayController
+  fullName: MacacaGames.GameSystem.GamePlayController
+  type: Class
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: GamePlayController
+    path: ../Runtime/GamePlayController.cs
+    startLine: 24
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  syntax:
+    content: public class GamePlayController
+    content.vb: Public Class GamePlayController
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: MacacaGames.GameSystem.GamePlayController.#ctor(MacacaGames.GameSystem.ApplicationController,MacacaGames.GameSystem.IGamePlayData)
+  commentId: M:MacacaGames.GameSystem.GamePlayController.#ctor(MacacaGames.GameSystem.ApplicationController,MacacaGames.GameSystem.IGamePlayData)
+  id: '#ctor(MacacaGames.GameSystem.ApplicationController,MacacaGames.GameSystem.IGamePlayData)'
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: GamePlayController(ApplicationController, IGamePlayData)
+  nameWithType: GamePlayController.GamePlayController(ApplicationController, IGamePlayData)
+  fullName: MacacaGames.GameSystem.GamePlayController.GamePlayController(MacacaGames.GameSystem.ApplicationController, MacacaGames.GameSystem.IGamePlayData)
+  type: Constructor
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: .ctor
+    path: ../Runtime/GamePlayController.cs
+    startLine: 29
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  syntax:
+    content: public GamePlayController(ApplicationController _applicationController, IGamePlayData gamePlayData)
+    parameters:
+    - id: _applicationController
+      type: MacacaGames.GameSystem.ApplicationController
+    - id: gamePlayData
+      type: MacacaGames.GameSystem.IGamePlayData
+    content.vb: Public Sub New(_applicationController As ApplicationController, gamePlayData As IGamePlayData)
+  overload: MacacaGames.GameSystem.GamePlayController.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: MacacaGames.GameSystem.GamePlayController.Init
+  commentId: M:MacacaGames.GameSystem.GamePlayController.Init
+  id: Init
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: Init()
+  nameWithType: GamePlayController.Init()
+  fullName: MacacaGames.GameSystem.GamePlayController.Init()
+  type: Method
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: Init
+    path: ../Runtime/GamePlayController.cs
+    startLine: 35
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  syntax:
+    content: public void Init()
+    content.vb: Public Sub Init
+  overload: MacacaGames.GameSystem.GamePlayController.Init*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: MacacaGames.GameSystem.GamePlayController.OnApplicationBeforeGamePlay
+  commentId: M:MacacaGames.GameSystem.GamePlayController.OnApplicationBeforeGamePlay
+  id: OnApplicationBeforeGamePlay
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: OnApplicationBeforeGamePlay()
+  nameWithType: GamePlayController.OnApplicationBeforeGamePlay()
+  fullName: MacacaGames.GameSystem.GamePlayController.OnApplicationBeforeGamePlay()
+  type: Method
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnApplicationBeforeGamePlay
+    path: ../Runtime/GamePlayController.cs
+    startLine: 40
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  syntax:
+    content: public void OnApplicationBeforeGamePlay()
+    content.vb: Public Sub OnApplicationBeforeGamePlay
+  overload: MacacaGames.GameSystem.GamePlayController.OnApplicationBeforeGamePlay*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: MacacaGames.GameSystem.GamePlayController.GetGamePlayData
+  commentId: M:MacacaGames.GameSystem.GamePlayController.GetGamePlayData
+  id: GetGamePlayData
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: GetGamePlayData()
+  nameWithType: GamePlayController.GetGamePlayData()
+  fullName: MacacaGames.GameSystem.GamePlayController.GetGamePlayData()
+  type: Method
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: GetGamePlayData
+    path: ../Runtime/GamePlayController.cs
+    startLine: 49
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nGet the current GamePlayData \n"
+  example: []
+  syntax:
+    content: public IGamePlayData GetGamePlayData()
+    return:
+      type: MacacaGames.GameSystem.IGamePlayData
+      description: GamePlayData
+    content.vb: Public Function GetGamePlayData As IGamePlayData
+  overload: MacacaGames.GameSystem.GamePlayController.GetGamePlayData*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: MacacaGames.GameSystem.GamePlayController.GetGamePlayData``1
+  commentId: M:MacacaGames.GameSystem.GamePlayController.GetGamePlayData``1
+  id: GetGamePlayData``1
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: GetGamePlayData<T>()
+  nameWithType: GamePlayController.GetGamePlayData<T>()
+  fullName: MacacaGames.GameSystem.GamePlayController.GetGamePlayData<T>()
+  type: Method
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: GetGamePlayData
+    path: ../Runtime/GamePlayController.cs
+    startLine: 59
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nGet the current GamePlayData and convert to target case\n"
+  example: []
+  syntax:
+    content: >-
+      public T GetGamePlayData<T>()
+          where T : class, IGamePlayData
+    typeParameters:
+    - id: T
+      description: Target Type
+    return:
+      type: '{T}'
+      description: GamePlayData
+    content.vb: Public Function GetGamePlayData(Of T As {Class, IGamePlayData}) As T
+  overload: MacacaGames.GameSystem.GamePlayController.GetGamePlayData*
+  nameWithType.vb: GamePlayController.GetGamePlayData(Of T)()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: MacacaGames.GameSystem.GamePlayController.GetGamePlayData(Of T)()
+  name.vb: GetGamePlayData(Of T)()
+- uid: MacacaGames.GameSystem.GamePlayController.GamePlayControllerCoreLoop(System.Collections.IEnumerator,System.Collections.IEnumerator)
+  commentId: M:MacacaGames.GameSystem.GamePlayController.GamePlayControllerCoreLoop(System.Collections.IEnumerator,System.Collections.IEnumerator)
+  id: GamePlayControllerCoreLoop(System.Collections.IEnumerator,System.Collections.IEnumerator)
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: GamePlayControllerCoreLoop(IEnumerator, IEnumerator)
+  nameWithType: GamePlayController.GamePlayControllerCoreLoop(IEnumerator, IEnumerator)
+  fullName: MacacaGames.GameSystem.GamePlayController.GamePlayControllerCoreLoop(System.Collections.IEnumerator, System.Collections.IEnumerator)
+  type: Method
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: GamePlayControllerCoreLoop
+    path: ../Runtime/GamePlayController.cs
+    startLine: 64
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  syntax:
+    content: public Executor GamePlayControllerCoreLoop(IEnumerator gamePlayUpdate, IEnumerator unPauseGamePlayUpdate)
+    parameters:
+    - id: gamePlayUpdate
+      type: System.Collections.IEnumerator
+    - id: unPauseGamePlayUpdate
+      type: System.Collections.IEnumerator
+    return:
+      type: Rayark.Mast.Executor
+    content.vb: Public Function GamePlayControllerCoreLoop(gamePlayUpdate As IEnumerator, unPauseGamePlayUpdate As IEnumerator) As Executor
+  overload: MacacaGames.GameSystem.GamePlayController.GamePlayControllerCoreLoop*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: MacacaGames.GameSystem.GamePlayController.SuccessGamePlay
+  commentId: M:MacacaGames.GameSystem.GamePlayController.SuccessGamePlay
+  id: SuccessGamePlay
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: SuccessGamePlay()
+  nameWithType: GamePlayController.SuccessGamePlay()
+  fullName: MacacaGames.GameSystem.GamePlayController.SuccessGamePlay()
+  type: Method
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: SuccessGamePlay
+    path: ../Runtime/GamePlayController.cs
+    startLine: 88
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nEnd and exit the gameplay,used on Game Clear\n"
+  example: []
+  syntax:
+    content: public void SuccessGamePlay()
+    content.vb: Public Sub SuccessGamePlay
+  overload: MacacaGames.GameSystem.GamePlayController.SuccessGamePlay*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: MacacaGames.GameSystem.GamePlayController.FailedGamePlay
+  commentId: M:MacacaGames.GameSystem.GamePlayController.FailedGamePlay
+  id: FailedGamePlay
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: FailedGamePlay()
+  nameWithType: GamePlayController.FailedGamePlay()
+  fullName: MacacaGames.GameSystem.GamePlayController.FailedGamePlay()
+  type: Method
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: FailedGamePlay
+    path: ../Runtime/GamePlayController.cs
+    startLine: 100
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nFailed and exit the gameplay, this will fire continue flow(if continue is available)\n<xref href=\"MacacaGames.GameSystem.GamePlayController.GameFaildFlow\" data-throw-if-not-resolved=\"false\"></xref> for the contniue behaviour\nor <xref href=\"MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinueFlow(Rayark.Mast.IReturn%7bSystem.Boolean%7d)\" data-throw-if-not-resolved=\"false\"></xref> for your continue implement \n"
+  example: []
+  syntax:
+    content: public void FailedGamePlay()
+    content.vb: Public Sub FailedGamePlay
+  overload: MacacaGames.GameSystem.GamePlayController.FailedGamePlay*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: MacacaGames.GameSystem.GamePlayController.QuitGamePlay
+  commentId: M:MacacaGames.GameSystem.GamePlayController.QuitGamePlay
+  id: QuitGamePlay
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: QuitGamePlay()
+  nameWithType: GamePlayController.QuitGamePlay()
+  fullName: MacacaGames.GameSystem.GamePlayController.QuitGamePlay()
+  type: Method
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: QuitGamePlay
+    path: ../Runtime/GamePlayController.cs
+    startLine: 110
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nQuit and exit the gameplay, usually used on UI to quit.\n"
+  example: []
+  syntax:
+    content: public void QuitGamePlay()
+    content.vb: Public Sub QuitGamePlay
+  overload: MacacaGames.GameSystem.GamePlayController.QuitGamePlay*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: MacacaGames.GameSystem.GamePlayController.EnterPause
+  commentId: M:MacacaGames.GameSystem.GamePlayController.EnterPause
+  id: EnterPause
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: EnterPause()
+  nameWithType: GamePlayController.EnterPause()
+  fullName: MacacaGames.GameSystem.GamePlayController.EnterPause()
+  type: Method
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: EnterPause
+    path: ../Runtime/GamePlayController.cs
+    startLine: 124
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nMake the game Pause, use <xref href=\"MacacaGames.GameSystem.GamePlayController.ResumePause\" data-throw-if-not-resolved=\"false\"></xref> to Resume from Pause\n"
+  example: []
+  syntax:
+    content: public void EnterPause()
+    content.vb: Public Sub EnterPause
+  overload: MacacaGames.GameSystem.GamePlayController.EnterPause*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: MacacaGames.GameSystem.GamePlayController.ResumePause
+  commentId: M:MacacaGames.GameSystem.GamePlayController.ResumePause
+  id: ResumePause
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: ResumePause()
+  nameWithType: GamePlayController.ResumePause()
+  fullName: MacacaGames.GameSystem.GamePlayController.ResumePause()
+  type: Method
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: ResumePause
+    path: ../Runtime/GamePlayController.cs
+    startLine: 132
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nResume the game Pause, use <xref href=\"MacacaGames.GameSystem.GamePlayController.EnterPause\" data-throw-if-not-resolved=\"false\"></xref> to Enter pause\n"
+  example: []
+  syntax:
+    content: public void ResumePause()
+    content.vb: Public Sub ResumePause
+  overload: MacacaGames.GameSystem.GamePlayController.ResumePause*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: MacacaGames.GameSystem.GamePlayController.isGaming
+  commentId: P:MacacaGames.GameSystem.GamePlayController.isGaming
+  id: isGaming
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: isGaming
+  nameWithType: GamePlayController.isGaming
+  fullName: MacacaGames.GameSystem.GamePlayController.isGaming
+  type: Property
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: isGaming
+    path: ../Runtime/GamePlayController.cs
+    startLine: 152
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nIs GamePlay Runing?\n"
+  example: []
+  syntax:
+    content: public bool isGaming { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public ReadOnly Property isGaming As Boolean
+  overload: MacacaGames.GameSystem.GamePlayController.isGaming*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: MacacaGames.GameSystem.GamePlayController.isPause
+  commentId: P:MacacaGames.GameSystem.GamePlayController.isPause
+  id: isPause
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: isPause
+  nameWithType: GamePlayController.isPause
+  fullName: MacacaGames.GameSystem.GamePlayController.isPause
+  type: Property
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: isPause
+    path: ../Runtime/GamePlayController.cs
+    startLine: 159
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nIs GamePlay Pause, value will keep until next gameplay start.\nShould be only modify the value by <xref href=\"MacacaGames.GameSystem.GamePlayController.EnterPause\" data-throw-if-not-resolved=\"false\"></xref> or  <xref href=\"MacacaGames.GameSystem.GamePlayController.ResumePause\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  example: []
+  syntax:
+    content: public bool isPause { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public ReadOnly Property isPause As Boolean
+  overload: MacacaGames.GameSystem.GamePlayController.isPause*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: MacacaGames.GameSystem.GamePlayController.isContinueing
+  commentId: P:MacacaGames.GameSystem.GamePlayController.isContinueing
+  id: isContinueing
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: isContinueing
+  nameWithType: GamePlayController.isContinueing
+  fullName: MacacaGames.GameSystem.GamePlayController.isContinueing
+  type: Property
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: isContinueing
+    path: ../Runtime/GamePlayController.cs
+    startLine: 165
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nIs GamePlay Continue progress working.\n"
+  example: []
+  syntax:
+    content: public bool isContinueing { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public ReadOnly Property isContinueing As Boolean
+  overload: MacacaGames.GameSystem.GamePlayController.isContinueing*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: MacacaGames.GameSystem.GamePlayController.isQuiting
+  commentId: P:MacacaGames.GameSystem.GamePlayController.isQuiting
+  id: isQuiting
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: isQuiting
+  nameWithType: GamePlayController.isQuiting
+  fullName: MacacaGames.GameSystem.GamePlayController.isQuiting
+  type: Property
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: isQuiting
+    path: ../Runtime/GamePlayController.cs
+    startLine: 171
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nIs GamePlay Quiting, value will keep until next gameplay start.\n"
+  example: []
+  syntax:
+    content: public bool isQuiting { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public ReadOnly Property isQuiting As Boolean
+  overload: MacacaGames.GameSystem.GamePlayController.isQuiting*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: MacacaGames.GameSystem.GamePlayController.isFailed
+  commentId: P:MacacaGames.GameSystem.GamePlayController.isFailed
+  id: isFailed
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: isFailed
+  nameWithType: GamePlayController.isFailed
+  fullName: MacacaGames.GameSystem.GamePlayController.isFailed
+  type: Property
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: isFailed
+    path: ../Runtime/GamePlayController.cs
+    startLine: 177
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nIs GamePlay Failed, value will keep until next gameplay start.\n"
+  example: []
+  syntax:
+    content: public bool isFailed { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public ReadOnly Property isFailed As Boolean
+  overload: MacacaGames.GameSystem.GamePlayController.isFailed*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: MacacaGames.GameSystem.GamePlayController.isInResult
+  commentId: P:MacacaGames.GameSystem.GamePlayController.isInResult
+  id: isInResult
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: isInResult
+  nameWithType: GamePlayController.isInResult
+  fullName: MacacaGames.GameSystem.GamePlayController.isInResult
+  type: Property
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: isInResult
+    path: ../Runtime/GamePlayController.cs
+    startLine: 183
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nIs In Result , value will keep until next gameplay start.\n"
+  example: []
+  syntax:
+    content: public bool isInResult { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public ReadOnly Property isInResult As Boolean
+  overload: MacacaGames.GameSystem.GamePlayController.isInResult*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: MacacaGames.GameSystem.GamePlayController.alreadyContinue
+  commentId: P:MacacaGames.GameSystem.GamePlayController.alreadyContinue
+  id: alreadyContinue
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: alreadyContinue
+  nameWithType: GamePlayController.alreadyContinue
+  fullName: MacacaGames.GameSystem.GamePlayController.alreadyContinue
+  type: Property
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: alreadyContinue
+    path: ../Runtime/GamePlayController.cs
+    startLine: 196
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nIs GamePlay alreadyContinue, value will keep until next gameplay start.\n"
+  example: []
+  syntax:
+    content: public bool alreadyContinue { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public ReadOnly Property alreadyContinue As Boolean
+  overload: MacacaGames.GameSystem.GamePlayController.alreadyContinue*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: MacacaGames.GameSystem.GamePlayController.gamePlayUpdateExecuter
+  commentId: F:MacacaGames.GameSystem.GamePlayController.gamePlayUpdateExecuter
+  id: gamePlayUpdateExecuter
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: gamePlayUpdateExecuter
+  nameWithType: GamePlayController.gamePlayUpdateExecuter
+  fullName: MacacaGames.GameSystem.GamePlayController.gamePlayUpdateExecuter
+  type: Field
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: gamePlayUpdateExecuter
+    path: ../Runtime/GamePlayController.cs
+    startLine: 293
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  syntax:
+    content: public Executor gamePlayUpdateExecuter
+    return:
+      type: Rayark.Mast.Executor
+    content.vb: Public gamePlayUpdateExecuter As Executor
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: MacacaGames.GameSystem.GamePlayController.gamePlayUnpauseUpdateExecuter
+  commentId: F:MacacaGames.GameSystem.GamePlayController.gamePlayUnpauseUpdateExecuter
+  id: gamePlayUnpauseUpdateExecuter
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: gamePlayUnpauseUpdateExecuter
+  nameWithType: GamePlayController.gamePlayUnpauseUpdateExecuter
+  fullName: MacacaGames.GameSystem.GamePlayController.gamePlayUnpauseUpdateExecuter
+  type: Field
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: gamePlayUnpauseUpdateExecuter
+    path: ../Runtime/GamePlayController.cs
+    startLine: 294
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  syntax:
+    content: public Executor gamePlayUnpauseUpdateExecuter
+    return:
+      type: Rayark.Mast.Executor
+    content.vb: Public gamePlayUnpauseUpdateExecuter As Executor
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: MacacaGames.GameSystem.GamePlayController.AddToUnpauseUpdateExecuter(Rayark.Mast.IResumable)
+  commentId: M:MacacaGames.GameSystem.GamePlayController.AddToUnpauseUpdateExecuter(Rayark.Mast.IResumable)
+  id: AddToUnpauseUpdateExecuter(Rayark.Mast.IResumable)
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: AddToUnpauseUpdateExecuter(IResumable)
+  nameWithType: GamePlayController.AddToUnpauseUpdateExecuter(IResumable)
+  fullName: MacacaGames.GameSystem.GamePlayController.AddToUnpauseUpdateExecuter(Rayark.Mast.IResumable)
+  type: Method
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: AddToUnpauseUpdateExecuter
+    path: ../Runtime/GamePlayController.cs
+    startLine: 296
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  syntax:
+    content: public void AddToUnpauseUpdateExecuter(IResumable c)
+    parameters:
+    - id: c
+      type: Rayark.Mast.IResumable
+    content.vb: Public Sub AddToUnpauseUpdateExecuter(c As IResumable)
+  overload: MacacaGames.GameSystem.GamePlayController.AddToUnpauseUpdateExecuter*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: MacacaGames.GameSystem.GamePlayController.RemoveFromUnpauseUpdateExecuter(Rayark.Mast.IResumable)
+  commentId: M:MacacaGames.GameSystem.GamePlayController.RemoveFromUnpauseUpdateExecuter(Rayark.Mast.IResumable)
+  id: RemoveFromUnpauseUpdateExecuter(Rayark.Mast.IResumable)
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: RemoveFromUnpauseUpdateExecuter(IResumable)
+  nameWithType: GamePlayController.RemoveFromUnpauseUpdateExecuter(IResumable)
+  fullName: MacacaGames.GameSystem.GamePlayController.RemoveFromUnpauseUpdateExecuter(Rayark.Mast.IResumable)
+  type: Method
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: RemoveFromUnpauseUpdateExecuter
+    path: ../Runtime/GamePlayController.cs
+    startLine: 302
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  syntax:
+    content: public void RemoveFromUnpauseUpdateExecuter(IResumable c)
+    parameters:
+    - id: c
+      type: Rayark.Mast.IResumable
+    content.vb: Public Sub RemoveFromUnpauseUpdateExecuter(c As IResumable)
+  overload: MacacaGames.GameSystem.GamePlayController.RemoveFromUnpauseUpdateExecuter*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: MacacaGames.GameSystem.GamePlayController.AddToUpdateExecuter(Rayark.Mast.IResumable)
+  commentId: M:MacacaGames.GameSystem.GamePlayController.AddToUpdateExecuter(Rayark.Mast.IResumable)
+  id: AddToUpdateExecuter(Rayark.Mast.IResumable)
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: AddToUpdateExecuter(IResumable)
+  nameWithType: GamePlayController.AddToUpdateExecuter(IResumable)
+  fullName: MacacaGames.GameSystem.GamePlayController.AddToUpdateExecuter(Rayark.Mast.IResumable)
+  type: Method
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: AddToUpdateExecuter
+    path: ../Runtime/GamePlayController.cs
+    startLine: 308
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  syntax:
+    content: public void AddToUpdateExecuter(IResumable c)
+    parameters:
+    - id: c
+      type: Rayark.Mast.IResumable
+    content.vb: Public Sub AddToUpdateExecuter(c As IResumable)
+  overload: MacacaGames.GameSystem.GamePlayController.AddToUpdateExecuter*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: MacacaGames.GameSystem.GamePlayController.RemoveFromUpdateExecuter(Rayark.Mast.IResumable)
+  commentId: M:MacacaGames.GameSystem.GamePlayController.RemoveFromUpdateExecuter(Rayark.Mast.IResumable)
+  id: RemoveFromUpdateExecuter(Rayark.Mast.IResumable)
+  parent: MacacaGames.GameSystem.GamePlayController
+  langs:
+  - csharp
+  - vb
+  name: RemoveFromUpdateExecuter(IResumable)
+  nameWithType: GamePlayController.RemoveFromUpdateExecuter(IResumable)
+  fullName: MacacaGames.GameSystem.GamePlayController.RemoveFromUpdateExecuter(Rayark.Mast.IResumable)
+  type: Method
+  source:
+    remote:
+      path: Runtime/GamePlayController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: RemoveFromUpdateExecuter
+    path: ../Runtime/GamePlayController.cs
+    startLine: 314
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  syntax:
+    content: public void RemoveFromUpdateExecuter(IResumable c)
+    parameters:
+    - id: c
+      type: Rayark.Mast.IResumable
+    content.vb: Public Sub RemoveFromUpdateExecuter(c As IResumable)
+  overload: MacacaGames.GameSystem.GamePlayController.RemoveFromUpdateExecuter*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: MacacaGames.GameSystem
+  commentId: N:MacacaGames.GameSystem
+  name: MacacaGames.GameSystem
+  nameWithType: MacacaGames.GameSystem
+  fullName: MacacaGames.GameSystem
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: MacacaGames.GameSystem.GamePlayController.#ctor*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.#ctor
+  name: GamePlayController
+  nameWithType: GamePlayController.GamePlayController
+  fullName: MacacaGames.GameSystem.GamePlayController.GamePlayController
+- uid: MacacaGames.GameSystem.ApplicationController
+  commentId: T:MacacaGames.GameSystem.ApplicationController
+  parent: MacacaGames.GameSystem
+  name: ApplicationController
+  nameWithType: ApplicationController
+  fullName: MacacaGames.GameSystem.ApplicationController
+- uid: MacacaGames.GameSystem.IGamePlayData
+  commentId: T:MacacaGames.GameSystem.IGamePlayData
+  parent: MacacaGames.GameSystem
+  name: IGamePlayData
+  nameWithType: IGamePlayData
+  fullName: MacacaGames.GameSystem.IGamePlayData
+- uid: MacacaGames.GameSystem.GamePlayController.Init*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.Init
+  name: Init
+  nameWithType: GamePlayController.Init
+  fullName: MacacaGames.GameSystem.GamePlayController.Init
+- uid: MacacaGames.GameSystem.GamePlayController.OnApplicationBeforeGamePlay*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.OnApplicationBeforeGamePlay
+  name: OnApplicationBeforeGamePlay
+  nameWithType: GamePlayController.OnApplicationBeforeGamePlay
+  fullName: MacacaGames.GameSystem.GamePlayController.OnApplicationBeforeGamePlay
+- uid: MacacaGames.GameSystem.GamePlayController.GetGamePlayData*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.GetGamePlayData
+  name: GetGamePlayData
+  nameWithType: GamePlayController.GetGamePlayData
+  fullName: MacacaGames.GameSystem.GamePlayController.GetGamePlayData
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: MacacaGames.GameSystem.GamePlayController.GamePlayControllerCoreLoop*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.GamePlayControllerCoreLoop
+  name: GamePlayControllerCoreLoop
+  nameWithType: GamePlayController.GamePlayControllerCoreLoop
+  fullName: MacacaGames.GameSystem.GamePlayController.GamePlayControllerCoreLoop
+- uid: System.Collections.IEnumerator
+  commentId: T:System.Collections.IEnumerator
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerator
+  nameWithType: IEnumerator
+  fullName: System.Collections.IEnumerator
+- uid: Rayark.Mast.Executor
+  commentId: T:Rayark.Mast.Executor
+  parent: Rayark.Mast
+  name: Executor
+  nameWithType: Executor
+  fullName: Rayark.Mast.Executor
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+- uid: Rayark.Mast
+  commentId: N:Rayark.Mast
+  name: Rayark.Mast
+  nameWithType: Rayark.Mast
+  fullName: Rayark.Mast
+- uid: MacacaGames.GameSystem.GamePlayController.SuccessGamePlay*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.SuccessGamePlay
+  name: SuccessGamePlay
+  nameWithType: GamePlayController.SuccessGamePlay
+  fullName: MacacaGames.GameSystem.GamePlayController.SuccessGamePlay
+- uid: MacacaGames.GameSystem.GamePlayController.GameFaildFlow
+  commentId: M:MacacaGames.GameSystem.GamePlayController.GameFaildFlow
+  isExternal: true
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinueFlow(Rayark.Mast.IReturn{System.Boolean})
+  commentId: M:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinueFlow(Rayark.Mast.IReturn{System.Boolean})
+  isExternal: true
+- uid: MacacaGames.GameSystem.GamePlayController.FailedGamePlay*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.FailedGamePlay
+  name: FailedGamePlay
+  nameWithType: GamePlayController.FailedGamePlay
+  fullName: MacacaGames.GameSystem.GamePlayController.FailedGamePlay
+- uid: MacacaGames.GameSystem.GamePlayController.QuitGamePlay*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.QuitGamePlay
+  name: QuitGamePlay
+  nameWithType: GamePlayController.QuitGamePlay
+  fullName: MacacaGames.GameSystem.GamePlayController.QuitGamePlay
+- uid: MacacaGames.GameSystem.GamePlayController.ResumePause
+  commentId: M:MacacaGames.GameSystem.GamePlayController.ResumePause
+  isExternal: true
+- uid: MacacaGames.GameSystem.GamePlayController.EnterPause*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.EnterPause
+  name: EnterPause
+  nameWithType: GamePlayController.EnterPause
+  fullName: MacacaGames.GameSystem.GamePlayController.EnterPause
+- uid: MacacaGames.GameSystem.GamePlayController.EnterPause
+  commentId: M:MacacaGames.GameSystem.GamePlayController.EnterPause
+  isExternal: true
+- uid: MacacaGames.GameSystem.GamePlayController.ResumePause*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.ResumePause
+  name: ResumePause
+  nameWithType: GamePlayController.ResumePause
+  fullName: MacacaGames.GameSystem.GamePlayController.ResumePause
+- uid: MacacaGames.GameSystem.GamePlayController.isGaming*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.isGaming
+  name: isGaming
+  nameWithType: GamePlayController.isGaming
+  fullName: MacacaGames.GameSystem.GamePlayController.isGaming
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: MacacaGames.GameSystem.GamePlayController.isPause*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.isPause
+  name: isPause
+  nameWithType: GamePlayController.isPause
+  fullName: MacacaGames.GameSystem.GamePlayController.isPause
+- uid: MacacaGames.GameSystem.GamePlayController.isContinueing*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.isContinueing
+  name: isContinueing
+  nameWithType: GamePlayController.isContinueing
+  fullName: MacacaGames.GameSystem.GamePlayController.isContinueing
+- uid: MacacaGames.GameSystem.GamePlayController.isQuiting*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.isQuiting
+  name: isQuiting
+  nameWithType: GamePlayController.isQuiting
+  fullName: MacacaGames.GameSystem.GamePlayController.isQuiting
+- uid: MacacaGames.GameSystem.GamePlayController.isFailed*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.isFailed
+  name: isFailed
+  nameWithType: GamePlayController.isFailed
+  fullName: MacacaGames.GameSystem.GamePlayController.isFailed
+- uid: MacacaGames.GameSystem.GamePlayController.isInResult*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.isInResult
+  name: isInResult
+  nameWithType: GamePlayController.isInResult
+  fullName: MacacaGames.GameSystem.GamePlayController.isInResult
+- uid: MacacaGames.GameSystem.GamePlayController.alreadyContinue*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.alreadyContinue
+  name: alreadyContinue
+  nameWithType: GamePlayController.alreadyContinue
+  fullName: MacacaGames.GameSystem.GamePlayController.alreadyContinue
+- uid: MacacaGames.GameSystem.GamePlayController.AddToUnpauseUpdateExecuter*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.AddToUnpauseUpdateExecuter
+  name: AddToUnpauseUpdateExecuter
+  nameWithType: GamePlayController.AddToUnpauseUpdateExecuter
+  fullName: MacacaGames.GameSystem.GamePlayController.AddToUnpauseUpdateExecuter
+- uid: Rayark.Mast.IResumable
+  commentId: T:Rayark.Mast.IResumable
+  parent: Rayark.Mast
+  name: IResumable
+  nameWithType: IResumable
+  fullName: Rayark.Mast.IResumable
+- uid: MacacaGames.GameSystem.GamePlayController.RemoveFromUnpauseUpdateExecuter*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.RemoveFromUnpauseUpdateExecuter
+  name: RemoveFromUnpauseUpdateExecuter
+  nameWithType: GamePlayController.RemoveFromUnpauseUpdateExecuter
+  fullName: MacacaGames.GameSystem.GamePlayController.RemoveFromUnpauseUpdateExecuter
+- uid: MacacaGames.GameSystem.GamePlayController.AddToUpdateExecuter*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.AddToUpdateExecuter
+  name: AddToUpdateExecuter
+  nameWithType: GamePlayController.AddToUpdateExecuter
+  fullName: MacacaGames.GameSystem.GamePlayController.AddToUpdateExecuter
+- uid: MacacaGames.GameSystem.GamePlayController.RemoveFromUpdateExecuter*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.RemoveFromUpdateExecuter
+  name: RemoveFromUpdateExecuter
+  nameWithType: GamePlayController.RemoveFromUpdateExecuter
+  fullName: MacacaGames.GameSystem.GamePlayController.RemoveFromUpdateExecuter

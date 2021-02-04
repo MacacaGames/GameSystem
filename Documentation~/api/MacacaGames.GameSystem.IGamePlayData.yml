@@ -1,0 +1,769 @@
+### YamlMime:ManagedReference
+items:
+- uid: MacacaGames.GameSystem.IGamePlayData
+  commentId: T:MacacaGames.GameSystem.IGamePlayData
+  id: IGamePlayData
+  parent: MacacaGames.GameSystem
+  children:
+  - MacacaGames.GameSystem.IGamePlayData.applicationController
+  - MacacaGames.GameSystem.IGamePlayData.GamePlay
+  - MacacaGames.GameSystem.IGamePlayData.gamePlayController
+  - MacacaGames.GameSystem.IGamePlayData.GameResult
+  - MacacaGames.GameSystem.IGamePlayData.Init
+  - MacacaGames.GameSystem.IGamePlayData.IsContinueAvailable
+  - MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
+  - MacacaGames.GameSystem.IGamePlayData.OnContinue
+  - MacacaGames.GameSystem.IGamePlayData.OnContinueFlow(Rayark.Mast.IReturn{System.Boolean})
+  - MacacaGames.GameSystem.IGamePlayData.OnEnterGame
+  - MacacaGames.GameSystem.IGamePlayData.OnGameEnd
+  - MacacaGames.GameSystem.IGamePlayData.OnGameFaild
+  - MacacaGames.GameSystem.IGamePlayData.OnGameLose
+  - MacacaGames.GameSystem.IGamePlayData.OnGameSuccess
+  - MacacaGames.GameSystem.IGamePlayData.OnGameValueReset
+  - MacacaGames.GameSystem.IGamePlayData.OnGUI
+  - MacacaGames.GameSystem.IGamePlayData.OnLeaveGame
+  langs:
+  - csharp
+  - vb
+  name: IGamePlayData
+  nameWithType: IGamePlayData
+  fullName: MacacaGames.GameSystem.IGamePlayData
+  type: Interface
+  source:
+    remote:
+      path: Runtime/Interface/IGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: IGamePlayData
+    path: ../Runtime/Interface/IGamePlayData.cs
+    startLine: 13
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  syntax:
+    content: public interface IGamePlayData
+    content.vb: Public Interface IGamePlayData
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: MacacaGames.GameSystem.IGamePlayData.gamePlayController
+  commentId: P:MacacaGames.GameSystem.IGamePlayData.gamePlayController
+  id: gamePlayController
+  parent: MacacaGames.GameSystem.IGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: gamePlayController
+  nameWithType: IGamePlayData.gamePlayController
+  fullName: MacacaGames.GameSystem.IGamePlayData.gamePlayController
+  type: Property
+  source:
+    remote:
+      path: Runtime/Interface/IGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: gamePlayController
+    path: ../Runtime/Interface/IGamePlayData.cs
+    startLine: 15
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  syntax:
+    content: GamePlayController gamePlayController { get; set; }
+    parameters: []
+    return:
+      type: MacacaGames.GameSystem.GamePlayController
+    content.vb: Property gamePlayController As GamePlayController
+  overload: MacacaGames.GameSystem.IGamePlayData.gamePlayController*
+  modifiers.csharp:
+  - get
+  - set
+- uid: MacacaGames.GameSystem.IGamePlayData.applicationController
+  commentId: P:MacacaGames.GameSystem.IGamePlayData.applicationController
+  id: applicationController
+  parent: MacacaGames.GameSystem.IGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: applicationController
+  nameWithType: IGamePlayData.applicationController
+  fullName: MacacaGames.GameSystem.IGamePlayData.applicationController
+  type: Property
+  source:
+    remote:
+      path: Runtime/Interface/IGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: applicationController
+    path: ../Runtime/Interface/IGamePlayData.cs
+    startLine: 16
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  syntax:
+    content: ApplicationController applicationController { get; set; }
+    parameters: []
+    return:
+      type: MacacaGames.GameSystem.ApplicationController
+    content.vb: Property applicationController As ApplicationController
+  overload: MacacaGames.GameSystem.IGamePlayData.applicationController*
+  modifiers.csharp:
+  - get
+  - set
+- uid: MacacaGames.GameSystem.IGamePlayData.Init
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.Init
+  id: Init
+  parent: MacacaGames.GameSystem.IGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: Init()
+  nameWithType: IGamePlayData.Init()
+  fullName: MacacaGames.GameSystem.IGamePlayData.Init()
+  type: Method
+  source:
+    remote:
+      path: Runtime/Interface/IGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: Init
+    path: ../Runtime/Interface/IGamePlayData.cs
+    startLine: 21
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nSame as ApplicationController Init.\n"
+  example: []
+  syntax:
+    content: void Init()
+    content.vb: Sub Init
+  overload: MacacaGames.GameSystem.IGamePlayData.Init*
+- uid: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
+  id: OnApplicationBeforeGamePlay
+  parent: MacacaGames.GameSystem.IGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnApplicationBeforeGamePlay()
+  nameWithType: IGamePlayData.OnApplicationBeforeGamePlay()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay()
+  type: Method
+  source:
+    remote:
+      path: Runtime/Interface/IGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnApplicationBeforeGamePlay
+    path: ../Runtime/Interface/IGamePlayData.cs
+    startLine: 27
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nSame as ApplicationController OnApplicationBeforeGamePlay.\n"
+  example: []
+  syntax:
+    content: void OnApplicationBeforeGamePlay()
+    content.vb: Sub OnApplicationBeforeGamePlay
+  overload: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay*
+- uid: MacacaGames.GameSystem.IGamePlayData.OnGameValueReset
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnGameValueReset
+  id: OnGameValueReset
+  parent: MacacaGames.GameSystem.IGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnGameValueReset()
+  nameWithType: IGamePlayData.OnGameValueReset()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnGameValueReset()
+  type: Method
+  source:
+    remote:
+      path: Runtime/Interface/IGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnGameValueReset
+    path: ../Runtime/Interface/IGamePlayData.cs
+    startLine: 32
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nReset all gameplay relalte value\n"
+  example: []
+  syntax:
+    content: void OnGameValueReset()
+    content.vb: Sub OnGameValueReset
+  overload: MacacaGames.GameSystem.IGamePlayData.OnGameValueReset*
+- uid: MacacaGames.GameSystem.IGamePlayData.OnEnterGame
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnEnterGame
+  id: OnEnterGame
+  parent: MacacaGames.GameSystem.IGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnEnterGame()
+  nameWithType: IGamePlayData.OnEnterGame()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnEnterGame()
+  type: Method
+  source:
+    remote:
+      path: Runtime/Interface/IGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnEnterGame
+    path: ../Runtime/Interface/IGamePlayData.cs
+    startLine: 37
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nExcude before gameplay realy start\n"
+  example: []
+  syntax:
+    content: IEnumerator OnEnterGame()
+    return:
+      type: System.Collections.IEnumerator
+    content.vb: Function OnEnterGame As IEnumerator
+  overload: MacacaGames.GameSystem.IGamePlayData.OnEnterGame*
+- uid: MacacaGames.GameSystem.IGamePlayData.GamePlay
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.GamePlay
+  id: GamePlay
+  parent: MacacaGames.GameSystem.IGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: GamePlay()
+  nameWithType: IGamePlayData.GamePlay()
+  fullName: MacacaGames.GameSystem.IGamePlayData.GamePlay()
+  type: Method
+  source:
+    remote:
+      path: Runtime/Interface/IGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: GamePlay
+    path: ../Runtime/Interface/IGamePlayData.cs
+    startLine: 43
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nMain logic of the game\n"
+  example: []
+  syntax:
+    content: IEnumerator GamePlay()
+    return:
+      type: System.Collections.IEnumerator
+      description: ''
+    content.vb: Function GamePlay As IEnumerator
+  overload: MacacaGames.GameSystem.IGamePlayData.GamePlay*
+- uid: MacacaGames.GameSystem.IGamePlayData.OnLeaveGame
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnLeaveGame
+  id: OnLeaveGame
+  parent: MacacaGames.GameSystem.IGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnLeaveGame()
+  nameWithType: IGamePlayData.OnLeaveGame()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnLeaveGame()
+  type: Method
+  source:
+    remote:
+      path: Runtime/Interface/IGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnLeaveGame
+    path: ../Runtime/Interface/IGamePlayData.cs
+    startLine: 49
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nExcude after GamePlay() is end, but before GameResult()\n"
+  example: []
+  syntax:
+    content: void OnLeaveGame()
+    content.vb: Sub OnLeaveGame
+  overload: MacacaGames.GameSystem.IGamePlayData.OnLeaveGame*
+- uid: MacacaGames.GameSystem.IGamePlayData.OnGameSuccess
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnGameSuccess
+  id: OnGameSuccess
+  parent: MacacaGames.GameSystem.IGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnGameSuccess()
+  nameWithType: IGamePlayData.OnGameSuccess()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnGameSuccess()
+  type: Method
+  source:
+    remote:
+      path: Runtime/Interface/IGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnGameSuccess
+    path: ../Runtime/Interface/IGamePlayData.cs
+    startLine: 54
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  syntax:
+    content: void OnGameSuccess()
+    content.vb: Sub OnGameSuccess
+  overload: MacacaGames.GameSystem.IGamePlayData.OnGameSuccess*
+- uid: MacacaGames.GameSystem.IGamePlayData.OnGameLose
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnGameLose
+  id: OnGameLose
+  parent: MacacaGames.GameSystem.IGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnGameLose()
+  nameWithType: IGamePlayData.OnGameLose()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnGameLose()
+  type: Method
+  source:
+    remote:
+      path: Runtime/Interface/IGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnGameLose
+    path: ../Runtime/Interface/IGamePlayData.cs
+    startLine: 59
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nGame Lose .\n"
+  example: []
+  syntax:
+    content: void OnGameLose()
+    content.vb: Sub OnGameLose
+  overload: MacacaGames.GameSystem.IGamePlayData.OnGameLose*
+- uid: MacacaGames.GameSystem.IGamePlayData.GameResult
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.GameResult
+  id: GameResult
+  parent: MacacaGames.GameSystem.IGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: GameResult()
+  nameWithType: IGamePlayData.GameResult()
+  fullName: MacacaGames.GameSystem.IGamePlayData.GameResult()
+  type: Method
+  source:
+    remote:
+      path: Runtime/Interface/IGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: GameResult
+    path: ../Runtime/Interface/IGamePlayData.cs
+    startLine: 65
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nOnly work during play died or clear, not on quit\n"
+  example: []
+  syntax:
+    content: IEnumerator GameResult()
+    return:
+      type: System.Collections.IEnumerator
+      description: ''
+    content.vb: Function GameResult As IEnumerator
+  overload: MacacaGames.GameSystem.IGamePlayData.GameResult*
+- uid: MacacaGames.GameSystem.IGamePlayData.OnGameEnd
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnGameEnd
+  id: OnGameEnd
+  parent: MacacaGames.GameSystem.IGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnGameEnd()
+  nameWithType: IGamePlayData.OnGameEnd()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnGameEnd()
+  type: Method
+  source:
+    remote:
+      path: Runtime/Interface/IGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnGameEnd
+    path: ../Runtime/Interface/IGamePlayData.cs
+    startLine: 70
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nGame total end, no mater is died, clear or quit.\n"
+  example: []
+  syntax:
+    content: void OnGameEnd()
+    content.vb: Sub OnGameEnd
+  overload: MacacaGames.GameSystem.IGamePlayData.OnGameEnd*
+- uid: MacacaGames.GameSystem.IGamePlayData.OnGameFaild
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnGameFaild
+  id: OnGameFaild
+  parent: MacacaGames.GameSystem.IGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnGameFaild()
+  nameWithType: IGamePlayData.OnGameFaild()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnGameFaild()
+  type: Method
+  source:
+    remote:
+      path: Runtime/Interface/IGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnGameFaild
+    path: ../Runtime/Interface/IGamePlayData.cs
+    startLine: 75
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nGame Failed.\n"
+  example: []
+  syntax:
+    content: void OnGameFaild()
+    content.vb: Sub OnGameFaild
+  overload: MacacaGames.GameSystem.IGamePlayData.OnGameFaild*
+- uid: MacacaGames.GameSystem.IGamePlayData.OnContinueFlow(Rayark.Mast.IReturn{System.Boolean})
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnContinueFlow(Rayark.Mast.IReturn{System.Boolean})
+  id: OnContinueFlow(Rayark.Mast.IReturn{System.Boolean})
+  parent: MacacaGames.GameSystem.IGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnContinueFlow(IReturn<Boolean>)
+  nameWithType: IGamePlayData.OnContinueFlow(IReturn<Boolean>)
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnContinueFlow(Rayark.Mast.IReturn<System.Boolean>)
+  type: Method
+  source:
+    remote:
+      path: Runtime/Interface/IGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnContinueFlow
+    path: ../Runtime/Interface/IGamePlayData.cs
+    startLine: 82
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nImplement the continue progress here and set result in result \n"
+  example: []
+  syntax:
+    content: IEnumerator OnContinueFlow(IReturn<bool> result)
+    parameters:
+    - id: result
+      type: Rayark.Mast.IReturn{System.Boolean}
+      description: the reture value for the continue progress
+    return:
+      type: System.Collections.IEnumerator
+      description: ''
+    content.vb: Function OnContinueFlow(result As IReturn(Of Boolean)) As IEnumerator
+  overload: MacacaGames.GameSystem.IGamePlayData.OnContinueFlow*
+  nameWithType.vb: IGamePlayData.OnContinueFlow(IReturn(Of Boolean))
+  fullName.vb: MacacaGames.GameSystem.IGamePlayData.OnContinueFlow(Rayark.Mast.IReturn(Of System.Boolean))
+  name.vb: OnContinueFlow(IReturn(Of Boolean))
+- uid: MacacaGames.GameSystem.IGamePlayData.IsContinueAvailable
+  commentId: P:MacacaGames.GameSystem.IGamePlayData.IsContinueAvailable
+  id: IsContinueAvailable
+  parent: MacacaGames.GameSystem.IGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: IsContinueAvailable
+  nameWithType: IGamePlayData.IsContinueAvailable
+  fullName: MacacaGames.GameSystem.IGamePlayData.IsContinueAvailable
+  type: Property
+  source:
+    remote:
+      path: Runtime/Interface/IGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: IsContinueAvailable
+    path: ../Runtime/Interface/IGamePlayData.cs
+    startLine: 88
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nTo verify is the game play available to continue\n"
+  example: []
+  syntax:
+    content: bool IsContinueAvailable { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: ReadOnly Property IsContinueAvailable As Boolean
+  overload: MacacaGames.GameSystem.IGamePlayData.IsContinueAvailable*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: MacacaGames.GameSystem.IGamePlayData.OnContinue
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnContinue
+  id: OnContinue
+  parent: MacacaGames.GameSystem.IGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnContinue()
+  nameWithType: IGamePlayData.OnContinue()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnContinue()
+  type: Method
+  source:
+    remote:
+      path: Runtime/Interface/IGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnContinue
+    path: ../Runtime/Interface/IGamePlayData.cs
+    startLine: 93
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nWhile the result in OnContinueFlow is true, do anything require to continue the gameplay on this callback.\n"
+  example: []
+  syntax:
+    content: void OnContinue()
+    content.vb: Sub OnContinue
+  overload: MacacaGames.GameSystem.IGamePlayData.OnContinue*
+- uid: MacacaGames.GameSystem.IGamePlayData.OnGUI
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnGUI
+  id: OnGUI
+  parent: MacacaGames.GameSystem.IGamePlayData
+  langs:
+  - csharp
+  - vb
+  name: OnGUI()
+  nameWithType: IGamePlayData.OnGUI()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnGUI()
+  type: Method
+  source:
+    remote:
+      path: Runtime/Interface/IGamePlayData.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnGUI
+    path: ../Runtime/Interface/IGamePlayData.cs
+    startLine: 95
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  syntax:
+    content: void OnGUI()
+    content.vb: Sub OnGUI
+  overload: MacacaGames.GameSystem.IGamePlayData.OnGUI*
+references:
+- uid: MacacaGames.GameSystem
+  commentId: N:MacacaGames.GameSystem
+  name: MacacaGames.GameSystem
+  nameWithType: MacacaGames.GameSystem
+  fullName: MacacaGames.GameSystem
+- uid: MacacaGames.GameSystem.IGamePlayData.gamePlayController*
+  commentId: Overload:MacacaGames.GameSystem.IGamePlayData.gamePlayController
+  name: gamePlayController
+  nameWithType: IGamePlayData.gamePlayController
+  fullName: MacacaGames.GameSystem.IGamePlayData.gamePlayController
+- uid: MacacaGames.GameSystem.GamePlayController
+  commentId: T:MacacaGames.GameSystem.GamePlayController
+  parent: MacacaGames.GameSystem
+  name: GamePlayController
+  nameWithType: GamePlayController
+  fullName: MacacaGames.GameSystem.GamePlayController
+- uid: MacacaGames.GameSystem.IGamePlayData.applicationController*
+  commentId: Overload:MacacaGames.GameSystem.IGamePlayData.applicationController
+  name: applicationController
+  nameWithType: IGamePlayData.applicationController
+  fullName: MacacaGames.GameSystem.IGamePlayData.applicationController
+- uid: MacacaGames.GameSystem.ApplicationController
+  commentId: T:MacacaGames.GameSystem.ApplicationController
+  parent: MacacaGames.GameSystem
+  name: ApplicationController
+  nameWithType: ApplicationController
+  fullName: MacacaGames.GameSystem.ApplicationController
+- uid: MacacaGames.GameSystem.IGamePlayData.Init*
+  commentId: Overload:MacacaGames.GameSystem.IGamePlayData.Init
+  name: Init
+  nameWithType: IGamePlayData.Init
+  fullName: MacacaGames.GameSystem.IGamePlayData.Init
+- uid: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay*
+  commentId: Overload:MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
+  name: OnApplicationBeforeGamePlay
+  nameWithType: IGamePlayData.OnApplicationBeforeGamePlay
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
+- uid: MacacaGames.GameSystem.IGamePlayData.OnGameValueReset*
+  commentId: Overload:MacacaGames.GameSystem.IGamePlayData.OnGameValueReset
+  name: OnGameValueReset
+  nameWithType: IGamePlayData.OnGameValueReset
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnGameValueReset
+- uid: MacacaGames.GameSystem.IGamePlayData.OnEnterGame*
+  commentId: Overload:MacacaGames.GameSystem.IGamePlayData.OnEnterGame
+  name: OnEnterGame
+  nameWithType: IGamePlayData.OnEnterGame
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnEnterGame
+- uid: System.Collections.IEnumerator
+  commentId: T:System.Collections.IEnumerator
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerator
+  nameWithType: IEnumerator
+  fullName: System.Collections.IEnumerator
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+- uid: MacacaGames.GameSystem.IGamePlayData.GamePlay*
+  commentId: Overload:MacacaGames.GameSystem.IGamePlayData.GamePlay
+  name: GamePlay
+  nameWithType: IGamePlayData.GamePlay
+  fullName: MacacaGames.GameSystem.IGamePlayData.GamePlay
+- uid: MacacaGames.GameSystem.IGamePlayData.OnLeaveGame*
+  commentId: Overload:MacacaGames.GameSystem.IGamePlayData.OnLeaveGame
+  name: OnLeaveGame
+  nameWithType: IGamePlayData.OnLeaveGame
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnLeaveGame
+- uid: MacacaGames.GameSystem.IGamePlayData.OnGameSuccess*
+  commentId: Overload:MacacaGames.GameSystem.IGamePlayData.OnGameSuccess
+  name: OnGameSuccess
+  nameWithType: IGamePlayData.OnGameSuccess
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnGameSuccess
+- uid: MacacaGames.GameSystem.IGamePlayData.OnGameLose*
+  commentId: Overload:MacacaGames.GameSystem.IGamePlayData.OnGameLose
+  name: OnGameLose
+  nameWithType: IGamePlayData.OnGameLose
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnGameLose
+- uid: MacacaGames.GameSystem.IGamePlayData.GameResult*
+  commentId: Overload:MacacaGames.GameSystem.IGamePlayData.GameResult
+  name: GameResult
+  nameWithType: IGamePlayData.GameResult
+  fullName: MacacaGames.GameSystem.IGamePlayData.GameResult
+- uid: MacacaGames.GameSystem.IGamePlayData.OnGameEnd*
+  commentId: Overload:MacacaGames.GameSystem.IGamePlayData.OnGameEnd
+  name: OnGameEnd
+  nameWithType: IGamePlayData.OnGameEnd
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnGameEnd
+- uid: MacacaGames.GameSystem.IGamePlayData.OnGameFaild*
+  commentId: Overload:MacacaGames.GameSystem.IGamePlayData.OnGameFaild
+  name: OnGameFaild
+  nameWithType: IGamePlayData.OnGameFaild
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnGameFaild
+- uid: MacacaGames.GameSystem.IGamePlayData.OnContinueFlow*
+  commentId: Overload:MacacaGames.GameSystem.IGamePlayData.OnContinueFlow
+  name: OnContinueFlow
+  nameWithType: IGamePlayData.OnContinueFlow
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnContinueFlow
+- uid: Rayark.Mast.IReturn{System.Boolean}
+  commentId: T:Rayark.Mast.IReturn{System.Boolean}
+  parent: Rayark.Mast
+  definition: Rayark.Mast.IReturn`1
+  name: IReturn<Boolean>
+  nameWithType: IReturn<Boolean>
+  fullName: Rayark.Mast.IReturn<System.Boolean>
+  nameWithType.vb: IReturn(Of Boolean)
+  fullName.vb: Rayark.Mast.IReturn(Of System.Boolean)
+  name.vb: IReturn(Of Boolean)
+  spec.csharp:
+  - uid: Rayark.Mast.IReturn`1
+    name: IReturn
+    nameWithType: IReturn
+    fullName: Rayark.Mast.IReturn
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Rayark.Mast.IReturn`1
+    name: IReturn
+    nameWithType: IReturn
+    fullName: Rayark.Mast.IReturn
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Rayark.Mast.IReturn`1
+  commentId: T:Rayark.Mast.IReturn`1
+  name: IReturn<T>
+  nameWithType: IReturn<T>
+  fullName: Rayark.Mast.IReturn<T>
+  nameWithType.vb: IReturn(Of T)
+  fullName.vb: Rayark.Mast.IReturn(Of T)
+  name.vb: IReturn(Of T)
+  spec.csharp:
+  - uid: Rayark.Mast.IReturn`1
+    name: IReturn
+    nameWithType: IReturn
+    fullName: Rayark.Mast.IReturn
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Rayark.Mast.IReturn`1
+    name: IReturn
+    nameWithType: IReturn
+    fullName: Rayark.Mast.IReturn
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Rayark.Mast
+  commentId: N:Rayark.Mast
+  name: Rayark.Mast
+  nameWithType: Rayark.Mast
+  fullName: Rayark.Mast
+- uid: MacacaGames.GameSystem.IGamePlayData.IsContinueAvailable*
+  commentId: Overload:MacacaGames.GameSystem.IGamePlayData.IsContinueAvailable
+  name: IsContinueAvailable
+  nameWithType: IGamePlayData.IsContinueAvailable
+  fullName: MacacaGames.GameSystem.IGamePlayData.IsContinueAvailable
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: MacacaGames.GameSystem.IGamePlayData.OnContinue*
+  commentId: Overload:MacacaGames.GameSystem.IGamePlayData.OnContinue
+  name: OnContinue
+  nameWithType: IGamePlayData.OnContinue
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnContinue
+- uid: MacacaGames.GameSystem.IGamePlayData.OnGUI*
+  commentId: Overload:MacacaGames.GameSystem.IGamePlayData.OnGUI
+  name: OnGUI
+  nameWithType: IGamePlayData.OnGUI
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnGUI
