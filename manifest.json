@@ -1,0 +1,265 @@
+{
+  "homepages": [],
+  "source_base_path": "/Users/miki/Documents/SquidBeat/SB_Unity/Packages/MacacaGameSystem/.docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../Documentation~/api/MacacaGames.GameSystem.ApplicationAutoInjecter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.ApplicationAutoInjecter.html",
+          "hash": "cfa7Rm+a7xao/rBgBpAMTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../Documentation~/api/MacacaGames.GameSystem.ApplicationController.ApplicationState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.ApplicationController.ApplicationState.html",
+          "hash": "vxBpgGufNsr64Y0xRbdNug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../Documentation~/api/MacacaGames.GameSystem.ApplicationController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.ApplicationController.html",
+          "hash": "Lhe8mP6HnCpYDCD0fzNwyA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../Documentation~/api/MacacaGames.GameSystem.GamePlayController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.GamePlayController.html",
+          "hash": "gLQOgimeDIncD6tYZ5T4mA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../Documentation~/api/MacacaGames.GameSystem.IGamePlayData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.IGamePlayData.html",
+          "hash": "4W26TmdbTFXSuuGPSWU74A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../Documentation~/api/MacacaGames.GameSystem.InjectAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.InjectAttribute.html",
+          "hash": "qoTOC/0xk1sImX7UX9V/dg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../Documentation~/api/MacacaGames.GameSystem.MonoBehaviourLifeCycle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.MonoBehaviourLifeCycle.html",
+          "hash": "j9uAWBOq2tv9n8wIHCEvSQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../Documentation~/api/MacacaGames.GameSystem.ResolveTargetAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.ResolveTargetAttribute.html",
+          "hash": "thuNNVVst+9VUjZA/2bYhg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../Documentation~/api/MacacaGames.GameSystem.ScriptableObjectGamePlayData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.ScriptableObjectGamePlayData.html",
+          "hash": "Iuzm8ZhO0v9pz7uoMN0sgw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../Documentation~/api/MacacaGames.GameSystem.ScriptableObjectLifeCycle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.ScriptableObjectLifeCycle.html",
+          "hash": "qidAJeOSpMocEYslu0DX9g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../Documentation~/api/MacacaGames.GameSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.html",
+          "hash": "RPtt5U162roa2TfxGvvrfg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "../Documentation~/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "sREFOkOqisv28lNpoSzJNQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "WqNtExXC7bNJq6E0o66SvQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "favicon.ico"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "HIIE/8xF47xuDYuIeUiYHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "logo.svg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "am/S9vBmE9qrVa4lJLnXaw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 2,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 11,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
