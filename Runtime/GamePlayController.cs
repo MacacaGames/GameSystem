@@ -38,7 +38,7 @@ namespace MacacaGames.GameSystem
             currentGamePlayData?.Init();
         }
 
-        public void OnApplicationBeforeGamePlay()
+        public void OnEnterLobby()
         {
             currentGamePlayData?.OnApplicationBeforeGamePlay();
         }

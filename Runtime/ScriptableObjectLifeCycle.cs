@@ -23,7 +23,7 @@ namespace MacacaGames.GameSystem
         /// <summary>
         /// Fire once between GameEnd and next GamePlay, also fire once after init. 
         /// </summary>  
-        public virtual void OnApplicationBeforeGamePlay() { }
+        public virtual void OnEnterLobby() { }
 
         /// <summary>
         /// Fire every frame during the gameplay loop is running and will also pause while GamePlay is paused

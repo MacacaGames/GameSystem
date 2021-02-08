@@ -14,7 +14,7 @@ namespace MacacaGames.GameSystem
         /// <summary>
         /// Fire once between GameEnd and next GamePlay, also fire once after init. 
         /// </summary>
-        void OnApplicationBeforeGamePlay();
+        void OnEnterLobby();
 
         /// <summary>
         /// Fire every frame during the application is running

@@ -76,7 +76,7 @@ namespace MacacaGames.GameSystem
         /// <summary>
         /// Fire once between GameEnd and next GamePlay, also fire once after init. 
         /// </summary>
-        Action OnApplicationBeforeGamePlay;
+        Action OnEnterLobby;
 
         GamePlayController gamePlayController;
 
@@ -216,14 +216,14 @@ namespace MacacaGames.GameSystem
             {
                 currentApplicationState = ApplicationState.Lobby;
                 isInGame = false;
-                OnApplicationBeforeGamePlay?.Invoke();
-                gamePlayController.OnApplicationBeforeGamePlay();
+                OnEnterLobby?.Invoke();
+                gamePlayController.OnEnterLobby();
 
                 foreach (var item in allApplicationLifeCycles)
                 {
                     try
                     {
-                        item.Value.OnApplicationBeforeGamePlay();
+                        item.Value.OnEnterLobby();
                     }
                     catch (Exception ex)
                     {
