@@ -15,16 +15,16 @@ namespace MacacaGames.GameSystem
         /// <param name="property">Property.</param>
         /// <param name="label">Label.</param>
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
-        {
+        {// Get attribute parameters.
+         // Begin drawing property field.
+            EditorGUI.BeginProperty(position, label, property);
             var requiredAttribute = this.attribute as RequireInterfaceAttribute;
 
             GUILayout.Label($"Requier Type: {requiredAttribute.requiredType.ToString()}", EditorStyles.boldLabel);
             // Check if this is reference type property.
             if (property.propertyType == SerializedPropertyType.ObjectReference)
             {
-                // Get attribute parameters.
-                // Begin drawing property field.
-                EditorGUI.BeginProperty(position, label, property);
+
                 // Draw property field.
                 var result = EditorGUILayout.ObjectField(label, property.objectReferenceValue, requiredAttribute.requiredType, true);
                 if (result != null && result.GetType().GetInterfaces().Contains(requiredAttribute.requiredType))
@@ -40,8 +40,7 @@ namespace MacacaGames.GameSystem
                 {
                     property.objectReferenceValue = null;
                 }
-                // Finish drawing property field.
-                EditorGUI.EndProperty();
+
             }
             else
             {
@@ -54,12 +53,8 @@ namespace MacacaGames.GameSystem
                 // Revert color change.
                 GUI.color = previousColor;
             }
+            // Finish drawing property field.
+            EditorGUI.EndProperty();
         }
-
-        // public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
-        // {
-        //     return EditorGUIUtility.singleLineHeight * 2;
-        // }
-
     }
 }

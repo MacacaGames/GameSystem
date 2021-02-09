@@ -1,39 +1,4 @@
-﻿/*
-/// Life cycle design
-///
-                        Unity App Start
-                                | 
-                                V
-                    ApplicitionController init
-                                |   [Fire OnApplicationInit() callback once]
-                                V        
-     Init and instance all GameSystems set in GameSystemBase[] gameSystems
-                                |   
-                                |   [ApplicitionController.ApplicationTask]
-                                |
-        ┌─────────────>─────────┐   [OnApplicationBeforeGamePlay]
-        |                       |  
-        |                       |   
-        |       ┌───────>──┐    |
-        |       |          |    | 
-        |       |       [Game Lobby] (A state for waiting for enter gameplay)
-        |       |          |    | 
-        |       └──────────┘    |
-        |                       |   [ApplicationController.Instance.StartGame] 
-        |                       V
-        |       ┌───────>──┐    |
-        |       |          |    |  
-        |       |     [GamePlayData.GamePlay()]
-        |       |          |    | 
-        |       └──────────┘    |
-        |                       | 
-        |                       |
-        |                       |                   
-        └───────────────────────┘   [GamePlayController.SuccessGamePlay]
-
-/// 
-/// 
-*/
+﻿
 
 using System.Collections;
 using System.Collections.Generic;
@@ -46,7 +11,48 @@ using System.Runtime;
 namespace MacacaGames.GameSystem
 {
     /// <summary>
-    /// Main ApplicationController for all games
+    /*
+    /// Life cycle design
+    ///
+                                    Unity App Start
+                                            | 
+                                            V
+                                ApplicitionController Init
+                                            |   
+                                            V        
+                            Instance all ScriptableObjectLifeCycle
+                    Get all MonoBehaviourLifeCycle instance in Scene
+                            Instance all [ResloveTarget] class
+                                            |  
+                                            V 
+            Init all ScriptableObjectLifeCycle, MonoBehaviourLifeCycle, [ResloveTarget] instance
+                                            |  
+                                            V 
+                                    Inject all target
+                                            |   
+                                            V  
+                    ┌─────────────>─────────┐   [OnApplicationBeforeGamePlay]
+                    |                       |  
+                    |                       |───────────────────────────────────────[ApplicitionController.ApplicationTask]
+                    |       ┌───────>──┐    |
+                    |       |          |    | 
+                    |       |       [Game Lobby] (A state for waiting for enter gameplay)
+                    |       |          |    | 
+                    |       └──────────┘    |
+                    |                       |   [ApplicationController.Instance.StartGame] 
+                    |                       V
+                    |       ┌───────>──┐    |
+                    |       |          |    |  
+                    |       |     [GamePlayData.GamePlay()]
+                    |       |          |    | 
+                    |       └──────────┘    |
+                    |                       | 
+                    |                       |
+                    |                       |                   
+                    └───────────────────────┘   [GamePlayController.SuccessGamePlay]
+    /// 
+    /// 
+    */
     /// </summary>
     [ResolveTarget]
     public class ApplicationController : MonoBehaviour
@@ -224,6 +230,7 @@ namespace MacacaGames.GameSystem
             while (true)
             {
                 currentApplicationState = ApplicationState.Lobby;
+                currentGameState = GameState.OutsideGamePlay;
                 isInGame = false;
                 OnEnterLobby?.Invoke();
                 gamePlayController.OnEnterLobby();
@@ -245,6 +252,7 @@ namespace MacacaGames.GameSystem
                     yield return null;
                 }
                 currentApplicationState = ApplicationState.Gaming;
+                currentGameState = GameState.Playing;
                 //Game Start
                 gamePlayTask = gamePlayController.GamePlayControllerCoreLoop(GamePlayUpdateRunner(), UnPauseGamePlayUpdateRunner());
                 while (!gamePlayTask.Finished)
@@ -259,15 +267,19 @@ namespace MacacaGames.GameSystem
 
                     if (gamePlayController.isPause)
                     {
-                        currentApplicationState = ApplicationState.Pause;
+                        currentGameState = GameState.Pause;
                     }
-                    if (gamePlayController.isContinueing)
+                    else if (gamePlayController.isContinueing)
                     {
-                        currentApplicationState = ApplicationState.Continuing;
+                        currentGameState = GameState.Continuing;
                     }
-                    if (gamePlayController.isInResult)
+                    else if (gamePlayController.isInResult)
                     {
-                        currentApplicationState = ApplicationState.Result;
+                        currentGameState = GameState.Result;
+                    }
+                    else
+                    {
+                        currentGameState = GameState.Playing;
                     }
                     yield return null;
                 }
@@ -400,22 +412,22 @@ namespace MacacaGames.GameSystem
 
         #endregion
 
-        #region ApplicationState
+        #region State
         /// <summary>
-        /// An enum to explain which state the application is.
+        /// An enum to explain which state the gamePlay is.
         /// </summary>
-        public enum ApplicationState
+        public enum GameState
         {
             /// <summary>
-            /// Lobby is the homepage waiting for user to start the game
+            /// OutsideGamePlay, means user is "not" in the GamePlay, equal to <see cref="GamePlayController.isGaming"/> == false, usually it is also in ApplicationState.Lobby state
             /// </summary>
-            Lobby,
+            OutsideGamePlay,
 
             /// <summary>
-            /// Gaming, means user is in the GamePlay, equal to <see cref="GamePlayController.isGaming"/> == true
+            /// Playing, means user is in the GamePlay, equal to <see cref="GamePlayController.isGaming"/> == true
             /// , Use <see cref="GamePlayController.alreadyContinue"/> to know is the player have continue or not. 
             /// </summary>
-            Gaming,
+            Playing,
 
             /// <summary>
             /// In the gameplay but paused, equal to <see cref="GamePlayController.isPause"/>  == true
@@ -431,6 +443,36 @@ namespace MacacaGames.GameSystem
             /// Game faild and proccessing the continue flow
             /// </summary>
             Continuing,
+        }
+        GameState currentGameState = GameState.OutsideGamePlay;
+
+        /// <summary>
+        /// Current application state
+        /// </summary>
+        /// <value>See <see cref="ApplicationController.ApplicationState"/> to get more detail about each state</value>
+        public GameState CurrentGameState
+        {
+            get
+            {
+                return currentGameState;
+            }
+        }
+
+        /// <summary>
+        /// An enum to explain which state the application is.
+        /// </summary>
+        public enum ApplicationState
+        {
+            /// <summary>
+            /// Lobby is the homepage waiting for user to start the game
+            /// </summary>
+            Lobby,
+
+            /// <summary>
+            /// Gaming, means user is in the GamePlay, equal to <see cref="GamePlayController.isGaming"/> == true
+            /// , Use <see cref="ApplicationController.GameState"/> to know the detail state of the gaming. 
+            /// </summary>
+            Gaming,
         }
 
         ApplicationState currentApplicationState = ApplicationState.Lobby;
