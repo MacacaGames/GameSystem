@@ -27,6 +27,7 @@ items:
     content: 'public class ApplicationAutoInjecter : MonoBehaviour'
     content.vb: >-
       Public Class ApplicationAutoInjecter
+
           Inherits MonoBehaviour
   inheritance:
   - System.Object

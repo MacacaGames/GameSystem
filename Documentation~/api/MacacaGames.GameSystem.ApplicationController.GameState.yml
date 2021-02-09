@@ -1,0 +1,235 @@
+### YamlMime:ManagedReference
+items:
+- uid: MacacaGames.GameSystem.ApplicationController.GameState
+  commentId: T:MacacaGames.GameSystem.ApplicationController.GameState
+  id: ApplicationController.GameState
+  parent: MacacaGames.GameSystem
+  children:
+  - MacacaGames.GameSystem.ApplicationController.GameState.Continuing
+  - MacacaGames.GameSystem.ApplicationController.GameState.OutsideGamePlay
+  - MacacaGames.GameSystem.ApplicationController.GameState.Pause
+  - MacacaGames.GameSystem.ApplicationController.GameState.Playing
+  - MacacaGames.GameSystem.ApplicationController.GameState.Result
+  langs:
+  - csharp
+  - vb
+  name: ApplicationController.GameState
+  nameWithType: ApplicationController.GameState
+  fullName: MacacaGames.GameSystem.ApplicationController.GameState
+  type: Enum
+  source:
+    remote:
+      path: Runtime/ApplicationController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: GameState
+    path: ../Runtime/ApplicationController.cs
+    startLine: 418
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nAn enum to explain which state the gamePlay is.\n"
+  example: []
+  syntax:
+    content: public enum GameState
+    content.vb: Public Enum GameState
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: MacacaGames.GameSystem.ApplicationController.GameState.OutsideGamePlay
+  commentId: F:MacacaGames.GameSystem.ApplicationController.GameState.OutsideGamePlay
+  id: OutsideGamePlay
+  parent: MacacaGames.GameSystem.ApplicationController.GameState
+  langs:
+  - csharp
+  - vb
+  name: OutsideGamePlay
+  nameWithType: ApplicationController.GameState.OutsideGamePlay
+  fullName: MacacaGames.GameSystem.ApplicationController.GameState.OutsideGamePlay
+  type: Field
+  source:
+    remote:
+      path: Runtime/ApplicationController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OutsideGamePlay
+    path: ../Runtime/ApplicationController.cs
+    startLine: 423
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nOutsideGamePlay, means user is &quot;not&quot; in the GamePlay, equal to <xref href=\"MacacaGames.GameSystem.GamePlayController.isGaming\" data-throw-if-not-resolved=\"false\"></xref> == false, usually it is also in ApplicationState.Lobby state\n"
+  example: []
+  syntax:
+    content: OutsideGamePlay = 0
+    return:
+      type: MacacaGames.GameSystem.ApplicationController.GameState
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: MacacaGames.GameSystem.ApplicationController.GameState.Playing
+  commentId: F:MacacaGames.GameSystem.ApplicationController.GameState.Playing
+  id: Playing
+  parent: MacacaGames.GameSystem.ApplicationController.GameState
+  langs:
+  - csharp
+  - vb
+  name: Playing
+  nameWithType: ApplicationController.GameState.Playing
+  fullName: MacacaGames.GameSystem.ApplicationController.GameState.Playing
+  type: Field
+  source:
+    remote:
+      path: Runtime/ApplicationController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: Playing
+    path: ../Runtime/ApplicationController.cs
+    startLine: 429
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nPlaying, means user is in the GamePlay, equal to <xref href=\"MacacaGames.GameSystem.GamePlayController.isGaming\" data-throw-if-not-resolved=\"false\"></xref> == true\n, Use <xref href=\"MacacaGames.GameSystem.GamePlayController.alreadyContinue\" data-throw-if-not-resolved=\"false\"></xref> to know is the player have continue or not. \n"
+  example: []
+  syntax:
+    content: Playing = 1
+    return:
+      type: MacacaGames.GameSystem.ApplicationController.GameState
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: MacacaGames.GameSystem.ApplicationController.GameState.Pause
+  commentId: F:MacacaGames.GameSystem.ApplicationController.GameState.Pause
+  id: Pause
+  parent: MacacaGames.GameSystem.ApplicationController.GameState
+  langs:
+  - csharp
+  - vb
+  name: Pause
+  nameWithType: ApplicationController.GameState.Pause
+  fullName: MacacaGames.GameSystem.ApplicationController.GameState.Pause
+  type: Field
+  source:
+    remote:
+      path: Runtime/ApplicationController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: Pause
+    path: ../Runtime/ApplicationController.cs
+    startLine: 434
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nIn the gameplay but paused, equal to <xref href=\"MacacaGames.GameSystem.GamePlayController.isPause\" data-throw-if-not-resolved=\"false\"></xref>  == true\n"
+  example: []
+  syntax:
+    content: Pause = 2
+    return:
+      type: MacacaGames.GameSystem.ApplicationController.GameState
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: MacacaGames.GameSystem.ApplicationController.GameState.Result
+  commentId: F:MacacaGames.GameSystem.ApplicationController.GameState.Result
+  id: Result
+  parent: MacacaGames.GameSystem.ApplicationController.GameState
+  langs:
+  - csharp
+  - vb
+  name: Result
+  nameWithType: ApplicationController.GameState.Result
+  fullName: MacacaGames.GameSystem.ApplicationController.GameState.Result
+  type: Field
+  source:
+    remote:
+      path: Runtime/ApplicationController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: Result
+    path: ../Runtime/ApplicationController.cs
+    startLine: 439
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nGameOver and in the result, use <xref href=\"MacacaGames.GameSystem.GamePlayController.isFailed\" data-throw-if-not-resolved=\"false\"></xref> to know if the player win or lose.\n"
+  example: []
+  syntax:
+    content: Result = 3
+    return:
+      type: MacacaGames.GameSystem.ApplicationController.GameState
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: MacacaGames.GameSystem.ApplicationController.GameState.Continuing
+  commentId: F:MacacaGames.GameSystem.ApplicationController.GameState.Continuing
+  id: Continuing
+  parent: MacacaGames.GameSystem.ApplicationController.GameState
+  langs:
+  - csharp
+  - vb
+  name: Continuing
+  nameWithType: ApplicationController.GameState.Continuing
+  fullName: MacacaGames.GameSystem.ApplicationController.GameState.Continuing
+  type: Field
+  source:
+    remote:
+      path: Runtime/ApplicationController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: Continuing
+    path: ../Runtime/ApplicationController.cs
+    startLine: 444
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nGame faild and proccessing the continue flow\n"
+  example: []
+  syntax:
+    content: Continuing = 4
+    return:
+      type: MacacaGames.GameSystem.ApplicationController.GameState
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: MacacaGames.GameSystem
+  commentId: N:MacacaGames.GameSystem
+  name: MacacaGames.GameSystem
+  nameWithType: MacacaGames.GameSystem
+  fullName: MacacaGames.GameSystem
+- uid: MacacaGames.GameSystem.GamePlayController.isGaming
+  commentId: P:MacacaGames.GameSystem.GamePlayController.isGaming
+  isExternal: true
+- uid: MacacaGames.GameSystem.ApplicationController.GameState
+  commentId: T:MacacaGames.GameSystem.ApplicationController.GameState
+  parent: MacacaGames.GameSystem
+  name: ApplicationController.GameState
+  nameWithType: ApplicationController.GameState
+  fullName: MacacaGames.GameSystem.ApplicationController.GameState
+- uid: MacacaGames.GameSystem.GamePlayController.alreadyContinue
+  commentId: P:MacacaGames.GameSystem.GamePlayController.alreadyContinue
+  isExternal: true
+- uid: MacacaGames.GameSystem.GamePlayController.isPause
+  commentId: P:MacacaGames.GameSystem.GamePlayController.isPause
+  isExternal: true
+- uid: MacacaGames.GameSystem.GamePlayController.isFailed
+  commentId: P:MacacaGames.GameSystem.GamePlayController.isFailed
+  isExternal: true

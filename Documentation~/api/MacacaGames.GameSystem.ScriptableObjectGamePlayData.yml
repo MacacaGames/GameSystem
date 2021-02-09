@@ -44,7 +44,9 @@ items:
     content: 'public abstract class ScriptableObjectGamePlayData : ScriptableObject, IGamePlayData'
     content.vb: >-
       Public MustInherit Class ScriptableObjectGamePlayData
+
           Inherits ScriptableObject
+
           Implements IGamePlayData
   inheritance:
   - System.Object

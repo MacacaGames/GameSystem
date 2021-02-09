@@ -8,6 +8,7 @@ items:
   - MacacaGames.GameSystem.ApplicationController.CreateInstance(System.Type,System.Boolean)
   - MacacaGames.GameSystem.ApplicationController.CreateInstance``1(System.Boolean)
   - MacacaGames.GameSystem.ApplicationController.CurrentApplicationState
+  - MacacaGames.GameSystem.ApplicationController.CurrentGameState
   - MacacaGames.GameSystem.ApplicationController.GetGamePlayController
   - MacacaGames.GameSystem.ApplicationController.GetMonobehaviourLifeCycle(System.Type)
   - MacacaGames.GameSystem.ApplicationController.GetMonobehaviourLifeCycle``1
@@ -36,12 +37,10 @@ items:
       repo: git@github.com:MacacaGames/GameSystem.git
     id: ApplicationController
     path: ../Runtime/ApplicationController.cs
-    startLine: 50
+    startLine: 56
   assemblies:
   - Macaca.GameSystem
   namespace: MacacaGames.GameSystem
-  summary: "\nMain ApplicationController for all games\n"
-  example: []
   syntax:
     content: >-
       [ResolveTarget]
@@ -51,6 +50,7 @@ items:
       <ResolveTarget>
 
       Public Class ApplicationController
+
           Inherits MonoBehaviour
   inheritance:
   - System.Object
@@ -182,7 +182,7 @@ items:
       repo: git@github.com:MacacaGames/GameSystem.git
     id: Instance
     path: ../Runtime/ApplicationController.cs
-    startLine: 53
+    startLine: 59
   assemblies:
   - Macaca.GameSystem
   namespace: MacacaGames.GameSystem
@@ -215,7 +215,7 @@ items:
       repo: git@github.com:MacacaGames/GameSystem.git
     id: IsInit
     path: ../Runtime/ApplicationController.cs
-    startLine: 82
+    startLine: 97
   assemblies:
   - Macaca.GameSystem
   namespace: MacacaGames.GameSystem
@@ -246,7 +246,7 @@ items:
       repo: git@github.com:MacacaGames/GameSystem.git
     id: Init
     path: ../Runtime/ApplicationController.cs
-    startLine: 84
+    startLine: 99
   assemblies:
   - Macaca.GameSystem
   namespace: MacacaGames.GameSystem
@@ -276,7 +276,7 @@ items:
       repo: git@github.com:MacacaGames/GameSystem.git
     id: isInGame
     path: ../Runtime/ApplicationController.cs
-    startLine: 210
+    startLine: 225
   assemblies:
   - Macaca.GameSystem
   namespace: MacacaGames.GameSystem
@@ -311,7 +311,7 @@ items:
       repo: git@github.com:MacacaGames/GameSystem.git
     id: RegistApplicationExecuter
     path: ../Runtime/ApplicationController.cs
-    startLine: 271
+    startLine: 292
   assemblies:
   - Macaca.GameSystem
   namespace: MacacaGames.GameSystem
@@ -347,7 +347,7 @@ items:
       repo: git@github.com:MacacaGames/GameSystem.git
     id: UnRegistApplicationExecuter
     path: ../Runtime/ApplicationController.cs
-    startLine: 281
+    startLine: 302
   assemblies:
   - Macaca.GameSystem
   namespace: MacacaGames.GameSystem
@@ -383,7 +383,7 @@ items:
       repo: git@github.com:MacacaGames/GameSystem.git
     id: GetScriptableLifeCycle
     path: ../Runtime/ApplicationController.cs
-    startLine: 292
+    startLine: 313
   assemblies:
   - Macaca.GameSystem
   namespace: MacacaGames.GameSystem
@@ -392,6 +392,7 @@ items:
   syntax:
     content: >-
       public T GetScriptableLifeCycle<T>()
+
           where T : ScriptableObjectLifeCycle
     typeParameters:
     - id: T
@@ -426,7 +427,7 @@ items:
       repo: git@github.com:MacacaGames/GameSystem.git
     id: GetScriptableLifeCycle
     path: ../Runtime/ApplicationController.cs
-    startLine: 304
+    startLine: 325
   assemblies:
   - Macaca.GameSystem
   namespace: MacacaGames.GameSystem
@@ -465,7 +466,7 @@ items:
       repo: git@github.com:MacacaGames/GameSystem.git
     id: GetGamePlayController
     path: ../Runtime/ApplicationController.cs
-    startLine: 315
+    startLine: 336
   assemblies:
   - Macaca.GameSystem
   namespace: MacacaGames.GameSystem
@@ -500,7 +501,7 @@ items:
       repo: git@github.com:MacacaGames/GameSystem.git
     id: GetMonobehaviourLifeCycle
     path: ../Runtime/ApplicationController.cs
-    startLine: 325
+    startLine: 346
   assemblies:
   - Macaca.GameSystem
   namespace: MacacaGames.GameSystem
@@ -509,6 +510,7 @@ items:
   syntax:
     content: >-
       public T GetMonobehaviourLifeCycle<T>()
+
           where T : MonoBehaviourLifeCycle
     typeParameters:
     - id: T
@@ -543,7 +545,7 @@ items:
       repo: git@github.com:MacacaGames/GameSystem.git
     id: GetMonobehaviourLifeCycle
     path: ../Runtime/ApplicationController.cs
-    startLine: 337
+    startLine: 358
   assemblies:
   - Macaca.GameSystem
   namespace: MacacaGames.GameSystem
@@ -581,7 +583,7 @@ items:
       repo: git@github.com:MacacaGames/GameSystem.git
     id: GetRegisterInstance
     path: ../Runtime/ApplicationController.cs
-    startLine: 349
+    startLine: 370
   assemblies:
   - Macaca.GameSystem
   namespace: MacacaGames.GameSystem
@@ -619,7 +621,7 @@ items:
       repo: git@github.com:MacacaGames/GameSystem.git
     id: StartGame
     path: ../Runtime/ApplicationController.cs
-    startLine: 360
+    startLine: 381
   assemblies:
   - Macaca.GameSystem
   namespace: MacacaGames.GameSystem
@@ -633,6 +635,44 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: MacacaGames.GameSystem.ApplicationController.CurrentGameState
+  commentId: P:MacacaGames.GameSystem.ApplicationController.CurrentGameState
+  id: CurrentGameState
+  parent: MacacaGames.GameSystem.ApplicationController
+  langs:
+  - csharp
+  - vb
+  name: CurrentGameState
+  nameWithType: ApplicationController.CurrentGameState
+  fullName: MacacaGames.GameSystem.ApplicationController.CurrentGameState
+  type: Property
+  source:
+    remote:
+      path: Runtime/ApplicationController.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: CurrentGameState
+    path: ../Runtime/ApplicationController.cs
+    startLine: 452
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nCurrent application state\n"
+  example: []
+  syntax:
+    content: public ApplicationController.GameState CurrentGameState { get; }
+    parameters: []
+    return:
+      type: MacacaGames.GameSystem.ApplicationController.GameState
+      description: See <xref href="MacacaGames.GameSystem.ApplicationController.ApplicationState" data-throw-if-not-resolved="false"></xref> to get more detail about each state
+    content.vb: Public ReadOnly Property CurrentGameState As ApplicationController.GameState
+  overload: MacacaGames.GameSystem.ApplicationController.CurrentGameState*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
 - uid: MacacaGames.GameSystem.ApplicationController.CurrentApplicationState
   commentId: P:MacacaGames.GameSystem.ApplicationController.CurrentApplicationState
   id: CurrentApplicationState
@@ -651,7 +691,7 @@ items:
       repo: git@github.com:MacacaGames/GameSystem.git
     id: CurrentApplicationState
     path: ../Runtime/ApplicationController.cs
-    startLine: 432
+    startLine: 483
   assemblies:
   - Macaca.GameSystem
   namespace: MacacaGames.GameSystem
@@ -689,7 +729,7 @@ items:
       repo: git@github.com:MacacaGames/GameSystem.git
     id: CreateInstance
     path: ../Runtime/ApplicationController.cs
-    startLine: 449
+    startLine: 500
   assemblies:
   - Macaca.GameSystem
   namespace: MacacaGames.GameSystem
@@ -731,7 +771,7 @@ items:
       repo: git@github.com:MacacaGames/GameSystem.git
     id: CreateInstance
     path: ../Runtime/ApplicationController.cs
-    startLine: 462
+    startLine: 513
   assemblies:
   - Macaca.GameSystem
   namespace: MacacaGames.GameSystem
@@ -740,6 +780,7 @@ items:
   syntax:
     content: >-
       public T CreateInstance<T>(bool inject = true)
+
           where T : class
     parameters:
     - id: inject
@@ -777,7 +818,7 @@ items:
       repo: git@github.com:MacacaGames/GameSystem.git
     id: ResolveInjection
     path: ../Runtime/ApplicationController.cs
-    startLine: 500
+    startLine: 551
   assemblies:
   - Macaca.GameSystem
   namespace: MacacaGames.GameSystem
@@ -5853,6 +5894,17 @@ references:
   name: ApplicationController.ApplicationState
   nameWithType: ApplicationController.ApplicationState
   fullName: MacacaGames.GameSystem.ApplicationController.ApplicationState
+- uid: MacacaGames.GameSystem.ApplicationController.CurrentGameState*
+  commentId: Overload:MacacaGames.GameSystem.ApplicationController.CurrentGameState
+  name: CurrentGameState
+  nameWithType: ApplicationController.CurrentGameState
+  fullName: MacacaGames.GameSystem.ApplicationController.CurrentGameState
+- uid: MacacaGames.GameSystem.ApplicationController.GameState
+  commentId: T:MacacaGames.GameSystem.ApplicationController.GameState
+  parent: MacacaGames.GameSystem
+  name: ApplicationController.GameState
+  nameWithType: ApplicationController.GameState
+  fullName: MacacaGames.GameSystem.ApplicationController.GameState
 - uid: MacacaGames.GameSystem.ApplicationController.CurrentApplicationState*
   commentId: Overload:MacacaGames.GameSystem.ApplicationController.CurrentApplicationState
   name: CurrentApplicationState

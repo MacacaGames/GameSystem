@@ -21,7 +21,19 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.ApplicationController.ApplicationState.html",
-          "hash": "vxBpgGufNsr64Y0xRbdNug=="
+          "hash": "lb29UzOhjOOVP/13yaU6RA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../Documentation~/api/MacacaGames.GameSystem.ApplicationController.GameState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.ApplicationController.GameState.html",
+          "hash": "8OXAf+AlvBBdlAzFoLKrXw=="
         }
       },
       "is_incremental": false,
@@ -33,7 +45,19 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.ApplicationController.html",
-          "hash": "Lhe8mP6HnCpYDCD0fzNwyA=="
+          "hash": "lS8c80IMU3t5XzkbVgVirw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../Documentation~/api/MacacaGames.GameSystem.ApplicationControllerEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.ApplicationControllerEditor.html",
+          "hash": "CimGM1tsrCqoW1l7fFNwhg=="
         }
       },
       "is_incremental": false,
@@ -45,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.GamePlayController.html",
-          "hash": "gLQOgimeDIncD6tYZ5T4mA=="
+          "hash": "Ksi+82yaaBatMfrO3f7+XA=="
         }
       },
       "is_incremental": false,
@@ -81,7 +105,31 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.MonoBehaviourLifeCycle.html",
-          "hash": "j9uAWBOq2tv9n8wIHCEvSQ=="
+          "hash": "2mtb4kKWB+jt82fYaD6oiw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../Documentation~/api/MacacaGames.GameSystem.RequireInterfaceAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.RequireInterfaceAttribute.html",
+          "hash": "yUdLzeaM4VjW/lQjQ6t13A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../Documentation~/api/MacacaGames.GameSystem.RequireInterfaceDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.RequireInterfaceDrawer.html",
+          "hash": "b3T1AElEdoBsZd5EcQvE/w=="
         }
       },
       "is_incremental": false,
@@ -117,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.ScriptableObjectLifeCycle.html",
-          "hash": "qidAJeOSpMocEYslu0DX9g=="
+          "hash": "/sJ5ZCDrl+Mggz8XMlJmhA=="
         }
       },
       "is_incremental": false,
@@ -129,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.html",
-          "hash": "RPtt5U162roa2TfxGvvrfg=="
+          "hash": "SuavT08ewCo6WcvE3F2amw=="
         }
       },
       "is_incremental": false,
@@ -141,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "sREFOkOqisv28lNpoSzJNQ=="
+          "hash": "w9G5BIWhNcVg8NWwPpoFQw=="
         }
       },
       "is_incremental": false,
@@ -176,7 +224,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "HIIE/8xF47xuDYuIeUiYHg=="
+          "hash": "Io3Zs5Nl6WG7owxC2zf4Vw=="
         }
       },
       "is_incremental": false,
@@ -226,7 +274,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 11,
+          "total_file_count": 15,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

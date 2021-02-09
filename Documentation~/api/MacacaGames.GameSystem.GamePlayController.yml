@@ -23,7 +23,7 @@ items:
   - MacacaGames.GameSystem.GamePlayController.isInResult
   - MacacaGames.GameSystem.GamePlayController.isPause
   - MacacaGames.GameSystem.GamePlayController.isQuiting
-  - MacacaGames.GameSystem.GamePlayController.OnApplicationBeforeGamePlay
+  - MacacaGames.GameSystem.GamePlayController.OnEnterLobby
   - MacacaGames.GameSystem.GamePlayController.QuitGamePlay
   - MacacaGames.GameSystem.GamePlayController.RemoveFromUnpauseUpdateExecuter(Rayark.Mast.IResumable)
   - MacacaGames.GameSystem.GamePlayController.RemoveFromUpdateExecuter(Rayark.Mast.IResumable)
@@ -131,32 +131,32 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: MacacaGames.GameSystem.GamePlayController.OnApplicationBeforeGamePlay
-  commentId: M:MacacaGames.GameSystem.GamePlayController.OnApplicationBeforeGamePlay
-  id: OnApplicationBeforeGamePlay
+- uid: MacacaGames.GameSystem.GamePlayController.OnEnterLobby
+  commentId: M:MacacaGames.GameSystem.GamePlayController.OnEnterLobby
+  id: OnEnterLobby
   parent: MacacaGames.GameSystem.GamePlayController
   langs:
   - csharp
   - vb
-  name: OnApplicationBeforeGamePlay()
-  nameWithType: GamePlayController.OnApplicationBeforeGamePlay()
-  fullName: MacacaGames.GameSystem.GamePlayController.OnApplicationBeforeGamePlay()
+  name: OnEnterLobby()
+  nameWithType: GamePlayController.OnEnterLobby()
+  fullName: MacacaGames.GameSystem.GamePlayController.OnEnterLobby()
   type: Method
   source:
     remote:
       path: Runtime/GamePlayController.cs
       branch: master
       repo: git@github.com:MacacaGames/GameSystem.git
-    id: OnApplicationBeforeGamePlay
+    id: OnEnterLobby
     path: ../Runtime/GamePlayController.cs
     startLine: 40
   assemblies:
   - Macaca.GameSystem
   namespace: MacacaGames.GameSystem
   syntax:
-    content: public void OnApplicationBeforeGamePlay()
-    content.vb: Public Sub OnApplicationBeforeGamePlay
-  overload: MacacaGames.GameSystem.GamePlayController.OnApplicationBeforeGamePlay*
+    content: public void OnEnterLobby()
+    content.vb: Public Sub OnEnterLobby
+  overload: MacacaGames.GameSystem.GamePlayController.OnEnterLobby*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -223,6 +223,7 @@ items:
   syntax:
     content: >-
       public T GetGamePlayData<T>()
+
           where T : class, IGamePlayData
     typeParameters:
     - id: T
@@ -1216,11 +1217,11 @@ references:
   name: Init
   nameWithType: GamePlayController.Init
   fullName: MacacaGames.GameSystem.GamePlayController.Init
-- uid: MacacaGames.GameSystem.GamePlayController.OnApplicationBeforeGamePlay*
-  commentId: Overload:MacacaGames.GameSystem.GamePlayController.OnApplicationBeforeGamePlay
-  name: OnApplicationBeforeGamePlay
-  nameWithType: GamePlayController.OnApplicationBeforeGamePlay
-  fullName: MacacaGames.GameSystem.GamePlayController.OnApplicationBeforeGamePlay
+- uid: MacacaGames.GameSystem.GamePlayController.OnEnterLobby*
+  commentId: Overload:MacacaGames.GameSystem.GamePlayController.OnEnterLobby
+  name: OnEnterLobby
+  nameWithType: GamePlayController.OnEnterLobby
+  fullName: MacacaGames.GameSystem.GamePlayController.OnEnterLobby
 - uid: MacacaGames.GameSystem.GamePlayController.GetGamePlayData*
   commentId: Overload:MacacaGames.GameSystem.GamePlayController.GetGamePlayData
   name: GetGamePlayData

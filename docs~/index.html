@@ -86,6 +86,46 @@
 
 git submodule add https://github.com/MacacaGames/mast.git Assets/Mast
 </code></pre>
+<h2 id="applicationlifecycle">ApplicationLifeCycle</h2>
+<pre><code>
+                                    Unity App Start
+                                            | 
+                                            V
+                                ApplicitionController Init
+                                            |   
+                                            V        
+                            Instance all ScriptableObjectLifeCycle
+                    Get all MonoBehaviourLifeCycle instance in Scene
+                            Instance all [ResloveTarget] class
+                                            |  
+                                            V 
+            Init all ScriptableObjectLifeCycle, MonoBehaviourLifeCycle, [ResloveTarget] instance
+                                            |  
+                                            V 
+                                    Inject all target
+                                            |   
+                                            V  
+                    ┌─────────────&gt;─────────┐   [OnApplicationBeforeGamePlay]
+                    |                       |  
+                    |                       |─────────────[ApplicitionController.ApplicationTask]
+                    |       ┌───────&gt;──┐    |
+                    |       |          |    | 
+                    |       |       [Game Lobby] (A state for waiting for enter gameplay)
+                    |       |          |    | 
+                    |       └──────────┘    |
+                    |                       |   [ApplicationController.Instance.StartGame] 
+                    |                       V
+                    |       ┌───────&gt;──┐    |
+                    |       |          |    |  
+                    |       |     [GamePlayData.GamePlay()]
+                    |       |          |    | 
+                    |       └──────────┘    |
+                    |                       | 
+                    |                       |
+                    |                       |                   
+                    └───────────────────────┘   [GamePlayController.SuccessGamePlay]
+ 
+</code></pre>
 <h2 id="igameplaydata">IGamePlayData</h2>
 <p>IGamePlayData is the main game logic implemention. Do your logic in the callbacks to complete your game. For each callback's detail please see <a href="https://macacagames.github.io/GameSystem/api/MacacaGames.GameSystem.IGamePlayData.html">Document</a></p>
 <p>Create a cs file which inherit from ScriptableObjectGamePlayData, and referenced it to ApplicationController.</p>
@@ -132,6 +172,21 @@ gamePlayController.FailedGamePlay();
 gamePlayController.QuitGamePlay();
 gamePlayController.EnterPause();
 gamePlayController.ResumePause();
+
+
+// Get the singleton instance managed by ApplicationController 
+// (Not recommend, use Injection instead)
+
+// Get ScripatableObjectLifeCycle instance
+ApplicationController.Instance.GetScriptableLifeCycle(Type type);
+ApplicationController.Instance.GetScriptableLifeCycle&lt;T&gt;();
+
+// Get GetMonobehaviourLifeCycle instance
+ApplicationController.Instance.GetMonobehaviourLifeCycle(Type type);
+ApplicationController.Instance.GetMonobehaviourLifeCycle&lt;T&gt;();
+
+// Get GetRegisterInstance instance
+ApplicationController.Instance.GetRegisterInstance(Type type);
 </code></pre>
 <h2 id="injection">Injection</h2>
 <p>Game System contains a lightweight dependency inject system, help you to resolve the reference problem in the game.</p>
@@ -181,6 +236,55 @@ public MyOtherClass{
 </code></pre>
 <h3 id="applicationautoinjecter">ApplicationAutoInjecter</h3>
 <p>On a GameObject you can attach <code>ApplicationAutoInjecter</code> component which will complete the injtection automatically on all component on the GameObject when the GameObject is Instantiated.</p>
+<h3 id="which-class-can-be-injected-do-i-need-to-resolve-inject-manually">Which class can be injected? Do I need to resolve inject manually?</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Can be inject target?</th>
+<th>Inject member with <code>[Inject]</code></th>
+<th>Resolve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MonoBehaviourLifeCycle</td>
+<td>Yes <br>(Require in Scene in begining)</td>
+<td>Yes</td>
+<td>Auto</td>
+</tr>
+<tr>
+<td>ScriptableObjectLifeCycle</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Auto</td>
+</tr>
+<tr>
+<td>Classes with <code>[ResloveTarget]</code></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Auto</td>
+</tr>
+<tr>
+<td>Classes</td>
+<td>No</td>
+<td>Yes</td>
+<td>Manual</td>
+</tr>
+<tr>
+<td>MonoBehaviour</td>
+<td>No</td>
+<td>Yes</td>
+<td>Manual <br>(Or automatically with <code>ApplicationAutoInjecter</code> component)</td>
+</tr>
+<tr>
+<td>ScriptableObject</td>
+<td>No</td>
+<td>Yes</td>
+<td>Manual</td>
+</tr>
+</tbody>
+</table>
 </article>
           </div>
           

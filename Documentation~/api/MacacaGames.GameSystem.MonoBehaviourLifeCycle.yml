@@ -6,8 +6,8 @@ items:
   parent: MacacaGames.GameSystem
   children:
   - MacacaGames.GameSystem.MonoBehaviourLifeCycle.Init
-  - MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationBeforeGamePlay
   - MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationUpdate
+  - MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnEnterLobby
   - MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnGamePlayUpdate
   - MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnUnPauseGamePlayUpdate
   langs:
@@ -34,7 +34,9 @@ items:
     content: 'public abstract class MonoBehaviourLifeCycle : MonoBehaviour, IApplicationLifeCycle'
     content.vb: >-
       Public MustInherit Class MonoBehaviourLifeCycle
+
           Inherits MonoBehaviour
+
           Implements IApplicationLifeCycle
   inheritance:
   - System.Object
@@ -214,23 +216,23 @@ items:
   modifiers.vb:
   - Public
   - Overridable
-- uid: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationBeforeGamePlay
-  commentId: M:MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationBeforeGamePlay
-  id: OnApplicationBeforeGamePlay
+- uid: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnEnterLobby
+  commentId: M:MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnEnterLobby
+  id: OnEnterLobby
   parent: MacacaGames.GameSystem.MonoBehaviourLifeCycle
   langs:
   - csharp
   - vb
-  name: OnApplicationBeforeGamePlay()
-  nameWithType: MonoBehaviourLifeCycle.OnApplicationBeforeGamePlay()
-  fullName: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationBeforeGamePlay()
+  name: OnEnterLobby()
+  nameWithType: MonoBehaviourLifeCycle.OnEnterLobby()
+  fullName: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnEnterLobby()
   type: Method
   source:
     remote:
       path: Runtime/MonoBehaviourLifeCycle.cs
       branch: master
       repo: git@github.com:MacacaGames/GameSystem.git
-    id: OnApplicationBeforeGamePlay
+    id: OnEnterLobby
     path: ../Runtime/MonoBehaviourLifeCycle.cs
     startLine: 23
   assemblies:
@@ -239,9 +241,9 @@ items:
   summary: "\nFire once between GameEnd and next GamePlay, also fire once after init. \n"
   example: []
   syntax:
-    content: public virtual void OnApplicationBeforeGamePlay()
-    content.vb: Public Overridable Sub OnApplicationBeforeGamePlay
-  overload: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationBeforeGamePlay*
+    content: public virtual void OnEnterLobby()
+    content.vb: Public Overridable Sub OnEnterLobby
+  overload: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnEnterLobby*
   modifiers.csharp:
   - public
   - virtual
@@ -5286,11 +5288,11 @@ references:
   name: OnApplicationUpdate
   nameWithType: MonoBehaviourLifeCycle.OnApplicationUpdate
   fullName: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationUpdate
-- uid: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationBeforeGamePlay*
-  commentId: Overload:MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationBeforeGamePlay
-  name: OnApplicationBeforeGamePlay
-  nameWithType: MonoBehaviourLifeCycle.OnApplicationBeforeGamePlay
-  fullName: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnApplicationBeforeGamePlay
+- uid: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnEnterLobby*
+  commentId: Overload:MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnEnterLobby
+  name: OnEnterLobby
+  nameWithType: MonoBehaviourLifeCycle.OnEnterLobby
+  fullName: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnEnterLobby
 - uid: MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnGamePlayUpdate*
   commentId: Overload:MacacaGames.GameSystem.MonoBehaviourLifeCycle.OnGamePlayUpdate
   name: OnGamePlayUpdate

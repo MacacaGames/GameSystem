@@ -7,10 +7,14 @@ items:
   - MacacaGames.GameSystem.ApplicationAutoInjecter
   - MacacaGames.GameSystem.ApplicationController
   - MacacaGames.GameSystem.ApplicationController.ApplicationState
+  - MacacaGames.GameSystem.ApplicationController.GameState
+  - MacacaGames.GameSystem.ApplicationControllerEditor
   - MacacaGames.GameSystem.GamePlayController
   - MacacaGames.GameSystem.IGamePlayData
   - MacacaGames.GameSystem.InjectAttribute
   - MacacaGames.GameSystem.MonoBehaviourLifeCycle
+  - MacacaGames.GameSystem.RequireInterfaceAttribute
+  - MacacaGames.GameSystem.RequireInterfaceDrawer
   - MacacaGames.GameSystem.ResolveTargetAttribute
   - MacacaGames.GameSystem.ScriptableObjectGamePlayData
   - MacacaGames.GameSystem.ScriptableObjectLifeCycle
@@ -35,6 +39,12 @@ references:
   name: ApplicationController
   nameWithType: ApplicationController
   fullName: MacacaGames.GameSystem.ApplicationController
+- uid: MacacaGames.GameSystem.ApplicationController.GameState
+  commentId: T:MacacaGames.GameSystem.ApplicationController.GameState
+  parent: MacacaGames.GameSystem
+  name: ApplicationController.GameState
+  nameWithType: ApplicationController.GameState
+  fullName: MacacaGames.GameSystem.ApplicationController.GameState
 - uid: MacacaGames.GameSystem.ApplicationController.ApplicationState
   commentId: T:MacacaGames.GameSystem.ApplicationController.ApplicationState
   parent: MacacaGames.GameSystem
@@ -52,6 +62,12 @@ references:
   name: ResolveTargetAttribute
   nameWithType: ResolveTargetAttribute
   fullName: MacacaGames.GameSystem.ResolveTargetAttribute
+- uid: MacacaGames.GameSystem.RequireInterfaceAttribute
+  commentId: T:MacacaGames.GameSystem.RequireInterfaceAttribute
+  parent: MacacaGames.GameSystem
+  name: RequireInterfaceAttribute
+  nameWithType: RequireInterfaceAttribute
+  fullName: MacacaGames.GameSystem.RequireInterfaceAttribute
 - uid: MacacaGames.GameSystem.GamePlayController
   commentId: T:MacacaGames.GameSystem.GamePlayController
   parent: MacacaGames.GameSystem
@@ -79,6 +95,16 @@ references:
   name: ScriptableObjectLifeCycle
   nameWithType: ScriptableObjectLifeCycle
   fullName: MacacaGames.GameSystem.ScriptableObjectLifeCycle
+- uid: MacacaGames.GameSystem.ApplicationControllerEditor
+  commentId: T:MacacaGames.GameSystem.ApplicationControllerEditor
+  name: ApplicationControllerEditor
+  nameWithType: ApplicationControllerEditor
+  fullName: MacacaGames.GameSystem.ApplicationControllerEditor
+- uid: MacacaGames.GameSystem.RequireInterfaceDrawer
+  commentId: T:MacacaGames.GameSystem.RequireInterfaceDrawer
+  name: RequireInterfaceDrawer
+  nameWithType: RequireInterfaceDrawer
+  fullName: MacacaGames.GameSystem.RequireInterfaceDrawer
 - uid: MacacaGames.GameSystem
   commentId: N:MacacaGames.GameSystem
   name: MacacaGames.GameSystem

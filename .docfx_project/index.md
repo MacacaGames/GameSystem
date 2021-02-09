@@ -31,6 +31,48 @@ git submodule add https://github.com/MacacaGames/GameSystem.git Assets/MacacaGam
 git submodule add https://github.com/MacacaGames/mast.git Assets/Mast
 ```
 
+## ApplicationLifeCycle
+```
+
+                                    Unity App Start
+                                            | 
+                                            V
+                                ApplicitionController Init
+                                            |   
+                                            V        
+                            Instance all ScriptableObjectLifeCycle
+                    Get all MonoBehaviourLifeCycle instance in Scene
+                            Instance all [ResloveTarget] class
+                                            |  
+                                            V 
+            Init all ScriptableObjectLifeCycle, MonoBehaviourLifeCycle, [ResloveTarget] instance
+                                            |  
+                                            V 
+                                    Inject all target
+                                            |   
+                                            V  
+                    ┌─────────────>─────────┐   [OnApplicationBeforeGamePlay]
+                    |                       |  
+                    |                       |─────────────[ApplicitionController.ApplicationTask]
+                    |       ┌───────>──┐    |
+                    |       |          |    | 
+                    |       |       [Game Lobby] (A state for waiting for enter gameplay)
+                    |       |          |    | 
+                    |       └──────────┘    |
+                    |                       |   [ApplicationController.Instance.StartGame] 
+                    |                       V
+                    |       ┌───────>──┐    |
+                    |       |          |    |  
+                    |       |     [GamePlayData.GamePlay()]
+                    |       |          |    | 
+                    |       └──────────┘    |
+                    |                       | 
+                    |                       |
+                    |                       |                   
+                    └───────────────────────┘   [GamePlayController.SuccessGamePlay]
+ 
+```
+
 ## IGamePlayData
 IGamePlayData is the main game logic implemention. Do your logic in the callbacks to complete your game. For each callback's detail please see [Document](https://macacagames.github.io/GameSystem/api/MacacaGames.GameSystem.IGamePlayData.html)
 
@@ -83,6 +125,21 @@ gamePlayController.FailedGamePlay();
 gamePlayController.QuitGamePlay();
 gamePlayController.EnterPause();
 gamePlayController.ResumePause();
+
+
+// Get the singleton instance managed by ApplicationController 
+// (Not recommend, use Injection instead)
+
+// Get ScripatableObjectLifeCycle instance
+ApplicationController.Instance.GetScriptableLifeCycle(Type type);
+ApplicationController.Instance.GetScriptableLifeCycle<T>();
+
+// Get GetMonobehaviourLifeCycle instance
+ApplicationController.Instance.GetMonobehaviourLifeCycle(Type type);
+ApplicationController.Instance.GetMonobehaviourLifeCycle<T>();
+
+// Get GetRegisterInstance instance
+ApplicationController.Instance.GetRegisterInstance(Type type);
 ```
 
 ## Injection
@@ -139,3 +196,16 @@ public MyOtherClass{
 ```
 ### ApplicationAutoInjecter
 On a GameObject you can attach ``ApplicationAutoInjecter`` component which will complete the injtection automatically on all component on the GameObject when the GameObject is Instantiated.
+
+
+### Which class can be injected? Do I need to resolve inject manually?
+|                                  | Can be inject target?                  | Inject member with ``[Inject]`` | Resolve                                                                  |
+| -------------------------------- | -------------------------------------- | ------------------------------- | ------------------------------------------------------------------------ |
+| MonoBehaviourLifeCycle           | Yes <br>(Require in Scene in begining) | Yes                             | Auto                                                                     |
+| ScriptableObjectLifeCycle        | Yes                                    | Yes                             | Auto                                                                     |
+| Classes with ``[ResloveTarget]`` | Yes                                    | Yes                             | Auto                                                                     |
+| Classes                          | No                                     | Yes                             | Manual                                                                   |
+| MonoBehaviour                    | No                                     | Yes                             | Manual <br>(Or automatically with ``ApplicationAutoInjecter`` component) |
+| ScriptableObject                 | No                                     | Yes                             | Manual                                                                   |
+
+

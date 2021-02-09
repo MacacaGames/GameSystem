@@ -37,6 +37,7 @@ items:
       <AttributeUsage(AttributeTargets.Class, AllowMultiple:=False)>
 
       Public Class ResolveTargetAttribute
+
           Inherits Attribute
   inheritance:
   - System.Object
