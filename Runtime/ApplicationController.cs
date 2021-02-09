@@ -11,14 +11,14 @@
                                 |   
                                 |   [ApplicitionController.ApplicationTask]
                                 |
-        ┌─────────────>─────────┐ 
+        ┌─────────────>─────────┐   [OnApplicationBeforeGamePlay]
         |                       |  
-        |                       |   [ApplicitionController.OnApplicationBeforeGamePlay]
-        |                       |   [GameSystemBase.OnApplicationBeforeGamePlay]
-        |                       V 
-        |                  Game Lobby (A state for waiting for enter gameplay)
-        |                       |
-        |                       |
+        |                       |   
+        |       ┌───────>──┐    |
+        |       |          |    | 
+        |       |       [Game Lobby] (A state for waiting for enter gameplay)
+        |       |          |    | 
+        |       └──────────┘    |
         |                       |   [ApplicationController.Instance.StartGame] 
         |                       V
         |       ┌───────>──┐    |
@@ -58,7 +58,16 @@ namespace MacacaGames.GameSystem
             Init();
         }
 
-        [SerializeField] ScriptableObjectGamePlayData gamePlayData;
+        [SerializeField]
+        [RequireInterface(typeof(IGamePlayData))]
+        UnityEngine.Object gamePlayData;
+        IGamePlayData _gamePlayData
+        {
+            get
+            {
+                return gamePlayData as IGamePlayData;
+            }
+        }
         [SerializeField] ScriptableObjectLifeCycle[] scriptableObjectLifeCycle;
         MonoBehaviourLifeCycle[] monoBehaviourLifeCycleInstance;
         List<ScriptableObjectLifeCycle> scriptableObjectLifeCycleInstances = new List<ScriptableObjectLifeCycle>();
@@ -86,7 +95,7 @@ namespace MacacaGames.GameSystem
         {
             if (IsInit) return;
             OnApplicationInit?.Invoke();
-            gamePlayController = new GamePlayController(this, gamePlayData);
+            gamePlayController = new GamePlayController(this, _gamePlayData);
             applicationExecutor = new Executor();
 
             //Prepare Instance
@@ -373,7 +382,7 @@ namespace MacacaGames.GameSystem
 
         void OnGUI()
         {
-            gamePlayData.OnGUI();
+            _gamePlayData.OnGUI();
         }
 
         void Update()
