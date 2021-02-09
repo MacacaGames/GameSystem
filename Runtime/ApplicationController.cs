@@ -58,7 +58,7 @@ namespace MacacaGames.GameSystem
             Init();
         }
 
-        [SerializeReference] ScriptableObjectGamePlayData gamePlayData;
+        [SerializeField] ScriptableObjectGamePlayData gamePlayData;
         [SerializeField] ScriptableObjectLifeCycle[] scriptableObjectLifeCycle;
         MonoBehaviourLifeCycle[] monoBehaviourLifeCycleInstance;
         List<ScriptableObjectLifeCycle> scriptableObjectLifeCycleInstances = new List<ScriptableObjectLifeCycle>();
