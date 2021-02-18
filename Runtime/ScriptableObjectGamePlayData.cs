@@ -29,7 +29,7 @@ namespace MacacaGames.GameSystem
         /// <summary>
         /// Same as ApplicationController OnApplicationBeforeGamePlay.
         /// </summary>
-        public abstract void OnApplicationBeforeGamePlay();
+        public abstract void OnEnterLobby();
 
         /// <summary>
         /// Reset all gameplay relalte value
