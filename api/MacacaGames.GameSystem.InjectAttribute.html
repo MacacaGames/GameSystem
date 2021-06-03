@@ -83,6 +83,10 @@ Remember the member needs to be accessable to make the Injection work.</p>
     <div class="level1"><span class="xref">System.Attribute</span></div>
     <div class="level2"><span class="xref">InjectAttribute</span></div>
   </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.Runtime.InteropServices._Attribute</span></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -194,6 +198,18 @@ Remember the member needs to be accessable to make the Injection work.</p>
       <span class="xref">System.Attribute.Match(System.Object)</span>
     </div>
     <div>
+      <span class="xref">System.Attribute.System.Runtime.InteropServices._Attribute.GetIDsOfNames(System.Guid, System.IntPtr, System.UInt32, System.UInt32, System.IntPtr)</span>
+    </div>
+    <div>
+      <span class="xref">System.Attribute.System.Runtime.InteropServices._Attribute.GetTypeInfo(System.UInt32, System.UInt32, System.IntPtr)</span>
+    </div>
+    <div>
+      <span class="xref">System.Attribute.System.Runtime.InteropServices._Attribute.GetTypeInfoCount(System.UInt32)</span>
+    </div>
+    <div>
+      <span class="xref">System.Attribute.System.Runtime.InteropServices._Attribute.Invoke(System.UInt32, System.Guid, System.UInt32, System.Int16, System.IntPtr, System.IntPtr, System.IntPtr, System.IntPtr)</span>
+    </div>
+    <div>
       <span class="xref">System.Attribute.TypeId</span>
     </div>
     <div>
@@ -217,7 +233,7 @@ Remember the member needs to be accessable to make the Injection work.</p>
   <h5 id="MacacaGames_GameSystem_InjectAttribute_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false)]
-public class InjectAttribute : Attribute</code></pre>
+public class InjectAttribute : Attribute, _Attribute</code></pre>
   </div>
   <h5 id="MacacaGames_GameSystem_InjectAttribute_examples"><strong>Examples</strong></h5>
   <p>In the case while trying to inject ChildClass the inject will has below result</p>
@@ -246,6 +262,10 @@ class BaseClass {
     public SomeClass publicItem;
 }</code></pre>
 
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.Runtime.InteropServices._Attribute</span>
+  </div>
 </article>
           </div>
           

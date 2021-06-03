@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.ApplicationAutoInjecter.html",
-          "hash": "cfa7Rm+a7xao/rBgBpAMTQ=="
+          "hash": "gzcBIXjWbgNAReawZJGvQg=="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.ApplicationController.html",
-          "hash": "lS8c80IMU3t5XzkbVgVirw=="
+          "hash": "iH3RR+gsywOauXO9LjzLoA=="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.ApplicationControllerEditor.html",
-          "hash": "CimGM1tsrCqoW1l7fFNwhg=="
+          "hash": "48yKCVZ746DMjnxtBoEgOQ=="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,19 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.GamePlayController.html",
-          "hash": "Ksi+82yaaBatMfrO3f7+XA=="
+          "hash": "bxiA0FO2/I+kbj/YGOMUlA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../Documentation~/api/MacacaGames.GameSystem.IApplicationLifeCycle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MacacaGames.GameSystem.IApplicationLifeCycle.html",
+          "hash": "95BwRW4o8XaKIgQppm9L0g=="
         }
       },
       "is_incremental": false,
@@ -81,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.IGamePlayData.html",
-          "hash": "4W26TmdbTFXSuuGPSWU74A=="
+          "hash": "4gr4e2KaYXc5sqg+jimrIA=="
         }
       },
       "is_incremental": false,
@@ -93,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.InjectAttribute.html",
-          "hash": "qoTOC/0xk1sImX7UX9V/dg=="
+          "hash": "IrxiPwX9EEFUGxExVNeyoQ=="
         }
       },
       "is_incremental": false,
@@ -105,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.MonoBehaviourLifeCycle.html",
-          "hash": "2mtb4kKWB+jt82fYaD6oiw=="
+          "hash": "H/UyHYnMBTxTxBH+WrQVww=="
         }
       },
       "is_incremental": false,
@@ -117,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.RequireInterfaceAttribute.html",
-          "hash": "yUdLzeaM4VjW/lQjQ6t13A=="
+          "hash": "aao+iZyHU2l8UotG/w9VaQ=="
         }
       },
       "is_incremental": false,
@@ -141,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.ResolveTargetAttribute.html",
-          "hash": "thuNNVVst+9VUjZA/2bYhg=="
+          "hash": "MoRbY+pLXt9KQYB6zd3ivw=="
         }
       },
       "is_incremental": false,
@@ -153,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.ScriptableObjectGamePlayData.html",
-          "hash": "Iuzm8ZhO0v9pz7uoMN0sgw=="
+          "hash": "BBYre+SctPWr4KX9XmGGhg=="
         }
       },
       "is_incremental": false,
@@ -165,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.ScriptableObjectLifeCycle.html",
-          "hash": "/sJ5ZCDrl+Mggz8XMlJmhA=="
+          "hash": "efJ6y1wkqvshH97yReNUXA=="
         }
       },
       "is_incremental": false,
@@ -177,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MacacaGames.GameSystem.html",
-          "hash": "SuavT08ewCo6WcvE3F2amw=="
+          "hash": "5B3LljSwSBoRMrw/Jn1/+w=="
         }
       },
       "is_incremental": false,
@@ -189,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "w9G5BIWhNcVg8NWwPpoFQw=="
+          "hash": "+VzZvdtHq6dqzvXFm1A7lg=="
         }
       },
       "is_incremental": false,
@@ -224,7 +236,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "Io3Zs5Nl6WG7owxC2zf4Vw=="
+          "hash": "WlidQYHh3uLH/AFRJGekzg=="
         }
       },
       "is_incremental": false,
@@ -257,25 +269,23 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because last build info is missing.",
+        "can_incremental": true,
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "NoAvailableBuildCache"
+        "skipped_file_count": 0
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 2,
-          "skipped_file_count": 0
+          "skipped_file_count": 1
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 15,
-          "skipped_file_count": 0
+          "total_file_count": 16,
+          "skipped_file_count": 2
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
@@ -295,8 +305,8 @@
     },
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0

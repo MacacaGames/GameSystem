@@ -83,6 +83,10 @@
     <div class="level2"><span class="xref">UnityEngine.PropertyAttribute</span></div>
     <div class="level3"><span class="xref">RequireInterfaceAttribute</span></div>
   </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.Runtime.InteropServices._Attribute</span></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -197,6 +201,18 @@
       <span class="xref">System.Attribute.Match(System.Object)</span>
     </div>
     <div>
+      <span class="xref">System.Attribute.System.Runtime.InteropServices._Attribute.GetIDsOfNames(System.Guid, System.IntPtr, System.UInt32, System.UInt32, System.IntPtr)</span>
+    </div>
+    <div>
+      <span class="xref">System.Attribute.System.Runtime.InteropServices._Attribute.GetTypeInfo(System.UInt32, System.UInt32, System.IntPtr)</span>
+    </div>
+    <div>
+      <span class="xref">System.Attribute.System.Runtime.InteropServices._Attribute.GetTypeInfoCount(System.UInt32)</span>
+    </div>
+    <div>
+      <span class="xref">System.Attribute.System.Runtime.InteropServices._Attribute.Invoke(System.UInt32, System.Guid, System.UInt32, System.Int16, System.IntPtr, System.IntPtr, System.IntPtr, System.IntPtr)</span>
+    </div>
+    <div>
       <span class="xref">System.Attribute.TypeId</span>
     </div>
     <div>
@@ -219,7 +235,7 @@
   <h6><strong>Assembly</strong>: Macaca.GameSystem.dll</h6>
   <h5 id="MacacaGames_GameSystem_RequireInterfaceAttribute_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class RequireInterfaceAttribute : PropertyAttribute</code></pre>
+    <pre><code class="lang-csharp hljs">public class RequireInterfaceAttribute : PropertyAttribute, _Attribute</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -289,6 +305,10 @@
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.Runtime.InteropServices._Attribute</span>
+  </div>
 </article>
           </div>
           
