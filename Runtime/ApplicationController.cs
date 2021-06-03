@@ -368,7 +368,7 @@ namespace MacacaGames.GameSystem
         /// </summary>
         /// <typeparam name="T">The Register class you wish to get</typeparam>
         /// <returns>The Register instance, null if no instance</returns>
-        public object GetRegisterInstance(Type t)
+        public object GetResloveTargetInstance(Type t)
         {
             object result;
             result = resolveTargetInstance.SingleOrDefault(m => m.GetType() == t);
@@ -619,7 +619,7 @@ namespace MacacaGames.GameSystem
                     return GetGamePlayController().GetGamePlayData();
                 }
                 //Finally try to find RegisterInstance
-                return GetRegisterInstance(t);
+                return GetResloveTargetInstance(t);
             }
         }
         #endregion
