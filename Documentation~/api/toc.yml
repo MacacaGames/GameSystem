@@ -14,6 +14,8 @@
     name: ApplicationControllerEditor
   - uid: MacacaGames.GameSystem.GamePlayController
     name: GamePlayController
+  - uid: MacacaGames.GameSystem.IApplicationLifeCycle
+    name: IApplicationLifeCycle
   - uid: MacacaGames.GameSystem.IGamePlayData
     name: IGamePlayData
   - uid: MacacaGames.GameSystem.InjectAttribute

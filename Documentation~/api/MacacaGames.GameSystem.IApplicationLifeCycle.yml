@@ -1,0 +1,222 @@
+### YamlMime:ManagedReference
+items:
+- uid: MacacaGames.GameSystem.IApplicationLifeCycle
+  commentId: T:MacacaGames.GameSystem.IApplicationLifeCycle
+  id: IApplicationLifeCycle
+  parent: MacacaGames.GameSystem
+  children:
+  - MacacaGames.GameSystem.IApplicationLifeCycle.Init
+  - MacacaGames.GameSystem.IApplicationLifeCycle.OnApplicationUpdate
+  - MacacaGames.GameSystem.IApplicationLifeCycle.OnEnterLobby
+  - MacacaGames.GameSystem.IApplicationLifeCycle.OnGamePlayUpdate
+  - MacacaGames.GameSystem.IApplicationLifeCycle.OnUnPauseGamePlayUpdate
+  langs:
+  - csharp
+  - vb
+  name: IApplicationLifeCycle
+  nameWithType: IApplicationLifeCycle
+  fullName: MacacaGames.GameSystem.IApplicationLifeCycle
+  type: Interface
+  source:
+    remote:
+      path: Runtime/Interface/IApplicationLifeCycle.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: IApplicationLifeCycle
+    path: ../Runtime/Interface/IApplicationLifeCycle.cs
+    startLine: 6
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nThe life cycle interface for GameSystem\nUse <xref href=\"MacacaGames.GameSystem.ScriptableObjectLifeCycle\" data-throw-if-not-resolved=\"false\"></xref> or  <xref href=\"MacacaGames.GameSystem.MonoBehaviourLifeCycle\" data-throw-if-not-resolved=\"false\"></xref> for more detail\n"
+  example: []
+  syntax:
+    content: public interface IApplicationLifeCycle
+    content.vb: Public Interface IApplicationLifeCycle
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: MacacaGames.GameSystem.IApplicationLifeCycle.Init
+  commentId: M:MacacaGames.GameSystem.IApplicationLifeCycle.Init
+  id: Init
+  parent: MacacaGames.GameSystem.IApplicationLifeCycle
+  langs:
+  - csharp
+  - vb
+  name: Init()
+  nameWithType: IApplicationLifeCycle.Init()
+  fullName: MacacaGames.GameSystem.IApplicationLifeCycle.Init()
+  type: Method
+  source:
+    remote:
+      path: Runtime/Interface/IApplicationLifeCycle.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: Init
+    path: ../Runtime/Interface/IApplicationLifeCycle.cs
+    startLine: 11
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nInit the instance,\n"
+  example: []
+  syntax:
+    content: void Init()
+    content.vb: Sub Init
+  overload: MacacaGames.GameSystem.IApplicationLifeCycle.Init*
+- uid: MacacaGames.GameSystem.IApplicationLifeCycle.OnEnterLobby
+  commentId: M:MacacaGames.GameSystem.IApplicationLifeCycle.OnEnterLobby
+  id: OnEnterLobby
+  parent: MacacaGames.GameSystem.IApplicationLifeCycle
+  langs:
+  - csharp
+  - vb
+  name: OnEnterLobby()
+  nameWithType: IApplicationLifeCycle.OnEnterLobby()
+  fullName: MacacaGames.GameSystem.IApplicationLifeCycle.OnEnterLobby()
+  type: Method
+  source:
+    remote:
+      path: Runtime/Interface/IApplicationLifeCycle.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnEnterLobby
+    path: ../Runtime/Interface/IApplicationLifeCycle.cs
+    startLine: 16
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nFire once between GameEnd and next GamePlay, also fire once after init. \n"
+  example: []
+  syntax:
+    content: void OnEnterLobby()
+    content.vb: Sub OnEnterLobby
+  overload: MacacaGames.GameSystem.IApplicationLifeCycle.OnEnterLobby*
+- uid: MacacaGames.GameSystem.IApplicationLifeCycle.OnApplicationUpdate
+  commentId: M:MacacaGames.GameSystem.IApplicationLifeCycle.OnApplicationUpdate
+  id: OnApplicationUpdate
+  parent: MacacaGames.GameSystem.IApplicationLifeCycle
+  langs:
+  - csharp
+  - vb
+  name: OnApplicationUpdate()
+  nameWithType: IApplicationLifeCycle.OnApplicationUpdate()
+  fullName: MacacaGames.GameSystem.IApplicationLifeCycle.OnApplicationUpdate()
+  type: Method
+  source:
+    remote:
+      path: Runtime/Interface/IApplicationLifeCycle.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnApplicationUpdate
+    path: ../Runtime/Interface/IApplicationLifeCycle.cs
+    startLine: 21
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nFire every frame during the application is running\n"
+  example: []
+  syntax:
+    content: void OnApplicationUpdate()
+    content.vb: Sub OnApplicationUpdate
+  overload: MacacaGames.GameSystem.IApplicationLifeCycle.OnApplicationUpdate*
+- uid: MacacaGames.GameSystem.IApplicationLifeCycle.OnGamePlayUpdate
+  commentId: M:MacacaGames.GameSystem.IApplicationLifeCycle.OnGamePlayUpdate
+  id: OnGamePlayUpdate
+  parent: MacacaGames.GameSystem.IApplicationLifeCycle
+  langs:
+  - csharp
+  - vb
+  name: OnGamePlayUpdate()
+  nameWithType: IApplicationLifeCycle.OnGamePlayUpdate()
+  fullName: MacacaGames.GameSystem.IApplicationLifeCycle.OnGamePlayUpdate()
+  type: Method
+  source:
+    remote:
+      path: Runtime/Interface/IApplicationLifeCycle.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnGamePlayUpdate
+    path: ../Runtime/Interface/IApplicationLifeCycle.cs
+    startLine: 27
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nFire every frame during the gameplay loop is running\n(While ApplicationController.Instance.IsInGame == true)\n"
+  example: []
+  syntax:
+    content: void OnGamePlayUpdate()
+    content.vb: Sub OnGamePlayUpdate
+  overload: MacacaGames.GameSystem.IApplicationLifeCycle.OnGamePlayUpdate*
+- uid: MacacaGames.GameSystem.IApplicationLifeCycle.OnUnPauseGamePlayUpdate
+  commentId: M:MacacaGames.GameSystem.IApplicationLifeCycle.OnUnPauseGamePlayUpdate
+  id: OnUnPauseGamePlayUpdate
+  parent: MacacaGames.GameSystem.IApplicationLifeCycle
+  langs:
+  - csharp
+  - vb
+  name: OnUnPauseGamePlayUpdate()
+  nameWithType: IApplicationLifeCycle.OnUnPauseGamePlayUpdate()
+  fullName: MacacaGames.GameSystem.IApplicationLifeCycle.OnUnPauseGamePlayUpdate()
+  type: Method
+  source:
+    remote:
+      path: Runtime/Interface/IApplicationLifeCycle.cs
+      branch: master
+      repo: git@github.com:MacacaGames/GameSystem.git
+    id: OnUnPauseGamePlayUpdate
+    path: ../Runtime/Interface/IApplicationLifeCycle.cs
+    startLine: 32
+  assemblies:
+  - Macaca.GameSystem
+  namespace: MacacaGames.GameSystem
+  summary: "\nFire every frame during the gameplay loop is running\n(While ApplicationController.Instance.IsInGame == true)\n"
+  example: []
+  syntax:
+    content: void OnUnPauseGamePlayUpdate()
+    content.vb: Sub OnUnPauseGamePlayUpdate
+  overload: MacacaGames.GameSystem.IApplicationLifeCycle.OnUnPauseGamePlayUpdate*
+references:
+- uid: MacacaGames.GameSystem.ScriptableObjectLifeCycle
+  commentId: T:MacacaGames.GameSystem.ScriptableObjectLifeCycle
+  name: ScriptableObjectLifeCycle
+  nameWithType: ScriptableObjectLifeCycle
+  fullName: MacacaGames.GameSystem.ScriptableObjectLifeCycle
+- uid: MacacaGames.GameSystem.MonoBehaviourLifeCycle
+  commentId: T:MacacaGames.GameSystem.MonoBehaviourLifeCycle
+  name: MonoBehaviourLifeCycle
+  nameWithType: MonoBehaviourLifeCycle
+  fullName: MacacaGames.GameSystem.MonoBehaviourLifeCycle
+- uid: MacacaGames.GameSystem
+  commentId: N:MacacaGames.GameSystem
+  name: MacacaGames.GameSystem
+  nameWithType: MacacaGames.GameSystem
+  fullName: MacacaGames.GameSystem
+- uid: MacacaGames.GameSystem.IApplicationLifeCycle.Init*
+  commentId: Overload:MacacaGames.GameSystem.IApplicationLifeCycle.Init
+  name: Init
+  nameWithType: IApplicationLifeCycle.Init
+  fullName: MacacaGames.GameSystem.IApplicationLifeCycle.Init
+- uid: MacacaGames.GameSystem.IApplicationLifeCycle.OnEnterLobby*
+  commentId: Overload:MacacaGames.GameSystem.IApplicationLifeCycle.OnEnterLobby
+  name: OnEnterLobby
+  nameWithType: IApplicationLifeCycle.OnEnterLobby
+  fullName: MacacaGames.GameSystem.IApplicationLifeCycle.OnEnterLobby
+- uid: MacacaGames.GameSystem.IApplicationLifeCycle.OnApplicationUpdate*
+  commentId: Overload:MacacaGames.GameSystem.IApplicationLifeCycle.OnApplicationUpdate
+  name: OnApplicationUpdate
+  nameWithType: IApplicationLifeCycle.OnApplicationUpdate
+  fullName: MacacaGames.GameSystem.IApplicationLifeCycle.OnApplicationUpdate
+- uid: MacacaGames.GameSystem.IApplicationLifeCycle.OnGamePlayUpdate*
+  commentId: Overload:MacacaGames.GameSystem.IApplicationLifeCycle.OnGamePlayUpdate
+  name: OnGamePlayUpdate
+  nameWithType: IApplicationLifeCycle.OnGamePlayUpdate
+  fullName: MacacaGames.GameSystem.IApplicationLifeCycle.OnGamePlayUpdate
+- uid: MacacaGames.GameSystem.IApplicationLifeCycle.OnUnPauseGamePlayUpdate*
+  commentId: Overload:MacacaGames.GameSystem.IApplicationLifeCycle.OnUnPauseGamePlayUpdate
+  name: OnUnPauseGamePlayUpdate
+  nameWithType: IApplicationLifeCycle.OnUnPauseGamePlayUpdate
+  fullName: MacacaGames.GameSystem.IApplicationLifeCycle.OnUnPauseGamePlayUpdate

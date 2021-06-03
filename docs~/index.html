@@ -64,6 +64,8 @@
 <p>See <a href="https://macacagames.github.io/GameSystem/">Document</a> for more detail.</p>
 <h1 id="welcome-to-macaca-gamesystem">Welcome to Macaca GameSystem</h1>
 <p>Macaca GameSystem is a framework to build game life cycle in Unity3D.</p>
+<h3 id="note-start-from-103-this-package-include-a-precompiled-rayarkmask--dlls">Note: start from 1.0.3, this package include a precompiled Rayark.Mask  Dlls.</h3>
+<hr>
 <h2 id="features">Features</h2>
 <ul>
 <li>Life cycle management and callback.</li>
@@ -76,15 +78,14 @@
 <pre><code class="lang-json">{
     &quot;dependencies&quot;: {
         &quot;com.macacagames.gamesystem&quot;: &quot;https://github.com/MacacaGames/GameSystem.git&quot;,
-        &quot;com.rayark.mast&quot;: &quot;https://github.com/MacacaGames/mast.git&quot;,
     }
 }
 </code></pre>
-<h3 id="option-2-git-submodule">Option 2: Git SubModule</h3>
-<p>Note: GameSystem is dependency with Rayark.Mast, so also add it in git submodule.</p>
+<h3 id="option-2-installation-via-openupm">Option 2: Installation via OpenUPM</h3>
+<pre><code class="lang-sh">openupm add com.macacagames.gamesystem
+</code></pre>
+<h3 id="option-3-git-submodule">Option 3: Git SubModule</h3>
 <pre><code class="lang-bash">git submodule add https://github.com/MacacaGames/GameSystem.git Assets/MacacaGameSystem
-
-git submodule add https://github.com/MacacaGames/mast.git Assets/Mast
 </code></pre>
 <h2 id="applicationlifecycle">ApplicationLifeCycle</h2>
 <pre><code>
@@ -191,9 +192,11 @@ ApplicationController.Instance.GetRegisterInstance(Type type);
 <h2 id="injection">Injection</h2>
 <p>Game System contains a lightweight dependency inject system, help you to resolve the reference problem in the game.</p>
 <p>Use the <code>[ResloveTarget]</code> attribute to mark a class to become a injectable object.</p>
-<p>Each MonoBehaviourLifeCycle and ScriptableObjectLifeCycle in the scene or referenced on ApplicationController will also injectable.</p>
+<p>Each MonoBehaviourLifeCycle and ScriptableObjectLifeCycle in the scene or referenced on ApplicationController will also injectable. (MonoBehaviourLifeCycle and ScriptableObjectLifeCycle doesn't require <code>[ResloveTarget]</code> attribute)</p>
 <p>And use <code>[Inject]</code> attribute on the target field/property. Finally use ResolveInjection to complete injection.</p>
 <p>All MonoBehaviourLifeCycle, ScriptableObjectLifeCycle and GamePlayData will complete the injtection automatically on each instance during Init phase.</p>
+<p>Note: Currentlly, MonoBehaviourLifeCycle, ScriptableObjectLifeCycle and the class which has <code>[ResloveTarget]</code> attribute will only have one instance and managed by ApplicationController.</p>
+<p>To get the class instance manually see <a href="https://macacagames.github.io/GameSystem/api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetMonobehaviourLifeCycle_System_Type_">Document</a> for more detail.</p>
 <h3 id="example">Example:</h3>
 <pre><code class="lang-csharp">[ResloveTarget]
 public class MySystem { }

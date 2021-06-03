@@ -12,7 +12,7 @@ items:
   - MacacaGames.GameSystem.ApplicationController.GetGamePlayController
   - MacacaGames.GameSystem.ApplicationController.GetMonobehaviourLifeCycle(System.Type)
   - MacacaGames.GameSystem.ApplicationController.GetMonobehaviourLifeCycle``1
-  - MacacaGames.GameSystem.ApplicationController.GetRegisterInstance(System.Type)
+  - MacacaGames.GameSystem.ApplicationController.GetResloveTargetInstance(System.Type)
   - MacacaGames.GameSystem.ApplicationController.GetScriptableLifeCycle(System.Type)
   - MacacaGames.GameSystem.ApplicationController.GetScriptableLifeCycle``1
   - MacacaGames.GameSystem.ApplicationController.Init
@@ -50,7 +50,6 @@ items:
       <ResolveTarget>
 
       Public Class ApplicationController
-
           Inherits MonoBehaviour
   inheritance:
   - System.Object
@@ -138,15 +137,19 @@ items:
   - UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
   - UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
   - UnityEngine.Object.FindObjectsOfType(System.Type)
+  - UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
   - UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)
   - UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
   - UnityEngine.Object.DestroyObject(UnityEngine.Object)
   - UnityEngine.Object.FindSceneObjectsOfType(System.Type)
   - UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
   - UnityEngine.Object.FindObjectsOfType``1
+  - UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
   - UnityEngine.Object.FindObjectOfType``1
+  - UnityEngine.Object.FindObjectOfType``1(System.Boolean)
   - UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
   - UnityEngine.Object.FindObjectOfType(System.Type)
+  - UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
   - UnityEngine.Object.ToString
   - UnityEngine.Object.name
   - UnityEngine.Object.hideFlags
@@ -392,7 +395,6 @@ items:
   syntax:
     content: >-
       public T GetScriptableLifeCycle<T>()
-
           where T : ScriptableObjectLifeCycle
     typeParameters:
     - id: T
@@ -510,7 +512,6 @@ items:
   syntax:
     content: >-
       public T GetMonobehaviourLifeCycle<T>()
-
           where T : MonoBehaviourLifeCycle
     typeParameters:
     - id: T
@@ -565,23 +566,23 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: MacacaGames.GameSystem.ApplicationController.GetRegisterInstance(System.Type)
-  commentId: M:MacacaGames.GameSystem.ApplicationController.GetRegisterInstance(System.Type)
-  id: GetRegisterInstance(System.Type)
+- uid: MacacaGames.GameSystem.ApplicationController.GetResloveTargetInstance(System.Type)
+  commentId: M:MacacaGames.GameSystem.ApplicationController.GetResloveTargetInstance(System.Type)
+  id: GetResloveTargetInstance(System.Type)
   parent: MacacaGames.GameSystem.ApplicationController
   langs:
   - csharp
   - vb
-  name: GetRegisterInstance(Type)
-  nameWithType: ApplicationController.GetRegisterInstance(Type)
-  fullName: MacacaGames.GameSystem.ApplicationController.GetRegisterInstance(System.Type)
+  name: GetResloveTargetInstance(Type)
+  nameWithType: ApplicationController.GetResloveTargetInstance(Type)
+  fullName: MacacaGames.GameSystem.ApplicationController.GetResloveTargetInstance(System.Type)
   type: Method
   source:
     remote:
       path: Runtime/ApplicationController.cs
       branch: master
       repo: git@github.com:MacacaGames/GameSystem.git
-    id: GetRegisterInstance
+    id: GetResloveTargetInstance
     path: ../Runtime/ApplicationController.cs
     startLine: 370
   assemblies:
@@ -590,15 +591,15 @@ items:
   summary: "\nGet the object instance which has Register Attribute\n"
   example: []
   syntax:
-    content: public object GetRegisterInstance(Type t)
+    content: public object GetResloveTargetInstance(Type t)
     parameters:
     - id: t
       type: System.Type
     return:
       type: System.Object
       description: The Register instance, null if no instance
-    content.vb: Public Function GetRegisterInstance(t As Type) As Object
-  overload: MacacaGames.GameSystem.ApplicationController.GetRegisterInstance*
+    content.vb: Public Function GetResloveTargetInstance(t As Type) As Object
+  overload: MacacaGames.GameSystem.ApplicationController.GetResloveTargetInstance*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -780,7 +781,6 @@ items:
   syntax:
     content: >-
       public T CreateInstance<T>(bool inject = true)
-
           where T : class
     parameters:
     - id: inject
@@ -4554,6 +4554,63 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
+  commentId: M:UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectsOfType(Type, Boolean)
+  nameWithType: Object.FindObjectsOfType(Type, Boolean)
+  fullName: UnityEngine.Object.FindObjectsOfType(System.Type, System.Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
+    name: FindObjectsOfType
+    nameWithType: Object.FindObjectsOfType
+    fullName: UnityEngine.Object.FindObjectsOfType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
+    name: FindObjectsOfType
+    nameWithType: Object.FindObjectsOfType
+    fullName: UnityEngine.Object.FindObjectsOfType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)
   commentId: M:UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)
   parent: UnityEngine.Object
@@ -4809,6 +4866,50 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
+  commentId: M:UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectsOfType<T>(Boolean)
+  nameWithType: Object.FindObjectsOfType<T>(Boolean)
+  fullName: UnityEngine.Object.FindObjectsOfType<T>(System.Boolean)
+  nameWithType.vb: Object.FindObjectsOfType(Of T)(Boolean)
+  fullName.vb: UnityEngine.Object.FindObjectsOfType(Of T)(System.Boolean)
+  name.vb: FindObjectsOfType(Of T)(Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
+    name: FindObjectsOfType<T>
+    nameWithType: Object.FindObjectsOfType<T>
+    fullName: UnityEngine.Object.FindObjectsOfType<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
+    name: FindObjectsOfType(Of T)
+    nameWithType: Object.FindObjectsOfType(Of T)
+    fullName: UnityEngine.Object.FindObjectsOfType(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: UnityEngine.Object.FindObjectOfType``1
   commentId: M:UnityEngine.Object.FindObjectOfType``1
   parent: UnityEngine.Object
@@ -4840,6 +4941,50 @@ references:
   - name: (
     nameWithType: (
     fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.FindObjectOfType``1(System.Boolean)
+  commentId: M:UnityEngine.Object.FindObjectOfType``1(System.Boolean)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectOfType<T>(Boolean)
+  nameWithType: Object.FindObjectOfType<T>(Boolean)
+  fullName: UnityEngine.Object.FindObjectOfType<T>(System.Boolean)
+  nameWithType.vb: Object.FindObjectOfType(Of T)(Boolean)
+  fullName.vb: UnityEngine.Object.FindObjectOfType(Of T)(System.Boolean)
+  name.vb: FindObjectOfType(Of T)(Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectOfType``1(System.Boolean)
+    name: FindObjectOfType<T>
+    nameWithType: Object.FindObjectOfType<T>
+    fullName: UnityEngine.Object.FindObjectOfType<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectOfType``1(System.Boolean)
+    name: FindObjectOfType(Of T)
+    nameWithType: Object.FindObjectOfType(Of T)
+    fullName: UnityEngine.Object.FindObjectOfType(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
   - name: )
     nameWithType: )
     fullName: )
@@ -4921,6 +5066,63 @@ references:
     name: Type
     nameWithType: Type
     fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
+  commentId: M:UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectOfType(Type, Boolean)
+  nameWithType: Object.FindObjectOfType(Type, Boolean)
+  fullName: UnityEngine.Object.FindObjectOfType(System.Type, System.Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
+    name: FindObjectOfType
+    nameWithType: Object.FindObjectOfType
+    fullName: UnityEngine.Object.FindObjectOfType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
+    name: FindObjectOfType
+    nameWithType: Object.FindObjectOfType
+    fullName: UnityEngine.Object.FindObjectOfType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
     isExternal: true
   - name: )
     nameWithType: )
@@ -5878,11 +6080,11 @@ references:
   name: GetMonobehaviourLifeCycle
   nameWithType: ApplicationController.GetMonobehaviourLifeCycle
   fullName: MacacaGames.GameSystem.ApplicationController.GetMonobehaviourLifeCycle
-- uid: MacacaGames.GameSystem.ApplicationController.GetRegisterInstance*
-  commentId: Overload:MacacaGames.GameSystem.ApplicationController.GetRegisterInstance
-  name: GetRegisterInstance
-  nameWithType: ApplicationController.GetRegisterInstance
-  fullName: MacacaGames.GameSystem.ApplicationController.GetRegisterInstance
+- uid: MacacaGames.GameSystem.ApplicationController.GetResloveTargetInstance*
+  commentId: Overload:MacacaGames.GameSystem.ApplicationController.GetResloveTargetInstance
+  name: GetResloveTargetInstance
+  nameWithType: ApplicationController.GetResloveTargetInstance
+  fullName: MacacaGames.GameSystem.ApplicationController.GetResloveTargetInstance
 - uid: MacacaGames.GameSystem.ApplicationController.StartGame*
   commentId: Overload:MacacaGames.GameSystem.ApplicationController.StartGame
   name: StartGame

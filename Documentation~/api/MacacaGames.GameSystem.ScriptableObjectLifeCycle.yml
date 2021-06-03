@@ -34,14 +34,14 @@ items:
     content: 'public abstract class ScriptableObjectLifeCycle : ScriptableObject, IApplicationLifeCycle'
     content.vb: >-
       Public MustInherit Class ScriptableObjectLifeCycle
-
           Inherits ScriptableObject
-
           Implements IApplicationLifeCycle
   inheritance:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
+  implements:
+  - MacacaGames.GameSystem.IApplicationLifeCycle
   inheritedMembers:
   - UnityEngine.ScriptableObject.SetDirty
   - UnityEngine.ScriptableObject.CreateInstance(System.String)
@@ -65,15 +65,19 @@ items:
   - UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
   - UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
   - UnityEngine.Object.FindObjectsOfType(System.Type)
+  - UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
   - UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)
   - UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
   - UnityEngine.Object.DestroyObject(UnityEngine.Object)
   - UnityEngine.Object.FindSceneObjectsOfType(System.Type)
   - UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
   - UnityEngine.Object.FindObjectsOfType``1
+  - UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
   - UnityEngine.Object.FindObjectOfType``1
+  - UnityEngine.Object.FindObjectOfType``1(System.Boolean)
   - UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
   - UnityEngine.Object.FindObjectOfType(System.Type)
+  - UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
   - UnityEngine.Object.ToString
   - UnityEngine.Object.name
   - UnityEngine.Object.hideFlags
@@ -117,6 +121,8 @@ items:
     content: public abstract void Init()
     content.vb: Public MustOverride Sub Init
   overload: MacacaGames.GameSystem.ScriptableObjectLifeCycle.Init*
+  implements:
+  - MacacaGames.GameSystem.IApplicationLifeCycle.Init
   modifiers.csharp:
   - public
   - abstract
@@ -151,6 +157,8 @@ items:
     content: public virtual void OnApplicationUpdate()
     content.vb: Public Overridable Sub OnApplicationUpdate
   overload: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnApplicationUpdate*
+  implements:
+  - MacacaGames.GameSystem.IApplicationLifeCycle.OnApplicationUpdate
   modifiers.csharp:
   - public
   - virtual
@@ -185,6 +193,8 @@ items:
     content: public virtual void OnEnterLobby()
     content.vb: Public Overridable Sub OnEnterLobby
   overload: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnEnterLobby*
+  implements:
+  - MacacaGames.GameSystem.IApplicationLifeCycle.OnEnterLobby
   modifiers.csharp:
   - public
   - virtual
@@ -219,6 +229,8 @@ items:
     content: public virtual void OnGamePlayUpdate()
     content.vb: Public Overridable Sub OnGamePlayUpdate
   overload: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnGamePlayUpdate*
+  implements:
+  - MacacaGames.GameSystem.IApplicationLifeCycle.OnGamePlayUpdate
   modifiers.csharp:
   - public
   - virtual
@@ -253,6 +265,8 @@ items:
     content: public virtual void OnUnPauseGamePlayUpdate()
     content.vb: Public Overridable Sub OnUnPauseGamePlayUpdate
   overload: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnUnPauseGamePlayUpdate*
+  implements:
+  - MacacaGames.GameSystem.IApplicationLifeCycle.OnUnPauseGamePlayUpdate
   modifiers.csharp:
   - public
   - virtual
@@ -286,6 +300,12 @@ references:
   name: ScriptableObject
   nameWithType: ScriptableObject
   fullName: UnityEngine.ScriptableObject
+- uid: MacacaGames.GameSystem.IApplicationLifeCycle
+  commentId: T:MacacaGames.GameSystem.IApplicationLifeCycle
+  parent: MacacaGames.GameSystem
+  name: IApplicationLifeCycle
+  nameWithType: IApplicationLifeCycle
+  fullName: MacacaGames.GameSystem.IApplicationLifeCycle
 - uid: UnityEngine.ScriptableObject.SetDirty
   commentId: M:UnityEngine.ScriptableObject.SetDirty
   parent: UnityEngine.ScriptableObject
@@ -1434,6 +1454,63 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
+  commentId: M:UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectsOfType(Type, Boolean)
+  nameWithType: Object.FindObjectsOfType(Type, Boolean)
+  fullName: UnityEngine.Object.FindObjectsOfType(System.Type, System.Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
+    name: FindObjectsOfType
+    nameWithType: Object.FindObjectsOfType
+    fullName: UnityEngine.Object.FindObjectsOfType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
+    name: FindObjectsOfType
+    nameWithType: Object.FindObjectsOfType
+    fullName: UnityEngine.Object.FindObjectsOfType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)
   commentId: M:UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)
   parent: UnityEngine.Object
@@ -1689,6 +1766,50 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
+  commentId: M:UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectsOfType<T>(Boolean)
+  nameWithType: Object.FindObjectsOfType<T>(Boolean)
+  fullName: UnityEngine.Object.FindObjectsOfType<T>(System.Boolean)
+  nameWithType.vb: Object.FindObjectsOfType(Of T)(Boolean)
+  fullName.vb: UnityEngine.Object.FindObjectsOfType(Of T)(System.Boolean)
+  name.vb: FindObjectsOfType(Of T)(Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
+    name: FindObjectsOfType<T>
+    nameWithType: Object.FindObjectsOfType<T>
+    fullName: UnityEngine.Object.FindObjectsOfType<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
+    name: FindObjectsOfType(Of T)
+    nameWithType: Object.FindObjectsOfType(Of T)
+    fullName: UnityEngine.Object.FindObjectsOfType(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: UnityEngine.Object.FindObjectOfType``1
   commentId: M:UnityEngine.Object.FindObjectOfType``1
   parent: UnityEngine.Object
@@ -1720,6 +1841,50 @@ references:
   - name: (
     nameWithType: (
     fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.FindObjectOfType``1(System.Boolean)
+  commentId: M:UnityEngine.Object.FindObjectOfType``1(System.Boolean)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectOfType<T>(Boolean)
+  nameWithType: Object.FindObjectOfType<T>(Boolean)
+  fullName: UnityEngine.Object.FindObjectOfType<T>(System.Boolean)
+  nameWithType.vb: Object.FindObjectOfType(Of T)(Boolean)
+  fullName.vb: UnityEngine.Object.FindObjectOfType(Of T)(System.Boolean)
+  name.vb: FindObjectOfType(Of T)(Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectOfType``1(System.Boolean)
+    name: FindObjectOfType<T>
+    nameWithType: Object.FindObjectOfType<T>
+    fullName: UnityEngine.Object.FindObjectOfType<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectOfType``1(System.Boolean)
+    name: FindObjectOfType(Of T)
+    nameWithType: Object.FindObjectOfType(Of T)
+    fullName: UnityEngine.Object.FindObjectOfType(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
   - name: )
     nameWithType: )
     fullName: )
@@ -1801,6 +1966,63 @@ references:
     name: Type
     nameWithType: Type
     fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
+  commentId: M:UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectOfType(Type, Boolean)
+  nameWithType: Object.FindObjectOfType(Type, Boolean)
+  fullName: UnityEngine.Object.FindObjectOfType(System.Type, System.Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
+    name: FindObjectOfType
+    nameWithType: Object.FindObjectOfType
+    fullName: UnityEngine.Object.FindObjectOfType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
+    name: FindObjectOfType
+    nameWithType: Object.FindObjectOfType
+    fullName: UnityEngine.Object.FindObjectOfType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
     isExternal: true
   - name: )
     nameWithType: )
@@ -2366,23 +2588,163 @@ references:
   name: Init
   nameWithType: ScriptableObjectLifeCycle.Init
   fullName: MacacaGames.GameSystem.ScriptableObjectLifeCycle.Init
+- uid: MacacaGames.GameSystem.IApplicationLifeCycle.Init
+  commentId: M:MacacaGames.GameSystem.IApplicationLifeCycle.Init
+  parent: MacacaGames.GameSystem.IApplicationLifeCycle
+  name: Init()
+  nameWithType: IApplicationLifeCycle.Init()
+  fullName: MacacaGames.GameSystem.IApplicationLifeCycle.Init()
+  spec.csharp:
+  - uid: MacacaGames.GameSystem.IApplicationLifeCycle.Init
+    name: Init
+    nameWithType: IApplicationLifeCycle.Init
+    fullName: MacacaGames.GameSystem.IApplicationLifeCycle.Init
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MacacaGames.GameSystem.IApplicationLifeCycle.Init
+    name: Init
+    nameWithType: IApplicationLifeCycle.Init
+    fullName: MacacaGames.GameSystem.IApplicationLifeCycle.Init
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnApplicationUpdate*
   commentId: Overload:MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnApplicationUpdate
   name: OnApplicationUpdate
   nameWithType: ScriptableObjectLifeCycle.OnApplicationUpdate
   fullName: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnApplicationUpdate
+- uid: MacacaGames.GameSystem.IApplicationLifeCycle.OnApplicationUpdate
+  commentId: M:MacacaGames.GameSystem.IApplicationLifeCycle.OnApplicationUpdate
+  parent: MacacaGames.GameSystem.IApplicationLifeCycle
+  name: OnApplicationUpdate()
+  nameWithType: IApplicationLifeCycle.OnApplicationUpdate()
+  fullName: MacacaGames.GameSystem.IApplicationLifeCycle.OnApplicationUpdate()
+  spec.csharp:
+  - uid: MacacaGames.GameSystem.IApplicationLifeCycle.OnApplicationUpdate
+    name: OnApplicationUpdate
+    nameWithType: IApplicationLifeCycle.OnApplicationUpdate
+    fullName: MacacaGames.GameSystem.IApplicationLifeCycle.OnApplicationUpdate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MacacaGames.GameSystem.IApplicationLifeCycle.OnApplicationUpdate
+    name: OnApplicationUpdate
+    nameWithType: IApplicationLifeCycle.OnApplicationUpdate
+    fullName: MacacaGames.GameSystem.IApplicationLifeCycle.OnApplicationUpdate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnEnterLobby*
   commentId: Overload:MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnEnterLobby
   name: OnEnterLobby
   nameWithType: ScriptableObjectLifeCycle.OnEnterLobby
   fullName: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnEnterLobby
+- uid: MacacaGames.GameSystem.IApplicationLifeCycle.OnEnterLobby
+  commentId: M:MacacaGames.GameSystem.IApplicationLifeCycle.OnEnterLobby
+  parent: MacacaGames.GameSystem.IApplicationLifeCycle
+  name: OnEnterLobby()
+  nameWithType: IApplicationLifeCycle.OnEnterLobby()
+  fullName: MacacaGames.GameSystem.IApplicationLifeCycle.OnEnterLobby()
+  spec.csharp:
+  - uid: MacacaGames.GameSystem.IApplicationLifeCycle.OnEnterLobby
+    name: OnEnterLobby
+    nameWithType: IApplicationLifeCycle.OnEnterLobby
+    fullName: MacacaGames.GameSystem.IApplicationLifeCycle.OnEnterLobby
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MacacaGames.GameSystem.IApplicationLifeCycle.OnEnterLobby
+    name: OnEnterLobby
+    nameWithType: IApplicationLifeCycle.OnEnterLobby
+    fullName: MacacaGames.GameSystem.IApplicationLifeCycle.OnEnterLobby
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnGamePlayUpdate*
   commentId: Overload:MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnGamePlayUpdate
   name: OnGamePlayUpdate
   nameWithType: ScriptableObjectLifeCycle.OnGamePlayUpdate
   fullName: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnGamePlayUpdate
+- uid: MacacaGames.GameSystem.IApplicationLifeCycle.OnGamePlayUpdate
+  commentId: M:MacacaGames.GameSystem.IApplicationLifeCycle.OnGamePlayUpdate
+  parent: MacacaGames.GameSystem.IApplicationLifeCycle
+  name: OnGamePlayUpdate()
+  nameWithType: IApplicationLifeCycle.OnGamePlayUpdate()
+  fullName: MacacaGames.GameSystem.IApplicationLifeCycle.OnGamePlayUpdate()
+  spec.csharp:
+  - uid: MacacaGames.GameSystem.IApplicationLifeCycle.OnGamePlayUpdate
+    name: OnGamePlayUpdate
+    nameWithType: IApplicationLifeCycle.OnGamePlayUpdate
+    fullName: MacacaGames.GameSystem.IApplicationLifeCycle.OnGamePlayUpdate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MacacaGames.GameSystem.IApplicationLifeCycle.OnGamePlayUpdate
+    name: OnGamePlayUpdate
+    nameWithType: IApplicationLifeCycle.OnGamePlayUpdate
+    fullName: MacacaGames.GameSystem.IApplicationLifeCycle.OnGamePlayUpdate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnUnPauseGamePlayUpdate*
   commentId: Overload:MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnUnPauseGamePlayUpdate
   name: OnUnPauseGamePlayUpdate
   nameWithType: ScriptableObjectLifeCycle.OnUnPauseGamePlayUpdate
   fullName: MacacaGames.GameSystem.ScriptableObjectLifeCycle.OnUnPauseGamePlayUpdate
+- uid: MacacaGames.GameSystem.IApplicationLifeCycle.OnUnPauseGamePlayUpdate
+  commentId: M:MacacaGames.GameSystem.IApplicationLifeCycle.OnUnPauseGamePlayUpdate
+  parent: MacacaGames.GameSystem.IApplicationLifeCycle
+  name: OnUnPauseGamePlayUpdate()
+  nameWithType: IApplicationLifeCycle.OnUnPauseGamePlayUpdate()
+  fullName: MacacaGames.GameSystem.IApplicationLifeCycle.OnUnPauseGamePlayUpdate()
+  spec.csharp:
+  - uid: MacacaGames.GameSystem.IApplicationLifeCycle.OnUnPauseGamePlayUpdate
+    name: OnUnPauseGamePlayUpdate
+    nameWithType: IApplicationLifeCycle.OnUnPauseGamePlayUpdate
+    fullName: MacacaGames.GameSystem.IApplicationLifeCycle.OnUnPauseGamePlayUpdate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MacacaGames.GameSystem.IApplicationLifeCycle.OnUnPauseGamePlayUpdate
+    name: OnUnPauseGamePlayUpdate
+    nameWithType: IApplicationLifeCycle.OnUnPauseGamePlayUpdate
+    fullName: MacacaGames.GameSystem.IApplicationLifeCycle.OnUnPauseGamePlayUpdate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

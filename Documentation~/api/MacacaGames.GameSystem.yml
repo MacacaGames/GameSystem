@@ -10,6 +10,7 @@ items:
   - MacacaGames.GameSystem.ApplicationController.GameState
   - MacacaGames.GameSystem.ApplicationControllerEditor
   - MacacaGames.GameSystem.GamePlayController
+  - MacacaGames.GameSystem.IApplicationLifeCycle
   - MacacaGames.GameSystem.IGamePlayData
   - MacacaGames.GameSystem.InjectAttribute
   - MacacaGames.GameSystem.MonoBehaviourLifeCycle
@@ -28,11 +29,12 @@ items:
   assemblies:
   - Macaca.GameSystem
 references:
-- uid: MacacaGames.GameSystem.ApplicationAutoInjecter
-  commentId: T:MacacaGames.GameSystem.ApplicationAutoInjecter
-  name: ApplicationAutoInjecter
-  nameWithType: ApplicationAutoInjecter
-  fullName: MacacaGames.GameSystem.ApplicationAutoInjecter
+- uid: MacacaGames.GameSystem.IApplicationLifeCycle
+  commentId: T:MacacaGames.GameSystem.IApplicationLifeCycle
+  parent: MacacaGames.GameSystem
+  name: IApplicationLifeCycle
+  nameWithType: IApplicationLifeCycle
+  fullName: MacacaGames.GameSystem.IApplicationLifeCycle
 - uid: MacacaGames.GameSystem.ApplicationController
   commentId: T:MacacaGames.GameSystem.ApplicationController
   parent: MacacaGames.GameSystem
@@ -68,33 +70,38 @@ references:
   name: RequireInterfaceAttribute
   nameWithType: RequireInterfaceAttribute
   fullName: MacacaGames.GameSystem.RequireInterfaceAttribute
+- uid: MacacaGames.GameSystem.ApplicationAutoInjecter
+  commentId: T:MacacaGames.GameSystem.ApplicationAutoInjecter
+  name: ApplicationAutoInjecter
+  nameWithType: ApplicationAutoInjecter
+  fullName: MacacaGames.GameSystem.ApplicationAutoInjecter
+- uid: MacacaGames.GameSystem.ScriptableObjectLifeCycle
+  commentId: T:MacacaGames.GameSystem.ScriptableObjectLifeCycle
+  name: ScriptableObjectLifeCycle
+  nameWithType: ScriptableObjectLifeCycle
+  fullName: MacacaGames.GameSystem.ScriptableObjectLifeCycle
 - uid: MacacaGames.GameSystem.GamePlayController
   commentId: T:MacacaGames.GameSystem.GamePlayController
   parent: MacacaGames.GameSystem
   name: GamePlayController
   nameWithType: GamePlayController
   fullName: MacacaGames.GameSystem.GamePlayController
+- uid: MacacaGames.GameSystem.MonoBehaviourLifeCycle
+  commentId: T:MacacaGames.GameSystem.MonoBehaviourLifeCycle
+  name: MonoBehaviourLifeCycle
+  nameWithType: MonoBehaviourLifeCycle
+  fullName: MacacaGames.GameSystem.MonoBehaviourLifeCycle
 - uid: MacacaGames.GameSystem.IGamePlayData
   commentId: T:MacacaGames.GameSystem.IGamePlayData
   parent: MacacaGames.GameSystem
   name: IGamePlayData
   nameWithType: IGamePlayData
   fullName: MacacaGames.GameSystem.IGamePlayData
-- uid: MacacaGames.GameSystem.MonoBehaviourLifeCycle
-  commentId: T:MacacaGames.GameSystem.MonoBehaviourLifeCycle
-  name: MonoBehaviourLifeCycle
-  nameWithType: MonoBehaviourLifeCycle
-  fullName: MacacaGames.GameSystem.MonoBehaviourLifeCycle
 - uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData
   commentId: T:MacacaGames.GameSystem.ScriptableObjectGamePlayData
   name: ScriptableObjectGamePlayData
   nameWithType: ScriptableObjectGamePlayData
   fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData
-- uid: MacacaGames.GameSystem.ScriptableObjectLifeCycle
-  commentId: T:MacacaGames.GameSystem.ScriptableObjectLifeCycle
-  name: ScriptableObjectLifeCycle
-  nameWithType: ScriptableObjectLifeCycle
-  fullName: MacacaGames.GameSystem.ScriptableObjectLifeCycle
 - uid: MacacaGames.GameSystem.ApplicationControllerEditor
   commentId: T:MacacaGames.GameSystem.ApplicationControllerEditor
   name: ApplicationControllerEditor

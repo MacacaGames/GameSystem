@@ -4,6 +4,10 @@ See [Document](https://macacagames.github.io/GameSystem/) for more detail.
 
 Macaca GameSystem is a framework to build game life cycle in Unity3D.
 
+### Note: start from 1.0.3, this package include a precompiled Rayark.Mask  Dlls.
+
+-----
+
 ## Features
 - Life cycle management and callback.
 - Replaceable gamelogic implement via Unity's ScriptableObject.
@@ -17,18 +21,19 @@ Add it to your editor's `manifest.json` file like this:
 {
     "dependencies": {
         "com.macacagames.gamesystem": "https://github.com/MacacaGames/GameSystem.git",
-        "com.rayark.mast": "https://github.com/MacacaGames/mast.git",
     }
 }
 ```
 
-### Option 2: Git SubModule
-Note: GameSystem is dependency with Rayark.Mast, so also add it in git submodule.
+### Option 2: Installation via OpenUPM
 
+```sh
+openupm add com.macacagames.gamesystem
+```
+
+### Option 3: Git SubModule
 ```bash
 git submodule add https://github.com/MacacaGames/GameSystem.git Assets/MacacaGameSystem
-
-git submodule add https://github.com/MacacaGames/mast.git Assets/Mast
 ```
 
 ## ApplicationLifeCycle
@@ -77,6 +82,7 @@ git submodule add https://github.com/MacacaGames/mast.git Assets/Mast
 IGamePlayData is the main game logic implemention. Do your logic in the callbacks to complete your game. For each callback's detail please see [Document](https://macacagames.github.io/GameSystem/api/MacacaGames.GameSystem.IGamePlayData.html)
 
 Create a cs file which inherit from ScriptableObjectGamePlayData, and referenced it to ApplicationController.
+
 
 ```csharp
 void Init();
@@ -147,11 +153,16 @@ Game System contains a lightweight dependency inject system, help you to resolve
 
 Use the ``[ResloveTarget]`` attribute to mark a class to become a injectable object.
 
-Each MonoBehaviourLifeCycle and ScriptableObjectLifeCycle in the scene or referenced on ApplicationController will also injectable.
+Each MonoBehaviourLifeCycle and ScriptableObjectLifeCycle in the scene or referenced on ApplicationController will also injectable. (MonoBehaviourLifeCycle and ScriptableObjectLifeCycle doesn't require ``[ResloveTarget]`` attribute)
 
 And use ``[Inject]`` attribute on the target field/property. Finally use ResolveInjection to complete injection.
 
 All MonoBehaviourLifeCycle, ScriptableObjectLifeCycle and GamePlayData will complete the injtection automatically on each instance during Init phase.
+
+Note: Currentlly, MonoBehaviourLifeCycle, ScriptableObjectLifeCycle and the class which has ``[ResloveTarget]`` attribute will only have one instance and managed by ApplicationController.
+
+
+To get the class instance manually see [Document](https://macacagames.github.io/GameSystem/api/MacacaGames.GameSystem.ApplicationController.html#MacacaGames_GameSystem_ApplicationController_GetMonobehaviourLifeCycle_System_Type_) for more detail.
 
 ### Example:
 ```csharp

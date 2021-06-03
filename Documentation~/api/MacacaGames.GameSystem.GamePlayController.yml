@@ -223,7 +223,6 @@ items:
   syntax:
     content: >-
       public T GetGamePlayData<T>()
-
           where T : class, IGamePlayData
     typeParameters:
     - id: T

@@ -11,10 +11,10 @@ items:
   - MacacaGames.GameSystem.ScriptableObjectGamePlayData.GameResult
   - MacacaGames.GameSystem.ScriptableObjectGamePlayData.Init
   - MacacaGames.GameSystem.ScriptableObjectGamePlayData.IsContinueAvailable
-  - MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnApplicationBeforeGamePlay
   - MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinue
   - MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnContinueFlow(Rayark.Mast.IReturn{System.Boolean})
   - MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnEnterGame
+  - MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnEnterLobby
   - MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameEnd
   - MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameFaild
   - MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnGameLose
@@ -44,9 +44,7 @@ items:
     content: 'public abstract class ScriptableObjectGamePlayData : ScriptableObject, IGamePlayData'
     content.vb: >-
       Public MustInherit Class ScriptableObjectGamePlayData
-
           Inherits ScriptableObject
-
           Implements IGamePlayData
   inheritance:
   - System.Object
@@ -77,15 +75,19 @@ items:
   - UnityEngine.Object.DestroyImmediate(UnityEngine.Object,System.Boolean)
   - UnityEngine.Object.DestroyImmediate(UnityEngine.Object)
   - UnityEngine.Object.FindObjectsOfType(System.Type)
+  - UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
   - UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)
   - UnityEngine.Object.DestroyObject(UnityEngine.Object,System.Single)
   - UnityEngine.Object.DestroyObject(UnityEngine.Object)
   - UnityEngine.Object.FindSceneObjectsOfType(System.Type)
   - UnityEngine.Object.FindObjectsOfTypeIncludingAssets(System.Type)
   - UnityEngine.Object.FindObjectsOfType``1
+  - UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
   - UnityEngine.Object.FindObjectOfType``1
+  - UnityEngine.Object.FindObjectOfType``1(System.Boolean)
   - UnityEngine.Object.FindObjectsOfTypeAll(System.Type)
   - UnityEngine.Object.FindObjectOfType(System.Type)
+  - UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
   - UnityEngine.Object.ToString
   - UnityEngine.Object.name
   - UnityEngine.Object.hideFlags
@@ -211,23 +213,23 @@ items:
   modifiers.vb:
   - Public
   - MustOverride
-- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnApplicationBeforeGamePlay
-  commentId: M:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnApplicationBeforeGamePlay
-  id: OnApplicationBeforeGamePlay
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnEnterLobby
+  commentId: M:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnEnterLobby
+  id: OnEnterLobby
   parent: MacacaGames.GameSystem.ScriptableObjectGamePlayData
   langs:
   - csharp
   - vb
-  name: OnApplicationBeforeGamePlay()
-  nameWithType: ScriptableObjectGamePlayData.OnApplicationBeforeGamePlay()
-  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnApplicationBeforeGamePlay()
+  name: OnEnterLobby()
+  nameWithType: ScriptableObjectGamePlayData.OnEnterLobby()
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnEnterLobby()
   type: Method
   source:
     remote:
       path: Runtime/ScriptableObjectGamePlayData.cs
       branch: master
       repo: git@github.com:MacacaGames/GameSystem.git
-    id: OnApplicationBeforeGamePlay
+    id: OnEnterLobby
     path: ../Runtime/ScriptableObjectGamePlayData.cs
     startLine: 31
   assemblies:
@@ -236,11 +238,11 @@ items:
   summary: "\nSame as ApplicationController OnApplicationBeforeGamePlay.\n"
   example: []
   syntax:
-    content: public abstract void OnApplicationBeforeGamePlay()
-    content.vb: Public MustOverride Sub OnApplicationBeforeGamePlay
-  overload: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnApplicationBeforeGamePlay*
+    content: public abstract void OnEnterLobby()
+    content.vb: Public MustOverride Sub OnEnterLobby
+  overload: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnEnterLobby*
   implements:
-  - MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
+  - MacacaGames.GameSystem.IGamePlayData.OnEnterLobby
   modifiers.csharp:
   - public
   - abstract
@@ -1916,6 +1918,63 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
+  commentId: M:UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectsOfType(Type, Boolean)
+  nameWithType: Object.FindObjectsOfType(Type, Boolean)
+  fullName: UnityEngine.Object.FindObjectsOfType(System.Type, System.Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
+    name: FindObjectsOfType
+    nameWithType: Object.FindObjectsOfType
+    fullName: UnityEngine.Object.FindObjectsOfType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectsOfType(System.Type,System.Boolean)
+    name: FindObjectsOfType
+    nameWithType: Object.FindObjectsOfType
+    fullName: UnityEngine.Object.FindObjectsOfType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)
   commentId: M:UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)
   parent: UnityEngine.Object
@@ -2171,6 +2230,50 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
+  commentId: M:UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectsOfType<T>(Boolean)
+  nameWithType: Object.FindObjectsOfType<T>(Boolean)
+  fullName: UnityEngine.Object.FindObjectsOfType<T>(System.Boolean)
+  nameWithType.vb: Object.FindObjectsOfType(Of T)(Boolean)
+  fullName.vb: UnityEngine.Object.FindObjectsOfType(Of T)(System.Boolean)
+  name.vb: FindObjectsOfType(Of T)(Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
+    name: FindObjectsOfType<T>
+    nameWithType: Object.FindObjectsOfType<T>
+    fullName: UnityEngine.Object.FindObjectsOfType<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectsOfType``1(System.Boolean)
+    name: FindObjectsOfType(Of T)
+    nameWithType: Object.FindObjectsOfType(Of T)
+    fullName: UnityEngine.Object.FindObjectsOfType(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: UnityEngine.Object.FindObjectOfType``1
   commentId: M:UnityEngine.Object.FindObjectOfType``1
   parent: UnityEngine.Object
@@ -2202,6 +2305,50 @@ references:
   - name: (
     nameWithType: (
     fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.FindObjectOfType``1(System.Boolean)
+  commentId: M:UnityEngine.Object.FindObjectOfType``1(System.Boolean)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectOfType<T>(Boolean)
+  nameWithType: Object.FindObjectOfType<T>(Boolean)
+  fullName: UnityEngine.Object.FindObjectOfType<T>(System.Boolean)
+  nameWithType.vb: Object.FindObjectOfType(Of T)(Boolean)
+  fullName.vb: UnityEngine.Object.FindObjectOfType(Of T)(System.Boolean)
+  name.vb: FindObjectOfType(Of T)(Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectOfType``1(System.Boolean)
+    name: FindObjectOfType<T>
+    nameWithType: Object.FindObjectOfType<T>
+    fullName: UnityEngine.Object.FindObjectOfType<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectOfType``1(System.Boolean)
+    name: FindObjectOfType(Of T)
+    nameWithType: Object.FindObjectOfType(Of T)
+    fullName: UnityEngine.Object.FindObjectOfType(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
   - name: )
     nameWithType: )
     fullName: )
@@ -2283,6 +2430,63 @@ references:
     name: Type
     nameWithType: Type
     fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
+  commentId: M:UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
+  parent: UnityEngine.Object
+  isExternal: true
+  name: FindObjectOfType(Type, Boolean)
+  nameWithType: Object.FindObjectOfType(Type, Boolean)
+  fullName: UnityEngine.Object.FindObjectOfType(System.Type, System.Boolean)
+  spec.csharp:
+  - uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
+    name: FindObjectOfType
+    nameWithType: Object.FindObjectOfType
+    fullName: UnityEngine.Object.FindObjectOfType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: UnityEngine.Object.FindObjectOfType(System.Type,System.Boolean)
+    name: FindObjectOfType
+    nameWithType: Object.FindObjectOfType
+    fullName: UnityEngine.Object.FindObjectOfType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
     isExternal: true
   - name: )
     nameWithType: )
@@ -2910,22 +3114,22 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnApplicationBeforeGamePlay*
-  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnApplicationBeforeGamePlay
-  name: OnApplicationBeforeGamePlay
-  nameWithType: ScriptableObjectGamePlayData.OnApplicationBeforeGamePlay
-  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnApplicationBeforeGamePlay
-- uid: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
-  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
+- uid: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnEnterLobby*
+  commentId: Overload:MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnEnterLobby
+  name: OnEnterLobby
+  nameWithType: ScriptableObjectGamePlayData.OnEnterLobby
+  fullName: MacacaGames.GameSystem.ScriptableObjectGamePlayData.OnEnterLobby
+- uid: MacacaGames.GameSystem.IGamePlayData.OnEnterLobby
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnEnterLobby
   parent: MacacaGames.GameSystem.IGamePlayData
-  name: OnApplicationBeforeGamePlay()
-  nameWithType: IGamePlayData.OnApplicationBeforeGamePlay()
-  fullName: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay()
+  name: OnEnterLobby()
+  nameWithType: IGamePlayData.OnEnterLobby()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnEnterLobby()
   spec.csharp:
-  - uid: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
-    name: OnApplicationBeforeGamePlay
-    nameWithType: IGamePlayData.OnApplicationBeforeGamePlay
-    fullName: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnEnterLobby
+    name: OnEnterLobby
+    nameWithType: IGamePlayData.OnEnterLobby
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnEnterLobby
   - name: (
     nameWithType: (
     fullName: (
@@ -2933,10 +3137,10 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
-    name: OnApplicationBeforeGamePlay
-    nameWithType: IGamePlayData.OnApplicationBeforeGamePlay
-    fullName: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
+  - uid: MacacaGames.GameSystem.IGamePlayData.OnEnterLobby
+    name: OnEnterLobby
+    nameWithType: IGamePlayData.OnEnterLobby
+    fullName: MacacaGames.GameSystem.IGamePlayData.OnEnterLobby
   - name: (
     nameWithType: (
     fullName: (

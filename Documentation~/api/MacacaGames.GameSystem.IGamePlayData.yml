@@ -11,10 +11,10 @@ items:
   - MacacaGames.GameSystem.IGamePlayData.GameResult
   - MacacaGames.GameSystem.IGamePlayData.Init
   - MacacaGames.GameSystem.IGamePlayData.IsContinueAvailable
-  - MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
   - MacacaGames.GameSystem.IGamePlayData.OnContinue
   - MacacaGames.GameSystem.IGamePlayData.OnContinueFlow(Rayark.Mast.IReturn{System.Boolean})
   - MacacaGames.GameSystem.IGamePlayData.OnEnterGame
+  - MacacaGames.GameSystem.IGamePlayData.OnEnterLobby
   - MacacaGames.GameSystem.IGamePlayData.OnGameEnd
   - MacacaGames.GameSystem.IGamePlayData.OnGameFaild
   - MacacaGames.GameSystem.IGamePlayData.OnGameLose
@@ -141,23 +141,23 @@ items:
     content: void Init()
     content.vb: Sub Init
   overload: MacacaGames.GameSystem.IGamePlayData.Init*
-- uid: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
-  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
-  id: OnApplicationBeforeGamePlay
+- uid: MacacaGames.GameSystem.IGamePlayData.OnEnterLobby
+  commentId: M:MacacaGames.GameSystem.IGamePlayData.OnEnterLobby
+  id: OnEnterLobby
   parent: MacacaGames.GameSystem.IGamePlayData
   langs:
   - csharp
   - vb
-  name: OnApplicationBeforeGamePlay()
-  nameWithType: IGamePlayData.OnApplicationBeforeGamePlay()
-  fullName: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay()
+  name: OnEnterLobby()
+  nameWithType: IGamePlayData.OnEnterLobby()
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnEnterLobby()
   type: Method
   source:
     remote:
       path: Runtime/Interface/IGamePlayData.cs
       branch: master
       repo: git@github.com:MacacaGames/GameSystem.git
-    id: OnApplicationBeforeGamePlay
+    id: OnEnterLobby
     path: ../Runtime/Interface/IGamePlayData.cs
     startLine: 27
   assemblies:
@@ -166,9 +166,9 @@ items:
   summary: "\nSame as ApplicationController OnApplicationBeforeGamePlay.\n"
   example: []
   syntax:
-    content: void OnApplicationBeforeGamePlay()
-    content.vb: Sub OnApplicationBeforeGamePlay
-  overload: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay*
+    content: void OnEnterLobby()
+    content.vb: Sub OnEnterLobby
+  overload: MacacaGames.GameSystem.IGamePlayData.OnEnterLobby*
 - uid: MacacaGames.GameSystem.IGamePlayData.OnGameValueReset
   commentId: M:MacacaGames.GameSystem.IGamePlayData.OnGameValueReset
   id: OnGameValueReset
@@ -588,11 +588,11 @@ references:
   name: Init
   nameWithType: IGamePlayData.Init
   fullName: MacacaGames.GameSystem.IGamePlayData.Init
-- uid: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay*
-  commentId: Overload:MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
-  name: OnApplicationBeforeGamePlay
-  nameWithType: IGamePlayData.OnApplicationBeforeGamePlay
-  fullName: MacacaGames.GameSystem.IGamePlayData.OnApplicationBeforeGamePlay
+- uid: MacacaGames.GameSystem.IGamePlayData.OnEnterLobby*
+  commentId: Overload:MacacaGames.GameSystem.IGamePlayData.OnEnterLobby
+  name: OnEnterLobby
+  nameWithType: IGamePlayData.OnEnterLobby
+  fullName: MacacaGames.GameSystem.IGamePlayData.OnEnterLobby
 - uid: MacacaGames.GameSystem.IGamePlayData.OnGameValueReset*
   commentId: Overload:MacacaGames.GameSystem.IGamePlayData.OnGameValueReset
   name: OnGameValueReset

@@ -33,7 +33,6 @@ items:
       <CustomPropertyDrawer(GetType(RequireInterfaceAttribute))>
 
       Public Class RequireInterfaceDrawer
-
           Inherits PropertyDrawer
   inheritance:
   - System.Object
