@@ -12,7 +12,7 @@ namespace MacacaGames.GameSystem
             if (injectFinish)
                 return;
 
-            Component[] injectables = GetComponentsInChildren<Component>();
+            Component[] injectables = GetComponents<Component>();
             if (injectables.Length == 0)
             {
                 Debug.LogError("No IApplicationInjectable found on this GameObject or its children, remember add IApplicationInjectable on the class which you wish to Inject", gameObject);
