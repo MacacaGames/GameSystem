@@ -140,7 +140,7 @@ namespace MacacaGames.GameSystem
             isQuiting = false;
             isFailed = false;
             isPause = false;
-            alreadyContinue = false;
+            // alreadyContinue = false;
             isContinueing = false;
         }
 
@@ -190,11 +190,11 @@ namespace MacacaGames.GameSystem
         }
         Rayark.Mast.Coroutine gameResultCoroutine = null;
 
-        /// <summary>
-        /// Is GamePlay alreadyContinue, value will keep until next gameplay start.
-        /// </summary>
-        /// <value></value>
-        public bool alreadyContinue { get; private set; } = false;
+        // /// <summary>
+        // /// Is GamePlay alreadyContinue, value will keep until next gameplay start.
+        // /// </summary>
+        // /// <value></value>
+        // public bool alreadyContinue { get; private set; } = false;
 
         IEnumerator GamePlayTask()
         {
@@ -257,7 +257,7 @@ namespace MacacaGames.GameSystem
             EnterPause();
             currentGamePlayData.OnGameFaild();
             //已經接關過
-            if (alreadyContinue || !currentGamePlayData.IsContinueAvailable)
+            if (!currentGamePlayData.IsContinueAvailable)
             {
                 EndTheGame();
             }
@@ -274,7 +274,7 @@ namespace MacacaGames.GameSystem
                     currentGamePlayData.OnContinue();
                     isFailed = false;
                     isContinueing = false;
-                    alreadyContinue = true;
+                    // alreadyContinue = true;
                 }
                 else
                 {
