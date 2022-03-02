@@ -77,6 +77,7 @@ namespace MacacaGames.GameSystem
         }
         [SerializeField] ScriptableObjectLifeCycle[] scriptableObjectLifeCycle;
         MonoBehaviourLifeCycle[] monoBehaviourLifeCycleInstance;
+        [System.NonSerialized]
         public List<ScriptableObjectLifeCycle> scriptableObjectLifeCycleInstances = new List<ScriptableObjectLifeCycle>();
         object[] resolveTargetInstance;
 
