@@ -83,4 +83,5 @@ namespace MacacaGames.GameSystem
             this.requiredType = type;
         }
     }
+
 }

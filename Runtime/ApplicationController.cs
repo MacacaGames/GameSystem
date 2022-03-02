@@ -8,6 +8,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 using System.Runtime;
+
 namespace MacacaGames.GameSystem
 {
     /// <summary>
@@ -76,7 +77,7 @@ namespace MacacaGames.GameSystem
         }
         [SerializeField] ScriptableObjectLifeCycle[] scriptableObjectLifeCycle;
         MonoBehaviourLifeCycle[] monoBehaviourLifeCycleInstance;
-        List<ScriptableObjectLifeCycle> scriptableObjectLifeCycleInstances = new List<ScriptableObjectLifeCycle>();
+        public List<ScriptableObjectLifeCycle> scriptableObjectLifeCycleInstances = new List<ScriptableObjectLifeCycle>();
         object[] resolveTargetInstance;
 
         Dictionary<Type, IApplicationLifeCycle> allApplicationLifeCycles = new Dictionary<Type, IApplicationLifeCycle>();
