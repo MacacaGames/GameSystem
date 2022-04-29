@@ -21,6 +21,15 @@ namespace MacacaGames.GameSystem
         /// </summary>
         void Init();
 
+        /// <summary>
+        /// Fire when change gameplay to this
+        /// </summary>
+        void OnChangeGamePlayData_Launch();
+
+        /// <summary>
+        /// Fire when change gameplay to other
+        /// </summary>
+        void OnChangeGamePlayData_Retire();
 
         /// <summary>
         /// Same as ApplicationController OnApplicationBeforeGamePlay.

@@ -101,5 +101,8 @@ namespace MacacaGames.GameSystem
 
         public abstract void OnGUI();
 
+        public abstract void OnChangeGamePlayData_Launch();
+
+        public abstract void OnChangeGamePlayData_Retire();
     }
 }

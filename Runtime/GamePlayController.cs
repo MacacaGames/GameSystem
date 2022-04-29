@@ -30,12 +30,23 @@ namespace MacacaGames.GameSystem
         public GamePlayController(ApplicationController _applicationController, IGamePlayData gamePlayData)
         {
             this._applicationController = _applicationController;
+            ChangeGamePlayData(gamePlayData);
             currentGamePlayData = gamePlayData;
+        }
+
+        public void ChangeGamePlayData(IGamePlayData iGameplayData)
+        {
+            if (currentGamePlayData != null)
+            {
+                currentGamePlayData.OnChangeGamePlayData_Retire();
+            }
+
+            currentGamePlayData = iGameplayData;
+            iGameplayData.OnChangeGamePlayData_Launch();
         }
 
         public void Init()
         {
-            currentGamePlayData?.Init();
         }
 
         public void OnEnterLobby()

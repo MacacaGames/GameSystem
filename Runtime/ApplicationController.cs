@@ -66,15 +66,13 @@ namespace MacacaGames.GameSystem
         }
 
         [SerializeField]
-        [RequireInterface(typeof(IGamePlayData))]
-        UnityEngine.Object gamePlayData;
-        IGamePlayData _gamePlayData
+        ScriptableObjectGamePlayData[] gamePlayDatas;
+
+        public IGamePlayData GetDefaultGameplayData()
         {
-            get
-            {
-                return gamePlayData as IGamePlayData;
-            }
+            return gamePlayDatas[0];
         }
+
         [SerializeField] ScriptableObjectLifeCycle[] scriptableObjectLifeCycle;
         MonoBehaviourLifeCycle[] monoBehaviourLifeCycleInstance;
         [System.NonSerialized]
@@ -103,7 +101,7 @@ namespace MacacaGames.GameSystem
         {
             if (IsInit) return;
             OnApplicationInit?.Invoke();
-            gamePlayController = new GamePlayController(this, _gamePlayData);
+            gamePlayController = new GamePlayController(this, GetDefaultGameplayData());
             applicationExecutor = new Executor();
 
             //Prepare Instance
@@ -122,7 +120,10 @@ namespace MacacaGames.GameSystem
             resolveTargetInstance = GenerateResolveTargetInstance(GetAllRegisterType().ToArray());
 
             //Inject Dependency
-            InjectByClass(gamePlayData);
+            foreach (var item in gamePlayDatas)
+            {
+                InjectByClass(item);
+            }
 
             foreach (var item in scriptableObjectLifeCycleInstances)
             {
@@ -152,6 +153,11 @@ namespace MacacaGames.GameSystem
             {
                 item.Init();
                 allApplicationLifeCycles.Add(item.GetType(), item);
+            }
+
+            foreach(var item in gamePlayDatas)
+            {
+                item.Init();
             }
 
             foreach (var item in resolveTargetInstance)
@@ -332,6 +338,20 @@ namespace MacacaGames.GameSystem
             return result;
         }
 
+        public T GetGameplayData<T>() where T : ScriptableObjectGamePlayData
+        {
+            T result;
+            result = gamePlayDatas.SingleOrDefault(m => m is T) as T;
+            return result;
+        }
+
+        public object GetGameplayData(Type t)
+        {
+            object result;
+            result = gamePlayDatas.SingleOrDefault(m => m.GetType() == t);
+            return result;
+        }
+
         /// <summary>
         /// Get Current GamePlayController
         /// </summary>
@@ -396,7 +416,10 @@ namespace MacacaGames.GameSystem
 
         void OnGUI()
         {
-            _gamePlayData.OnGUI();
+            foreach (var gd in gamePlayDatas)
+            {
+                gd.OnGUI();
+            }
         }
 
         void Update()
@@ -614,6 +637,10 @@ namespace MacacaGames.GameSystem
                 if (t.IsSubclassOf(typeof(ScriptableObjectLifeCycle)))
                 {
                     return GetScriptableLifeCycle(t);
+                }
+                if (t.IsSubclassOf(typeof(ScriptableObjectGamePlayData)))
+                {
+                    return GetGameplayData(t);
                 }
 
                 if (typeof(IGamePlayData).IsAssignableFrom(t))
