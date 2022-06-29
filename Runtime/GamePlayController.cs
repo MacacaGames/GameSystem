@@ -113,11 +113,10 @@ namespace MacacaGames.GameSystem
         /// <see cref="GameFaildFlow()"/> for the contniue behaviour
         /// or <see cref="ScriptableObjectGamePlayData.OnContinueFlow(IReturn{bool})()"/> for your continue implement 
         /// </summary>
-        public void FailedGamePlay()
+        public async void FailedGamePlay()
         {
             isFailed = true;
-            Rayark.Mast.Coroutine coroutine = new Rayark.Mast.Coroutine(GameFaildFlow());
-            AddToUnpauseUpdateExecuter(coroutine);
+            await GameFaildFlow();
         }
 
         /// <summary>
@@ -244,13 +243,6 @@ namespace MacacaGames.GameSystem
 
                 var resultTask = currentGamePlayData.GameResult();
                 yield return new WaitForTaskCompletion(resultTask);
-                // gameResultCoroutine = new Rayark.Mast.Coroutine();
-                // while (!gameResultCoroutine.Finished)
-                // {
-                //     gameResultCoroutine.Resume(Rayark.Mast.Coroutine.Delta);
-                //     yield return null;
-                // }
-                // gameResultCoroutine = null;
             }
             //Game Ending by external reason, e.g. Quit from UI
             else
@@ -269,7 +261,7 @@ namespace MacacaGames.GameSystem
         /// This flow may fire mutilple times during one gameplay.
         /// </summary>
         /// <returns></returns>
-        IEnumerator GameFaildFlow()
+        async Task GameFaildFlow()
         {
             EnterPause();
             currentGamePlayData.OnGameFaild();
@@ -282,11 +274,10 @@ namespace MacacaGames.GameSystem
             else
             {
                 isContinueing = true;
-                BlockMonad<bool> continueFlowCoroutine = new BlockMonad<bool>(r => currentGamePlayData.OnContinueFlow(r));
-                yield return continueFlowCoroutine.Do();
+                var result = await currentGamePlayData.OnContinueFlow();
 
                 // Continue success
-                if (continueFlowCoroutine.Result)
+                if (result)
                 {
                     currentGamePlayData.OnContinue();
                     isFailed = false;
@@ -298,7 +289,6 @@ namespace MacacaGames.GameSystem
                     isContinueing = false;
                     EndTheGame();
                 }
-                continueFlowCoroutine = null;
             }
 
             ResumePause();

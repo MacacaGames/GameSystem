@@ -85,7 +85,7 @@ namespace MacacaGames.GameSystem
         /// </summary>
         /// <param name="result"> the reture value for the continue progress</param>
         /// <returns></returns>
-        public abstract IEnumerator OnContinueFlow(IReturn<bool> result);
+        public abstract Task<bool> OnContinueFlow();
 
         /// <summary>
         /// To verify is the game play available to continue
