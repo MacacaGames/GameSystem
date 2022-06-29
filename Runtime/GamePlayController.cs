@@ -20,6 +20,8 @@ using UnityEngine;
 using System.IO;
 using Rayark.Mast;
 using System;
+using System.Threading.Tasks;
+
 namespace MacacaGames.GameSystem
 {
     public class GamePlayController
@@ -89,7 +91,9 @@ namespace MacacaGames.GameSystem
 
         IEnumerator EnterGame()
         {
-            yield return currentGamePlayData.OnEnterGame();
+            // yield return currentGamePlayData.OnEnterGame();
+            var enterGameTask = currentGamePlayData.OnEnterGame();
+            yield return new WaitForTaskCompletion(enterGameTask);
             isGaming = true;
             yield return GamePlayTask();
         }
@@ -238,13 +242,15 @@ namespace MacacaGames.GameSystem
                     currentGamePlayData.OnGameSuccess();
                 }
 
-                gameResultCoroutine = new Rayark.Mast.Coroutine(currentGamePlayData.GameResult());
-                while (!gameResultCoroutine.Finished)
-                {
-                    gameResultCoroutine.Resume(Rayark.Mast.Coroutine.Delta);
-                    yield return null;
-                }
-                gameResultCoroutine = null;
+                var resultTask = currentGamePlayData.GameResult();
+                yield return new WaitForTaskCompletion(resultTask);
+                // gameResultCoroutine = new Rayark.Mast.Coroutine();
+                // while (!gameResultCoroutine.Finished)
+                // {
+                //     gameResultCoroutine.Resume(Rayark.Mast.Coroutine.Delta);
+                //     yield return null;
+                // }
+                // gameResultCoroutine = null;
             }
             //Game Ending by external reason, e.g. Quit from UI
             else
@@ -330,5 +336,37 @@ namespace MacacaGames.GameSystem
         }
 
         #endregion
+    }
+}
+
+/// <summary>
+/// WaitForStandardYieldInstruction is a helper to make a YieldInstruction into CustomYieldInstruction
+/// Therefore you can iterate it with a third-party Coroutine implement, e.g. Rayark.Mast
+/// </summary>
+public class WaitForTaskCompletion : CustomYieldInstruction
+{
+    bool isRunning;
+
+    Task _task;
+
+    public WaitForTaskCompletion(Task task)
+    {
+        _task = task;
+        WaitForTaskCompletionImplement();
+    }
+
+    public async void WaitForTaskCompletionImplement()
+    {
+        isRunning = true;
+        await _task;
+        isRunning = false;
+    }
+
+    public override bool keepWaiting
+    {
+        get
+        {
+            return isRunning;
+        }
     }
 }

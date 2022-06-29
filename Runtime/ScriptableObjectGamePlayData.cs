@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Rayark.Mast;
 using UnityEngine;
 namespace MacacaGames.GameSystem
@@ -39,7 +40,7 @@ namespace MacacaGames.GameSystem
         /// <summary>
         /// Excude before gameplay realy start
         /// </summary>
-        public abstract IEnumerator OnEnterGame();
+        public abstract Task OnEnterGame();
 
         /// <summary>
         /// Main logic of the game
@@ -67,7 +68,7 @@ namespace MacacaGames.GameSystem
         /// Only work during play died or clear, not on quit
         /// </summary>
         /// <returns></returns>
-        public abstract IEnumerator GameResult();
+        public abstract Task GameResult();
 
         /// <summary>
         /// Game total end, no mater is died, clear or quit.
