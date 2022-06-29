@@ -72,7 +72,6 @@ namespace MacacaGames.GameSystem
         /// <summary>
         /// Only work during play died or clear, not on quit
         /// </summary>
-        /// <returns></returns>
         Task GameResult();
 
         /// <summary>
@@ -88,8 +87,7 @@ namespace MacacaGames.GameSystem
         /// <summary>
         /// Implement the continue progress here and set result in result 
         /// </summary>
-        /// <param name="result"> the reture value for the continue progress</param>
-        /// <returns></returns>
+        /// <returns>True if the player would like to continue</returns>
         Task<bool> OnContinueFlow();
 
         /// <summary>
