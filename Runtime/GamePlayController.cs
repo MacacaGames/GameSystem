@@ -217,7 +217,10 @@ namespace MacacaGames.GameSystem
             while (isQuiting == false && isGaming == true)
             {
                 if (!gamePlayCoroutine.Finished)
+                {
                     gamePlayCoroutine.Resume(Rayark.Mast.Coroutine.Delta);
+                    DoAddAndRemoveExecuter();
+                }
                 else
                 {
                     Debug.LogError("gamePlayCoroutine is finished, Remember to call   gamePlayController.SuccessGamePlay(); in the end of GamePlay IEnumrator");
@@ -300,29 +303,70 @@ namespace MacacaGames.GameSystem
 
         public Executor gamePlayUpdateExecuter = new Executor();
         public Executor gamePlayUnpauseUpdateExecuter = new Executor();
+        List<IResumable> addUnpauseUpdateExecuterCache = new List<IResumable>();
+        List<IResumable> removeUnpauseUpdateExecuterCache= new List<IResumable>();
+        List<IResumable> addUpdateExecuterCache= new List<IResumable>();
+        List<IResumable> removeUpdateExecuterCache= new List<IResumable>();
 
         public void AddToUnpauseUpdateExecuter(IResumable c)
         {
-            if (!gamePlayUnpauseUpdateExecuter.Contains(c))
-                gamePlayUnpauseUpdateExecuter.Add(c);
+            if (!(gamePlayUnpauseUpdateExecuter.Contains(c) || addUnpauseUpdateExecuterCache.Contains(c)))
+                addUnpauseUpdateExecuterCache.Add(c);
         }
 
         public void RemoveFromUnpauseUpdateExecuter(IResumable c)
         {
-            if (gamePlayUnpauseUpdateExecuter.Contains(c))
-                gamePlayUnpauseUpdateExecuter.Remove(c);
+            if (!(gamePlayUnpauseUpdateExecuter.Contains(c) || removeUnpauseUpdateExecuterCache.Contains(c)))
+                removeUnpauseUpdateExecuterCache.Add(c);
         }
 
         public void AddToUpdateExecuter(IResumable c)
         {
-            if (!gamePlayUpdateExecuter.Contains(c))
-                gamePlayUpdateExecuter.Add(c);
+            if (!(gamePlayUnpauseUpdateExecuter.Contains(c) || addUpdateExecuterCache.Contains(c)))
+                addUpdateExecuterCache.Add(c);
         }
 
         public void RemoveFromUpdateExecuter(IResumable c)
         {
-            if (gamePlayUpdateExecuter.Contains(c))
-                gamePlayUpdateExecuter.Remove(c);
+
+            if (!(gamePlayUnpauseUpdateExecuter.Contains(c) || removeUpdateExecuterCache.Contains(c)))
+                removeUpdateExecuterCache.Add(c);
+        }
+
+        private void DoAddAndRemoveExecuter()
+        {
+            if(removeUnpauseUpdateExecuterCache.Count > 0)
+            {
+                foreach(IResumable re in  removeUnpauseUpdateExecuterCache)
+                {
+                    gamePlayUnpauseUpdateExecuter.Remove(re);
+                }
+                removeUnpauseUpdateExecuterCache.Clear();
+            }
+            if(addUnpauseUpdateExecuterCache.Count> 0)
+            {
+                foreach(IResumable re in  addUnpauseUpdateExecuterCache)
+                {
+                    gamePlayUnpauseUpdateExecuter.Add(re);
+                }
+                addUnpauseUpdateExecuterCache.Clear();
+            }
+            if(removeUpdateExecuterCache.Count > 0)
+            {
+                foreach(IResumable re in  removeUpdateExecuterCache)
+                {
+                    gamePlayUpdateExecuter.Remove(re);
+                }
+                removeUpdateExecuterCache.Clear();
+            }
+            if(addUpdateExecuterCache.Count> 0)
+            {
+                foreach(IResumable re in  addUpdateExecuterCache)
+                {
+                    gamePlayUpdateExecuter.Add(re);
+                }
+                addUpdateExecuterCache.Clear();
+            }
         }
 
         #endregion
