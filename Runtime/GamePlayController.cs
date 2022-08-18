@@ -267,7 +267,7 @@ namespace MacacaGames.GameSystem
         async Task GameFaildFlow()
         {
             EnterPause();
-            currentGamePlayData.OnGameFaild();
+            await currentGamePlayData.OnGameFaild();
             //已經接關過
             if (!currentGamePlayData.IsContinueAvailable)
             {
@@ -304,9 +304,9 @@ namespace MacacaGames.GameSystem
         public Executor gamePlayUpdateExecuter = new Executor();
         public Executor gamePlayUnpauseUpdateExecuter = new Executor();
         List<IResumable> addUnpauseUpdateExecuterCache = new List<IResumable>();
-        List<IResumable> removeUnpauseUpdateExecuterCache= new List<IResumable>();
-        List<IResumable> addUpdateExecuterCache= new List<IResumable>();
-        List<IResumable> removeUpdateExecuterCache= new List<IResumable>();
+        List<IResumable> removeUnpauseUpdateExecuterCache = new List<IResumable>();
+        List<IResumable> addUpdateExecuterCache = new List<IResumable>();
+        List<IResumable> removeUpdateExecuterCache = new List<IResumable>();
 
         public void AddToUnpauseUpdateExecuter(IResumable c)
         {
@@ -335,33 +335,33 @@ namespace MacacaGames.GameSystem
 
         private void DoAddAndRemoveExecuter()
         {
-            if(removeUnpauseUpdateExecuterCache.Count > 0)
+            if (removeUnpauseUpdateExecuterCache.Count > 0)
             {
-                foreach(IResumable re in  removeUnpauseUpdateExecuterCache)
+                foreach (IResumable re in removeUnpauseUpdateExecuterCache)
                 {
                     gamePlayUnpauseUpdateExecuter.Remove(re);
                 }
                 removeUnpauseUpdateExecuterCache.Clear();
             }
-            if(addUnpauseUpdateExecuterCache.Count> 0)
+            if (addUnpauseUpdateExecuterCache.Count > 0)
             {
-                foreach(IResumable re in  addUnpauseUpdateExecuterCache)
+                foreach (IResumable re in addUnpauseUpdateExecuterCache)
                 {
                     gamePlayUnpauseUpdateExecuter.Add(re);
                 }
                 addUnpauseUpdateExecuterCache.Clear();
             }
-            if(removeUpdateExecuterCache.Count > 0)
+            if (removeUpdateExecuterCache.Count > 0)
             {
-                foreach(IResumable re in  removeUpdateExecuterCache)
+                foreach (IResumable re in removeUpdateExecuterCache)
                 {
                     gamePlayUpdateExecuter.Remove(re);
                 }
                 removeUpdateExecuterCache.Clear();
             }
-            if(addUpdateExecuterCache.Count> 0)
+            if (addUpdateExecuterCache.Count > 0)
             {
-                foreach(IResumable re in  addUpdateExecuterCache)
+                foreach (IResumable re in addUpdateExecuterCache)
                 {
                     gamePlayUpdateExecuter.Add(re);
                 }

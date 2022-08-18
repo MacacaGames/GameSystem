@@ -78,7 +78,7 @@ namespace MacacaGames.GameSystem
         /// <summary>
         /// Game Failed.
         /// </summary>
-        public abstract void OnGameFaild();
+        public abstract Task OnGameFaild();
 
         /// <summary>
         /// Implement the continue progress here and set result in result 
