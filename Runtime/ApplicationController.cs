@@ -79,6 +79,7 @@ namespace MacacaGames.GameSystem
         [System.NonSerialized]
         public List<ScriptableObjectLifeCycle> scriptableObjectLifeCycleInstances = new List<ScriptableObjectLifeCycle>();
         object[] resolveTargetInstance;
+        static Dictionary<Type, object> externalTargetInstance = new Dictionary<Type, object>();
 
         Dictionary<Type, IApplicationLifeCycle> allApplicationLifeCycles = new Dictionary<Type, IApplicationLifeCycle>();
 
@@ -87,12 +88,12 @@ namespace MacacaGames.GameSystem
         /// Usually to use in other scene before Scene with ApplicationController
         /// e.g. Loading scene
         /// </summary>
-        Action OnApplicationInit;
+        public Action OnApplicationInit;
 
         /// <summary>
         /// Fire once between GameEnd and next GamePlay, also fire once after init. 
         /// </summary>
-        Action OnEnterLobby;
+        public Action OnEnterLobby;
 
         GamePlayController gamePlayController;
 
@@ -570,14 +571,33 @@ namespace MacacaGames.GameSystem
                     .Where(p => p.GetCustomAttribute(typeof(ResolveTargetAttribute), true) != null)
                     .OrderBy(p => p.GetCustomAttribute<ResolveTargetAttribute>(true).order);
 
-            // bool IsSystemLifeCycle(Type t)
-            // {
-            //     return
-            //         !t.IsSubclassOf(typeof(MonoBehaviourLifeCycle)) &&
-            //         !t.IsSubclassOf(typeof(ScriptableObjectLifeCycle)) &&
-            //         !t.IsSubclassOf(typeof(GamePlayData));
-            // }
         }
+
+        /// <summary>
+        /// Registe an external object to make is injectable by ApplicationConlloer.Instance.ResloveInject();
+        /// The target type will be only be able to get value after calling this method, so it is recommend to bind a event on OnApplicationInit therefore it will be inject during the Init phase
+        /// Or using Unity's [RuntimeInitializeOnLoadMethod]
+        /// </summary>
+        /// <param name="target">The target Instance, note only allow one instance for each type, newer one will replace old one.</param>
+        /// <param name="ReInject">If true, the system will try to do resolve for all instance (Not implement yet)</param>
+        public static void RegisteExternalTarget(object target, bool autoReInject = true)
+        {
+
+            Type type = target.GetType();
+            if (externalTargetInstance.ContainsKey(type))
+            {
+                externalTargetInstance[type] = target;
+            }
+            else
+            {
+                externalTargetInstance.Add(type, target);
+            }
+            if (autoReInject == false)
+            {
+                return;
+            }
+        }
+
 
         /// <summary>
         /// Inject all member with [Inject] attribute on target object
@@ -655,6 +675,10 @@ namespace MacacaGames.GameSystem
                 if (typeof(IGamePlayData).IsAssignableFrom(t))
                 {
                     return GetGamePlayController().GetGamePlayData();
+                }
+                if (externalTargetInstance.ContainsKey(t))
+                {
+                    return externalTargetInstance[t];
                 }
                 //Finally try to find RegisterInstance
                 return GetResloveTargetInstance(t);
