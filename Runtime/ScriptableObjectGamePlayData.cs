@@ -24,7 +24,7 @@ namespace MacacaGames.GameSystem
         /// <summary>
         /// Same as ApplicationController Init.
         /// </summary>
-        public abstract void Init();
+        public abstract Task Init();
 
 
         /// <summary>

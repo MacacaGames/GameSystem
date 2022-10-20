@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Rayark.Mast;
 using Coroutine = Rayark.Mast.Coroutine;
+using System.Threading.Tasks;
+
 namespace MacacaGames.GameSystem
 {
     /// <summary>
@@ -13,7 +15,7 @@ namespace MacacaGames.GameSystem
         /// <summary>
         /// Init the object, fire once during ApplicationController.Init()
         /// </summary>
-        public abstract void Init();
+        public abstract Task Init();
 
         /// <summary>
         /// Fire every frame during the application is running, likes UnityEngine.Update() but controls by ApplicationController

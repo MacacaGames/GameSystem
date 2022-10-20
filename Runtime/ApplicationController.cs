@@ -8,6 +8,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 using System.Runtime;
+using System.Threading.Tasks;
 
 namespace MacacaGames.GameSystem
 {
@@ -97,7 +98,7 @@ namespace MacacaGames.GameSystem
 
         public bool IsInit = false;
 
-        public void Init()
+        public async void Init()
         {
             if (IsInit) return;
             OnApplicationInit?.Invoke();
@@ -143,31 +144,39 @@ namespace MacacaGames.GameSystem
             //Init
             gamePlayController.Init();
 
+            List<Task> tasks = new List<Task>();
+
             foreach (var item in scriptableObjectLifeCycleInstances)
             {
-                item.Init();
+                var t = item.Init();
+                tasks.Add(t);
                 allApplicationLifeCycles.Add(item.GetType(), item);
             }
 
             foreach (var item in monoBehaviourLifeCycleInstance)
             {
-                item.Init();
+                var t = item.Init();
+                tasks.Add(t);
                 allApplicationLifeCycles.Add(item.GetType(), item);
             }
 
-            foreach(var item in gamePlayDatas)
+            foreach (var item in gamePlayDatas)
             {
-                item.Init();
+                var t = item.Init();
+                tasks.Add(t);
             }
 
             foreach (var item in resolveTargetInstance)
             {
                 if (item is IApplicationLifeCycle applicationLifeCycle)
                 {
-                    applicationLifeCycle.Init();
+                    var t = applicationLifeCycle.Init();
+                    tasks.Add(t);
                     allApplicationLifeCycles.Add(item.GetType(), applicationLifeCycle);
                 }
             }
+
+            await Task.WhenAll(tasks);
 
             applicationExecutor.Add(ApplicationTask());
             applicationExecutor.Add(ApplicationUpdateRunner());

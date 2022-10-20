@@ -1,3 +1,5 @@
+using System.Threading.Tasks;
+
 namespace MacacaGames.GameSystem
 {
     /// <summary>
@@ -9,7 +11,7 @@ namespace MacacaGames.GameSystem
         /// <summary>
         /// Init the instance,
         /// </summary>
-        void Init();
+        Task Init();
 
         /// <summary>
         /// Fire once between GameEnd and next GamePlay, also fire once after init. 

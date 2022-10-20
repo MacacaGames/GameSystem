@@ -20,7 +20,7 @@ namespace MacacaGames.GameSystem
         /// <summary>
         /// Same as ApplicationController Init.
         /// </summary>
-        void Init();
+        Task Init();
 
         /// <summary>
         /// Fire when change gameplay to this

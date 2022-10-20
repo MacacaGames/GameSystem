@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 namespace MacacaGames.GameSystem
 {
@@ -11,7 +12,7 @@ namespace MacacaGames.GameSystem
         /// <summary>
         /// Init the object, fire once during ApplicationController.Init()
         /// </summary>
-        public abstract void Init();
+        public abstract Task Init();
 
         /// <summary>
         /// Fire every frame during the application is running, likes UnityEngine.Update() but controls by ApplicationController
