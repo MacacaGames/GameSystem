@@ -33,7 +33,7 @@ namespace MacacaGames.GameSystem
                                     Inject all target
                                             |   
                                             V  
-                    ┌─────────────>─────────┐   [OnApplicationBeforeGamePlay]
+                    ┌─────────────>─────────┐   [OnEnterLobby]
                     |                       |  
                     |                       |───────────────────────────────────────[ApplicitionController.ApplicationTask]
                     |       ┌───────>──┐    |
@@ -332,7 +332,7 @@ namespace MacacaGames.GameSystem
         public T GetScriptableLifeCycle<T>() where T : ScriptableObjectLifeCycle
         {
             T result;
-            result = scriptableObjectLifeCycleInstances.SingleOrDefault(m => m is T) as T;
+            result = GetScriptableLifeCycle(typeof(T)) as T;
             return result;
         }
 
@@ -351,7 +351,7 @@ namespace MacacaGames.GameSystem
         public T GetGameplayData<T>() where T : ScriptableObjectGamePlayData
         {
             T result;
-            result = gamePlayDatas.SingleOrDefault(m => m is T) as T;
+            result = GetGameplayData(typeof(T)) as T;
             return result;
         }
 
@@ -379,7 +379,7 @@ namespace MacacaGames.GameSystem
         public T GetMonobehaviourLifeCycle<T>() where T : MonoBehaviourLifeCycle
         {
             T result;
-            result = monoBehaviourLifeCycleInstance.SingleOrDefault(m => m is T) as T;
+            result = GetMonobehaviourLifeCycle(typeof(T)) as T;
             return result;
         }
 
