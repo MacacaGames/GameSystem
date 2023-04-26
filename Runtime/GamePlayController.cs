@@ -199,10 +199,10 @@ namespace MacacaGames.GameSystem
         {
             get
             {
-                return gameResultCoroutine != null && !gameResultCoroutine.Finished;
+                return resultTask != null && !resultTask.IsCompleted;
             }
         }
-        Rayark.Mast.Coroutine gameResultCoroutine = null;
+        Task resultTask = null;
 
         // /// <summary>
         // /// Is GamePlay alreadyContinue, value will keep until next gameplay start.
@@ -244,7 +244,7 @@ namespace MacacaGames.GameSystem
                     currentGamePlayData.OnGameSuccess();
                 }
 
-                var resultTask = currentGamePlayData.GameResult();
+                resultTask = currentGamePlayData.GameResult();
                 yield return new WaitForTaskCompletion(resultTask);
             }
             //Game Ending by external reason, e.g. Quit from UI
