@@ -1,7 +1,8 @@
 {
     "name": "Macaca.GameSystem",
+    "rootNamespace": "",
     "references": [
-        "GUID:2d3eb0c22eaa7421ca42eb7a15b685c2"
+        "GUID:474def811854047f9b89854e89359183"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
