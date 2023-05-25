@@ -1,6 +1,6 @@
 
 using System;
-namespace MacacaGames
+namespace MacacaGames.GameSystem
 {
     /// <summary>
     /// Mark a Property or Field inside a class that can be Injected by ApplicationController
