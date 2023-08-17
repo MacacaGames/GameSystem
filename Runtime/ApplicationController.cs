@@ -228,7 +228,7 @@ namespace MacacaGames.GameSystem
                 {
                     try
                     {
-                        item.Value.OnGamePlayUpdate();
+                        item.Value.OnUnPauseGamePlayUpdate();
                     }
                     catch (Exception ex)
                     {
