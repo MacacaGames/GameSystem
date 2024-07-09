@@ -30,9 +30,10 @@ namespace MacacaGames.GameSystem
 
                 foreach (var item in applicationController.scriptableObjectLifeCycleInstances)
                 {
-                    EditorGUILayout.ObjectField(item, typeof(ScriptableObjectLifeCycle),false);
+                    EditorGUILayout.ObjectField(item, typeof(ScriptableObjectLifeCycle), false);
                 }
             }
+            serializedObject.ApplyModifiedProperties();
         }
     }
 }

@@ -56,7 +56,6 @@ namespace MacacaGames.GameSystem
     /// 
     */
     /// </summary>
-    [ResolveTarget]
     public class ApplicationController : MonoBehaviour
     {
         public static ApplicationController Instance;
@@ -96,6 +95,7 @@ namespace MacacaGames.GameSystem
         public Action OnEnterLobby;
 
         GamePlayController gamePlayController;
+        public static IProgress<float> InitProgress;
 
         public bool IsInit = false;
 
@@ -177,7 +177,11 @@ namespace MacacaGames.GameSystem
                 }
             }
 
-            await Task.WhenAll(tasks);
+            while (tasks.Count(m => m.IsCompleted) < tasks.Count)
+            {
+                await Task.Yield();
+                InitProgress?.Report((float)tasks.Count(m => m.IsCompleted) / (float)tasks.Count);
+            }
 
             applicationExecutor.Add(ApplicationTask());
             applicationExecutor.Add(ApplicationUpdateRunner());
