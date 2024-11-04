@@ -147,6 +147,15 @@ namespace MacacaGames.GameSystem
 
             List<Task> tasks = new List<Task>();
 
+            foreach (var item in GetPreLoadResloveTargets())
+            {
+                if (item is IApplicationLifeCycle applicationLifeCycle)
+                {
+                    var t = applicationLifeCycle.Init();
+                    tasks.Add(t);
+                    allApplicationLifeCycles.Add(item.GetType(), applicationLifeCycle);
+                }
+            }
             foreach (var item in scriptableObjectLifeCycleInstances)
             {
                 var t = item.Init();
@@ -167,7 +176,7 @@ namespace MacacaGames.GameSystem
                 tasks.Add(t);
             }
 
-            foreach (var item in resolveTargetInstance)
+            foreach (var item in GetNormalResloveTargets())
             {
                 if (item is IApplicationLifeCycle applicationLifeCycle)
                 {
@@ -600,6 +609,30 @@ namespace MacacaGames.GameSystem
             {
                 return;
             }
+        }
+        public List<object> GetResolveTargets(Func<ResolveTargetAttribute, bool> predicate)
+        {
+            return resolveTargetInstance
+                .Select(obj => new
+                {
+                    Object = obj,
+                    Type = obj.GetType(),
+                    Attribute = obj.GetType().GetCustomAttribute<ResolveTargetAttribute>(true)
+                })
+                .Where(x => predicate(x.Attribute))
+                .OrderBy(x => x.Attribute.resloveType)
+                .ThenBy(x => x.Attribute.order)
+                .Select(x => x.Object)
+                .ToList();
+        }
+        public List<object> GetPreLoadResloveTargets()
+        {
+            return GetResolveTargets(attr => attr.resloveType != ResloveType.Normal);
+        }
+
+        public List<object> GetNormalResloveTargets()
+        {
+            return GetResolveTargets(attr => attr.resloveType == ResloveType.Normal);
         }
 
 
