@@ -147,7 +147,7 @@ namespace MacacaGames.GameSystem
 
             List<Task> tasks = new List<Task>();
 
-            foreach (var item in GetPreLoadResloveTargets())
+            foreach (var item in GetPreInitializationResolveTargets())
             {
                 if (item is IApplicationLifeCycle applicationLifeCycle)
                 {
@@ -176,7 +176,7 @@ namespace MacacaGames.GameSystem
                 tasks.Add(t);
             }
 
-            foreach (var item in GetNormalResloveTargets())
+            foreach (var item in GetPostInitializationResolveTargets())
             {
                 if (item is IApplicationLifeCycle applicationLifeCycle)
                 {
@@ -620,19 +620,19 @@ namespace MacacaGames.GameSystem
                     Attribute = obj.GetType().GetCustomAttribute<ResolveTargetAttribute>(true)
                 })
                 .Where(x => predicate(x.Attribute))
-                .OrderBy(x => x.Attribute.resloveType)
+                .OrderBy(x => x.Attribute.ResolveType)
                 .ThenBy(x => x.Attribute.order)
                 .Select(x => x.Object)
                 .ToList();
         }
-        public List<object> GetPreLoadResloveTargets()
+        public List<object> GetPreInitializationResolveTargets()
         {
-            return GetResolveTargets(attr => attr.resloveType != ResloveType.Normal);
+            return GetResolveTargets(attr => attr.ResolveType == ResolveType.BeforeLifeCycleInit);
         }
 
-        public List<object> GetNormalResloveTargets()
+        public List<object> GetPostInitializationResolveTargets()
         {
-            return GetResolveTargets(attr => attr.resloveType == ResloveType.Normal);
+            return GetResolveTargets(attr => attr.ResolveType == ResolveType.AfterLifeCycleInit);
         }
 
 

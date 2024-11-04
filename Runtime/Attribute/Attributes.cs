@@ -61,26 +61,26 @@ namespace MacacaGames.GameSystem
             this.order = order;
         }
         
-        public ResolveTargetAttribute(ResloveType resloveType)
+        public ResolveTargetAttribute(ResolveType resolveType)
         {
-            this.resloveType = resloveType;
+            this.ResolveType = resolveType;
         }
 
-        public ResolveTargetAttribute(int order, ResloveType resloveType)
+        public ResolveTargetAttribute(int order, ResolveType resolveType)
         {
-            this.resloveType = resloveType;
+            this.ResolveType = resolveType;
         }
 
         /// <summary>
         /// The order to CreateInstance and inject
         /// </summary>
         public int order;
-        public ResloveType resloveType;
+        public ResolveType ResolveType;
     }
 
-    public enum ResloveType
+    public enum ResolveType
     {
-        Normal = 0,
-        Entity = 1,
+        AfterLifeCycleInit = 0,
+        BeforeLifeCycleInit = 1,
     }
 }
