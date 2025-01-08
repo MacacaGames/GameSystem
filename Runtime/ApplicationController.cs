@@ -177,10 +177,16 @@ namespace MacacaGames.GameSystem
                 }
             }
 
-            while (tasks.Count(m => m.IsCompleted) < tasks.Count)
+            while (true)
             {
-                await Task.Yield();
-                InitProgress?.Report((float)tasks.Count(m => m.IsCompleted) / (float)tasks.Count);
+                var completedTasks = tasks.Count(m => m.IsCompleted || m.IsFaulted || m.IsCanceled);
+                InitProgress?.Report((float)completedTasks / tasks.Count);
+
+                // Break when all tasks are either completed, faulted, or canceled
+                if (completedTasks == tasks.Count)
+                    break;
+
+                await Task.Delay(100); // Use a small delay to avoid busy waiting
             }
 
             applicationExecutor.Add(ApplicationTask());
