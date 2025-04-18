@@ -294,6 +294,83 @@ public class Enemy : MonoBehaviour{
 
 Once follow up the steps, you can very easy control the Game Pause by calling `ApplicationController.Instance.GetGamePlayController().EnterPause()` or `ApplicationController.Instance.GetGamePlayController().ResumePause();`
 
+#### Script Tips
+Here is the pre-implement base class to let you very easy to replace the MonoBehaviour and use the powerful GameSystem time manage. 
+
+Create a .cs file and paste the follow content.
+```csharp
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Rayark.Mast;
+using Coroutine = Rayark.Mast.Coroutine;
+using MacacaGames.GameSystem;
+
+public class GameplayUpdateReceiverBase : MonoBehaviour
+{
+    public virtual void Awake()
+    {
+        ApplicationController.Instance.ResolveInjection(this);
+    }
+    public List<Coroutine> coroutines = new List<Coroutine>();
+
+    protected void RegistCoroutine(Coroutine c)
+    {
+        ApplicationController.Instance.GetGamePlayController.AddToUpdateExecuter(c);
+        coroutines.Add(c);
+    }
+
+    public void DisposeGamePlayUpdate()
+    {
+        foreach (Coroutine c in coroutines)
+        {
+            if (c != null)
+                c.Dispose();
+        }
+
+        coroutines.Clear();
+    }
+
+    public virtual void OnGamePlayUpdate(float deltaTime)
+    {
+    }
+
+    public virtual void OnEnable()
+    {
+        RegistCoroutine(new Coroutine(GamePlayUpdate()));
+    }
+
+    public virtual void OnDisable()
+    {
+        DisposeGamePlayUpdate();
+    }
+
+    public IEnumerator GamePlayUpdate()
+    {
+        while (true)
+        {
+            OnGamePlayUpdate(Coroutine.Delta);
+            yield return null;
+        }
+    }
+}
+```
+
+Usage
+
+```csharp
+
+public class MyObject : GameplayUpdateReceiverBase{
+  
+    public override void OnGamePlayUpdate(float deltaTime)
+    {
+        // Do something, just like using MonoBehaviour.Update()
+        transform.Translate(Vector3.Up * deltaTime); // Remember use deltaTime to replace the Time.deltaTime
+    }
+}
+
+```
+
 ## Highlight API
 
 The most useful API in this library.
