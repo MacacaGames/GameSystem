@@ -267,7 +267,7 @@ For instance,
 ```csharp
 public class Enemy : MonoBehaviour{
 
-    Rayark.Mast.Coroutine unpauseCoroutineGameTime;
+    Rayark.Mast.Coroutine coroutineGameTime;
 
     // Use this to replace the MonoBehaviour.Update(), only excude when the Game State is not in Pause
     IEnumrator MyUpdateRunInGameTime(){
